@@ -1,304 +1,551 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aerolinea High Flight</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="description" content="Menú gourmet a bordo - High Flight Airlines">
+    <title>Menú Gourmet - High Flight</title>
+
+    <!-- Preconnect para mejor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/food.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg">
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- Inicio de header -->
+    <!-- Header -->
     <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/mundo.png" alt="Logo High Flight">
+                <div class="logo-text">
+                    <span>HIGH</span>
+                    <span>FLIGHT</span>
+                </div>
+            </a>
 
-        <a href="index.html" class="logo">
-            <img src="img/mundo.png" alt="">
-            <h3 href="index.html">HIGH <br>FLIGHT</h3>
-        </a>
-        <!-- Inicio-Navegacion1 -->
-        <nav class="navegacion1">
-            <a href="login.html"  class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-            </svg></a>
+            <nav class="nav">
+                <a href="login.html" class="nav-btn">
+                    <i class="fas fa-user"></i>
+                    Iniciar Sesión
+                </a>
 
-            <a href="ayuda.html"  class="boton ">ayuda<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <circle cx="12" cy="12" r="9"></circle>
-            <line x1="12" y1="17" x2="12" y2="17.01"></line>
-            <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
-            </svg></a>
-        </nav>
-        <!-- Final-navegacion1 -->
+                <a href="ayuda.html" class="nav-btn">
+                    <i class="fas fa-question-circle"></i>
+                    Ayuda
+                </a>
+
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <section class="home1" id="home1">
-        <div class="content">
-            <h3>AQUÍ ENCONTRARAS LAS MEJORES COMIDAS Y BEBIDAS 😋</h3>
-            <p>las mejores Comidas de todos los paises, preparados con ingredientes especiales para darle un toque unico y especial para tu gusto. </p>
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+
+            <!-- Hero Section -->
+            <section class="restaurant-hero">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Gastronomía de Altura</h1>
+                        <p>Las mejores comidas y bebidas de todos los países, preparadas con ingredientes especiales
+                            para darle un toque único y especial a tu vuelo.</p>
+                        <div class="hero-features">
+                            <span class="feature">
+                                <i class="fas fa-utensils"></i>
+                                Cocina internacional
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-award"></i>
+                                Chefs certificados
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-leaf"></i>
+                                Ingredientes frescos
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="hero-images">
+                        <img src="img/home-img.png" alt="Plato gourmet" class="hero-main-img">
+                        <img src="img/home-parallax-img.png" alt="Decoración culinaria" class="hero-parallax-img">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Categorías del menú -->
+            <section class="menu-categories">
+                <h2 class="section-title">
+                    <i class="fas fa-list"></i>
+                    Nuestro Menú
+                </h2>
+
+                <div class="categories-grid">
+                    <a href="comidas.html" class="category-card">
+                        <div class="category-image">
+                            <img src="img/menu1.jpg" alt="Desayunos gourmet">
+                            <div class="category-overlay">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                        </div>
+                        <div class="category-content">
+                            <h3>Desayunos</h3>
+                            <p>Comienza tu día con energía</p>
+                            <span class="category-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <a href="comidas.html" class="category-card">
+                        <div class="category-image">
+                            <img src="img/menu3.jpg" alt="Almuerzos gourmet">
+                            <div class="category-overlay">
+                                <i class="fas fa-hamburger"></i>
+                            </div>
+                        </div>
+                        <div class="category-content">
+                            <h3>Almuerzos</h3>
+                            <p>Sabores internacionales</p>
+                            <span class="category-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <a href="comidas.html" class="category-card">
+                        <div class="category-image">
+                            <img src="img/cat-5.png" alt="Cenas gourmet">
+                            <div class="category-overlay">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                        </div>
+                        <div class="category-content">
+                            <h3>Cenas</h3>
+                            <p>Experiencias únicas</p>
+                            <span class="category-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <a href="bebidas.html" class="category-card">
+                        <div class="category-image">
+                            <img src="img/bebida.jpg" alt="Bebidas premium">
+                            <div class="category-overlay">
+                                <i class="fas fa-wine-glass"></i>
+                            </div>
+                        </div>
+                        <div class="category-content">
+                            <h3>Bebidas</h3>
+                            <p>Selección premium</p>
+                            <span class="category-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Platos populares -->
+            <section class="popular-dishes">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-fire"></i>
+                        Comidas Populares
+                    </h2>
+                    <p class="section-subtitle">En oferta especial</p>
+                </div>
+
+                <div class="dishes-grid">
+                    <!-- Galleta rellena -->
+                    <article class="dish-card" data-item="galleta-rellena">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <div class="dish-image">
+                            <img src="img/pop1.png" alt="Galleta rellena gourmet">
+                        </div>
+
+                        <div class="dish-content">
+                            <h3>Galleta Rellena</h3>
+
+                            <div class="dish-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(50)</span>
+                            </div>
+
+                            <div class="dish-price">
+                                <span class="current-price">$30.00</span>
+                                <span class="original-price">$40.00</span>
+                                <span class="discount">-25%</span>
+                            </div>
+
+                            <button class="btn btn--primary"
+                                onclick="addToCart('galleta-rellena', 30.00, 'Galleta Rellena', 'img/pop1.png')">
+                                <i class="fas fa-cart-plus"></i>
+                                Agregar
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Torta de vainilla -->
+                    <article class="dish-card" data-item="torta-vainilla">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <div class="dish-image">
+                            <img src="img/pop2.jpg" alt="Torta de vainilla artesanal">
+                        </div>
+
+                        <div class="dish-content">
+                            <h3>Torta de Vainilla</h3>
+
+                            <div class="dish-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(75)</span>
+                            </div>
+
+                            <div class="dish-price">
+                                <span class="current-price">$40.00</span>
+                                <span class="original-price">$60.00</span>
+                                <span class="discount">-33%</span>
+                            </div>
+
+                            <button class="btn btn--primary"
+                                onclick="addToCart('torta-vainilla', 40.00, 'Torta de Vainilla', 'img/pop2.jpg')">
+                                <i class="fas fa-cart-plus"></i>
+                                Agregar
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Anticucho -->
+                    <article class="dish-card featured" data-item="anticucho">
+                        <div class="featured-badge">Popular</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <div class="dish-image">
+                            <img src="img/pop3.jpg" alt="Anticucho peruano tradicional">
+                        </div>
+
+                        <div class="dish-content">
+                            <h3>Anticucho</h3>
+
+                            <div class="dish-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(120)</span>
+                            </div>
+
+                            <div class="dish-price">
+                                <span class="current-price">$60.00</span>
+                                <span class="original-price">$70.00</span>
+                                <span class="discount">-14%</span>
+                            </div>
+
+                            <button class="btn btn--primary"
+                                onclick="addToCart('anticucho', 60.00, 'Anticucho', 'img/pop3.jpg')">
+                                <i class="fas fa-cart-plus"></i>
+                                Agregar
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Pollo broaster -->
+                    <article class="dish-card" data-item="pollo-broaster">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <div class="dish-image">
+                            <img src="img/pop4.jpg" alt="Pollo broaster crujiente">
+                        </div>
+
+                        <div class="dish-content">
+                            <h3>Pollo Broaster</h3>
+
+                            <div class="dish-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(89)</span>
+                            </div>
+
+                            <div class="dish-price">
+                                <span class="current-price">$35.00</span>
+                                <span class="original-price">$45.00</span>
+                                <span class="discount">-22%</span>
+                            </div>
+
+                            <button class="btn btn--primary"
+                                onclick="addToCart('pollo-broaster', 35.00, 'Pollo Broaster', 'img/pop4.jpg')">
+                                <i class="fas fa-cart-plus"></i>
+                                Agregar
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Tacos al pastor -->
+                    <article class="dish-card" data-item="tacos-pastor">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <div class="dish-image">
+                            <img src="img/pop5.jpg" alt="Tacos al pastor auténticos">
+                        </div>
+
+                        <div class="dish-content">
+                            <h3>Tacos al Pastor</h3>
+
+                            <div class="dish-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(95)</span>
+                            </div>
+
+                            <div class="dish-price">
+                                <span class="current-price">$70.00</span>
+                                <span class="original-price">$80.00</span>
+                                <span class="discount">-12%</span>
+                            </div>
+
+                            <button class="btn btn--primary"
+                                onclick="addToCart('tacos-pastor', 70.00, 'Tacos al Pastor', 'img/pop5.jpg')">
+                                <i class="fas fa-cart-plus"></i>
+                                Agregar
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Mojito -->
+                    <article class="dish-card" data-item="mojito">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <div class="dish-image">
+                            <img src="img/pop6.jpg" alt="Mojito refrescante">
+                        </div>
+
+                        <div class="dish-content">
+                            <h3>Mojito</h3>
+
+                            <div class="dish-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(68)</span>
+                            </div>
+
+                            <div class="dish-price">
+                                <span class="current-price">$107.00</span>
+                                <span class="original-price">$110.00</span>
+                                <span class="discount">-3%</span>
+                            </div>
+
+                            <button class="btn btn--primary"
+                                onclick="addToCart('mojito', 107.00, 'Mojito', 'img/pop6.jpg')">
+                                <i class="fas fa-cart-plus"></i>
+                                Agregar
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Cerveza Beer -->
+                    <article class="dish-card" data-item="cerveza-beer">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <div class="dish-image">
+                            <img src="img/pop7.jpg" alt="Cerveza premium">
+                        </div>
+
+                        <div class="dish-content">
+                            <h3>Cerveza Beer</h3>
+
+                            <div class="dish-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(112)</span>
+                            </div>
+
+                            <div class="dish-price">
+                                <span class="current-price">$95.00</span>
+                                <span class="original-price">$100.00</span>
+                                <span class="discount">-5%</span>
+                            </div>
+
+                            <button class="btn btn--primary"
+                                onclick="addToCart('cerveza-beer', 95.00, 'Cerveza Beer', 'img/pop7.jpg')">
+                                <i class="fas fa-cart-plus"></i>
+                                Agregar
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Vino -->
+                    <article class="dish-card" data-item="vino-premium">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+
+                        <div class="dish-image">
+                            <img src="img/pop8.jpg" alt="Vino selección premium">
+                        </div>
+
+                        <div class="dish-content">
+                            <h3>Vino Premium</h3>
+
+                            <div class="dish-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(87)</span>
+                            </div>
+
+                            <div class="dish-price">
+                                <span class="current-price">$56.00</span>
+                                <span class="original-price">$70.00</span>
+                                <span class="discount">-20%</span>
+                            </div>
+
+                            <button class="btn btn--primary"
+                                onclick="addToCart('vino-premium', 56.00, 'Vino Premium', 'img/pop8.jpg')">
+                                <i class="fas fa-cart-plus"></i>
+                                Agregar
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Navegación de vuelta -->
+            <section class="navigation-section">
+                <a href="index.html" class="back-to-home">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver al inicio
+                </a>
+            </section>
+
+            <!-- Carrito flotante -->
+            <div class="cart-floating" id="cartFloating">
+                <button class="cart-toggle" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+
+                <div class="cart-dropdown" id="cartDropdown">
+                    <div class="cart-header">
+                        <h3>Tu pedido</h3>
+                        <button class="cart-close" onclick="toggleCart()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="cart-items" id="cartItems">
+                        <div class="cart-empty">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Tu carrito está vacío</p>
+                        </div>
+                    </div>
+
+                    <div class="cart-footer">
+                        <div class="cart-total">
+                            <span>Total: $<span id="cartTotal">0.00</span></span>
+                        </div>
+                        <button class="btn btn--primary btn--large" onclick="proceedToCheckout()">
+                            <i class="fas fa-credit-card"></i>
+                            Proceder al pago
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    
-        <div class="image">
-            <img src="img/home-img.png" alt="" class="home1-img">
-            <img src="img/home-parallax-img.png" alt="" class="home1-parallax-img">
-        </div>
-    </section>
+    </main>
 
-    <section class="category">
-        <a href="comidas.html" class="box">
-            <img src="img/menu1.jpg" alt="">
-            <h3>Desayunos</h3>
-        </a>
-    
-        <a href="comidas.html" class="box">
-            <img src="img/menu3.jpg" alt="">
-            <h3>Almuerzos</h3>
-        </a>
-
-        <a href="comidas.html" class="box">
-            <img src="img/cat-5.png" alt="">
-            <h3>Cenas</h3>
-        </a>
-
-        <a href="bebidas.html" class="box">
-            <img src="img/bebida.jpg" alt="">
-            <h3>Bebidas</h3>
-        </a>
-    </section>
-
-    <section class="popular" id="popular">
-        <div class="heading">
-            <span>Comidas Populares</span>
-            <h3>en oferta </h3>
-        </div>
-    
-        <div class="box-container">
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/pop1.png" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>galleta rellena </h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span> (50) </span>
-                    </div>
-
-                    <div class="price">$30.00 <span>$40.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
             </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/pop2.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>torta de vainilla</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span> (50) </span>
-                    </div>
-
-                    <div class="price">$40.00 <span>$60.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/pop3.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Anticucho</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span> (50) </span>
-                    </div>
-
-                    <div class="price">$60.00 <span>$70.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/pop4.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>pollo broaster</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span> (50) </span>
-                    </div>
-
-                    <div class="price">$35.00 <span>$45.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/pop5.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>tacos al pastor</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span> (50) </span>
-                    </div>
-
-                    <div class="price">$70.00 <span>$80.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/pop6.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>mojito</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span> (50) </span>
-                    </div>
-
-                    <div class="price">$107.00 <span>$110.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/pop7.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Cerveza beer</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span> (50) </span>
-                    </div>
-
-                    <div class="price">$95.00 <span>$100.00</span></div>
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/pop8.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Vino</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span> (50) </span>
-                    </div>
-
-                    <div class="price">$56.00 <span>$70.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
+            <div class="footer-text">
+                <p>&copy; 2024 <span>High Flight</span> | Gastronomía de altura</p>
             </div>
         </div>
-    </section>
-    
-    <div class="sad">
-        <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-left" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M20 15h-8v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h8a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1z"></path>
-        </svg></a>
-    </div>
+    </footer>
 
-    <section class="footer">
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-            <a href="#" class="fab fa-pinterest"></a>
-        </div>
-    
-        <div class="credit">@2023 <span>creado </span> | por la aerolinea H.F. com</div>
-    </section> 
-
-    <script type="text/javascript"></script>
-    <script src="js/traductor.js"></script> 
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/food-menu.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>
