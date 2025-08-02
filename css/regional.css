@@ -421,16 +421,81 @@
     margin: 0;
 }
 
-/* Tema oscuro para nuevas secciones */
-.dark-theme .info-card,
-.dark-theme .tip-card {
-    background: var(--gray-light);
-    border-color: #555;
+/* Ciudades populares */
+.popular-cities {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 2px solid var(--gray-light);
 }
 
-.dark-theme .info-card:hover,
-.dark-theme .tip-card:hover {
-    border-color: var(--primary);
+.popular-cities h4 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-large);
+    text-align: center;
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.city-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border-left: 3px solid var(--primary);
+}
+
+.city-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--accent);
+}
+
+.city-item i {
+    color: var(--primary);
+    margin-right: var(--spacing-xs);
+    font-size: var(--font-size-base);
+}
+
+.city-item span:first-of-type {
+    flex: 1;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.city-price {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: var(--font-size-base);
+}
+
+/* Responsive para ciudades populares */
+@media (max-width: 768px) {
+    .cities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .city-item {
+        padding: var(--spacing-sm);
+    }
+}
+
+/* Tema oscuro para ciudades */
+.dark-theme .city-item {
+    background: var(--gray-light);
+    border-left-color: var(--primary);
+}
+
+.dark-theme .city-item:hover {
+    border-left-color: var(--accent);
 }
 
 /* Responsive para nuevas secciones */

@@ -1,89 +1,423 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Aerolinea High Flight </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comida navideña especial - High Flight Airlines">
+    <title>Comida Navideña - High Flight</title>
+
+    <!-- Preconnect para mejor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/food.css">
+    <link rel="stylesheet" href="css/christmas.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
+    <!-- Header -->
     <header class="header">
-        <a href="index.html" class="logo">
-            <img src="img/mundo.png" alt="">
-            <h3>HIGH<br>FLIGHT</h3>
-        </a>
-        <!-- Inicio-Navegacion1 -->
-        <nav class="navegacion1">
-            <a href="login.html"  class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-            </svg></a>
-        </nav>
-        <!-- Final-navegacion1 -->
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/mundo.png" alt="Logo High Flight">
+                <div class="logo-text">
+                    <span>HIGH</span>
+                    <span>FLIGHT</span>
+                </div>
+            </a>
+
+            <nav class="nav">
+                <a href="login.html" class="nav-btn">
+                    <i class="fas fa-user"></i>
+                    Iniciar Sesión
+                </a>
+
+                <!-- Traductor -->
+                <div id="google_translate_element" class="translator"></div>
+
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
     </header>
-    <section >
 
-        <div class="Kaw">
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
 
-            <div  class="kaw">
-                <img src="img/nav1.jpg" alt="">
-            </div>
-            <div  class="kaw">
-                <h2>Pasta Fria Navideña</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quod qui, nesciunt maxime perspiciatis aut ratione labore architecto facere nihil provident harum amet atque molestias sed saepe ipsa dolores aperiam laudantium beatae culpa deserunt. Sint, voluptatum assumenda. Officia, neque! Facere recusandae eligendi totam ad corporis natus quisquam laboriosam aspernatur doloribus nemo maxime architecto perferendis numquam amet at, ipsam quam unde praesentium a sint nesciunt! Consectetur, quaerat saepe, adipisci modi vero quia veniam natus ducimus tempora enim libero officiis neque repellat ratione similique praesentium molestiae non voluptatum optio. Iure veritatis at qui, dolorem perspiciatis modi nihil sunt ex aperiam ut perferendis.</p>
+            <!-- Hero navideño -->
+            <section class="christmas-hero">
+                <div class="hero-content">
+                    <div class="christmas-decoration">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-snowflake"></i>
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h1>
+                        <i class="fas fa-candy-cane"></i>
+                        Menú Navideño Especial
+                    </h1>
+                    <p>Celebra las fiestas con sabores tradicionales a gran altura</p>
+                    <div class="hero-badges">
+                        <span class="badge">
+                            <i class="fas fa-holly-berry"></i>
+                            Edición limitada
+                        </span>
+                        <span class="badge">
+                            <i class="fas fa-heart"></i>
+                            Recetas familiares
+                        </span>
+                        <span class="badge">
+                            <i class="fas fa-sparkles"></i>
+                            Temporada especial
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Menú navideño -->
+            <section class="christmas-menu">
+                <h2 class="section-title">
+                    <i class="fas fa-utensils"></i>
+                    Nuestras Especialidades Navideñas
+                </h2>
+
+                <div class="menu-grid">
+
+                    <!-- Pasta Fría Navideña -->
+                    <article class="christmas-item">
+                        <div class="item-image">
+                            <img src="img/nav1.jpg" alt="Pasta Fría Navideña" loading="lazy">
+                            <div class="christmas-overlay">
+                                <div class="seasonal-badge">
+                                    <i class="fas fa-snowflake"></i>
+                                    Temporada
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Pasta Fría Navideña</h3>
+                                <span class="price">$24.99</span>
+                            </div>
+
+                            <div class="item-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-text">(4.8) · 87 reseñas</span>
+                            </div>
+
+                            <p class="item-description">
+                                Ensalada de pasta con vegetales frescos de temporada, jamón especiado, queso manchego,
+                                aceitunas mediterráneas y nuestra vinagreta navideña con hierbas aromáticas. Una
+                                deliciosa
+                                fusión de sabores tradicionales perfecta para acompañar tus celebraciones.
+                            </p>
+
+                            <div class="item-tags">
+                                <span class="tag tag--christmas">
+                                    <i class="fas fa-tree"></i>
+                                    Navideño
+                                </span>
+                                <span class="tag tag--fresh">
+                                    <i class="fas fa-leaf"></i>
+                                    Fresco
+                                </span>
+                            </div>
+
+                            <div class="item-actions">
+                                <button class="btn btn--outline btn--small" onclick="toggleFavorite(this)">
+                                    <i class="far fa-heart"></i>
+                                    Favorito
+                                </button>
+                                <button class="btn btn--primary"
+                                    onclick="addToCart('pasta-navidena', 24.99, 'Pasta Fría Navideña', 'img/nav1.jpg')">
+                                    <i class="fas fa-cart-plus"></i>
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Sandwichón Navideño -->
+                    <article class="christmas-item featured">
+                        <div class="featured-badge">
+                            <i class="fas fa-crown"></i>
+                            Especialidad
+                        </div>
+
+                        <div class="item-image">
+                            <img src="img/nav2.jpg" alt="Sandwichón Navideño" loading="lazy">
+                            <div class="christmas-overlay">
+                                <div class="seasonal-badge">
+                                    <i class="fas fa-gift"></i>
+                                    Exclusivo
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Sandwichón Navideño</h3>
+                                <span class="price">$32.99</span>
+                            </div>
+
+                            <div class="item-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-text">(4.9) · 156 reseñas</span>
+                            </div>
+
+                            <p class="item-description">
+                                Nuestro icónico sandwichón multicapa con pan brioche artesanal, pavo rostizado con
+                                especias
+                                navideñas, jamón ahumado, queso cremoso, vegetales crujientes y nuestra salsa especial
+                                de
+                                arándanos. Una experiencia gastronómica que evoca la calidez del hogar en cada bocado.
+                            </p>
+
+                            <div class="item-tags">
+                                <span class="tag tag--signature">
+                                    <i class="fas fa-signature"></i>
+                                    Signature
+                                </span>
+                                <span class="tag tag--premium">
+                                    <i class="fas fa-star"></i>
+                                    Premium
+                                </span>
+                            </div>
+
+                            <div class="item-actions">
+                                <button class="btn btn--outline btn--small" onclick="toggleFavorite(this)">
+                                    <i class="far fa-heart"></i>
+                                    Favorito
+                                </button>
+                                <button class="btn btn--primary"
+                                    onclick="addToCart('sandwichon-navideno', 32.99, 'Sandwichón Navideño', 'img/nav2.jpg')">
+                                    <i class="fas fa-cart-plus"></i>
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Taquitos Dorados -->
+                    <article class="christmas-item">
+                        <div class="item-image">
+                            <img src="img/nav3.png" alt="Taquitos Dorados" loading="lazy">
+                            <div class="christmas-overlay">
+                                <div class="seasonal-badge">
+                                    <i class="fas fa-pepper-hot"></i>
+                                    Picante
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Taquitos Dorados</h3>
+                                <span class="price">$19.99</span>
+                            </div>
+
+                            <div class="item-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-text">(4.2) · 94 reseñas</span>
+                            </div>
+
+                            <p class="item-description">
+                                Crujientes taquitos rellenos de pollo deshebrado sazonado con especias mexicanas
+                                tradicionales,
+                                servidos con guacamole fresco, crema agria, salsa verde artesanal y una mezcla de
+                                quesos.
+                                Una explosión de sabores auténticos que transportan a las tradiciones culinarias
+                                mexicanas.
+                            </p>
+
+                            <div class="item-tags">
+                                <span class="tag tag--spicy">
+                                    <i class="fas fa-fire"></i>
+                                    Picante
+                                </span>
+                                <span class="tag tag--traditional">
+                                    <i class="fas fa-pepper-hot"></i>
+                                    Tradicional
+                                </span>
+                            </div>
+
+                            <div class="item-actions">
+                                <button class="btn btn--outline btn--small" onclick="toggleFavorite(this)">
+                                    <i class="far fa-heart"></i>
+                                    Favorito
+                                </button>
+                                <button class="btn btn--primary"
+                                    onclick="addToCart('taquitos-dorados', 19.99, 'Taquitos Dorados', 'img/nav3.png')">
+                                    <i class="fas fa-cart-plus"></i>
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Información navideña -->
+            <section class="christmas-info">
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle"></i>
+                    Celebra la Navidad en las Alturas
+                </h2>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Disponibilidad Limitada</h3>
+                        <p>Menú especial disponible solo durante la temporada navideña (Diciembre - Enero)</p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-award"></i>
+                        <h3>Recetas Tradicionales</h3>
+                        <p>Platos preparados con recetas familiares transmitidas por generaciones</p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Ingredientes Frescos</h3>
+                        <p>Solo utilizamos ingredientes de temporada y de la más alta calidad</p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Preparado con Amor</h3>
+                        <p>Cada platillo es preparado con el cariño y calidez de las fiestas navideñas</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Promociones navideñas -->
+            <section class="christmas-promotions">
+                <h3 class="section-title">
+                    <i class="fas fa-gift"></i>
+                    Promociones Especiales de Temporada
+                </h3>
+
+                <div class="promotions-grid">
+                    <div class="promo-card">
+                        <div class="promo-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h4>Combo Familiar</h4>
+                        <p>Ordena 3 platillos navideños y obtén <strong>15% de descuento</strong></p>
+                        <span class="promo-code">Código: FAMILIA15</span>
+                    </div>
+
+                    <div class="promo-card">
+                        <div class="promo-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Mesa Compartida</h4>
+                        <p>Para grupos de <strong>4 personas o más</strong>, bebida navideña gratis</p>
+                        <span class="promo-code">Válido hasta enero</span>
+                    </div>
+
+                    <div class="promo-card">
+                        <div class="promo-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Reserva Anticipada</h4>
+                        <p>Reserva con <strong>48 horas de anticipación</strong> y obtén postre gratis</p>
+                        <span class="promo-code">Solo vuelos internacionales</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Carrito flotante -->
+            <div class="cart-floating" id="cartFloating">
+                <button class="cart-toggle" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+
+                <div class="cart-dropdown" id="cartDropdown">
+                    <div class="cart-header">
+                        <h3>Tu pedido navideño</h3>
+                        <button class="cart-close" onclick="toggleCart()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="cart-items" id="cartItems">
+                        <div class="cart-empty">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Tu carrito está vacío</p>
+                        </div>
+                    </div>
+
+                    <div class="cart-footer">
+                        <div class="cart-total">
+                            <span>Total: $<span id="cartTotal">0.00</span></span>
+                        </div>
+                        <button class="btn btn--primary btn--large" onclick="proceedToCheckout()">
+                            <i class="fas fa-credit-card"></i>
+                            Proceder al pago
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
+    </main>
 
-        <div class="Kaw">
-            <div  class="kaw">
-                <img src="img/nav2.jpg" alt="">
-            </div>
-            <div  class="kaw">
-                <h2>Sandwichón Navideño</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quod qui, nesciunt maxime perspiciatis aut ratione labore architecto facere nihil provident harum amet atque molestias sed saepe ipsa dolores aperiam laudantium beatae culpa deserunt. Sint, voluptatum assumenda. Officia, neque! Facere recusandae eligendi totam ad corporis natus quisquam laboriosam aspernatur doloribus nemo maxime architecto perferendis numquam amet at, ipsam quam unde praesentium a sint nesciunt! Consectetur, quaerat saepe, adipisci modi vero quia veniam natus ducimus tempora enim libero officiis neque repellat ratione similique praesentium molestiae non voluptatum optio. Iure veritatis at qui, dolorem perspiciatis modi nihil sunt ex aperiam ut perferendis.</p>
-            </div>
-        </div>
-
-        <div class="Kaw">
-            <div  class="kaw">
-                <img src="img/nav3.png" alt="">
-            </div>
-            <div  class="kaw">
-                <h2>Taquitos Dorados</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quod qui, nesciunt maxime perspiciatis aut ratione labore architecto facere nihil provident harum amet atque molestias sed saepe ipsa dolores aperiam laudantium beatae culpa deserunt. Sint, voluptatum assumenda. Officia, neque! Facere recusandae eligendi totam ad corporis natus quisquam laboriosam aspernatur doloribus nemo maxime architecto perferendis numquam amet at, ipsam quam unde praesentium a sint nesciunt! Consectetur, quaerat saepe, adipisci modi vero quia veniam natus ducimus tempora enim libero officiis neque repellat ratione similique praesentium molestiae non voluptatum optio. Iure veritatis at qui, dolorem perspiciatis modi nihil sunt ex aperiam ut perferendis.</p>
-            </div>
-        </div>
-
-    </section>
-
+    <!-- Footer -->
     <footer class="footer">
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-            <a href="#" class="fab fa-pinterest"></a>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2024 <span>High Flight</span> | Sabores navideños de altura</p>
+            </div>
         </div>
-
-        <p>&copy;2023 creado por la aerolineaH.F.com</p>
     </footer>
 
-    <script type="text/javascript"></script>
-    <script src="js/traductor.js"></script> 
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript"></script>
-   
-
-
-
-
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/food-menu.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>

@@ -1,129 +1,402 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aerolinea High Flight</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" href="img/inicial.jpg">
-    <link rel="stylesheet" href="css/style.css">
+<html lang="es">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vuelos a América del Norte - Estados Unidos, Canadá y México">
+  <title>América del Norte - High Flight</title>
+
+  <!-- Preconnect para mejor performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/regional.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/inicial.jpg">
 </head>
 
 <body>
-    <!-- Inicio de header -->
+  <!-- Header -->
   <header class="header">
-    <a href="index.html" class="logo">
-      <img src="img/mundo.png" alt="">
-      <h3 href="index.html">HIGH <br>FLIGHT</h3>
-    </a>
-      <!-- Inicio-Navegacion1 -->
-    <nav class="navegacion1">
-      <a href="login.html"  class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <circle cx="12" cy="7" r="4"></circle>
-      <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-      </svg>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="img/mundo.png" alt="Logo High Flight">
+        <div class="logo-text">
+          <span>HIGH</span>
+          <span>FLIGHT</span>
+        </div>
       </a>
 
-      <a href="ayuda.html"  class="boton ">ayuda<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <circle cx="12" cy="12" r="9"></circle>
-      <line x1="12" y1="17" x2="12" y2="17.01"></line>
-      <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
-      </svg>
-      </a>
-    </nav>
-      <!-- Final-navegacion1 -->
+      <nav class="nav">
+        <a href="login.html" class="nav-btn">
+          <i class="fas fa-user"></i>
+          Iniciar Sesión
+        </a>
+
+        <a href="ayuda.html" class="nav-btn">
+          <i class="fas fa-question-circle"></i>
+          Ayuda
+        </a>
+
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <div class="slider"> 
-      <ul>
-        <li><img class="alfa" src="img/nor1.png" alt=""></li>
-        <li><img class="alfa" src="img/nor2.png" alt=""></li>
-        <li><img class="alfa" src="img/nor3.png" alt=""></li>
-      </ul>
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+
+      <!-- Hero Section -->
+      <section class="hero-regional">
+        <h1>Descubre América del Norte</h1>
+        <p>De los rascacielos de Nueva York a las Montañas Rocosas de Canadá</p>
+      </section>
+
+      <!-- Slider de destinos -->
+      <section class="destinations-slider">
+        <h2 class="section-title">Principales Destinos</h2>
+        <div class="slider-container">
+          <div class="slider">
+            <div class="slide active">
+              <img src="img/nor1.png" alt="Nueva York, Estados Unidos">
+              <div class="slide-info">
+                <h3>Estados Unidos</h3>
+                <p>La tierra de las oportunidades y la diversidad cultural</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="img/nor2.png" alt="Toronto, Canadá">
+              <div class="slide-info">
+                <h3>Canadá</h3>
+                <p>Naturaleza salvaje y ciudades cosmopolitas</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="img/nor3.png" alt="Ciudad de México">
+              <div class="slide-info">
+                <h3>México</h3>
+                <p>Historia ancestral y playas paradisíacas</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles del slider -->
+          <button class="slider-btn prev" onclick="changeSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="slider-btn next" onclick="changeSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <!-- Indicadores -->
+          <div class="slider-indicators">
+            <span class="indicator active" onclick="currentSlide(1)"></span>
+            <span class="indicator" onclick="currentSlide(2)"></span>
+            <span class="indicator" onclick="currentSlide(3)"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contenido principal en dos columnas -->
+      <section class="booking-section">
+        <div class="booking-grid">
+
+          <!-- Tabla de precios -->
+          <div class="prices-section">
+            <h3 class="section-title">
+              <i class="fas fa-tags"></i>
+              Precios desde Perú
+            </h3>
+
+            <div class="prices-table-container">
+              <table class="prices-table">
+                <thead>
+                  <tr>
+                    <th>País de Origen</th>
+                    <th>Destino</th>
+                    <th>Precio</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Perú</td>
+                    <td>Estados Unidos</td>
+                    <td class="price">$650</td>
+                    <td><button class="btn btn--small">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Perú</td>
+                    <td>Canadá</td>
+                    <td class="price">$720</td>
+                    <td><button class="btn btn--small">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Perú</td>
+                    <td>México</td>
+                    <td class="price">$450</td>
+                    <td><button class="btn btn--small">Reservar</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Ciudades populares -->
+            <div class="popular-cities">
+              <h4>Ciudades más populares</h4>
+              <div class="cities-grid">
+                <div class="city-item">
+                  <i class="fas fa-building"></i>
+                  <span>Nueva York</span>
+                  <span class="city-price">$680</span>
+                </div>
+                <div class="city-item">
+                  <i class="fas fa-leaf"></i>
+                  <span>Toronto</span>
+                  <span class="city-price">$740</span>
+                </div>
+                <div class="city-item">
+                  <i class="fas fa-sun"></i>
+                  <span>Cancún</span>
+                  <span class="city-price">$420</span>
+                </div>
+                <div class="city-item">
+                  <i class="fas fa-bridge"></i>
+                  <span>San Francisco</span>
+                  <span class="city-price">$750</span>
+                </div>
+                <div class="city-item">
+                  <i class="fas fa-mountain"></i>
+                  <span>Vancouver</span>
+                  <span class="city-price">$780</span>
+                </div>
+                <div class="city-item">
+                  <i class="fas fa-landmark"></i>
+                  <span>Ciudad de México</span>
+                  <span class="city-price">$480</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario de reserva -->
+          <div class="booking-form-section">
+            <h3 class="section-title">
+              <i class="fas fa-plane-departure"></i>
+              Reservar tu pasaje
+            </h3>
+
+            <form class="booking-form" id="bookingForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" id="nombre" name="nombre" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="apellidos" class="form-label">Apellidos</label>
+                  <input type="text" id="apellidos" name="apellidos" class="form-input" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="pasajes" class="form-label">N° de pasajes</label>
+                  <select id="pasajes" name="pasajes" class="form-input" required>
+                    <option value="">Seleccionar</option>
+                    <option value="1">1 pasaje</option>
+                    <option value="2">2 pasajes</option>
+                    <option value="3">3 pasajes</option>
+                    <option value="4">4 pasajes</option>
+                    <option value="5+">5 o más</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="fecha" class="form-label">Fecha de viaje</label>
+                  <input type="date" id="fecha" name="fecha" class="form-input" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="origen" class="form-label">Origen</label>
+                  <select id="origen" name="origen" class="form-input" required>
+                    <option value="">Seleccionar ciudad</option>
+                    <option value="lima">Lima, Perú</option>
+                    <option value="arequipa">Arequipa, Perú</option>
+                    <option value="cusco">Cusco, Perú</option>
+                    <option value="trujillo">Trujillo, Perú</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="destino" class="form-label">Destino</label>
+                  <select id="destino" name="destino" class="form-input" required>
+                    <option value="">Seleccionar destino</option>
+                    <option value="nueva-york">Nueva York, USA</option>
+                    <option value="miami">Miami, USA</option>
+                    <option value="los-angeles">Los Ángeles, USA</option>
+                    <option value="toronto">Toronto, Canadá</option>
+                    <option value="vancouver">Vancouver, Canadá</option>
+                    <option value="cancun">Cancún, México</option>
+                    <option value="ciudad-mexico">Ciudad de México</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn--large btn--primary">
+                  <i class="fas fa-credit-card"></i>
+                  Continuar al pago
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Información sobre América del Norte -->
+      <section class="region-info">
+        <h2 class="section-title">
+          <i class="fas fa-info-circle"></i>
+          ¿Por qué elegir América del Norte?
+        </h2>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <i class="fas fa-city"></i>
+            <h3>Ciudades Icónicas</h3>
+            <p>Nueva York, Los Ángeles, Toronto - metrópolis que definen la modernidad</p>
+          </div>
+
+          <div class="info-card">
+            <i class="fas fa-tree"></i>
+            <h3>Naturaleza Espectacular</h3>
+            <p>Parques nacionales, Montañas Rocosas y paisajes que quitan el aliento</p>
+          </div>
+
+          <div class="info-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Educación de Clase Mundial</h3>
+            <p>Las mejores universidades y centros de investigación del planeta</p>
+          </div>
+
+          <div class="info-card">
+            <i class="fas fa-globe-americas"></i>
+            <h3>Diversidad Cultural</h3>
+            <p>Crisol de culturas con infinitas experiencias gastronómicas y artísticas</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Datos curiosos -->
+      <section class="fun-facts">
+        <h3 class="section-title">
+          <i class="fas fa-lightbulb"></i>
+          Datos Curiosos de América del Norte
+        </h3>
+
+        <div class="facts-grid">
+          <div class="fact-card">
+            <div class="fact-number">580M</div>
+            <div class="fact-text">habitantes en total</div>
+          </div>
+
+          <div class="fact-card">
+            <div class="fact-number">3</div>
+            <div class="fact-text">países principales</div>
+          </div>
+
+          <div class="fact-card">
+            <div class="fact-number">24.7M</div>
+            <div class="fact-text">km² de superficie</div>
+          </div>
+
+          <div class="fact-card">
+            <div class="fact-number">4</div>
+            <div class="fact-text">zonas horarias en USA</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Consejos de viaje -->
+      <section class="travel-tips">
+        <h3 class="section-title">
+          <i class="fas fa-compass"></i>
+          Consejos para tu viaje a América del Norte
+        </h3>
+
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-icon">
+              <i class="fas fa-passport"></i>
+            </div>
+            <h4>Visa y Documentación</h4>
+            <p>Visa americana requerida para USA. ESTA para turismo. Para Canadá, eTA o visa según duración.</p>
+          </div>
+
+          <div class="tip-card">
+            <div class="tip-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <h4>Moneda y Propinas</h4>
+            <p>USD en Estados Unidos, CAD en Canadá, MXN en México. Las propinas son importantes (15-20%).</p>
+          </div>
+
+          <div class="tip-card">
+            <div class="tip-icon">
+              <i class="fas fa-thermometer-half"></i>
+            </div>
+            <h4>Clima Variado</h4>
+            <p>Desde tropical en Florida hasta ártico en Alaska. Revisa el clima según la región y temporada.</p>
+          </div>
+
+          <div class="tip-card">
+            <div class="tip-icon">
+              <i class="fas fa-car"></i>
+            </div>
+            <h4>Transporte</h4>
+            <p>Alquiler de auto recomendado fuera de grandes ciudades. Transporte público excelente en urbes.</p>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
+  </main>
 
-  <section class="reserva">
-    <div class="reserva11">
-      <table>
-        <tr>
-          <th>PAIS DE ORIGEN</th>
-          <th>DESTINO</th> 
-          <th>PRECIO</th>
-        </tr>
-
-        <tr>
-          <td>Peru</td>
-          <td>Estado Unidos</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Canada</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Mexico</td>
-          <td>$350</td>
-        </tr>
-      </table>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+      </div>
+      <div class="footer-text">
+        <p>&copy; 2024 <span>High Flight</span> | Conectando con América del Norte</p>
+      </div>
     </div>
+  </footer>
 
-    <div class="reserva1">
-      <h2>RESERVAR TU PASAJE</h2>
-
-      <fieldset >
-        <input type="text"  placeholder="Nombre ">
-      </fieldset>
-
-      <fieldset >
-        <input type="text"  placeholder="Apellidos">
-      </fieldset>
-
-      <fieldset >
-        <input type="text"  placeholder="n° de pasajes">
-      </fieldset>
-
-      <fieldset >
-        <input type="text"  placeholder="Origen">
-      </fieldset>
-
-      <fieldset >
-        <input type="text"  placeholder="Destino">
-      </fieldset>
-
-      <fieldset >
-        <label for="fecha"></label>
-        <input type="date"  placeholder="Fecha">
-      </fieldset>
-
-      <a class="bn" href="tarjeta.html">Enviar</a>
-    </div>
-  </section>
- 
-
-  <section class="footer">
-    <div class="share">
-      <a href="#" class="fab fa-facebook-f"></a>
-      <a href="#" class="fab fa-twitter"></a>
-      <a href="#" class="fab fa-instagram"></a>
-      <a href="#" class="fab fa-linkedin"></a>
-      <a href="#" class="fab fa-pinterest"></a>
-    </div>
-    
-    <div class="credit">@2023 <span>creado </span> | por la aerolinea H.F. com</div>
-  </section> 
-
-  <script type="text/javascript"></script>
-  <script src="js/traductor.js"></script> 
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/translator.js"></script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>

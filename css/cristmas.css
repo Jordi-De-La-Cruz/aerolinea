@@ -1,0 +1,340 @@
+/* Christmas - Estilos específicos para página navideña */
+
+:root {
+    /* Colores navideños */
+    --christmas-red: #c41e3a;
+    --christmas-green: #2e8b57;
+    --christmas-gold: #ffd700;
+    --christmas-silver: #c0c0c0;
+    --snow-white: #fffafa;
+    --winter-blue: #4682b4;
+}
+
+/* Hero navideño */
+.christmas-hero {
+    background: linear-gradient(135deg, var(--christmas-red), var(--christmas-green));
+    color: white;
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.christmas-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20">❄️</text></svg>') repeat;
+    opacity: 0.1;
+    animation: snowfall 20s linear infinite;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(100px);
+    }
+}
+
+.christmas-decoration {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    font-size: 2rem;
+}
+
+.christmas-decoration i {
+    color: var(--christmas-gold);
+    animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+.christmas-decoration i:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.christmas-decoration i:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.christmas-hero h1 {
+    font-size: var(--font-size-hero);
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.christmas-hero h1 i {
+    color: var(--christmas-gold);
+}
+
+.christmas-hero p {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+}
+
+/* Menu navideño */
+.christmas-menu {
+    margin-bottom: var(--spacing-xl);
+}
+
+.christmas-item {
+    background: var(--snow-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+}
+
+.christmas-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--christmas-red);
+}
+
+.christmas-item.featured {
+    border-color: var(--christmas-gold);
+}
+
+.christmas-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    opacity: 0;
+    transition: var(--transition);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-md);
+}
+
+.christmas-item:hover .christmas-overlay {
+    opacity: 1;
+}
+
+.seasonal-badge {
+    background: var(--christmas-red);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+/* Tags navideños */
+.tag--christmas {
+    background: var(--christmas-red);
+    color: white;
+}
+
+.tag--fresh {
+    background: var(--christmas-green);
+    color: white;
+}
+
+.tag--spicy {
+    background: #ff4500;
+    color: white;
+}
+
+.tag--traditional {
+    background: #8b4513;
+    color: white;
+}
+
+/* Información navideña */
+.christmas-info {
+    margin-bottom: var(--spacing-xl);
+}
+
+.christmas-info .info-card {
+    border-left: 4px solid var(--christmas-red);
+    transition: var(--transition);
+}
+
+.christmas-info .info-card:hover {
+    border-left-color: var(--christmas-green);
+    transform: translateY(-3px);
+}
+
+.christmas-info .info-card i {
+    color: var(--christmas-red);
+}
+
+/* Promociones navideñas */
+.christmas-promotions {
+    background: linear-gradient(135deg, var(--christmas-green), var(--winter-blue));
+    color: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.promo-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.promo-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--christmas-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-md);
+    color: var(--christmas-red);
+    font-size: var(--font-size-xl);
+}
+
+.promo-card h4 {
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-large);
+    color: var(--christmas-gold);
+}
+
+.promo-card p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.promo-code {
+    display: inline-block;
+    background: var(--christmas-red);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+}
+
+/* Animaciones navideñas */
+@keyframes jingleBell {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+.christmas-item:hover .item-image img {
+    animation: jingleBell 0.5s ease-in-out;
+}
+
+/* Efectos de nieve */
+.snow-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.6"/><circle cx="80" cy="60" r="1" fill="white" opacity="0.4"/><circle cx="40" cy="80" r="1.5" fill="white" opacity="0.5"/></svg>') repeat;
+    animation: snowfall 15s linear infinite;
+}
+
+/* Tema oscuro navideño */
+.dark-theme .christmas-item {
+    background: #2a2a2a;
+    border-color: var(--christmas-red);
+}
+
+.dark-theme .christmas-info .info-card {
+    background: #333;
+    border-left-color: var(--christmas-green);
+}
+
+/* Responsive navideño */
+@media (max-width: 768px) {
+    .christmas-hero h1 {
+        font-size: var(--font-size-xxl);
+        flex-direction: column;
+    }
+
+    .christmas-decoration {
+        gap: var(--spacing-md);
+    }
+
+    .promotions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .christmas-promotions {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .christmas-hero {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .christmas-decoration {
+        font-size: 1.5rem;
+    }
+
+    .promo-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
