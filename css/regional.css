@@ -1,0 +1,376 @@
+/* Regional - Estilos específicos para páginas regionales */
+
+/* Hero Regional */
+.hero-regional {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: var(--border-radius-lg);
+}
+
+.hero-regional h1 {
+    font-size: var(--font-size-hero);
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-regional p {
+    font-size: var(--font-size-large);
+    opacity: 0.9;
+}
+
+/* Slider de destinos */
+.destinations-slider {
+    margin-bottom: var(--spacing-xl);
+}
+
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.slider {
+    position: relative;
+    height: 400px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    align-items: flex-end;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: var(--spacing-lg);
+    text-align: left;
+}
+
+.slide-info h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xs);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-info p {
+    font-size: var(--font-size-base);
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Controles del slider */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: var(--font-size-large);
+    color: var(--primary);
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-md);
+}
+
+.slider-btn.prev {
+    left: 20px;
+}
+
+.slider-btn.next {
+    right: 20px;
+}
+
+/* Indicadores del slider */
+.slider-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-xs);
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.indicator.active,
+.indicator:hover {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Sección de reservas */
+.booking-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+/* Tabla de precios */
+.prices-section {
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.prices-table-container {
+    overflow-x: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.prices-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    min-width: 500px;
+}
+
+.prices-table th {
+    background: var(--primary);
+    color: white;
+    padding: var(--spacing-md);
+    text-align: left;
+    font-weight: 700;
+    font-size: var(--font-size-base);
+}
+
+.prices-table td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--gray-light);
+    font-size: var(--font-size-base);
+}
+
+.prices-table tr:hover {
+    background: rgba(33, 147, 176, 0.05);
+}
+
+.prices-table .price {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: var(--font-size-large);
+}
+
+/* Formulario de reserva */
+.booking-form-section {
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.booking-form {
+    max-width: 100%;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.form-row:last-of-type {
+    margin-bottom: 0;
+}
+
+.form-actions {
+    margin-top: var(--spacing-lg);
+    text-align: center;
+}
+
+.form-actions .btn {
+    width: 100%;
+}
+
+/* Experiencias para Francia */
+.experiences-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.experience-card {
+    background: var(--light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.experience-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.experience-card h4 {
+    color: var(--dark);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-large);
+}
+
+.experience-card p {
+    color: var(--gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Tema oscuro */
+.dark-theme .prices-section,
+.dark-theme .booking-form-section {
+    background: var(--gray-light);
+    border: 1px solid #555;
+}
+
+.dark-theme .prices-table {
+    background: var(--gray-light);
+}
+
+.dark-theme .prices-table td {
+    border-bottom-color: #555;
+    color: var(--light);
+}
+
+.dark-theme .experience-card {
+    background: var(--gray-light);
+    border-color: #555;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .booking-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .slider-container {
+        max-width: 100%;
+    }
+
+    .experiences-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-regional {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .hero-regional h1 {
+        font-size: var(--font-size-xxl);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .slider {
+        height: 300px;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .slider-btn.prev {
+        left: 10px;
+    }
+
+    .slider-btn.next {
+        right: 10px;
+    }
+
+    .prices-table th,
+    .prices-table td {
+        padding: var(--spacing-sm);
+        font-size: var(--font-size-small);
+    }
+}
+
+@media (max-width: 480px) {
+    .prices-table-container {
+        margin: 0 -var(--spacing-sm);
+    }
+
+    .slider {
+        height: 250px;
+    }
+
+    .slide-info {
+        padding: var(--spacing-md);
+    }
+
+    .slide-info h3 {
+        font-size: var(--font-size-large);
+    }
+
+    .booking-form-section,
+    .prices-section {
+        padding: var(--spacing-md);
+    }
+}
