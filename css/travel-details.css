@@ -1,0 +1,441 @@
+/* Travel Details - Estilos específicos */
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: var(--spacing-lg);
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--primary);
+    font-weight: 600;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    background: var(--gray-light);
+    transform: translateX(-3px);
+}
+
+/* Galería de imágenes */
+.gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.gallery-main {
+    position: relative;
+    overflow: hidden;
+}
+
+.main-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.main-image:hover {
+    transform: scale(1.05);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: var(--spacing-xs);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+}
+
+.gallery-image:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+/* Información del destino */
+.destination-info {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.destination-header h1 {
+    font-size: var(--font-size-hero);
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 900;
+}
+
+.destination-tags {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 20px;
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Sección de paquete */
+.package-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.package-card {
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.package-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.package-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--gray-light);
+}
+
+.package-header i {
+    font-size: var(--font-size-xl);
+    color: var(--primary);
+}
+
+.package-header h3 {
+    font-size: var(--font-size-xl);
+    color: var(--dark);
+    margin: 0;
+}
+
+.operator {
+    color: var(--gray);
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+}
+
+.duration {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Detalles de vuelo */
+.flight-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.flight-item {
+    background: var(--gray-light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.flight-item h4 {
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.flight-item p {
+    margin: var(--spacing-xs) 0;
+    color: var(--gray);
+}
+
+.time {
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    color: var(--dark) !important;
+}
+
+/* Detalles del hotel */
+.hotel-details h4 {
+    color: var(--primary);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-sm);
+}
+
+.amenities {
+    list-style: none;
+    padding: 0;
+}
+
+.amenities li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+    color: var(--gray);
+}
+
+.amenities li::before {
+    content: '✓';
+    color: var(--success);
+    font-weight: bold;
+}
+
+/* Sección no incluye */
+.excluded-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.excluded-title {
+    color: var(--warning);
+}
+
+.excluded-title i {
+    color: var(--warning);
+}
+
+.excluded-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.excluded-item {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+}
+
+.excluded-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.excluded-header i {
+    color: var(--warning);
+    font-size: var(--font-size-large);
+}
+
+.excluded-header h4 {
+    color: var(--warning);
+    margin: 0;
+}
+
+.excluded-item p {
+    color: #856404;
+    margin: 0;
+}
+
+/* CTA de reserva */
+.booking-cta {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.cta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+}
+
+.price-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.price-label {
+    font-size: var(--font-size-base);
+    opacity: 0.9;
+    margin-bottom: var(--spacing-xs);
+}
+
+.price {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: var(--spacing-xs);
+}
+
+.price-note {
+    font-size: var(--font-size-small);
+    opacity: 0.8;
+}
+
+.cta-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.cta-actions .btn {
+    background: white;
+    color: var(--primary);
+    border: 2px solid white;
+}
+
+.cta-actions .btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.cta-actions .btn--outline {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.cta-actions .btn--outline:hover {
+    background: white;
+    color: var(--primary);
+}
+
+/* Traductor */
+.translator {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xs);
+}
+
+.translator .goog-te-combo {
+    background: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xs);
+    font-size: var(--font-size-small);
+}
+
+/* Tema oscuro */
+.dark-theme .package-card {
+    background: var(--gray-light);
+    border-color: #555;
+}
+
+.dark-theme .flight-item {
+    background: #444;
+}
+
+.dark-theme .excluded-item {
+    background: #3a3a2a;
+    border-color: #5a5a2a;
+}
+
+.dark-theme .excluded-item p {
+    color: #d4b106;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    .cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .price-info {
+        align-items: center;
+    }
+
+    .cta-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .destination-header h1 {
+        font-size: var(--font-size-xxl);
+    }
+
+    .flight-details {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .excluded-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-tags {
+        justify-content: center;
+    }
+
+    .price {
+        font-size: 2.5rem;
+    }
+
+    .booking-cta {
+        padding: var(--spacing-md);
+    }
+}

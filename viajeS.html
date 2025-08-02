@@ -1,163 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Aerolinea High Flight </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Viaje a Singapur - 3 noches con vuelo y alojamiento incluido">
+    <title>Singapur - Aerolínea High Flight</title>
+
+    <!-- Preconnect para mejor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/travel-details.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
+    <!-- Header -->
     <header class="header">
-        <a href="index.html" class="logo">
-            <img src="img/mundo.png" alt="">
-            <h3>HIGH<br>FLIGHT</h3>
-        </a>
-        <!-- Inicio-Navegacion1 -->
-        <nav class="navegacion1">
-            <a href="login.html"  class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-            </svg></a>
-        </nav>
-        <!-- Final-navegacion1 -->
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/mundo.png" alt="Logo High Flight">
+                <div class="logo-text">
+                    <span>HIGH</span>
+                    <span>FLIGHT</span>
+                </div>
+            </a>
+
+            <nav class="nav">
+                <a href="login.html" class="nav-btn">
+                    <i class="fas fa-user"></i>
+                    Iniciar Sesión
+                </a>
+
+                <!-- Traductor -->
+                <div id="google_translate_element" class="translator"></div>
+
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
     </header>
-    
-    <section>
 
-        <div class="Sing">
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
 
-            <div  >
-                <img class="sing" src="img/sing1.jpg" alt="">
+            <!-- Navegación hacia atrás -->
+            <nav class="breadcrumb">
+                <a href="oferta.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver a ofertas
+                </a>
+            </nav>
 
-            </div>
+            <!-- Galería de imágenes -->
+            <section class="gallery">
+                <div class="gallery-main">
+                    <img src="img/sing1.jpg" alt="Vista principal de Singapur" class="main-image">
+                </div>
 
-            <div >
+                <div class="gallery-grid">
+                    <img src="img/sing2.jpg" alt="Marina Bay Sands Singapur" class="gallery-image">
+                    <img src="img/sing3.jpg" alt="Gardens by the Bay" class="gallery-image">
+                    <img src="img/sing4.jpg" alt="Distrito financiero de Singapur" class="gallery-image">
+                </div>
+            </section>
 
-                <img class="sin" src="img/sing2.jpg" alt="">
+            <!-- Información del destino -->
+            <section class="destination-info">
+                <div class="destination-header">
+                    <h1>Singapur a tu alcance</h1>
+                    <p class="destination-tags">
+                        <span class="tag">#aventura</span>
+                        <span class="tag">#gastronomía</span>
+                        <span class="tag">#cultura</span>
+                    </p>
+                </div>
+            </section>
 
-                <div class="SI">
-                    <div>
-                        <img class="si" src="img/sing3.jpg" alt="">
+            <!-- Paquete incluido -->
+            <section class="package-section">
+                <h2 class="section-title">
+                    <i class="fas fa-check-circle"></i>
+                    Este paquete incluye
+                </h2>
+
+                <div class="package-grid">
+                    <!-- Vuelo -->
+                    <div class="package-card">
+                        <div class="package-header">
+                            <i class="fas fa-plane"></i>
+                            <h3>Vuelo</h3>
+                        </div>
+                        <p class="operator">Operado por Aerolínea High Flight</p>
+
+                        <div class="flight-details">
+                            <div class="flight-item">
+                                <h4>Ida</h4>
+                                <p>Domingo 03 de diciembre</p>
+                                <p class="time">06:30 hrs</p>
+                            </div>
+                            <div class="flight-item">
+                                <h4>Vuelta</h4>
+                                <p>Miércoles 06 de diciembre</p>
+                                <p class="time">09:30 hrs</p>
+                            </div>
+                        </div>
                     </div>
-                    <div> 
-                        <img class="si" src="img/sing4.jpg" alt="">
+
+                    <!-- Alojamiento -->
+                    <div class="package-card">
+                        <div class="package-header">
+                            <i class="fas fa-hotel"></i>
+                            <h3>Alojamiento</h3>
+                        </div>
+                        <p class="duration">3 noches</p>
+
+                        <div class="hotel-details">
+                            <h4>Plaza Hotel</h4>
+                            <ul class="amenities">
+                                <li>Habitación Estándar</li>
+                                <li>Desayuno incluido</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- No incluye -->
+            <section class="excluded-section">
+                <h3 class="section-title excluded-title">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    No incluye
+                </h3>
+
+                <div class="excluded-grid">
+                    <div class="excluded-item">
+                        <div class="excluded-header">
+                            <i class="fas fa-taxi"></i>
+                            <h4>Traslados</h4>
+                        </div>
+                        <p>Los traslados entre el aeropuerto y el hotel no están incluidos.</p>
                     </div>
 
+                    <div class="excluded-item">
+                        <div class="excluded-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Seguro de viaje</h4>
+                        </div>
+                        <p>El seguro de tu viaje no está incluido en este paquete.</p>
+                    </div>
                 </div>
-            </div>
+            </section>
 
+            <!-- CTA de reserva -->
+            <section class="booking-cta">
+                <div class="cta-content">
+                    <div class="price-info">
+                        <span class="price-label">Precio por persona</span>
+                        <span class="price">$899</span>
+                        <span class="price-note">*Precio sujeto a disponibilidad</span>
+                    </div>
+                    <div class="cta-actions">
+                        <button class="btn btn--large btn--primary">
+                            <i class="fas fa-calendar-check"></i>
+                            Reservar ahora
+                        </button>
+                        <button class="btn btn--large btn--outline">
+                            <i class="fas fa-heart"></i>
+                            Guardar favorito
+                        </button>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
+    </main>
 
-    <section class="S">
-        <h1>Singapur a tu alcance</h1>
-        <h3>En este viaje vive  #aventura, #gastronomía, #cultura</h3>
-    </section>
-
-   
-    <h2 class="paq" > ✓ Este paquete incluye</h2>
-
-    <section class="Ho1">
-
-        <div class="Hot1">
-
-            <div class="Hot">
-            
-                <div class="Paq">
-                    <h3 class="	fas fa-plane"> <span> Vuelo </span> </h3>
-                    <p class="pl">Operado por Aerolinea High Flight</p>  
-                </div>
-                
-          
-                <div class="Paq">
-                      <h4>IDA</h4>
-                      <p>dom. 03 de dic. a las 06.30</p>
-                </div>
-          
-                <div class="Paq">
-                      <h4>VUELTA</h4>
-                      <p>mié. 06 de diciembre. a las 09.30</p>
-                </div>
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
             </div>
-    
-            <div class="Hot">
-
-                <div  class="Paq">
-                    <h3 class="fas fa-hotel"> <span>Alojamiento </span> </h3>
-                    <p class="pl"> .3 noches </p>
-                </div>
-        
-                <div  class="Paq">
-                    <h4>Plaza Hotel</h4>
-        
-                </div>
-        
-                <div  class="Paq">
-                    <p>Habitación Estándar</p>
-                    <p>Desayuno</p>
-                </div>
-    
+            <div class="footer-text">
+                <p>&copy; 2024 <span>High Flight</span> | Aerolínea de confianza</p>
             </div>
         </div>
-        
-    </section>
+    </footer>
 
-
-    <h3 class="paq">No incluye</h3>
-
-    <section class="Ho1" >
-
-        <div class="Hot1">
-
-            <div class="Hot">
-                <h4 class="fas fa-taxi"> <span> TRASLADO</span></h4>
-                <p>Los traslados entre el aeropuerto y el hotel no están incluidos.</p>
-            </div>
-
-            <div class="Hot">
-                <h4 class="fas fa-briefcase-medical"> <span>    SEGURO  </span> </h4>
-                <p>El seguro de tu viaje no está incluido.</p>
-            </div>
-
-        </div>
-
-      
-
-    </section>
-
-    <section>
-        <div class="sad">
-            <a href="oferta.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-left" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M20 15h-8v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h8a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1z"></path>
-            </svg></a>
-        </div>
-    </section>
-
-<script type="text/javascript"></script>
-<script src="js/traductor.js"></script> 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript"></script>
-
-<footer class="footer">
-    <div class="share">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-linkedin"></a>
-        <a href="#" class="fab fa-pinterest"></a>
-    </div>
-
-    <p>&copy;2023 creado por la aerolineaH.F.com</p>
-</footer>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>
