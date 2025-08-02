@@ -1,102 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-   
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Reserva vuelos a América, Europa, África, Asia y Oceanía">
+    <title>Destinos Mundiales - Reserva tu Vuelo</title>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
-    <!-- Inicio de header -->
+    <!-- Header -->
     <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="img/mundo.png" alt="Logo Aerolínea">
+                <span>Destinos Mundiales</span>
+            </a>
 
-        <a href="#" class="logo">
-            <img src="img/mundo.png" alt="">
-        </a>
-        <!-- Inicio-Navegacion1 -->
-        <nav class="navegacion1">
-            <a href="login.html"  class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-             </svg></a>
-
-            <a href="ayuda.html"  class="boton ">ayuda<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <circle cx="12" cy="12" r="9"></circle>
-                <line x1="12" y1="17" x2="12" y2="17.01"></line>
-                <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
-             </svg></a>
-             <img src="img/moon.png" id="icon1" alt="">
-        </nav>
-        <!-- Final-navegacion1 -->
+            <nav class="nav">
+                <a href="login.html" class="nav-btn">
+                    <i class="fas fa-user"></i>
+                    Iniciar Sesión
+                </a>
+                <a href="ayuda.html" class="nav-btn">
+                    <i class="fas fa-question-circle"></i>
+                    Ayuda
+                </a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
     </header>
-   
-    <main>
-        <fieldset class="vuelo">
-            <div >
-                <a href="america.html" ><img  src="img/america.jpg" alt="">
-                <h2>América</h2>
-                </a>  
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto recusandae sequi pariatur dicta quae quibusdam accusantium adipisci voluptatum dolorem ducimus, haru qua</p>
-        </fieldset>
 
-        <fieldset class="vuelo">
-            <div>
-                <a href="europa.html" ><img  src="img/europa.jpg" alt="">
-                <h2>Europa</h2>
-                </a>
-            </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto recusandae sequi pariatur dicta quae quibusdam accusantium adipisci voluptatum dolorem ducimus, harum qua</p>
-        </fieldset>
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+                <h1>Explora el Mundo</h1>
+                <p>Descubre destinos increíbles en todos los continentes</p>
+            </section>
 
-        <fieldset class="vuelo1">
-            <div>
-                <a href="africa.html" ><img  src="img/africa.jpg" alt="">
-                <h2>África</h2>
-                </a>
-            </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto recusandae sequi pariatur dicta quae quibusdam accusantium adipisci voluptatum dolorem ducimus, harum qua</p>
-        </fieldset>
+            <section class="destinations">
+                <h2 class="section-title">Nuestros Destinos</h2>
 
-        <fieldset class="vuelo1">
-            <div>
-                <a href="asia.html" ><img  src="img/asia.jpg" alt="">
-                <h2>Asia</h2>  
-                </a>
-            </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto recusandae sequi pariatur dicta quae quibusdam accusantium adipisci voluptatum dolorem ducimus, harum qua</p>
-        </fieldset>
+                <div class="destinations-grid">
+                    <!-- América -->
+                    <article class="destination-card">
+                        <a href="america.html" class="card-link">
+                            <div class="card-image">
+                                <img src="img/america.jpg" alt="Destinos en América">
+                            </div>
+                            <div class="card-content">
+                                <h3>América</h3>
+                                <p>Desde las playas del Caribe hasta los glaciares de la Patagonia, descubre la
+                                    diversidad americana.</p>
+                                <span class="card-cta">Explorar destinos</span>
+                            </div>
+                        </a>
+                    </article>
 
-        <fieldset class="vuelo2">
-            <div>
-                <a href="oceania.html"><img  src="img/oceania.jpg" alt="">
-                <h2>Oceanía</h2>
-                </a>
-            </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto recusandae sequi pariatur dicta quae quibusdam accusantium adipisci voluptatum dolorem ducimus, harum qua</p>
-        </fieldset>
+                    <!-- Europa -->
+                    <article class="destination-card">
+                        <a href="europa.html" class="card-link">
+                            <div class="card-image">
+                                <img src="img/europa.jpg" alt="Destinos en Europa">
+                            </div>
+                            <div class="card-content">
+                                <h3>Europa</h3>
+                                <p>Arte, historia y cultura en cada rincón. Vive la magia de las ciudades europeas más
+                                    emblemáticas.</p>
+                                <span class="card-cta">Explorar destinos</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- África -->
+                    <article class="destination-card">
+                        <a href="africa.html" class="card-link">
+                            <div class="card-image">
+                                <img src="img/africa.jpg" alt="Destinos en África">
+                            </div>
+                            <div class="card-content">
+                                <h3>África</h3>
+                                <p>Safaris únicos, paisajes extraordinarios y culturas milenarias te esperan en el
+                                    continente africano.</p>
+                                <span class="card-cta">Explorar destinos</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Asia -->
+                    <article class="destination-card">
+                        <a href="asia.html" class="card-link">
+                            <div class="card-image">
+                                <img src="img/asia.jpg" alt="Destinos en Asia">
+                            </div>
+                            <div class="card-content">
+                                <h3>Asia</h3>
+                                <p>Templos sagrados, tecnología avanzada y tradiciones ancestrales conviven en perfecta
+                                    armonía.</p>
+                                <span class="card-cta">Explorar destinos</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Oceanía -->
+                    <article class="destination-card">
+                        <a href="oceania.html" class="card-link">
+                            <div class="card-image">
+                                <img src="img/oceania.jpg" alt="Destinos en Oceanía">
+                            </div>
+                            <div class="card-content">
+                                <h3>Oceanía</h3>
+                                <p>Paraísos naturales, fauna única y aventuras extremas en las islas más remotas del
+                                    planeta.</p>
+                                <span class="card-cta">Explorar destinos</span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </section>
+        </div>
     </main>
 
-
-
-    <section class="footer">
-
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-            <a href="#" class="fab fa-pinterest"></a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2024 <span>Destinos Mundiales</span> | Aerolínea H.F.</p>
+            </div>
         </div>
-    
-        <div class="credit">@2023 <span>creado </span> | por la aerolinea H.F. com</div>
-    
-    </section> 
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>
