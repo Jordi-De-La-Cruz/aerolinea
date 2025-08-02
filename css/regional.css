@@ -277,25 +277,198 @@
     margin: 0;
 }
 
-/* Tema oscuro */
-.dark-theme .prices-section,
-.dark-theme .booking-form-section {
+/* Información sobre regiones */
+.region-info {
+    margin-bottom: var(--spacing-xl);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.info-card {
     background: var(--gray-light);
-    border: 1px solid #555;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
 }
 
-.dark-theme .prices-table {
-    background: var(--gray-light);
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--primary);
 }
 
-.dark-theme .prices-table td {
-    border-bottom-color: #555;
-    color: var(--light);
+.info-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
 }
 
-.dark-theme .experience-card {
+.info-card h3 {
+    color: var(--dark);
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-large);
+}
+
+.info-card p {
+    color: var(--gray);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Datos curiosos */
+.fun-facts {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.fact-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.fact-number {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: var(--spacing-xs);
+    color: var(--accent);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.fact-text {
+    font-size: var(--font-size-base);
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Consejos de viaje */
+.travel-tips {
+    margin-bottom: var(--spacing-xl);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.tip-card {
+    background: var(--light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary);
+}
+
+.tip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--accent);
+}
+
+.tip-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.tip-icon i {
+    font-size: var(--font-size-xl);
+    color: white;
+}
+
+.tip-card h4 {
+    color: var(--dark);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-large);
+    font-weight: 700;
+}
+
+.tip-card p {
+    color: var(--gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Tema oscuro para nuevas secciones */
+.dark-theme .info-card,
+.dark-theme .tip-card {
     background: var(--gray-light);
     border-color: #555;
+}
+
+.dark-theme .info-card:hover,
+.dark-theme .tip-card:hover {
+    border-color: var(--primary);
+}
+
+/* Responsive para nuevas secciones */
+@media (max-width: 768px) {
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fact-number {
+        font-size: 2.5rem;
+    }
+
+    .fun-facts {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fact-number {
+        font-size: 2rem;
+    }
+
+    .tip-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tip-icon i {
+        font-size: var(--font-size-large);
+    }
 }
 
 /* Responsive */

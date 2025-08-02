@@ -1,317 +1,446 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aerolinea High Flight</title>
+    <meta name="description" content="Ofertas especiales en vuelos y paquetes turísticos - High Flight">
+    <title>Ofertas Especiales - High Flight</title>
+
+    <!-- Preconnect para mejor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/offers.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">   
-    <link rel="stylesheet" href="css/style.css">
-
 </head>
+
 <body>
-    <!-- Inicio de header -->
+    <!-- Header -->
     <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/mundo.png" alt="Logo High Flight">
+                <div class="logo-text">
+                    <span>HIGH</span>
+                    <span>FLIGHT</span>
+                </div>
+            </a>
 
-        <a href="index.html" class="logo">
-            <img src="img/mundo.png" alt="">
-            <h3>HIGH<br>FLIGHT</h3>
-        </a>
-        <!-- Inicio-Navegacion1 -->
-        <nav class="navegacion1">
-            <a href="login.html"  class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="28" height="28" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-            </svg></a>
+            <nav class="nav">
+                <a href="login.html" class="nav-btn">
+                    <i class="fas fa-user"></i>
+                    Iniciar Sesión
+                </a>
 
-            <a href="ayuda.html"  class="boton ">ayuda<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="28" height="28" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <circle cx="12" cy="12" r="9"></circle>
-            <line x1="12" y1="17" x2="12" y2="17.01"></line>
-            <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
-            </svg></a>
-        </nav>
-        <!-- Final-navegacion1 -->
+                <a href="ayuda.html" class="nav-btn">
+                    <i class="fas fa-question-circle"></i>
+                    Ayuda
+                </a>
+
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <section class="home" id="home">
-        <div class="contenido">
-            <h1>VUELOS INTERNACIONALES </h1>
-            <p>Viaje seguro en nuestra aerolínea</p>
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+
+            <!-- Hero de ofertas -->
+            <section class="offers-hero">
+                <div class="hero-content">
+                    <h1>Vuelos Internacionales</h1>
+                    <p>Viaje seguro en nuestra aerolínea</p>
+                    <div class="hero-features">
+                        <span class="feature">
+                            <i class="fas fa-plane"></i>
+                            Vuelos directos
+                        </span>
+                        <span class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            Viaje seguro
+                        </span>
+                        <span class="feature">
+                            <i class="fas fa-tags"></i>
+                            Mejores ofertas
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Título de paquetes -->
+            <section class="packages-title">
+                <h2>Paquetes y Promociones</h2>
+            </section>
+
+            <!-- Ofertas de hoy -->
+            <section class="offers-section">
+                <h2 class="section-title">
+                    <i class="fas fa-fire"></i>
+                    Ofertas de Hoy
+                </h2>
+
+                <div class="offers-grid">
+                    <!-- Comida Kawaii -->
+                    <article class="offer-card">
+                        <div class="offer-image">
+                            <img src="img/comida2.jpg" alt="Comida Kawaii">
+                            <div class="discount-badge">-8%</div>
+                        </div>
+
+                        <div class="offer-actions">
+                            <button class="action-btn favorite" onclick="toggleFavorite(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <a href="Kawaii.html" class="action-btn view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+
+                        <div class="offer-content">
+                            <h3>Comida Kawaii</h3>
+                            <div class="offer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                            </div>
+                            <p>Experiencia gastronómica única con platillos de diseño japonés</p>
+                        </div>
+                    </article>
+
+                    <!-- Hotel Plata -->
+                    <article class="offer-card">
+                        <div class="offer-image">
+                            <img src="img/hotel.jpg" alt="Hotel Plata República Dominicana">
+                            <div class="discount-badge">-5%</div>
+                        </div>
+
+                        <div class="offer-actions">
+                            <button class="action-btn favorite" onclick="toggleFavorite(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <a href="Hotelplata.html" class="action-btn view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+
+                        <div class="offer-content">
+                            <h3>Hotel Plata</h3>
+                            <p class="location">República Dominicana</p>
+                            <div class="offer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                            </div>
+                            <p>Resort todo incluido en las mejores playas caribeñas</p>
+                        </div>
+                    </article>
+
+                    <!-- Viaje a Singapur -->
+                    <article class="offer-card featured">
+                        <div class="featured-badge">
+                            <i class="fas fa-crown"></i>
+                            Destacado
+                        </div>
+                        <div class="offer-image">
+                            <img src="img/vuelo.jpg" alt="Viaje a Singapur">
+                            <div class="discount-badge">-10%</div>
+                        </div>
+
+                        <div class="offer-actions">
+                            <button class="action-btn favorite" onclick="toggleFavorite(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <a href="viajeS.html" class="action-btn view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+
+                        <div class="offer-content">
+                            <h3>Viaje a Singapur</h3>
+                            <div class="offer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                            </div>
+                            <p>Descubre la perla de Asia con nuestro paquete completo</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Ofertas navideñas -->
+            <section class="offers-section">
+                <h2 class="section-title">
+                    <i class="fas fa-gift"></i>
+                    Ofertas Navideñas
+                </h2>
+
+                <div class="offers-grid">
+                    <!-- Comida Navideña -->
+                    <article class="offer-card">
+                        <div class="offer-image">
+                            <img src="img/com_navidad.jpg" alt="Comida Navideña">
+                            <div class="discount-badge">-9%</div>
+                        </div>
+
+                        <div class="offer-actions">
+                            <button class="action-btn favorite" onclick="toggleFavorite(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <a href="nav.html" class="action-btn view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+
+                        <div class="offer-content">
+                            <h3>Comida Navideña</h3>
+                            <div class="offer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                            </div>
+                            <p>Menú especial de temporada con los sabores tradicionales</p>
+                        </div>
+                    </article>
+
+                    <!-- Hotel Malte -->
+                    <article class="offer-card">
+                        <div class="offer-image">
+                            <img src="img/hos_navidad.jpg" alt="Hotel Malte Francia">
+                            <div class="discount-badge">-5%</div>
+                        </div>
+
+                        <div class="offer-actions">
+                            <button class="action-btn favorite" onclick="toggleFavorite(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <a href="hotelMate.html" class="action-btn view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+
+                        <div class="offer-content">
+                            <h3>Hotel Malte</h3>
+                            <p class="location">Francia</p>
+                            <div class="offer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                            </div>
+                            <p>Elegancia francesa en el corazón de Europa</p>
+                        </div>
+                    </article>
+
+                    <!-- Emiratos Árabes Unidos -->
+                    <article class="offer-card">
+                        <div class="offer-image">
+                            <img src="img/vuelo_navidad.jpg" alt="Viaje a Emiratos Árabes Unidos">
+                            <div class="discount-badge">-10%</div>
+                        </div>
+
+                        <div class="offer-actions">
+                            <button class="action-btn favorite" onclick="toggleFavorite(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <a href="Emiratos.html" class="action-btn view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+
+                        <div class="offer-content">
+                            <h3>Viaje a Emiratos Árabes Unidos</h3>
+                            <div class="offer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                            </div>
+                            <p>Lujo y modernidad en el desierto dorado</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Ofertas año nuevo -->
+            <section class="offers-section">
+                <h2 class="section-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    Ofertas Año Nuevo
+                </h2>
+
+                <div class="offers-grid">
+                    <!-- Pizzas -->
+                    <article class="offer-card">
+                        <div class="offer-image">
+                            <img src="img/oferta4.jpg" alt="Pizzas gourmet">
+                            <div class="discount-badge">-10%</div>
+                        </div>
+
+                        <div class="offer-actions">
+                            <button class="action-btn favorite" onclick="toggleFavorite(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <a href="piz.html" class="action-btn view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+
+                        <div class="offer-content">
+                            <h3>Pizzas Gourmet</h3>
+                            <div class="offer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                            </div>
+                            <p>Auténticas recetas italianas con ingredientes premium</p>
+                        </div>
+                    </article>
+
+                    <!-- Hotel Banyan Tree -->
+                    <article class="offer-card">
+                        <div class="offer-image">
+                            <img src="img/oferta5.jpg" alt="Hotel Banyan Tree Macau">
+                            <div class="discount-badge">-5%</div>
+                        </div>
+
+                        <div class="offer-actions">
+                            <button class="action-btn favorite" onclick="toggleFavorite(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <a href="HotelBanyan.html" class="action-btn view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+
+                        <div class="offer-content">
+                            <h3>Hotel Banyan Tree Macau</h3>
+                            <p class="location">Japón</p>
+                            <div class="offer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                            </div>
+                            <p>Lujo asiático con vistas espectaculares</p>
+                        </div>
+                    </article>
+
+                    <!-- Viaje a Francia -->
+                    <article class="offer-card">
+                        <div class="offer-image">
+                            <img src="img/oferta7.jpg" alt="Viaje a Francia">
+                            <div class="discount-badge">-10%</div>
+                        </div>
+
+                        <div class="offer-actions">
+                            <button class="action-btn favorite" onclick="toggleFavorite(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <a href="viajefran.html" class="action-btn view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+
+                        <div class="offer-content">
+                            <h3>Viaje a Francia</h3>
+                            <div class="offer-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.0</span>
+                            </div>
+                            <p>Romance, arte y gastronomía en la Ciudad Luz</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Navegación -->
+            <section class="navigation-section">
+                <a href="index.html" class="back-to-home">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver al inicio
+                </a>
+            </section>
         </div>
-    </section>
+    </main>
 
-    <div class="leo">
-        <h2>PAQUETES Y PROMOCIONES</h2>
-    </div>
-
-    <section class="products">
-        <h1 class="title"> OFERTAS DE HOY </h1>
-
-        <div class="box-container">
-            <div class="box">
-                <div class="icons">
-                   
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="Kawaii.html" class="fas fa-eye"></a>
-                </div>
-
-                <div class="image">
-                    <img src="img/comida2.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Comida Kawaii</h3>
-                    <div class="price">- 8%</div>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
             </div>
-    
-            <div class="box">
-                <div class="icons">
-                   
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="Hotelplata.html" class="fas fa-eye"></a>
-                </div>
-
-                <div class="image">
-                    <img src="img/hotel.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Hotel plata <br>(Republica Dominicana) </h3>
-                    <div class="price">- 5%</div>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="box">
-                <div class="icons">
-                    
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="viajeS.html" class="fas fa-eye"></a>
-                </div>
-
-                <div class="image">
-                    <img src="img/vuelo.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Viaje a Singapur</h3>
-                    <div class="price">- 10%</div>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </div>
+            <div class="footer-text">
+                <p>&copy; 2024 <span>High Flight</span> | Las mejores ofertas</p>
             </div>
         </div>
-    </section>
-  
-    <section class="products">
-        <h1 class="title"> OFERTAS NAVIDEÑAS </h1>
-    
-        <div class="box-container">
-            <div class="box">
-                <div class="icons">
-                    
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="nav.html" class="fas fa-eye"></a>
-                </div>
+    </footer>
 
-                <div class="image">
-                    <img src="img/com_navidad.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Comida Navideña</h3>
-                    <div class="price">- 9%</div>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="box">
-                <div class="icons">
-                    
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="hotelMate.html" class="fas fa-eye"></a>
-                </div>
-
-                <div class="image">
-                    <img src="img/hos_navidad.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Hotel Malte <br>(Francia) </h3>
-                    <div class="price">- 5%</div>
-    
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="box">
-                <div class="icons">
-                   
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="Emiratos.html" class="fas fa-eye"></a>
-                </div>
-
-                <div class="image">
-                    <img src="img/vuelo_navidad.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Viaje a Emiratos Árabes Unidos</h3>
-                    <div class="price">- 10%</div>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="products">
-        <h1 class="title"> OFERTAS AÑO NUEVO </h1>
-    
-        <div class="box-container">
-            <div class="box">
-                <div class="icons">
-                    
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="piz.html" class="fas fa-eye"></a>
-                </div>
-
-                <div class="image">
-                    <img src="img/oferta4.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Pizzas</h3>
-                    <div class="price">- 10%</div>
-                    <div class="stars">
-
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="box">
-                <div class="icons">
-                    
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="HotelBanyan.html" class="fas fa-eye"></a>
-                </div>
-
-                <div class="image">
-                    <img src="img/oferta5.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Hotel Banyan Tree Macau <br>(Japón) </h3>
-                    <div class="price">- 5%</div>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="box">
-                <div class="icons">
-                    
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="viajefran.html" class="fas fa-eye"></a>
-                </div>
-
-                <div class="image">
-                    <img src="img/oferta7.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Viaje a Francia</h3>
-                    <div class="price">- 10%</div>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="sad">
-        <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-left" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M20 15h-8v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h8a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1z"></path>
-        </svg></a>
-    </div>
-
-    <section class="footer">
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-            <a href="#" class="fab fa-pinterest"></a>
-        </div>
-    
-        <div class="credit">@2023 <span>creado </span> | por la aerolinea H.F. com</div>
-    </section>  
-
-    <script type="text/javascript"></script>
-    <script src="js/traductor.js"></script> 
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/offers.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>
