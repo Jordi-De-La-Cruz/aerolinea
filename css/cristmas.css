@@ -1,5 +1,3 @@
-/* Christmas - Estilos específicos para página navideña */
-
 :root {
     /* Colores navideños */
     --christmas-red: #c41e3a;
@@ -10,7 +8,6 @@
     --winter-blue: #4682b4;
 }
 
-/* Hero navideño */
 .christmas-hero {
     background: linear-gradient(135deg, var(--christmas-red), var(--christmas-green));
     color: white;
@@ -97,7 +94,6 @@
     opacity: 0.9;
 }
 
-/* Menu navideño */
 .christmas-menu {
     margin-bottom: var(--spacing-xl);
 }
@@ -155,7 +151,6 @@
     gap: var(--spacing-xs);
 }
 
-/* Tags navideños */
 .tag--christmas {
     background: var(--christmas-red);
     color: white;
@@ -176,7 +171,6 @@
     color: white;
 }
 
-/* Información navideña */
 .christmas-info {
     margin-bottom: var(--spacing-xl);
 }
@@ -195,7 +189,6 @@
     color: var(--christmas-red);
 }
 
-/* Promociones navideñas */
 .christmas-promotions {
     background: linear-gradient(135deg, var(--christmas-green), var(--winter-blue));
     color: white;
@@ -260,7 +253,6 @@
     font-weight: 600;
 }
 
-/* Animaciones navideñas */
 @keyframes jingleBell {
 
     0%,
@@ -281,7 +273,6 @@
     animation: jingleBell 0.5s ease-in-out;
 }
 
-/* Efectos de nieve */
 .snow-effect {
     position: absolute;
     top: 0;

@@ -1,10 +1,8 @@
-// Variables globales
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
 
 // Tema oscuro/claro
 function initTheme() {
-    // Verificar preferencia guardada
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -52,7 +50,6 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // Observar cards de destinos
     const cards = document.querySelectorAll('.destination-card');
     cards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
@@ -76,7 +73,6 @@ function initSmoothScrolling() {
     });
 }
 
-// Preloader simple
 function initPreloader() {
     window.addEventListener('load', () => {
         const preloader = document.querySelector('.preloader');
@@ -89,7 +85,6 @@ function initPreloader() {
     });
 }
 
-// Lazy loading para imágenes
 function initLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
 
@@ -107,7 +102,6 @@ function initLazyLoading() {
     images.forEach(img => imageObserver.observe(img));
 }
 
-// Validación de formularios (para páginas futuras)
 function validateForm(form) {
     const inputs = form.querySelectorAll('.form-input[required]');
     let isValid = true;
@@ -147,13 +141,11 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-// Utilidad para mostrar notificaciones
 function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
     notification.className = `notification notification--${type}`;
     notification.textContent = message;
 
-    // Estilos inline para la notificación
     Object.assign(notification.style, {
         position: 'fixed',
         top: '20px',
@@ -167,7 +159,6 @@ function showNotification(message, type = 'success') {
         transition: 'transform 0.3s ease'
     });
 
-    // Colores según el tipo
     const colors = {
         success: '#27ae60',
         warning: '#f39c12',
@@ -184,7 +175,6 @@ function showNotification(message, type = 'success') {
         notification.style.transform = 'translateX(0)';
     }, 100);
 
-    // Remover después de 4 segundos
     setTimeout(() => {
         notification.style.transform = 'translateX(100%)';
         setTimeout(() => {
@@ -197,7 +187,6 @@ function showNotification(message, type = 'success') {
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar funcionalidades
     initTheme();
     initScrollAnimations();
     initSmoothScrolling();
@@ -209,7 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.addEventListener('click', toggleTheme);
     }
 
-    // Validación de formularios
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
         form.addEventListener('submit', (e) => {
@@ -220,17 +208,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Añadir clase de carga completada
     body.classList.add('loaded');
 });
 
-// Manejo de errores globales
 window.addEventListener('error', (e) => {
     console.error('Error en la aplicación:', e.error);
-    // En producción, aquí podrías enviar el error a un servicio de logging
 });
 
-// Optimización para dispositivos táctiles
 if ('ontouchstart' in window) {
     document.body.classList.add('touch-device');
 }

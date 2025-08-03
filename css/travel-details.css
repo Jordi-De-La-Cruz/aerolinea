@@ -1,6 +1,3 @@
-/* Travel Details - Estilos específicos */
-
-/* Breadcrumb */
 .breadcrumb {
     margin-bottom: var(--spacing-lg);
 }
@@ -21,7 +18,6 @@
     transform: translateX(-3px);
 }
 
-/* Galería de imágenes */
 .gallery {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -68,7 +64,6 @@
     transform: scale(1.02);
 }
 
-/* Información del destino */
 .destination-info {
     text-align: center;
     margin-bottom: var(--spacing-xl);
@@ -98,7 +93,6 @@
     box-shadow: var(--shadow-sm);
 }
 
-/* Sección de paquete */
 .package-section {
     margin-bottom: var(--spacing-xl);
 }
@@ -156,7 +150,6 @@
     margin-bottom: var(--spacing-md);
 }
 
-/* Detalles de vuelo */
 .flight-details {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -189,7 +182,6 @@
     color: var(--dark) !important;
 }
 
-/* Detalles del hotel */
 .hotel-details h4 {
     color: var(--primary);
     font-size: var(--font-size-large);
@@ -215,7 +207,6 @@
     font-weight: bold;
 }
 
-/* Sección no incluye */
 .excluded-section {
     margin-bottom: var(--spacing-xl);
 }
@@ -263,7 +254,6 @@
     margin: 0;
 }
 
-/* CTA de reserva */
 .booking-cta {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
@@ -332,7 +322,6 @@
     color: var(--primary);
 }
 
-/* Traductor */
 .translator {
     background: rgba(255, 255, 255, 0.1);
     border-radius: var(--border-radius);

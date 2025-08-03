@@ -1,6 +1,3 @@
-/* Offers - Estilos específicos para página de ofertas */
-
-/* Hero de ofertas */
 .offers-hero {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
@@ -40,7 +37,6 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Título de paquetes */
 .packages-title {
     text-align: center;
     margin-bottom: var(--spacing-xl);
@@ -53,7 +49,6 @@
     letter-spacing: 2px;
 }
 
-/* Secciones de ofertas */
 .offers-section {
     margin-bottom: var(--spacing-xl);
 }
@@ -65,7 +60,6 @@
     margin-bottom: var(--spacing-lg);
 }
 
-/* Cards de ofertas */
 .offer-card {
     background: var(--light);
     border-radius: var(--border-radius-lg);
@@ -103,7 +97,6 @@
     gap: var(--spacing-xs);
 }
 
-/* Imagen de la oferta */
 .offer-image {
     position: relative;
     height: 250px;
@@ -134,7 +127,6 @@
     z-index: 10;
 }
 
-/* Acciones de la oferta */
 .offer-actions {
     position: absolute;
     top: 50%;
@@ -177,7 +169,6 @@
     color: #e74c3c;
 }
 
-/* Contenido de la oferta */
 .offer-content {
     padding: var(--spacing-lg);
     flex-grow: 1;
@@ -254,7 +245,6 @@
     transform: translateX(-5px);
 }
 
-/* Información adicional sobre regiones */
 .region-info {
     margin-bottom: var(--spacing-xl);
 }
@@ -296,7 +286,6 @@
     line-height: 1.6;
 }
 
-/* Datos curiosos */
 .fun-facts {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
@@ -333,7 +322,6 @@
     opacity: 0.9;
 }
 
-/* Animaciones específicas para ofertas */
 @keyframes pulse {
 
     0%,

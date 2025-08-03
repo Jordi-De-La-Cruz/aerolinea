@@ -1,6 +1,3 @@
-// Food Menu - JavaScript para manejo del carrito y favoritos
-
-// Estado del carrito
 let cart = {
     items: [],
     total: 0
@@ -9,7 +6,6 @@ let cart = {
 // Estado de favoritos
 let favorites = new Set();
 
-// Inicialización
 document.addEventListener('DOMContentLoaded', function () {
     loadCartFromStorage();
     loadFavoritesFromStorage();
@@ -17,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeAnimations();
 });
 
-// Cargar carrito desde localStorage
 function loadCartFromStorage() {
     const savedCart = localStorage.getItem('highflight-cart');
     if (savedCart) {
@@ -25,12 +20,10 @@ function loadCartFromStorage() {
     }
 }
 
-// Guardar carrito en localStorage
 function saveCartToStorage() {
     localStorage.setItem('highflight-cart', JSON.stringify(cart));
 }
 
-// Cargar favoritos desde localStorage
 function loadFavoritesFromStorage() {
     const savedFavorites = localStorage.getItem('highflight-favorites');
     if (savedFavorites) {
@@ -39,14 +32,12 @@ function loadFavoritesFromStorage() {
     }
 }
 
-// Guardar favoritos en localStorage
 function saveFavoritesToStorage() {
     localStorage.setItem('highflight-favorites', JSON.stringify([...favorites]));
 }
 
 // Agregar item al carrito
 function addToCart(itemId, price, name = null, image = null) {
-    // Si no se proporciona nombre, intentar obtenerlo del DOM
     if (!name) {
         const itemElement = document.querySelector(`[data-item="${itemId}"]`) ||
             document.querySelector(`button[onclick*="${itemId}"]`).closest('.menu-item, .dish-card');
@@ -72,19 +63,15 @@ function addToCart(itemId, price, name = null, image = null) {
         });
     }
 
-    // Actualizar total
     calculateTotal();
 
-    // Guardar en localStorage
     saveCartToStorage();
 
-    // Actualizar display
     updateCartDisplay();
 
     // Mostrar notificación
     showNotification(`${name || itemId} agregado al carrito`, 'success');
 
-    // Animación del botón
     if (window.event && window.event.target) {
         animateAddToCart(window.event.target);
     }
@@ -99,7 +86,6 @@ function removeFromCart(itemId) {
     showNotification('Producto eliminado del carrito', 'info');
 }
 
-// Actualizar cantidad de un item
 function updateQuantity(itemId, newQuantity) {
     const item = cart.items.find(item => item.id === itemId);
     if (item) {
@@ -114,12 +100,10 @@ function updateQuantity(itemId, newQuantity) {
     }
 }
 
-// Calcular total del carrito
 function calculateTotal() {
     cart.total = cart.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 }
 
-// Actualizar display del carrito
 function updateCartDisplay() {
     const cartCount = document.getElementById('cartCount');
     const cartItems = document.getElementById('cartItems');
@@ -132,7 +116,6 @@ function updateCartDisplay() {
     cartCount.textContent = totalItems;
     cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
 
-    // Actualizar lista de items
     if (cart.items.length === 0) {
         cartItems.innerHTML = `
       <div class="cart-empty">
@@ -170,7 +153,6 @@ function updateCartDisplay() {
     cartTotal.textContent = cart.total.toFixed(2);
 }
 
-// Toggle del carrito
 function toggleCart() {
     const cartDropdown = document.getElementById('cartDropdown');
     if (cartDropdown) {
@@ -185,13 +167,8 @@ function proceedToCheckout() {
         return;
     }
 
-    // Aquí podrías redirigir a una página de checkout
     showNotification('Redirigiendo al pago...', 'info');
 
-    // Ejemplo de redirección (descomenta si tienes la página)
-    // window.location.href = 'checkout.html';
-
-    // Por ahora, simular proceso de pago
     setTimeout(() => {
         cart = { items: [], total: 0 };
         saveCartToStorage();
@@ -225,7 +202,6 @@ function toggleFavorite(button) {
     animateFavorite(button);
 }
 
-// Actualizar display de favoritos
 function updateFavoritesDisplay() {
     const favoriteButtons = document.querySelectorAll('.favorite-btn');
 
@@ -248,7 +224,6 @@ function updateFavoritesDisplay() {
 
 // Animaciones
 function initializeAnimations() {
-    // Animación de entrada para las cards
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -291,7 +266,7 @@ function animateFavorite(button) {
     }, 200);
 }
 
-// Búsqueda y filtros (opcional)
+// Búsqueda y filtros
 function setupSearch() {
     const searchInput = document.getElementById('searchInput');
     const categoryFilter = document.getElementById('categoryFilter');
@@ -325,7 +300,6 @@ function filterItems() {
 
         let showItem = true;
 
-        // Filtro de búsqueda
         if (searchTerm && !title.includes(searchTerm)) {
             showItem = false;
         }
@@ -345,7 +319,6 @@ function filterItems() {
 }
 
 
-// Cerrar carrito al hacer clic fuera
 document.addEventListener('click', function (e) {
     const cartFloating = document.getElementById('cartFloating');
     const cartDropdown = document.getElementById('cartDropdown');
@@ -381,18 +354,14 @@ function getItemFromElement(element) {
     return { name, price, image };
 }
 
-// Notificaciones mejoradas para el contexto de comida
 function showFoodNotification(message, type = 'success') {
-    // Usar la función showNotification del main.js si existe, sino crear una propia
     if (typeof showNotification === 'function') {
         showNotification(message, type);
     } else {
-        // Fallback: crear notificación simple
         const notification = document.createElement('div');
         notification.className = `food-notification food-notification--${type}`;
         notification.textContent = message;
 
-        // Estilos inline para la notificación
         Object.assign(notification.style, {
             position: 'fixed',
             top: '20px',
@@ -409,7 +378,6 @@ function showFoodNotification(message, type = 'success') {
             transition: 'transform 0.3s ease'
         });
 
-        // Colores según el tipo
         const colors = {
             success: '#27ae60',
             warning: '#f39c12',
@@ -426,7 +394,6 @@ function showFoodNotification(message, type = 'success') {
             notification.style.transform = 'translateX(0)';
         }, 100);
 
-        // Remover después de 3 segundos
         setTimeout(() => {
             notification.style.transform = 'translateX(100%)';
             setTimeout(() => {
@@ -440,7 +407,6 @@ function showFoodNotification(message, type = 'success') {
 
 // Shortcuts de teclado
 document.addEventListener('keydown', function (e) {
-    // Esc para cerrar carrito
     if (e.key === 'Escape') {
         const cartDropdown = document.getElementById('cartDropdown');
         if (cartDropdown && cartDropdown.classList.contains('active')) {
@@ -448,7 +414,6 @@ document.addEventListener('keydown', function (e) {
         }
     }
 
-    // Ctrl+K para buscar (si existe campo de búsqueda)
     if (e.ctrlKey && e.key === 'k') {
         e.preventDefault();
         const searchInput = document.getElementById('searchInput');
@@ -458,7 +423,6 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-// CSS dinámico para items del carrito
 function addCartStyles() {
     if (document.getElementById('cart-styles')) return;
 
@@ -558,7 +522,6 @@ function addCartStyles() {
 // Inicializar estilos del carrito cuando se carga la página
 document.addEventListener('DOMContentLoaded', addCartStyles);
 
-// Exportar funciones para uso global
 window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
 window.updateQuantity = updateQuantity;

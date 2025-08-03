@@ -1,6 +1,3 @@
-// Offers Page - JavaScript para manejo de ofertas y favoritos
-
-// Estado de favoritos
 let favorites = new Set();
 
 // Inicialización
@@ -11,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeFilters();
 });
 
-// Cargar favoritos desde localStorage
 function loadFavoritesFromStorage() {
     const savedFavorites = localStorage.getItem('highflight-favorites');
     if (savedFavorites) {
@@ -19,12 +15,10 @@ function loadFavoritesFromStorage() {
     }
 }
 
-// Guardar favoritos en localStorage
 function saveFavoritesToStorage() {
     localStorage.setItem('highflight-favorites', JSON.stringify([...favorites]));
 }
 
-// Toggle favoritos
 function toggleFavorite(button) {
     const offerCard = button.closest('.offer-card');
     if (!offerCard) return;
@@ -71,7 +65,6 @@ function updateFavoritesDisplay() {
     });
 }
 
-// Animaciones
 function initializeAnimations() {
     // Animación de entrada para las cards
     const observer = new IntersectionObserver((entries) => {
@@ -90,7 +83,6 @@ function initializeAnimations() {
         observer.observe(card);
     });
 
-    // Animar elementos del hero
     const heroElements = document.querySelectorAll('.offers-hero h1, .offers-hero p, .hero-features');
     heroElements.forEach((element, index) => {
         element.style.opacity = '0';
@@ -116,7 +108,6 @@ function animateFavorite(button) {
 
 // Filtros de ofertas
 function initializeFilters() {
-    // Crear controles de filtro dinámicamente
     createFilterControls();
 
     // Event listeners para filtros
@@ -171,7 +162,6 @@ function createFilterControls() {
 
     firstSection.insertBefore(filterContainer, firstSection.querySelector('.offers-grid'));
 
-    // Añadir estilos para los filtros
     addFilterStyles();
 }
 
@@ -260,7 +250,6 @@ function applyFilters() {
             showOffer = false;
         }
 
-        // Filtro de categoría
         if (categoryFilter && category !== categoryFilter) {
             showOffer = false;
         }
@@ -270,12 +259,10 @@ function applyFilters() {
             showOffer = false;
         }
 
-        // Mostrar/ocultar oferta
         offer.style.display = showOffer ? 'flex' : 'none';
         if (showOffer) visibleCount++;
     });
 
-    // Mostrar mensaje si no hay resultados
     updateNoResultsMessage(visibleCount);
 }
 
@@ -327,7 +314,6 @@ function clearFilters() {
     showNotification('Filtros limpiados', 'info');
 }
 
-// Utilidad debounce para la búsqueda
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -340,7 +326,6 @@ function debounce(func, wait) {
     };
 }
 
-// Funcionalidad de compartir ofertas
 function shareOffer(offerElement) {
     const title = offerElement.querySelector('h3').textContent;
     const url = window.location.href;
@@ -352,7 +337,6 @@ function shareOffer(offerElement) {
             url: url
         }).catch(console.error);
     } else {
-        // Fallback: copiar al clipboard
         navigator.clipboard.writeText(`${title} - ${url}`)
             .then(() => showNotification('Enlace copiado al portapapeles', 'success'))
             .catch(() => showNotification('No se pudo copiar el enlace', 'error'));
@@ -391,12 +375,10 @@ function sortOffers(criteria) {
             }
         });
 
-        // Reordenar en el DOM
         offers.forEach(offer => grid.appendChild(offer));
     });
 }
 
-// Crear controles de ordenamiento
 function createSortControls() {
     const mainContainer = document.querySelector('.main .container');
     if (!mainContainer || document.querySelector('.sort-controls')) return;
@@ -420,19 +402,17 @@ function createSortControls() {
         mainContainer.insertBefore(sortContainer, firstSection);
     }
 
-    // Event listener para ordenamiento
     const sortSelect = document.getElementById('sortSelect');
     if (sortSelect) {
         sortSelect.addEventListener('change', (e) => {
             if (e.target.value !== 'default') {
                 sortOffers(e.target.value);
             } else {
-                location.reload(); // Restaurar orden original
+                location.reload();
             }
         });
     }
 
-    // Añadir estilos para ordenamiento
     addSortStyles();
 }
 
@@ -488,7 +468,6 @@ function addSortStyles() {
     document.head.appendChild(style);
 }
 
-// Estadísticas de ofertas
 function showOfferStats() {
     const totalOffers = document.querySelectorAll('.offer-card').length;
     const featuredOffers = document.querySelectorAll('.offer-card.featured').length;
@@ -515,13 +494,11 @@ function calculateAverageDiscount() {
 
 // Inicializar funcionalidades adicionales
 document.addEventListener('DOMContentLoaded', function () {
-    // Crear controles de ordenamiento después de un delay
     setTimeout(() => {
         createSortControls();
         showOfferStats();
     }, 1000);
 
-    // Añadir tooltips a los botones
     addTooltips();
 });
 
@@ -538,7 +515,6 @@ function addTooltips() {
     });
 }
 
-// Manejar errores de imágenes
 document.addEventListener('DOMContentLoaded', function () {
     const images = document.querySelectorAll('.offer-image img');
 
@@ -550,7 +526,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Funcionalidad de carga lazy para mejorar rendimiento
 function initLazyLoading() {
     const images = document.querySelectorAll('.offer-image img');
 
@@ -574,7 +549,6 @@ function initLazyLoading() {
     });
 }
 
-// Exportar funciones para uso global
 window.toggleFavorite = toggleFavorite;
 window.clearFilters = clearFilters;
 window.shareOffer = shareOffer;

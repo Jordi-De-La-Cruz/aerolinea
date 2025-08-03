@@ -1,4 +1,3 @@
-// Control del slider de destinos
 let currentSlideIndex = 0;
 let slideInterval;
 
@@ -11,22 +10,18 @@ function initializeSlider() {
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
 
-    if (slides.length === 0) return; // No hay slider en esta página
+    if (slides.length === 0) return;
 
-    // Mostrar primera slide
     showSlide(currentSlideIndex);
 
-    // Iniciar auto-play
     startAutoPlay();
 
-    // Pausar auto-play cuando el mouse esté sobre el slider
     const sliderContainer = document.querySelector('.slider-container');
     if (sliderContainer) {
         sliderContainer.addEventListener('mouseenter', stopAutoPlay);
         sliderContainer.addEventListener('mouseleave', startAutoPlay);
     }
 
-    // Soporte para gestos táctiles en móviles
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -47,10 +42,8 @@ function initializeSlider() {
 
         if (Math.abs(diff) > swipeThreshold) {
             if (diff > 0) {
-                // Swipe left - siguiente slide
                 changeSlide(1);
             } else {
-                // Swipe right - slide anterior
                 changeSlide(-1);
             }
         }
@@ -63,11 +56,9 @@ function showSlide(index) {
 
     if (slides.length === 0) return;
 
-    // Remover clase active de todas las slides e indicadores
     slides.forEach(slide => slide.classList.remove('active'));
     indicators.forEach(indicator => indicator.classList.remove('active'));
 
-    // Añadir clase active a la slide e indicador actual
     if (slides[index]) {
         slides[index].classList.add('active');
     }
@@ -84,7 +75,6 @@ function changeSlide(direction) {
 
     currentSlideIndex += direction;
 
-    // Loop del slider
     if (currentSlideIndex >= slides.length) {
         currentSlideIndex = 0;
     } else if (currentSlideIndex < 0) {
@@ -93,22 +83,20 @@ function changeSlide(direction) {
 
     showSlide(currentSlideIndex);
 
-    // Reiniciar auto-play
     stopAutoPlay();
     startAutoPlay();
 }
 
 function currentSlide(index) {
-    currentSlideIndex = index - 1; // Los indicadores empiezan en 1
+    currentSlideIndex = index - 1;
     showSlide(currentSlideIndex);
 
-    // Reiniciar auto-play
     stopAutoPlay();
     startAutoPlay();
 }
 
 function startAutoPlay() {
-    const autoPlayDelay = 4000; // 4 segundos
+    const autoPlayDelay = 4000;
 
     slideInterval = setInterval(function () {
         changeSlide(1);
@@ -121,14 +109,12 @@ function stopAutoPlay() {
     }
 }
 
-// Función para añadir más slides dinámicamente (opcional)
 function addSlide(imageSrc, title, description) {
     const slider = document.querySelector('.slider');
     const indicators = document.querySelector('.slider-indicators');
 
     if (!slider || !indicators) return;
 
-    // Crear nueva slide
     const newSlide = document.createElement('div');
     newSlide.className = 'slide';
     newSlide.innerHTML = `
@@ -145,12 +131,10 @@ function addSlide(imageSrc, title, description) {
     const slideCount = document.querySelectorAll('.slide').length + 1;
     newIndicator.onclick = function () { currentSlide(slideCount); };
 
-    // Añadir al DOM
     slider.appendChild(newSlide);
     indicators.appendChild(newIndicator);
 }
 
-// Función para precargar imágenes del slider
 function preloadSliderImages() {
     const slides = document.querySelectorAll('.slide img');
 
@@ -160,7 +144,6 @@ function preloadSliderImages() {
     });
 }
 
-// Lazy loading para slides no visibles
 function setupLazyLoading() {
     const slides = document.querySelectorAll('.slide img[data-src]');
 
@@ -180,7 +163,6 @@ function setupLazyLoading() {
     });
 }
 
-// Función para actualizar el slider basado en el tamaño de pantalla
 function updateSliderForMobile() {
     const sliderContainer = document.querySelector('.slider-container');
 
@@ -190,9 +172,8 @@ function updateSliderForMobile() {
         const isMobile = window.innerWidth <= 768;
 
         if (isMobile) {
-            // Configuración para móviles
             sliderContainer.classList.add('mobile-slider');
-            stopAutoPlay(); // Pausar auto-play en móviles para mejor UX
+            stopAutoPlay();
         } else {
             // Configuración para desktop
             sliderContainer.classList.remove('mobile-slider');
@@ -200,7 +181,6 @@ function updateSliderForMobile() {
         }
     }
 
-    // Verificar al cargar y al redimensionar
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
 }
@@ -212,13 +192,11 @@ document.addEventListener('DOMContentLoaded', function () {
     updateSliderForMobile();
 });
 
-// Gestión de errores para imágenes que no cargan
 document.addEventListener('DOMContentLoaded', function () {
     const sliderImages = document.querySelectorAll('.slide img');
 
     sliderImages.forEach(function (img) {
         img.addEventListener('error', function () {
-            // Imagen de fallback o placeholder
             this.src = 'img/placeholder.jpg';
             this.alt = 'Imagen no disponible';
             console.warn('Error cargando imagen del slider:', this.src);
@@ -226,6 +204,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Funciones globales para usar desde HTML (onclick)
 window.changeSlide = changeSlide;
 window.currentSlide = currentSlide;

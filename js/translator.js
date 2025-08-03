@@ -1,8 +1,7 @@
-// Configuración del traductor de Google
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
-        pageLanguage: 'es', // Cambié a español ya que el contenido está en español
-        includedLanguages: 'en,es,fr,de,it,pt,ja,ko,zh', // Idiomas más comunes para turismo
+        pageLanguage: 'es',
+        includedLanguages: 'en,es,fr,de,it,pt,ja,ko,zh',
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
         autoDisplay: false,
         multilanguagePage: true
@@ -11,14 +10,13 @@ function googleTranslateElementInit() {
 
 // Mejorar la apariencia del traductor cuando se cargue
 document.addEventListener('DOMContentLoaded', function () {
-    // Esperar a que el traductor se cargue
     const observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             if (mutation.type === 'childList') {
                 const translateElement = document.querySelector('#google_translate_element');
                 if (translateElement && translateElement.querySelector('.goog-te-combo')) {
                     styleTranslator();
-                    observer.disconnect(); // Dejar de observar una vez que se apliquen los estilos
+                    observer.disconnect();
                 }
             }
         });
@@ -30,18 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Función para aplicar estilos personalizados al traductor
 function styleTranslator() {
-    // Ocultar el banner de Google Translate
     const banner = document.querySelector('.goog-te-banner-frame');
     if (banner) {
         banner.style.display = 'none';
     }
 
-    // Ajustar el margin-top del body que Google Translate añade
     document.body.style.marginTop = '0';
 
-    // Estilizar el select del traductor
     const selectElement = document.querySelector('.goog-te-combo');
     if (selectElement) {
         selectElement.style.background = 'white';
@@ -54,7 +48,6 @@ function styleTranslator() {
         selectElement.style.cursor = 'pointer';
         selectElement.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
 
-        // Añadir un icono de globo antes del select
         const icon = document.createElement('i');
         icon.className = 'fas fa-globe';
         icon.style.marginRight = '0.5rem';
@@ -73,7 +66,6 @@ function styleTranslator() {
         wrapper.appendChild(selectElement);
     }
 
-    // Ocultar elementos no deseados
     const unwantedElements = document.querySelectorAll(
         '.goog-te-gadget-icon, .goog-te-gadget-simple .goog-te-menu-value span:first-child'
     );
@@ -82,14 +74,12 @@ function styleTranslator() {
     });
 }
 
-// Funciones adicionales para mejorar la experiencia del traductor
 function detectUserLanguage() {
     const userLang = navigator.language || navigator.userLanguage;
     const supportedLanguages = ['en', 'es', 'fr', 'de', 'it', 'pt', 'ja', 'ko', 'zh'];
     const langCode = userLang.split('-')[0];
 
     if (supportedLanguages.includes(langCode) && langCode !== 'es') {
-        // Opcionalmente, podrías mostrar una sugerencia para traducir
         setTimeout(() => {
             showTranslationSuggestion(langCode);
         }, 2000);
@@ -148,14 +138,12 @@ function showTranslationSuggestion(langCode) {
 
         document.body.appendChild(notification);
 
-        // Auto-dismiss después de 10 segundos
         setTimeout(() => {
             dismissTranslationSuggestion();
         }, 10000);
     }
 }
 
-// Funciones globales para los botones de sugerencia
 window.acceptTranslation = function (langCode) {
     const selectElement = document.querySelector('.goog-te-combo');
     if (selectElement) {
@@ -173,13 +161,10 @@ window.dismissTranslationSuggestion = function () {
     localStorage.setItem('translation-suggestion-dismissed', 'true');
 };
 
-// Inicializar detección de idioma cuando la página esté cargada
 document.addEventListener('DOMContentLoaded', function () {
-    // Pequeño delay para asegurar que el traductor esté listo
     setTimeout(detectUserLanguage, 1000);
 });
 
-// Limpiar el localStorage de sugerencias cada 24 horas
 function cleanupTranslationPreferences() {
     const lastCleanup = localStorage.getItem('translation-cleanup');
     const now = Date.now();
@@ -191,5 +176,4 @@ function cleanupTranslationPreferences() {
     }
 }
 
-// Ejecutar cleanup al cargar la página
 cleanupTranslationPreferences();

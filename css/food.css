@@ -1,6 +1,3 @@
-/* Food - Estilos específicos para páginas de comida */
-
-/* Hero de comida */
 .food-hero {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
@@ -45,7 +42,6 @@
     margin-right: var(--spacing-xs);
 }
 
-/* Hero de restaurante */
 .restaurant-hero {
     margin-bottom: var(--spacing-xl);
 }
@@ -107,7 +103,6 @@
     z-index: 1;
 }
 
-/* Menú grid */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -283,7 +278,6 @@
     align-items: center;
 }
 
-/* Categorías del menú */
 .menu-categories {
     margin-bottom: var(--spacing-xl);
 }
@@ -380,7 +374,6 @@
     transform: translateX(5px);
 }
 
-/* Platos populares */
 .popular-dishes {
     margin-bottom: var(--spacing-xl);
 }
@@ -526,7 +519,6 @@
     font-weight: 600;
 }
 
-/* Información adicional */
 .info-section {
     margin-bottom: var(--spacing-xl);
 }
@@ -566,7 +558,6 @@
     margin: 0;
 }
 
-/* Carrito flotante */
 .cart-floating {
     position: fixed;
     bottom: 30px;
