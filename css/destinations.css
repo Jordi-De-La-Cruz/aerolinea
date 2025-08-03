@@ -1,0 +1,538 @@
+/* ===== DESTINATIONS PAGE SPECIFIC STYLES ===== */
+
+/* Destinations Hero */
+.destinations-hero {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: var(--light);
+    padding: var(--spacing-xl) 0;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.destinations-hero .hero-content h1 {
+    font-size: var(--font-size-hero);
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.destinations-hero .hero-content p {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: var(--font-size-xxl);
+    font-weight: 700;
+    color: var(--secondary);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: var(--font-size-small);
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Gallery Slider */
+.destinations-gallery {
+    padding: var(--spacing-xl) 0;
+    background: var(--light);
+}
+
+.gallery-slider {
+    margin-top: var(--spacing-lg);
+}
+
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.slides-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+    height: 400px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: var(--light);
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+    text-align: center;
+}
+
+.slide-caption h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xs);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.slide-caption p {
+    font-size: var(--font-size-base);
+    opacity: 0.9;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+    font-size: var(--font-size-large);
+    color: var(--dark);
+}
+
+.slider-btn:hover {
+    background: var(--light);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-btn--prev {
+    left: var(--spacing-md);
+}
+
+.slider-btn--next {
+    right: var(--spacing-md);
+}
+
+.slider-pagination {
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-xs);
+    z-index: 10;
+}
+
+.pagination-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pagination-dot.active,
+.pagination-dot:hover {
+    background: var(--light);
+    transform: scale(1.2);
+}
+
+/* Flight Booking Section */
+.flight-booking {
+    padding: var(--spacing-xl) 0;
+    background: var(--gray-light);
+}
+
+.booking-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+/* Destinations Table */
+.destinations-table-container {
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.destinations-table-container h2 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xl);
+    text-align: center;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--border-radius);
+}
+
+.destinations-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-small);
+}
+
+.destinations-table th,
+.destinations-table td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.destinations-table th {
+    background: var(--primary);
+    color: var(--light);
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+.destinations-table th i {
+    margin-right: var(--spacing-xs);
+}
+
+.destinations-table tbody tr:hover {
+    background: var(--gray-light);
+}
+
+.country-cell,
+.destination-cell {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.flag {
+    font-size: var(--font-size-large);
+}
+
+.destination-cell div {
+    display: flex;
+    flex-direction: column;
+}
+
+.destination-cell small {
+    color: var(--gray);
+    font-size: 11px;
+}
+
+.price-cell {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: var(--font-size-base);
+}
+
+/* Booking Form */
+.booking-form-container {
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    height: fit-content;
+}
+
+.booking-form-container h2 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xl);
+    text-align: center;
+}
+
+.flight-booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.flight-booking-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.flight-booking-form label {
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--dark);
+    font-size: var(--font-size-small);
+}
+
+.flight-booking-form input,
+.flight-booking-form select {
+    padding: var(--spacing-sm);
+    border: 2px solid var(--gray-light);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    background: var(--light);
+    transition: var(--transition);
+}
+
+.flight-booking-form input:focus,
+.flight-booking-form select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.1);
+}
+
+.price-estimate {
+    background: var(--gray-light);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.estimate-content h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-large);
+}
+
+.price-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.price-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-line.total {
+    border-top: 1px solid var(--gray);
+    padding-top: var(--spacing-xs);
+    margin-top: var(--spacing-xs);
+    font-size: var(--font-size-large);
+}
+
+/* Popular Destinations */
+.popular-destinations {
+    padding: var(--spacing-xl) 0;
+    background: var(--light);
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.destination-card {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    height: 300px;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.destination-image {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.destination-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.destination-card:hover .destination-image img {
+    transform: scale(1.1);
+}
+
+.destination-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: var(--light);
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+    text-align: center;
+}
+
+.destination-overlay h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xs);
+}
+
+.destination-overlay p {
+    font-size: var(--font-size-small);
+    opacity: 0.9;
+    margin-bottom: var(--spacing-sm);
+}
+
+.destination-price {
+    background: var(--primary);
+    color: var(--light);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Dark Theme Adjustments */
+.dark-theme .destinations-table-container,
+.dark-theme .booking-form-container {
+    background: var(--gray-light);
+}
+
+.dark-theme .destinations-table tbody tr:hover {
+    background: var(--dark);
+}
+
+.dark-theme .flight-booking-form input,
+.dark-theme .flight-booking-form select {
+    background: var(--dark);
+    border-color: #555;
+    color: var(--light);
+}
+
+.dark-theme .price-estimate {
+    background: var(--dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .destinations-hero .hero-content h1 {
+        font-size: var(--font-size-xxl);
+    }
+
+    .hero-stats {
+        gap: var(--spacing-md);
+    }
+
+    .booking-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .slide {
+        height: 250px;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-base);
+    }
+
+    .destinations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .destination-card {
+        height: 200px;
+    }
+
+    .destinations-table {
+        font-size: 12px;
+    }
+
+    .destinations-table th,
+    .destinations-table td {
+        padding: var(--spacing-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .destinations-hero {
+        min-height: 50vh;
+    }
+
+    .destinations-hero .hero-content h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .slider-container {
+        margin: 0 var(--spacing-sm);
+    }
+
+    .slide {
+        height: 200px;
+    }
+
+    .destinations-table-container,
+    .booking-form-container {
+        padding: var(--spacing-md);
+    }
+
+    .table-wrapper {
+        font-size: 11px;
+    }
+
+    .flag {
+        font-size: var(--font-size-base);
+    }
+
+    .destination-card {
+        height: 150px;
+    }
+
+    .destination-overlay {
+        padding: var(--spacing-sm);
+    }
+
+    .destination-overlay h3 {
+        font-size: var(--font-size-base);
+    }
+}
