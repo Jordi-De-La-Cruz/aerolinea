@@ -1,656 +1,186 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vuelos a Europa - Descubre el Viejo Continente | High Flight Airlines</title>
+  <title>Aerolinea High Flight</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" href="img/inicial.jpg">
+  <link rel="stylesheet" href="css/style.css">
 
-  <!-- SEO Meta Tags -->
-  <meta name="description"
-    content="Vuela a Europa con High Flight Airlines. Descubre París, Roma, Madrid y más destinos europeos con nuestras mejores tarifas.">
-  <meta name="keywords" content="vuelos europa, viajes europa, paris, roma, madrid, vuelos internacionales">
-
-  <!-- Favicon -->
-  <link rel="icon" href="img/inicial.jpg" type="image/jpeg">
-
-  <!-- External Stylesheets -->
-  <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/layouts.css">
-  <link rel="stylesheet" href="css/destinations.css">
 </head>
 
-<body class="europa-page">
-  <!-- Language Translator -->
-  <div id="google_translate_element" class="translator-widget"></div>
-
-  <!-- Theme Toggle -->
-  <button class="theme-toggle theme-toggle--floating" id="themeToggle" aria-label="Cambiar tema">
-    <span class="theme-toggle__icon">
-      <i class="ti ti-brightness-2"></i>
-    </span>
-    <span class="theme-toggle__icon">
-      <i class="ti ti-moon"></i>
-    </span>
-  </button>
-
-  <!-- Header -->
+<body>
+  <!-- Inicio de header -->
   <header class="header">
-    <nav class="navbar">
-      <a href="index.html" class="logo" aria-label="High Flight Airlines - Inicio">
-        <img src="img/mundo.png" alt="High Flight Logo" class="logo__image">
-        <div class="logo__text">
-          <span class="logo__brand">HIGH</span>
-          <span class="logo__brand">FLIGHT</span>
-        </div>
+
+    <a href="index.html" class="logo">
+      <img src="img/mundo.png" alt="">
+      <h3 href="index.html">HIGH <br>FLIGHT</h3>
+    </a>
+    <!-- Inicio-Navegacion1 -->
+    <nav class="navegacion1">
+      <a href="login.html" class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-user" width="24" height="24" viewbox="0 0 24 24" stroke-width="2"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+          <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+        </svg>
       </a>
 
-      <div class="nav-links">
-        <a href="login.html" class="nav-btn">
-          <i class="ti ti-user"></i>
-          <span>Iniciar Sesión</span>
-        </a>
-        <a href="ayuda.html" class="nav-btn">
-          <i class="ti ti-help"></i>
-          <span>Ayuda</span>
-        </a>
-      </div>
+      <a href="ayuda.html" class="boton ">ayuda<svg xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-help" width="24" height="24" viewbox="0 0 24 24" stroke-width="2"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <circle cx="12" cy="12" r="9"></circle>
+          <line x1="12" y1="17" x2="12" y2="17.01"></line>
+          <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
+        </svg>
+      </a>
     </nav>
+    <!-- Final-navegacion1 -->
   </header>
 
-  <!-- Main Content -->
-  <main class="main-content">
-
-    <!-- Hero Section -->
-    <section class="destinations-hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Descubre Europa</h1>
-          <p>Explora la historia, cultura y belleza del continente europeo con nuestros vuelos directos</p>
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-number">15+</span>
-              <span class="stat-label">Países</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">50+</span>
-              <span class="stat-label">Ciudades</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">$350</span>
-              <span class="stat-label">Desde</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Image Gallery Slider -->
-    <section class="destinations-gallery">
-      <div class="container">
-        <h2 class="section-title">Explora Europa en imágenes</h2>
-
-        <div class="gallery-slider">
-          <div class="slider-container">
-            <div class="slides-wrapper" id="slidesWrapper">
-              <div class="slide active">
-                <img src="img/europa1.jpg" alt="Torre Eiffel, París" loading="lazy">
-                <div class="slide-caption">
-                  <h3>París, Francia</h3>
-                  <p>La Ciudad de la Luz te espera</p>
-                </div>
-              </div>
-              <div class="slide">
-                <img src="img/europa2.jpg" alt="Coliseo, Roma" loading="lazy">
-                <div class="slide-caption">
-                  <h3>Roma, Italia</h3>
-                  <p>Historia viva en cada rincón</p>
-                </div>
-              </div>
-              <div class="slide">
-                <img src="img/europa3.jpg" alt="Sagrada Familia, Barcelona" loading="lazy">
-                <div class="slide-caption">
-                  <h3>Barcelona, España</h3>
-                  <p>Arte y arquitectura únicos</p>
-                </div>
-              </div>
-              <div class="slide">
-                <img src="img/europa4.jpg" alt="Puerta de Brandenburgo, Berlín" loading="lazy">
-                <div class="slide-caption">
-                  <h3>Berlín, Alemania</h3>
-                  <p>Modernidad y tradición</p>
-                </div>
-              </div>
-              <div class="slide">
-                <img src="img/europa5.jpg" alt="Acrópolis, Atenas" loading="lazy">
-                <div class="slide-caption">
-                  <h3>Atenas, Grecia</h3>
-                  <p>Cuna de la civilización</p>
-                </div>
-              </div>
-              <div class="slide">
-                <img src="img/europa6.jpg" alt="Torre de Belém, Lisboa" loading="lazy">
-                <div class="slide-caption">
-                  <h3>Lisboa, Portugal</h3>
-                  <p>Encanto atlántico</p>
-                </div>
-              </div>
-              <div class="slide">
-                <img src="img/europa7.jpg" alt="Atomium, Bruselas" loading="lazy">
-                <div class="slide-caption">
-                  <h3>Bruselas, Bélgica</h3>
-                  <p>Corazón de Europa</p>
-                </div>
-              </div>
-              <div class="slide">
-                <img src="img/europa8.jpg" alt="Cliffs of Moher, Irlanda" loading="lazy">
-                <div class="slide-caption">
-                  <h3>Dublín, Irlanda</h3>
-                  <p>Paisajes espectaculares</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Navigation Controls -->
-            <button class="slider-btn slider-btn--prev" id="prevBtn">
-              <i class="ti ti-chevron-left"></i>
-            </button>
-            <button class="slider-btn slider-btn--next" id="nextBtn">
-              <i class="ti ti-chevron-right"></i>
-            </button>
-
-            <!-- Pagination Dots -->
-            <div class="slider-pagination" id="sliderPagination">
-              <button class="pagination-dot active" data-slide="0"></button>
-              <button class="pagination-dot" data-slide="1"></button>
-              <button class="pagination-dot" data-slide="2"></button>
-              <button class="pagination-dot" data-slide="3"></button>
-              <button class="pagination-dot" data-slide="4"></button>
-              <button class="pagination-dot" data-slide="5"></button>
-              <button class="pagination-dot" data-slide="6"></button>
-              <button class="pagination-dot" data-slide="7"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Flight Booking Section -->
-    <section class="flight-booking">
-      <div class="container">
-        <div class="booking-content">
-
-          <!-- Destinations Table -->
-          <div class="destinations-table-container">
-            <h2>Tarifas desde Perú a Europa</h2>
-            <div class="table-wrapper">
-              <table class="destinations-table">
-                <thead>
-                  <tr>
-                    <th>
-                      <i class="ti ti-plane-departure"></i>
-                      País de Origen
-                    </th>
-                    <th>
-                      <i class="ti ti-map-pin"></i>
-                      Destino
-                    </th>
-                    <th>
-                      <i class="ti ti-currency-dollar"></i>
-                      Precio desde
-                    </th>
-                    <th>
-                      <i class="ti ti-clock"></i>
-                      Duración
-                    </th>
-                    <th>Acción</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="country-cell">
-                        <span class="flag">🇵🇪</span>
-                        Perú
-                      </div>
-                    </td>
-                    <td>
-                      <div class="destination-cell">
-                        <span class="flag">🇮🇹</span>
-                        <div>
-                          <strong>Italia</strong>
-                          <small>Roma, Milán</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="price-cell">$350</td>
-                    <td>14h 30m</td>
-                    <td>
-                      <button class="btn btn--small btn--primary">Reservar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="country-cell">
-                        <span class="flag">🇵🇪</span>
-                        Perú
-                      </div>
-                    </td>
-                    <td>
-                      <div class="destination-cell">
-                        <span class="flag">🇫🇷</span>
-                        <div>
-                          <strong>Francia</strong>
-                          <small>París, Lyon</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="price-cell">$350</td>
-                    <td>13h 45m</td>
-                    <td>
-                      <button class="btn btn--small btn--primary">Reservar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="country-cell">
-                        <span class="flag">🇵🇪</span>
-                        Perú
-                      </div>
-                    </td>
-                    <td>
-                      <div class="destination-cell">
-                        <span class="flag">🇩🇪</span>
-                        <div>
-                          <strong>Alemania</strong>
-                          <small>Berlín, Múnich</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="price-cell">$350</td>
-                    <td>15h 20m</td>
-                    <td>
-                      <button class="btn btn--small btn--primary">Reservar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="country-cell">
-                        <span class="flag">🇵🇪</span>
-                        Perú
-                      </div>
-                    </td>
-                    <td>
-                      <div class="destination-cell">
-                        <span class="flag">🇪🇸</span>
-                        <div>
-                          <strong>España</strong>
-                          <small>Madrid, Barcelona</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="price-cell">$350</td>
-                    <td>12h 15m</td>
-                    <td>
-                      <button class="btn btn--small btn--primary">Reservar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="country-cell">
-                        <span class="flag">🇵🇪</span>
-                        Perú
-                      </div>
-                    </td>
-                    <td>
-                      <div class="destination-cell">
-                        <span class="flag">🇵🇹</span>
-                        <div>
-                          <strong>Portugal</strong>
-                          <small>Lisboa, Oporto</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="price-cell">$350</td>
-                    <td>13h 10m</td>
-                    <td>
-                      <button class="btn btn--small btn--primary">Reservar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="country-cell">
-                        <span class="flag">🇵🇪</span>
-                        Perú
-                      </div>
-                    </td>
-                    <td>
-                      <div class="destination-cell">
-                        <span class="flag">🇧🇪</span>
-                        <div>
-                          <strong>Bélgica</strong>
-                          <small>Bruselas, Amberes</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="price-cell">$350</td>
-                    <td>14h 50m</td>
-                    <td>
-                      <button class="btn btn--small btn--primary">Reservar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="country-cell">
-                        <span class="flag">🇵🇪</span>
-                        Perú
-                      </div>
-                    </td>
-                    <td>
-                      <div class="destination-cell">
-                        <span class="flag">🇬🇷</span>
-                        <div>
-                          <strong>Grecia</strong>
-                          <small>Atenas, Tesalónica</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="price-cell">$350</td>
-                    <td>16h 25m</td>
-                    <td>
-                      <button class="btn btn--small btn--primary">Reservar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="country-cell">
-                        <span class="flag">🇵🇪</span>
-                        Perú
-                      </div>
-                    </td>
-                    <td>
-                      <div class="destination-cell">
-                        <span class="flag">🇲🇹</span>
-                        <div>
-                          <strong>Malta</strong>
-                          <small>La Valeta</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="price-cell">$350</td>
-                    <td>15h 40m</td>
-                    <td>
-                      <button class="btn btn--small btn--primary">Reservar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="country-cell">
-                        <span class="flag">🇵🇪</span>
-                        Perú
-                      </div>
-                    </td>
-                    <td>
-                      <div class="destination-cell">
-                        <span class="flag">🇮🇪</span>
-                        <div>
-                          <strong>Irlanda</strong>
-                          <small>Dublín, Cork</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="price-cell">$350</td>
-                    <td>14h 05m</td>
-                    <td>
-                      <button class="btn btn--small btn--primary">Reservar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="country-cell">
-                        <span class="flag">🇵🇪</span>
-                        Perú
-                      </div>
-                    </td>
-                    <td>
-                      <div class="destination-cell">
-                        <span class="flag">🇸🇮</span>
-                        <div>
-                          <strong>Eslovenia</strong>
-                          <small>Liubliana</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="price-cell">$350</td>
-                    <td>16h 15m</td>
-                    <td>
-                      <button class="btn btn--small btn--primary">Reservar</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Booking Form -->
-          <div class="booking-form-container">
-            <h2>Reserva tu vuelo a Europa</h2>
-            <form class="flight-booking-form" id="flightBookingForm">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="firstName">Nombre</label>
-                  <input type="text" id="firstName" name="firstName" placeholder="Tu nombre" required>
-                </div>
-                <div class="form-group">
-                  <label for="lastName">Apellidos</label>
-                  <input type="text" id="lastName" name="lastName" placeholder="Tus apellidos" required>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="passengers">Número de pasajeros</label>
-                  <select id="passengers" name="passengers" required>
-                    <option value="">Selecciona</option>
-                    <option value="1">1 Pasajero</option>
-                    <option value="2">2 Pasajeros</option>
-                    <option value="3">3 Pasajeros</option>
-                    <option value="4">4 Pasajeros</option>
-                    <option value="5+">5+ Pasajeros</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="travelClass">Clase</label>
-                  <select id="travelClass" name="travelClass" required>
-                    <option value="">Selecciona</option>
-                    <option value="economy">Económica</option>
-                    <option value="premium">Premium</option>
-                    <option value="business">Business</option>
-                    <option value="first">Primera</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="origin">Origen</label>
-                  <select id="origin" name="origin" required>
-                    <option value="">Selecciona origen</option>
-                    <option value="lima">Lima, Perú</option>
-                    <option value="cusco">Cusco, Perú</option>
-                    <option value="arequipa">Arequipa, Perú</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="destination">Destino en Europa</label>
-                  <select id="destination" name="destination" required>
-                    <option value="">Selecciona destino</option>
-                    <option value="paris">París, Francia</option>
-                    <option value="rome">Roma, Italia</option>
-                    <option value="madrid">Madrid, España</option>
-                    <option value="berlin">Berlín, Alemania</option>
-                    <option value="lisbon">Lisboa, Portugal</option>
-                    <option value="brussels">Bruselas, Bélgica</option>
-                    <option value="athens">Atenas, Grecia</option>
-                    <option value="valletta">La Valeta, Malta</option>
-                    <option value="dublin">Dublín, Irlanda</option>
-                    <option value="ljubljana">Liubliana, Eslovenia</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="departureDate">Fecha de salida</label>
-                  <input type="date" id="departureDate" name="departureDate" required>
-                </div>
-                <div class="form-group">
-                  <label for="returnDate">Fecha de regreso</label>
-                  <input type="date" id="returnDate" name="returnDate">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label>
-                  <input type="checkbox" id="newsletter" name="newsletter">
-                  Recibir ofertas especiales y noticias por email
-                </label>
-              </div>
-
-              <div class="price-estimate" id="priceEstimate">
-                <div class="estimate-content">
-                  <h3>Estimación de precio</h3>
-                  <div class="price-breakdown">
-                    <div class="price-line">
-                      <span>Vuelo base:</span>
-                      <span id="basePrice">$350</span>
-                    </div>
-                    <div class="price-line">
-                      <span>Impuestos y tasas:</span>
-                      <span id="taxes">$52</span>
-                    </div>
-                    <div class="price-line total">
-                      <span><strong>Total estimado:</strong></span>
-                      <span id="totalPrice"><strong>$402</strong></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <button type="submit" class="btn btn--primary btn--large btn--full">
-                <i class="ti ti-plane"></i>
-                Reservar Vuelo
-              </button>
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Popular Destinations -->
-    <section class="popular-destinations">
-      <div class="container">
-        <h2 class="section-title">Destinos más populares en Europa</h2>
-
-        <div class="destinations-grid">
-          <div class="destination-card">
-            <div class="destination-image">
-              <img src="img/europa1.jpg" alt="París" loading="lazy">
-              <div class="destination-overlay">
-                <h3>París</h3>
-                <p>La Ciudad del Amor</p>
-                <span class="destination-price">Desde $350</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="destination-card">
-            <div class="destination-image">
-              <img src="img/europa2.jpg" alt="Roma" loading="lazy">
-              <div class="destination-overlay">
-                <h3>Roma</h3>
-                <p>La Ciudad Eterna</p>
-                <span class="destination-price">Desde $350</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="destination-card">
-            <div class="destination-image">
-              <img src="img/europa3.jpg" alt="Barcelona" loading="lazy">
-              <div class="destination-overlay">
-                <h3>Barcelona</h3>
-                <p>Arte y Arquitectura</p>
-                <span class="destination-price">Desde $350</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="destination-card">
-            <div class="destination-image">
-              <img src="img/europa4.jpg" alt="Berlín" loading="lazy">
-              <div class="destination-overlay">
-                <h3>Berlín</h3>
-                <p>Historia y Cultura</p>
-                <span class="destination-price">Desde $350</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <!-- Social Media Links -->
-      <div class="social-links">
-        <a href="#" class="social-link" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="Pinterest">
-          <i class="fab fa-pinterest"></i>
-        </a>
-      </div>
-
-      <!-- Copyright -->
-      <div class="footer-text">
-        <p>&copy; 2024 <span>High Flight Airlines</span> | Todos los derechos reservados</p>
-      </div>
+  <section>
+    <div class="slider">
+      <ul>
+        <li><img src="img/europa1.jpg" alt=""></li>
+        <li><img src="img/europa2.jpg" alt=""></li>
+        <li><img src="img/europa3.jpg" alt=""></li>
+        <li><img src="img/europa4.jpg" alt=""></li>
+        <li><img src="img/europa5.jpg" alt=""></li>
+        <li><img src="img/europa6.jpg" alt=""></li>
+        <li><img src="img/europa7.jpg" alt=""></li>
+        <li><img src="img/europa8.jpg" alt=""></li>
+      </ul>
     </div>
-  </footer>
+  </section>
 
-  <!-- Loading Overlay -->
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="loading-spinner">
-      <i class="ti ti-plane"></i>
+
+  <section class="reserva">
+    <div class="reserva11">
+      <table>
+        <tr>
+          <th>PAIS DE ORIGEN</th>
+          <th>DESTINO</th>
+          <th>PRECIO</th>
+        </tr>
+
+        <tr>
+          <td>Perú</td>
+          <td>Italia</td>
+          <td>$350</td>
+        </tr>
+
+        <tr>
+          <td>Perú</td>
+          <td>Francia</td>
+          <td>$350</td>
+        </tr>
+
+        <tr>
+          <td>Perú</td>
+          <td>Alemania</td>
+          <td>$350</td>
+        </tr>
+
+        <tr>
+          <td>Perú</td>
+          <td>España</td>
+          <td>$350</td>
+        </tr>
+
+        <tr>
+          <td>Perú</td>
+          <td>Portugal</td>
+          <td>$350</td>
+        </tr>
+
+        <tr>
+          <td>Perú</td>
+          <td>Bélgica</td>
+          <td>$350</td>
+        </tr>
+
+        <tr>
+          <td>Perú</td>
+          <td>Grecia</td>
+          <td>$350</td>
+        </tr>
+
+        <tr>
+          <td>Perú</td>
+          <td>Malta</td>
+          <td>$350</td>
+        </tr>
+
+        <tr>
+          <td>Perú</td>
+          <td>Irlanda</td>
+          <td>$350</td>
+        </tr>
+
+        <tr>
+          <td>Perú</td>
+          <td>Eslovenia</td>
+          <td>$350</td>
+        </tr>
+
+      </table>
     </div>
-  </div>
 
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
-  <script src="js/slider.js"></script>
-  <script src="js/flight-booking.js"></script>
-  <script src="js/translator.js"></script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <div class="reserva1">
+      <h2>RESERVAR TU PASAJE</h2>
+
+      <fieldset>
+        <input type="text" placeholder="Nombre ">
+      </fieldset>
+
+      <fieldset>
+        <input type="text" placeholder="Apellidos">
+      </fieldset>
+
+      <fieldset>
+        <input type="text" placeholder="n° de pasajes">
+      </fieldset>
+
+      <fieldset>
+        <input type="text" placeholder="Origen">
+      </fieldset>
+
+      <fieldset>
+        <input type="text" placeholder="Destino">
+      </fieldset>
+
+      <fieldset>
+        <label for="fecha"></label>
+        <input type="date" placeholder="Fecha">
+      </fieldset>
+
+      <a class="bn" href="tarjeta.html">Enviar</a>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div class="share">
+      <a href="#" class="fab fa-facebook-f"></a>
+      <a href="#" class="fab fa-twitter"></a>
+      <a href="#" class="fab fa-instagram"></a>
+      <a href="#" class="fab fa-linkedin"></a>
+      <a href="#" class="fab fa-pinterest"></a>
+    </div>
+
+    <div class="credit">@2023 <span>creado </span> | por la aerolinea H.F. com</div>
+  </section>
+
+  <script type="text/javascript"></script>
+  <script src="js/traductor.js"></script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 
 </html>

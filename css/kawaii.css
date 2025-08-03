@@ -1,13 +1,40 @@
-/* ===== KAWAII PAGE SPECIFIC STYLES ===== */
+/**
+ * kawaii.css - Estilos específicos para la página kawaii
+ * Integra con base.css, layout.css y components.css
+ */
 
-/* Page Header específico para kawaii */
+/* === KAWAII PAGE BASE === */
+.kawaii-page {
+    background: linear-gradient(135deg, #fff0f5, #ffe4e6, #fff0f5);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.kawaii-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="%23ff99cc" opacity="0.1"/><circle cx="75" cy="75" r="1.5" fill="%23ff66b3" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="%23ffccf2" opacity="0.1"/><circle cx="10" cy="60" r="1.5" fill="%23ff99cc" opacity="0.1"/><circle cx="90" cy="30" r="1" fill="%23ff66b3" opacity="0.1"/></svg>') repeat;
+    animation: gentleFloat 20s ease-in-out infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* === PAGE HEADER === */
 .kawaii-page .page-header {
     background: linear-gradient(135deg, #ffb3d9, #ff99cc, #ffccf2);
     color: var(--dark);
     border-radius: var(--border-radius-lg);
     margin: var(--spacing-md);
+    padding: var(--spacing-xl);
+    text-align: center;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
 }
 
 .kawaii-page .page-header::before {
@@ -18,12 +45,11 @@
     width: 200%;
     height: 200%;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="%23ffffff" opacity="0.3"/><circle cx="75" cy="75" r="1.5" fill="%23ffffff" opacity="0.4"/><circle cx="50" cy="10" r="1" fill="%23ffffff" opacity="0.2"/><circle cx="10" cy="60" r="1.5" fill="%23ffffff" opacity="0.3"/><circle cx="90" cy="30" r="1" fill="%23ffffff" opacity="0.5"/></svg>') repeat;
-    animation: float 20s ease-in-out infinite;
+    animation: sparkleFloat 15s ease-in-out infinite;
     z-index: 1;
 }
 
-.kawaii-page .page-title,
-.kawaii-page .page-subtitle {
+.kawaii-page .page-header__content {
     position: relative;
     z-index: 2;
 }
@@ -31,32 +57,44 @@
 .kawaii-page .page-title {
     color: #d63384;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    font-size: var(--font-size-hero);
+    margin-bottom: var(--spacing-sm);
+    animation: kawaiiBounce 2s ease-in-out infinite;
 }
 
 .kawaii-page .page-subtitle {
     color: #6f42c1;
     font-weight: 500;
+    font-size: var(--font-size-large);
+    margin-bottom: 0;
 }
 
-/* Kawaii Grid específico */
-.kawaii-page .kawaii-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: var(--spacing-xl);
+/* === KAWAII CONTENT === */
+.kawaii-content {
     padding: var(--spacing-lg) 0;
 }
 
-/* Kawaii Cards mejoradas */
-.kawaii-page .kawaii-card {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
-    border: 3px solid transparent;
-    background-clip: padding-box;
-    position: relative;
-    overflow: hidden;
+.kawaii-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
 }
 
-.kawaii-page .kawaii-card::before {
+/* === KAWAII CARDS === */
+.kawaii-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    transition: all var(--transition);
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+}
+
+.kawaii-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -65,25 +103,24 @@
     bottom: 0;
     background: linear-gradient(45deg, #ff6b9d, #c44569, #f8b500, #7bed9f);
     background-size: 400% 400%;
-    animation: gradientShift 3s ease infinite;
+    animation: gradientShift 6s ease infinite;
     z-index: -1;
     margin: -3px;
     border-radius: inherit;
 }
 
-.kawaii-page .kawaii-card:hover {
+.kawaii-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 40px rgba(255, 107, 157, 0.3);
 }
 
-.kawaii-page .kawaii-card__image {
+.kawaii-card__image {
     height: 280px;
     position: relative;
     overflow: hidden;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
-.kawaii-page .kawaii-card__image::after {
+.kawaii-card__image::after {
     content: '';
     position: absolute;
     top: 0;
@@ -95,30 +132,34 @@
     transition: opacity 0.3s ease;
 }
 
-.kawaii-page .kawaii-card:hover .kawaii-card__image::after {
+.kawaii-card:hover .kawaii-card__image::after {
     opacity: 1;
 }
 
-.kawaii-page .kawaii-card__image img {
+.kawaii-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     filter: saturate(1.2) brightness(1.1);
     transition: all 0.5s ease;
 }
 
-.kawaii-page .kawaii-card:hover .kawaii-card__image img {
+.kawaii-card:hover .kawaii-card__image img {
     transform: scale(1.1);
     filter: saturate(1.4) brightness(1.2);
 }
 
-/* Kawaii Card Content */
-.kawaii-page .kawaii-card__content {
+/* === CARD CONTENT === */
+.kawaii-card__content {
+    padding: var(--spacing-lg);
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     position: relative;
 }
 
-.kawaii-page .kawaii-card__title {
+.kawaii-card__title {
     color: #e91e63;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
     font-size: var(--font-size-xxl);
     text-align: center;
     margin-bottom: var(--spacing-md);
@@ -126,7 +167,7 @@
     position: relative;
 }
 
-.kawaii-page .kawaii-card__title::after {
+.kawaii-card__title::after {
     content: '✨';
     position: absolute;
     right: -30px;
@@ -135,7 +176,7 @@
     animation: sparkle 2s ease-in-out infinite;
 }
 
-.kawaii-page .kawaii-card__description {
+.kawaii-card__description {
     color: #6c757d;
     line-height: 1.8;
     text-align: justify;
@@ -143,25 +184,27 @@
     font-size: var(--font-size-base);
 }
 
-.kawaii-page .kawaii-card__actions {
+.kawaii-card__actions {
     text-align: center;
 }
 
-.kawaii-page .kawaii-card .btn--secondary {
-    background: linear-gradient(45deg, #ff6b9d, #e91e63);
-    color: white;
-    border: none;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    font-weight: 600;
-    text-transform: none;
-    letter-spacing: normal;
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border-radius: 25px;
+/* === KAWAII BUTTONS === */
+.kawaii-btn {
+    background: linear-gradient(45deg, #ff6b9d, #e91e63) !important;
+    color: white !important;
+    border: none !important;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    padding: var(--spacing-sm) var(--spacing-lg) !important;
+    border-radius: 25px !important;
     position: relative;
     overflow: hidden;
+    transition: all var(--transition) !important;
 }
 
-.kawaii-page .kawaii-card .btn--secondary::before {
+.kawaii-btn::before {
     content: '';
     position: absolute;
     top: 0;
@@ -172,20 +215,24 @@
     transition: left 0.6s ease;
 }
 
-.kawaii-page .kawaii-card .btn--secondary:hover::before {
+.kawaii-btn:hover::before {
     left: 100%;
 }
 
-.kawaii-page .kawaii-card .btn--secondary:hover {
-    background: linear-gradient(45deg, #e91e63, #c44569);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.4);
+.kawaii-btn:hover {
+    background: linear-gradient(45deg, #e91e63, #c44569) !important;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.4) !important;
 }
 
-/* CTA Section específica para kawaii */
+/* === CTA SECTION === */
 .kawaii-page .cta-section {
     background: linear-gradient(135deg, #ff9a9e, #fecfef, #fecfef);
     border: none;
+    border-radius: var(--border-radius-lg);
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-xl);
+    text-align: center;
     position: relative;
     overflow: hidden;
 }
@@ -202,7 +249,7 @@
     justify-content: space-around;
     font-size: var(--font-size-xxl);
     opacity: 0.1;
-    animation: float 15s ease-in-out infinite;
+    animation: gentleFloat 15s ease-in-out infinite;
     z-index: 1;
 }
 
@@ -213,16 +260,26 @@
 
 .kawaii-page .cta-content h2 {
     color: #e91e63;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--spacing-md);
 }
 
 .kawaii-page .cta-content p {
     color: #6f42c1;
     font-weight: 500;
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-lg);
 }
 
-/* Decorative Elements */
+.cta-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* === FLOATING DECORATIONS === */
 .kawaii-decorations {
     position: fixed;
     top: 0;
@@ -239,6 +296,7 @@
     font-size: var(--font-size-xxl);
     opacity: 0.05;
     animation: floatRandom 20s ease-in-out infinite;
+    transition: all 0.3s ease;
 }
 
 .kawaii-decoration:nth-child(1) {
@@ -250,68 +308,366 @@
 .kawaii-decoration:nth-child(2) {
     top: 20%;
     right: 10%;
-    animation-delay: 5s;
+    animation-delay: 2.5s;
 }
 
 .kawaii-decoration:nth-child(3) {
     bottom: 30%;
     left: 15%;
-    animation-delay: 10s;
+    animation-delay: 5s;
 }
 
 .kawaii-decoration:nth-child(4) {
     bottom: 10%;
     right: 5%;
+    animation-delay: 7.5s;
+}
+
+.kawaii-decoration:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    animation-delay: 10s;
+}
+
+.kawaii-decoration:nth-child(6) {
+    top: 15%;
+    left: 85%;
+    animation-delay: 12.5s;
+}
+
+.kawaii-decoration:nth-child(7) {
+    bottom: 60%;
+    left: 5%;
     animation-delay: 15s;
 }
 
-/* Animations */
+.kawaii-decoration:nth-child(8) {
+    top: 70%;
+    right: 20%;
+    animation-delay: 17.5s;
+}
+
+/* === KAWAII MODAL === */
+.kawaii-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.kawaii-modal-content {
+    background: linear-gradient(145deg, #ffffff, #fff0f5);
+    border-radius: 20px;
+    padding: var(--spacing-xl);
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: translateY(50px) scale(0.9);
+    transition: transform 0.3s ease;
+    border: 3px solid #ff6b9d;
+    box-shadow: 0 20px 40px rgba(255, 107, 157, 0.3);
+    position: relative;
+}
+
+.kawaii-modal-close {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background: none;
+    border: none;
+    font-size: var(--font-size-xxl);
+    color: #e91e63;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+}
+
+.kawaii-modal-close:hover {
+    background: rgba(233, 30, 99, 0.1);
+    transform: scale(1.1);
+}
+
+.kawaii-modal-header h2 {
+    color: #e91e63;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xxl);
+}
+
+.kawaii-modal-body p {
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-large);
+}
+
+.kawaii-locations h3,
+.kawaii-features h3 {
+    color: #e91e63;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-large);
+}
+
+.kawaii-locations ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-lg);
+}
+
+.kawaii-locations li {
+    padding: var(--spacing-xs) 0;
+    color: #6c757d;
+    font-size: var(--font-size-base);
+}
+
+.location-emoji {
+    margin-right: var(--spacing-xs);
+    color: #ff6b9d;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    background: rgba(255, 107, 157, 0.1);
+    border-radius: var(--border-radius);
+    color: #6c757d;
+    font-size: var(--font-size-small);
+}
+
+.feature-emoji {
+    font-size: var(--font-size-large);
+}
+
+.kawaii-modal-footer {
+    text-align: center;
+}
+
+/* === KAWAII NOTIFICATIONS === */
+.kawaii-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border-radius: 15px;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    max-width: 400px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.kawaii-notification-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.kawaii-notification-emoji {
+    font-size: var(--font-size-large);
+    flex-shrink: 0;
+}
+
+.kawaii-notification-text {
+    flex-grow: 1;
+}
+
+.kawaii-notification-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    border-radius: 50%;
+    transition: all var(--transition);
+    flex-shrink: 0;
+}
+
+.kawaii-notification-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* === PARTICLE EFFECTS === */
+.kawaii-particle,
+.floating-heart,
+.random-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    font-size: var(--font-size-large);
+}
+
+/* === KAWAII CURSOR === */
+.kawaii-cursor {
+    position: fixed;
+    pointer-events: none;
+    font-size: var(--font-size-large);
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    opacity: 0;
+}
+
+/* === ANIMATIONS === */
 @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
 }
 
 @keyframes sparkle {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1) rotate(0deg);
         opacity: 1;
     }
+
     50% {
         transform: scale(1.2) rotate(180deg);
         opacity: 0.7;
     }
 }
 
-@keyframes float {
-    0%, 100% {
+@keyframes gentleFloat {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-20px);
     }
 }
 
+@keyframes sparkleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+}
+
 @keyframes floatRandom {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(0px, 0px) rotate(0deg);
     }
+
     33% {
         transform: translate(30px, -30px) rotate(120deg);
     }
+
     66% {
         transform: translate(-20px, 20px) rotate(240deg);
     }
 }
 
-/* Particle effect on hover */
-.kawaii-page .kawaii-card:hover::after {
+@keyframes kawaiiBounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+
+    to {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+@keyframes floatUpAndFade {
+    from {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    to {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+}
+
+@keyframes particleEffect {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8) translateY(-50px);
+    }
+}
+
+/* === HOVER EFFECTS === */
+.kawaii-card:hover::after {
     content: '💖 ✨ 🌟 💫 💖 ✨ 🌟 💫';
     position: absolute;
     top: 0;
@@ -328,22 +684,11 @@
     z-index: 10;
 }
 
-@keyframes particleEffect {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    50% {
-        opacity: 0.8;
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0.8) translateY(-50px);
-    }
+/* === DARK THEME === */
+.dark-theme.kawaii-page {
+    background: linear-gradient(135deg, #2d1b4e, #4a148c, #6a1b9a);
 }
 
-/* Dark theme adjustments for kawaii */
 .dark-theme.kawaii-page .page-header {
     background: linear-gradient(135deg, #4a148c, #6a1b9a, #8e24aa);
     color: var(--light);
@@ -358,19 +703,19 @@
     color: #e1bee7;
 }
 
-.dark-theme.kawaii-page .kawaii-card {
+.dark-theme .kawaii-card {
     background: linear-gradient(145deg, var(--gray-light), #4a4a4a);
 }
 
-.dark-theme.kawaii-page .kawaii-card__content {
+.dark-theme .kawaii-card__content {
     background: rgba(68, 68, 68, 0.95);
 }
 
-.dark-theme.kawaii-page .kawaii-card__title {
+.dark-theme .kawaii-card__title {
     color: #ff4081;
 }
 
-.dark-theme.kawaii-page .kawaii-card__description {
+.dark-theme .kawaii-card__description {
     color: #e0e0e0;
 }
 
@@ -387,7 +732,31 @@
     color: #e1bee7;
 }
 
-/* Responsive adjustments */
+.dark-theme .kawaii-modal-content {
+    background: linear-gradient(145deg, var(--gray-light), #4a4a4a);
+    border-color: #ff4081;
+}
+
+.dark-theme .kawaii-modal-header h2 {
+    color: #ff4081;
+}
+
+.dark-theme .kawaii-modal-body p,
+.dark-theme .kawaii-locations li {
+    color: #e0e0e0;
+}
+
+.dark-theme .kawaii-locations h3,
+.dark-theme .kawaii-features h3 {
+    color: #ff4081;
+}
+
+.dark-theme .feature-item {
+    background: rgba(255, 64, 129, 0.1);
+    color: #e0e0e0;
+}
+
+/* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
     .kawaii-page .kawaii-grid {
         grid-template-columns: 1fr;
@@ -410,10 +779,28 @@
 
     .kawaii-page .page-header {
         margin: var(--spacing-sm);
+        padding: var(--spacing-lg);
+    }
+
+    .kawaii-page .page-title {
+        font-size: var(--font-size-xxl);
     }
 
     .kawaii-decoration {
         font-size: var(--font-size-xl);
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kawaii-modal-content {
+        padding: var(--spacing-lg);
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -432,28 +819,134 @@
 
     .kawaii-page .kawaii-card__description {
         font-size: var(--font-size-small);
+        text-align: left;
     }
 
-    .kawaii-page .kawaii-card .btn--secondary {
-        padding: var(--spacing-xs) var(--spacing-md);
-        font-size: var(--font-size-small);
+    .kawaii-page .kawaii-card__content {
+        padding: var(--spacing-md);
+    }
+
+    .kawaii-btn {
+        padding: var(--spacing-xs) var(--spacing-md) !important;
+        font-size: var(--font-size-small) !important;
     }
 
     .kawaii-decoration {
-        display: none; /* Ocultar decoraciones en móviles para mejor rendimiento */
+        display: none;
+    }
+
+    .kawaii-page .page-header {
+        padding: var(--spacing-md);
+    }
+
+    .kawaii-page .page-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .kawaii-page .page-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .kawaii-modal-content {
+        width: 95%;
+        padding: var(--spacing-md);
+    }
+
+    .kawaii-notification {
+        right: var(--spacing-sm);
+        max-width: calc(100vw - 2rem);
     }
 }
 
-/* Prefers reduced motion */
+/* === ACCESSIBILITY === */
 @media (prefers-reduced-motion: reduce) {
+
     .kawaii-page .kawaii-card::before,
     .kawaii-page .page-header::before,
     .kawaii-page .cta-section::before,
-    .kawaii-decoration {
+    .kawaii-decoration,
+    .kawaii-page .page-title {
         animation: none !important;
     }
 
     .kawaii-page .kawaii-card__title::after {
         animation: none !important;
+    }
+
+    .kawaii-card:hover {
+        transform: none;
+    }
+
+    .kawaii-btn:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .kawaii-page:not(.light-theme) {
+        background: linear-gradient(135deg, #2d1b4e, #4a148c, #6a1b9a);
+    }
+}
+
+/* === HIGH CONTRAST MODE === */
+@media (prefers-contrast: high) {
+    .kawaii-page .kawaii-card {
+        border: 3px solid #000;
+    }
+
+    .kawaii-page .kawaii-card__title,
+    .kawaii-page .page-title {
+        text-shadow: none;
+        color: #000;
+    }
+
+    .dark-theme .kawaii-page .kawaii-card__title,
+    .dark-theme .kawaii-page .page-title {
+        color: #fff;
+    }
+}
+
+/* === PRINT STYLES === */
+@media print {
+
+    .kawaii-decorations,
+    .kawaii-page::before,
+    .kawaii-page .page-header::before,
+    .kawaii-page .cta-section::before {
+        display: none !important;
+    }
+
+    .kawaii-page {
+        background: white !important;
+    }
+
+    .kawaii-card {
+        break-inside: avoid;
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+}
+
+/* === FOCUS STYLES === */
+.kawaii-btn:focus,
+.kawaii-modal-close:focus {
+    outline: 3px solid #ff4081;
+    outline-offset: 2px;
+}
+
+/* === LOADING STATES === */
+.kawaii-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ff6b9d;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }

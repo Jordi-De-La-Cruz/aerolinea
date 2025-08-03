@@ -1,502 +1,175 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospedaje - Encuentra tu hotel perfecto | High Flight Airlines</title>
+    <title>Aerolinea High Flight</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="img/inicial.jpg">
+    <link rel="stylesheet" href="css/style.css">
 
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Encuentra y reserva el hotel perfecto para tu viaje con High Flight Airlines. Hoteles en América Latina y el mundo con los mejores precios.">
-    <meta name="keywords" content="hoteles, hospedaje, reservas, alojamiento, vuelos, high flight">
-
-    <!-- Favicon -->
-    <link rel="icon" href="img/inicial.jpg" type="image/jpeg">
-
-    <!-- External Stylesheets -->
-    <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/layouts.css">
-    <link rel="stylesheet" href="css/hotels.css">
-    <link rel="stylesheet" href="css/hospedaje.css">
 </head>
 
-<body class="hospedaje-page">
-    <!-- Language Translator -->
-    <div id="google_translate_element" class="translator-widget"></div>
+<body class="body">
 
-    <!-- Theme Toggle -->
-    <button class="theme-toggle theme-toggle--floating" id="themeToggle" aria-label="Cambiar tema">
-        <span class="theme-toggle__icon">
-            <i class="ti ti-brightness-2"></i>
-        </span>
-        <span class="theme-toggle__icon">
-            <i class="ti ti-moon"></i>
-        </span>
-    </button>
-
-    <!-- Header -->
+    <!-- Inicio de header -->
     <header class="header">
-        <nav class="navbar">
-            <a href="index.html" class="logo" aria-label="High Flight Airlines - Inicio">
-                <img src="img/mundo.png" alt="High Flight Logo" class="logo__image">
-                <div class="logo__text">
-                    <span class="logo__brand">HIGH</span>
-                    <span class="logo__brand">FLIGHT</span>
-                </div>
+        <a href="index.html" class="logo">
+            <img src="img/mundo.png" alt="">
+            <h3 href="index.html">HIGH <br>FLIGHT</h3>
+        </a>
+        <!-- Inicio-Navegacion1 -->
+        <nav class="navegacion1">
+            <a href="login.html" class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-user" width="24" height="24" viewbox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                </svg>
             </a>
 
-            <div class="nav-links">
-                <a href="login.html" class="nav-btn">
-                    <i class="ti ti-user"></i>
-                    <span>Iniciar Sesión</span>
-                </a>
-                <a href="ayuda.html" class="nav-btn">
-                    <i class="ti ti-help"></i>
-                    <span>Ayuda</span>
-                </a>
-            </div>
+            <a href="ayuda.html" class="boton ">ayuda<svg xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-help" width="24" height="24" viewbox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <line x1="12" y1="17" x2="12" y2="17.01"></line>
+                    <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
+                </svg>
+            </a>
         </nav>
+        <!-- Final-navegacion1 -->
     </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
 
-        <!-- Hero Search Section -->
-        <section class="search-hero">
-            <div class="container">
-                <div class="search-content">
-                    <h1>Encuentra tu hospedaje perfecto</h1>
-                    <p>Descubre hoteles increíbles en los mejores destinos del mundo</p>
+    <section class="b">
 
-                    <!-- Search Form -->
-                    <form class="hotel-search-form" id="hotelSearchForm">
-                        <div class="search-fields">
-                            <div class="search-field">
-                                <label for="destination" class="search-label">
-                                    <i class="ti ti-map-pin"></i>
-                                    Destino
-                                </label>
-                                <input type="text" id="destination" name="destination" placeholder="¿A dónde viajas?"
-                                    class="search-input" required>
-                                <div class="search-suggestions" id="destinationSuggestions"></div>
-                            </div>
+        <div class="habit2">
 
-                            <div class="search-field">
-                                <label for="checkin" class="search-label">
-                                    <i class="ti ti-calendar"></i>
-                                    Llegada
-                                </label>
-                                <input type="date" id="checkin" name="checkin" class="search-input" required>
-                            </div>
+            <div class="habit">
 
-                            <div class="search-field">
-                                <label for="checkout" class="search-label">
-                                    <i class="ti ti-calendar"></i>
-                                    Salida
-                                </label>
-                                <input type="date" id="checkout" name="checkout" class="search-input" required>
-                            </div>
+                <div class="hab1">
+                    <img src="img/dormitorio1.jpg" alt="">
+                    <div class="hab1">
+                        <h3>Hotel Buenos Aires</h3>
+                        <p>(Argentina)</p>
+                        <p class="precio">$110 por noche</p>
 
-                            <div class="search-field">
-                                <label for="guests" class="search-label">
-                                    <i class="ti ti-users"></i>
-                                    Huéspedes
-                                </label>
-                                <select id="guests" name="guests" class="search-input" required>
-                                    <option value="1">1 Huésped</option>
-                                    <option value="2">2 Huéspedes</option>
-                                    <option value="3">3 Huéspedes</option>
-                                    <option value="4">4 Huéspedes</option>
-                                    <option value="5+">5+ Huéspedes</option>
-                                </select>
-                            </div>
-
-                            <div class="search-field">
-                                <label for="rooms" class="search-label">
-                                    <i class="ti ti-bed"></i>
-                                    Habitaciones
-                                </label>
-                                <select id="rooms" name="rooms" class="search-input" required>
-                                    <option value="1">1 Habitación</option>
-                                    <option value="2">2 Habitaciones</option>
-                                    <option value="3">3 Habitaciones</option>
-                                    <option value="4+">4+ Habitaciones</option>
-                                </select>
-                            </div>
-
-                            <button type="submit" class="search-btn">
-                                <i class="ti ti-search"></i>
-                                <span>Buscar Hoteles</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Hotels Section -->
-        <section class="featured-hotels">
-            <div class="container">
-                <h2 class="section-title">Hoteles destacados</h2>
-
-                <div class="hotels-grid">
-
-                    <!-- Hotel Buenos Aires -->
-                    <article class="hotel-card hover-lift">
-                        <div class="hotel-card__image">
-                            <img src="img/dormitorio1.jpg" alt="Hotel Buenos Aires" loading="lazy">
-                            <div class="hotel-card__badge">Más popular</div>
-                            <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
-                                <i class="ti ti-heart"></i>
-                            </button>
-                        </div>
-                        <div class="hotel-card__content">
-                            <h3>Hotel Buenos Aires</h3>
-                            <p class="hotel-location">
-                                <i class="ti ti-map-pin"></i>
-                                Buenos Aires, Argentina
-                            </p>
-                            <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                                <span>4.2 (245 reseñas)</span>
-                            </div>
-                            <div class="hotel-amenities">
-                                <span class="amenity-tag">
-                                    <i class="ti ti-wifi"></i>
-                                    WiFi gratis
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="ti ti-swimming-pool"></i>
-                                    Piscina
-                                </span>
-                            </div>
-                            <div class="hotel-price">
-                                <span class="price-from">Desde</span>
-                                <span class="price-amount">$110</span>
-                                <span class="price-period">/noche</span>
-                            </div>
-                            <a href="hotel-buenos-aires.html" class="btn btn--primary btn--full">Ver detalles</a>
-                        </div>
-                    </article>
-
-                    <!-- Hotel Cool By -->
-                    <article class="hotel-card hover-lift">
-                        <div class="hotel-card__image">
-                            <img src="img/dormitorio3.jpg" alt="Hotel Cool By" loading="lazy">
-                            <div class="hotel-card__badge">Oferta especial</div>
-                            <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
-                                <i class="ti ti-heart"></i>
-                            </button>
-                        </div>
-                        <div class="hotel-card__content">
-                            <h3>Hotel Cool By</h3>
-                            <p class="hotel-location">
-                                <i class="ti ti-map-pin"></i>
-                                Bogotá, Colombia
-                            </p>
-                            <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span>4.8 (189 reseñas)</span>
-                            </div>
-                            <div class="hotel-amenities">
-                                <span class="amenity-tag">
-                                    <i class="ti ti-car"></i>
-                                    Estacionamiento
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="ti ti-dumbbell"></i>
-                                    Gimnasio
-                                </span>
-                            </div>
-                            <div class="hotel-price">
-                                <span class="price-from">Desde</span>
-                                <span class="price-amount">$100</span>
-                                <span class="price-period">/noche</span>
-                            </div>
-                            <a href="hotel-cool-by.html" class="btn btn--primary btn--full">Ver detalles</a>
-                        </div>
-                    </article>
-
-                    <!-- Hotel Meilk -->
-                    <article class="hotel-card hover-lift">
-                        <div class="hotel-card__image">
-                            <img src="img/dormitorio4.jpg" alt="Hotel Meilk" loading="lazy">
-                            <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
-                                <i class="ti ti-heart"></i>
-                            </button>
-                        </div>
-                        <div class="hotel-card__content">
-                            <h3>Hotel Meilk</h3>
-                            <p class="hotel-location">
-                                <i class="ti ti-map-pin"></i>
-                                Lima, Perú
-                            </p>
-                            <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                                <span>4.1 (312 reseñas)</span>
-                            </div>
-                            <div class="hotel-amenities">
-                                <span class="amenity-tag">
-                                    <i class="ti ti-spa"></i>
-                                    Spa
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="ti ti-utensils"></i>
-                                    Restaurante
-                                </span>
-                            </div>
-                            <div class="hotel-price">
-                                <span class="price-from">Desde</span>
-                                <span class="price-amount">$150</span>
-                                <span class="price-period">/noche</span>
-                            </div>
-                            <a href="hotel-meilk.html" class="btn btn--primary btn--full">Ver detalles</a>
-                        </div>
-                    </article>
-
-                    <!-- Hotel Drankl -->
-                    <article class="hotel-card hover-lift">
-                        <div class="hotel-card__image">
-                            <img src="img/dormitorio5.jpg" alt="Hotel Drankl" loading="lazy">
-                            <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
-                                <i class="ti ti-heart"></i>
-                            </button>
-                        </div>
-                        <div class="hotel-card__content">
-                            <h3>Hotel Drankl</h3>
-                            <p class="hotel-location">
-                                <i class="ti ti-map-pin"></i>
-                                Caracas, Venezuela
-                            </p>
-                            <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                                <span>4.0 (156 reseñas)</span>
-                            </div>
-                            <div class="hotel-amenities">
-                                <span class="amenity-tag">
-                                    <i class="ti ti-wifi"></i>
-                                    WiFi gratis
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="ti ti-coffee"></i>
-                                    Desayuno
-                                </span>
-                            </div>
-                            <div class="hotel-price">
-                                <span class="price-from">Desde</span>
-                                <span class="price-amount">$90</span>
-                                <span class="price-period">/noche</span>
-                            </div>
-                            <a href="hotel-drankl.html" class="btn btn--primary btn--full">Ver detalles</a>
-                        </div>
-                    </article>
-
-                    <!-- Hotel Camilo -->
-                    <article class="hotel-card hover-lift">
-                        <div class="hotel-card__image">
-                            <img src="img/dormitorio6.jpg" alt="Hotel Camilo" loading="lazy">
-                            <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
-                                <i class="ti ti-heart"></i>
-                            </button>
-                        </div>
-                        <div class="hotel-card__content">
-                            <h3>Hotel Camilo</h3>
-                            <p class="hotel-location">
-                                <i class="ti ti-map-pin"></i>
-                                Quito, Ecuador
-                            </p>
-                            <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span>4.6 (203 reseñas)</span>
-                            </div>
-                            <div class="hotel-amenities">
-                                <span class="amenity-tag">
-                                    <i class="ti ti-mountain"></i>
-                                    Vista montaña
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="ti ti-car"></i>
-                                    Estacionamiento
-                                </span>
-                            </div>
-                            <div class="hotel-price">
-                                <span class="price-from">Desde</span>
-                                <span class="price-amount">$120</span>
-                                <span class="price-period">/noche</span>
-                            </div>
-                            <a href="hotel-camilo.html" class="btn btn--primary btn--full">Ver detalles</a>
-                        </div>
-                    </article>
-
-                    <!-- Hotel Greey -->
-                    <article class="hotel-card hover-lift">
-                        <div class="hotel-card__image">
-                            <img src="img/dormitorio7.jpg" alt="Hotel Greey" loading="lazy">
-                            <div class="hotel-card__badge">Lujo</div>
-                            <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
-                                <i class="ti ti-heart"></i>
-                            </button>
-                        </div>
-                        <div class="hotel-card__content">
-                            <h3>Hotel Greey</h3>
-                            <p class="hotel-location">
-                                <i class="ti ti-map-pin"></i>
-                                Nueva York, EE.UU
-                            </p>
-                            <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span>4.9 (421 reseñas)</span>
-                            </div>
-                            <div class="hotel-amenities">
-                                <span class="amenity-tag">
-                                    <i class="ti ti-building-skyscraper"></i>
-                                    Vista ciudad
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="ti ti-sparkles"></i>
-                                    5 estrellas
-                                </span>
-                            </div>
-                            <div class="hotel-price">
-                                <span class="price-from">Desde</span>
-                                <span class="price-amount">$200</span>
-                                <span class="price-period">/noche</span>
-                            </div>
-                            <a href="hotel-greey.html" class="btn btn--primary btn--full">Ver detalles</a>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Choose Us Section -->
-        <section class="why-choose-us">
-            <div class="container">
-                <h2 class="section-title">¿Por qué reservar con nosotros?</h2>
-
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="ti ti-shield-check"></i>
-                        </div>
-                        <h3>Reserva segura</h3>
-                        <p>Protección garantizada en todas tus reservas con certificación SSL</p>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="ti ti-coin"></i>
-                        </div>
-                        <h3>Mejores precios</h3>
-                        <p>Garantía de precio más bajo o te devolvemos la diferencia</p>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="ti ti-clock-24"></i>
-                        </div>
-                        <h3>Soporte 24/7</h3>
-                        <p>Atención al cliente disponible las 24 horas, los 7 días de la semana</p>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="ti ti-x"></i>
-                        </div>
-                        <h3>Cancelación gratis</h3>
-                        <p>Cancela tu reserva sin costo hasta 24 horas antes de tu llegada</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-    </main>
+                <div class="hab1">
+                    <img src="img/dormitorio3.jpg" alt="">
+                    <div class="hab1">
+                        <h3>Hotel cool by</h3>
+                        <p>(Colombia)</p>
+                        <p class="precio">$100 por noche</p>
+                    </div>
+                </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <!-- Social Media Links -->
-            <div class="social-links">
-                <a href="#" class="social-link" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="Pinterest">
-                    <i class="fab fa-pinterest"></i>
-                </a>
+                <div class="hab1">
+                    <img src="img/dormitorio4.jpg" alt="">
+                    <div class="hab1">
+                        <h3>Hotel meilk</h3>
+                        <p>(Perú)</p>
+                        <p class="precio">$150 por noche</p>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Copyright -->
-            <div class="footer-text">
-                <p>&copy; 2024 <span>High Flight Airlines</span> | Todos los derechos reservados</p>
+            <div class="habit1">
+
+                <div class="hab1">
+                    <img src="img/dormitorio5.jpg" alt="">
+                    <div class="hab1">
+                        <h3>Hotel Drankl</h3>
+                        <p>(Venezuela)</p>
+                        <p class="precio">$90 por noche</p>
+
+                    </div>
+                </div>
+
+                <div class="hab1">
+                    <img src="img/dormitorio6.jpg" alt="">
+                    <div class="hab1">
+                        <h3>Hotel camilo</h3>
+                        <p>(Ecuador)</p>
+                        <p class="precio">$120 por noche</p>
+                    </div>
+                </div>
+
+                <div class="hab1">
+                    <img src="img/dormitorio7.jpg" alt="">
+                    <div class="hab1">
+                        <h3>Hotel Greey</h3>
+                        <p>(EE.UU)</p>
+                        <p class="precio">$200 por noche</p>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </footer>
 
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner">
-            <i class="ti ti-plane"></i>
+
+
+
+        <fieldset class="hospedaje">
+            <div>
+                <h2>Reserva tu Hospedaje</h2>
+
+                <div>
+                    <fieldset>
+                        <input type="map-marker" id="map-marker-box" placeholder="Ubicación">
+                        <label for="map" class="fas fa-map-marker"></label>
+
+                    </fieldset>
+
+                    <fieldset>
+
+                        <label for="fecha"> </label>
+                        <input type="date" placeholder="Entrada" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <div class="i">
+                            <input type="bed" id="bed-box" placeholder="N° de Habitaciones">
+                            <input type="number" placeholder="" required>
+                            <label for="Habitaciones" class="fas fa-bed"></label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <input type="search" id="search-box" placeholder="Buscar">
+                        <label for="Buscar" class="fas fa-search"></label>
+                    </fieldset>
+                </div>
+                <a href="tarjeta.html" class="buy">Registrar</a>
+            </div>
+        </fieldset>
+    </section>
+
+
+    <section class="footer">
+
+        <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-pinterest"></a>
         </div>
-    </div>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/hotel-search.js"></script>
-    <script src="js/translator.js"></script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <div class="credit">@2023 <span>creado </span> | por la aerolinea H.F. com</div>
+    </section>
+    <script type="text/javascript"></script>
+    <script src="js/traductor.js"></script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 
 </html>

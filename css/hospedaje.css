@@ -1,6 +1,3 @@
-/* ===== HOSPEDAJE PAGE SPECIFIC STYLES ===== */
-
-/* Search Hero Section */
 .search-hero {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--light);
@@ -28,7 +25,6 @@
     opacity: 0.9;
 }
 
-/* Hotel Search Form */
 .hotel-search-form {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -115,7 +111,6 @@
     box-shadow: var(--shadow-md);
 }
 
-/* Featured Hotels Section */
 .featured-hotels {
     padding: var(--spacing-xl) 0;
     background: var(--light);
@@ -127,7 +122,6 @@
     gap: var(--spacing-lg);
 }
 
-/* Enhanced Hotel Cards */
 .hotel-card {
     background: var(--light);
     border-radius: var(--border-radius-lg);
@@ -278,7 +272,6 @@
     color: var(--gray);
 }
 
-/* Why Choose Us Section */
 .why-choose-us {
     padding: var(--spacing-xl) 0;
     background: var(--gray-light);

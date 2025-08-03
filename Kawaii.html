@@ -3,184 +3,272 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kawaii Collection - High Flight Airlines</title>
+    <meta name="description" content="Descubre el mundo kawaii más adorable - Destinos Mundiales">
+    <meta name="keywords" content="kawaii, cute, adorable, viajes, destinos, animales tiernos">
+    <title>Mundo Kawaii - Destinos Mundiales</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Descubre nuestra adorable colección kawaii en High Flight Airlines">
-    <meta name="keywords" content="kawaii, high flight, aerolínea, vuelos">
+    <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/kawaii.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Preload -->
+    <link rel="preload" href="img/mundo.png" as="image">
+    <link rel="preload" href="js/main.js" as="script">
 
     <!-- Favicon -->
-    <link rel="icon" href="img/inicial.jpg" type="image/jpeg">
-
-    <!-- External Stylesheets -->
-    <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/layouts.css">
-    <link rel="stylesheet" href="css/kawaii.css">
+    <link rel="icon" href="img/inicial.jpg">
 </head>
 
 <body class="kawaii-page">
-    <!-- Header with Navigation -->
-    <header class="header">
-        <nav class="navbar">
-            <a href="index.html" class="logo" aria-label="Ir al inicio">
-                <img src="img/mundo.png" alt="High Flight Logo" class="logo__image">
-                <div class="logo__text">
-                    <span class="logo__brand">HIGH</span>
-                    <span class="logo__brand">FLIGHT</span>
-                </div>
-            </a>
-
-            <!-- Dark Mode Toggle -->
-            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
-                <i class="ti ti-sun theme-toggle__icon--light"></i>
-                <i class="ti ti-moon theme-toggle__icon--dark"></i>
-            </button>
-
-            <!-- Navigation Links -->
-            <div class="nav-links">
-                <a href="login.html" class="btn btn--primary" aria-label="Iniciar sesión">
-                    <i class="ti ti-user"></i>
-                    <span>Iniciar Sesión</span>
-                </a>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="container">
-                <h1 class="page-title">Colección Kawaii</h1>
-                <p class="page-subtitle">Descubre nuestros adorables personajes</p>
-            </div>
-        </section>
-
-        <!-- Kawaii Cards Section -->
-        <section class="kawaii-section">
-            <div class="container">
-                <div class="kawaii-grid">
-
-                    <!-- Kawaii Card 1 -->
-                    <article class="kawaii-card">
-                        <div class="kawaii-card__image">
-                            <img src="img/kaw1.jpg" alt="Conejitos Kawaii" loading="lazy">
-                        </div>
-                        <div class="kawaii-card__content">
-                            <h2 class="kawaii-card__title">Conejitos Kawaii</h2>
-                            <p class="kawaii-card__description">
-                                Descubre la ternura de nuestros adorables conejitos kawaii.
-                                Estos simpáticos personajes harán que tu viaje sea más divertido
-                                y lleno de alegría. Perfectos compañeros para aventuras inolvidables
-                                en los cielos con High Flight Airlines.
-                            </p>
-                            <div class="kawaii-card__actions">
-                                <button class="btn btn--secondary">Ver más</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Kawaii Card 2 -->
-                    <article class="kawaii-card">
-                        <div class="kawaii-card__image">
-                            <img src="img/kaw2.jpeg" alt="Gatito Kawaii" loading="lazy">
-                        </div>
-                        <div class="kawaii-card__content">
-                            <h2 class="kawaii-card__title">Gatito Kawaii</h2>
-                            <p class="kawaii-card__description">
-                                Nuestro encantador gatito kawaii te acompañará en cada vuelo.
-                                Con su carita tierna y personalidad juguetona, este felino
-                                especial se ha convertido en la mascota favorita de nuestros
-                                pasajeros más jóvenes.
-                            </p>
-                            <div class="kawaii-card__actions">
-                                <button class="btn btn--secondary">Ver más</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Kawaii Card 3 -->
-                    <article class="kawaii-card">
-                        <div class="kawaii-card__image">
-                            <img src="img/kaw3.jpg" alt="Patito Kawaii" loading="lazy">
-                        </div>
-                        <div class="kawaii-card__content">
-                            <h2 class="kawaii-card__title">Patito Kawaii</h2>
-                            <p class="kawaii-card__description">
-                                El adorable patito kawaii representa la libertad de volar.
-                                Su espíritu aventurero y su sonrisa contagiosa inspirarán
-                                a toda la familia a explorar nuevos destinos con nosotros.
-                                ¡Un compañero perfecto para tus vacaciones!
-                            </p>
-                            <div class="kawaii-card__actions">
-                                <button class="btn btn--secondary">Ver más</button>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action Section -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>¿Te gustan nuestros personajes kawaii?</h2>
-                    <p>Descubre más contenido especial y ofertas exclusivas</p>
-                    <a href="index.html" class="btn btn--primary btn--large">Explorar más</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Kawaii Decorations -->
+    <!-- Decoraciones kawaii flotantes -->
     <div class="kawaii-decorations">
         <div class="kawaii-decoration">🐰</div>
         <div class="kawaii-decoration">🐱</div>
-        <div class="kawaii-decoration">🦆</div>
+        <div class="kawaii-decoration">🐣</div>
         <div class="kawaii-decoration">💖</div>
+        <div class="kawaii-decoration">✨</div>
+        <div class="kawaii-decoration">🌟</div>
+        <div class="kawaii-decoration">💫</div>
+        <div class="kawaii-decoration">🎀</div>
     </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/mundo.png" alt="Logo Destinos Mundiales">
+                <span>Destinos Mundiales</span>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-btn">
+                    <i class="fas fa-home"></i>
+                    Inicio
+                </a>
+                <a href="login.html" class="nav-btn">
+                    <i class="fas fa-user"></i>
+                    Iniciar Sesión
+                </a>
+                <a href="ayuda.html" class="nav-btn">
+                    <i class="fas fa-question-circle"></i>
+                    Ayuda
+                </a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="page-header">
+                <div class="page-header__content">
+                    <h1 class="page-title">🌸 Mundo Kawaii 🌸</h1>
+                    <p class="page-subtitle">Descubre los destinos más adorables y tiernos del planeta</p>
+                </div>
+            </section>
+
+            <!-- Kawaii Content Grid -->
+            <section class="kawaii-content">
+                <div class="kawaii-grid">
+                    <!-- Conejitos Kawaii -->
+                    <article class="kawaii-card fade-in" data-aos="fade-up" data-aos-delay="100">
+                        <div class="kawaii-card__image">
+                            <img src="img/kaw1.jpg" alt="Conejitos Kawaii adorables">
+                        </div>
+                        <div class="kawaii-card__content">
+                            <h2 class="kawaii-card__title">🐰 Conejitos Kawaii</h2>
+                            <p class="kawaii-card__description">
+                                Descubre los lugares más adorables donde habitan los conejitos más tiernos del mundo.
+                                Desde los campos floridos de Holanda hasta los santuarios de conejos en Japón,
+                                experimenta la ternura en su máxima expresión. Estos pequeños amigos peludos te
+                                robarán el corazón con sus saltitos juguetones y sus caritas dulces.
+                                ¡Una experiencia que despertará tu lado más tierno!
+                            </p>
+                            <div class="kawaii-card__actions">
+                                <button class="btn btn--secondary kawaii-btn" data-destination="conejitos">
+                                    <i class="fas fa-heart"></i>
+                                    Explorar Destino
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Gatitos Kawaii -->
+                    <article class="kawaii-card fade-in" data-aos="fade-up" data-aos-delay="200">
+                        <div class="kawaii-card__image">
+                            <img src="img/kaw2.jpeg" alt="Gatitos Kawaii super adorables">
+                        </div>
+                        <div class="kawaii-card__content">
+                            <h2 class="kawaii-card__title">🐱 Gatitos Kawaii</h2>
+                            <p class="kawaii-card__description">
+                                Sumérgete en el mundo felino más adorable que puedas imaginar. Visita cafeterías
+                                de gatos en Tokio, explora las islas de gatos en Grecia, y conoce los felinos
+                                más tiernos del planeta. Con sus ronroneos melodiosos y sus travesuras encantadoras,
+                                estos pequeños compañeros peludos te harán sentir en el paraíso kawaii.
+                                ¡Prepárate para una sobrecarga de ternura!
+                            </p>
+                            <div class="kawaii-card__actions">
+                                <button class="btn btn--secondary kawaii-btn" data-destination="gatitos">
+                                    <i class="fas fa-paw"></i>
+                                    Explorar Destino
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Patitos Kawaii -->
+                    <article class="kawaii-card fade-in" data-aos="fade-up" data-aos-delay="300">
+                        <div class="kawaii-card__image">
+                            <img src="img/kaw3.jpg" alt="Patitos Kawaii en su hábitat natural">
+                        </div>
+                        <div class="kawaii-card__content">
+                            <h2 class="kawaii-card__title">🐣 Patitos Kawaii</h2>
+                            <p class="kawaii-card__description">
+                                Embárcate en una aventura acuática llena de ternura junto a los patitos más
+                                adorables del mundo. Desde los parques urbanos hasta los lagos cristalinos,
+                                observa cómo estos pequeños navegantes conquistan los corazones con sus
+                                chapoteos juguetones y sus cuacks melodiosos. Una experiencia que te conectará
+                                con la naturaleza más tierna y te llenará de paz y alegría.
+                            </p>
+                            <div class="kawaii-card__actions">
+                                <button class="btn btn--secondary kawaii-btn" data-destination="patitos">
+                                    <i class="fas fa-water"></i>
+                                    Explorar Destino
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Osos Panda Kawaii -->
+                    <article class="kawaii-card fade-in" data-aos="fade-up" data-aos-delay="400">
+                        <div class="kawaii-card__image">
+                            <img src="img/panda-kawaii.jpg" alt="Osos Panda kawaii"
+                                onerror="this.src='https://via.placeholder.com/400x280/ffb3d9/ffffff?text=🐼+Panda+Kawaii'">
+                        </div>
+                        <div class="kawaii-card__content">
+                            <h2 class="kawaii-card__title">🐼 Pandas Kawaii</h2>
+                            <p class="kawaii-card__description">
+                                Conoce a los osos panda más adorables en sus santuarios naturales. Estos
+                                gigantes gentiles con sus caritas redonditas y sus movimientos torpes te
+                                enamorarán al instante. Observa cómo juegan, comen bambú y toman sus siestas
+                                más tiernas. Una experiencia única que te hará creer en la magia de la ternura.
+                            </p>
+                            <div class="kawaii-card__actions">
+                                <button class="btn btn--secondary kawaii-btn" data-destination="pandas">
+                                    <i class="fas fa-leaf"></i>
+                                    Explorar Destino
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Pingüinos Kawaii -->
+                    <article class="kawaii-card fade-in" data-aos="fade-up" data-aos-delay="500">
+                        <div class="kawaii-card__image">
+                            <img src="img/pinguino-kawaii.jpg" alt="Pingüinos kawaii"
+                                onerror="this.src='https://via.placeholder.com/400x280/b3d9ff/ffffff?text=🐧+Pingüino+Kawaii'">
+                        </div>
+                        <div class="kawaii-card__content">
+                            <h2 class="kawaii-card__title">🐧 Pingüinos Kawaii</h2>
+                            <p class="kawaii-card__description">
+                                Descubre el mundo de los pingüinos más adorables en sus hábitats helados.
+                                Con sus caminatas tambalentes y sus trajes de etiqueta naturales, estos
+                                pequeños caballeros del hielo te conquistarán con su elegancia cómica y
+                                su ternura infinita. ¡Una aventura polar llena de amor!
+                            </p>
+                            <div class="kawaii-card__actions">
+                                <button class="btn btn--secondary kawaii-btn" data-destination="pinguinos">
+                                    <i class="fas fa-snowflake"></i>
+                                    Explorar Destino
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Koalas Kawaii -->
+                    <article class="kawaii-card fade-in" data-aos="fade-up" data-aos-delay="600">
+                        <div class="kawaii-card__image">
+                            <img src="img/koala-kawaii.jpg" alt="Koalas kawaii"
+                                onerror="this.src='https://via.placeholder.com/400x280/d9ffb3/ffffff?text=🐨+Koala+Kawaii'">
+                        </div>
+                        <div class="kawaii-card__content">
+                            <h2 class="kawaii-card__title">🐨 Koalas Kawaii</h2>
+                            <p class="kawaii-card__description">
+                                Conoce a los marsupiales más tiernos de Australia. Estos pequeños dormilones
+                                con sus narices de botón y sus abrazos eternos a los eucaliptos te mostrarán
+                                el verdadero significado de la vida relajada. Su ternura natural y su
+                                tranquilidad contagiosa te harán sentir en paz total.
+                            </p>
+                            <div class="kawaii-card__actions">
+                                <button class="btn btn--secondary kawaii-btn" data-destination="koalas">
+                                    <i class="fas fa-tree"></i>
+                                    Explorar Destino
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>✨ ¡Únete a la Aventura Kawaii! ✨</h2>
+                    <p>Reserva tu viaje al mundo más tierno y adorable que jamás hayas imaginado</p>
+                    <div class="cta-actions">
+                        <a href="reservas.html" class="btn btn--large">
+                            <i class="fas fa-plane"></i>
+                            Reservar Aventura Kawaii
+                        </a>
+                        <a href="galeria-kawaii.html" class="btn btn--outline">
+                            <i class="fas fa-images"></i>
+                            Ver Galería
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <!-- Social Media Links -->
             <div class="social-links">
-                <a href="#" class="social-link" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="Pinterest">
-                    <i class="fab fa-pinterest"></i>
-                </a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
             </div>
-
-            <!-- Copyright -->
             <div class="footer-text">
-                <p>&copy; 2024 High Flight Airlines. Todos los derechos reservados.</p>
+                <p>&copy; 2024 <span>Destinos Mundiales</span> | Mundo Kawaii Edition 🌸</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Google Translate -->
+    <div id="google_translate_element"></div>
+
+    <!-- JavaScript Modular -->
     <script src="js/main.js"></script>
+    <script src="js/kawaii.js"></script>
     <script src="js/translator.js"></script>
+
+    <!-- Google Translate Script -->
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 

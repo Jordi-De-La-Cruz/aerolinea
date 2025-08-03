@@ -3,169 +3,134 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - High Flight Airlines</title>
+    <meta name="description" content="Inicia sesión en Destinos Mundiales">
+    <title>Iniciar Sesión - Destinos Mundiales</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Inicia sesión en High Flight Airlines para acceder a tu cuenta">
-    <meta name="keywords" content="login, iniciar sesión, high flight, aerolínea">
-
-    <!-- Favicon -->
-    <link rel="icon" href="img/inicial.jpg" type="image/jpeg">
-
-    <!-- External Stylesheets -->
-    <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom Stylesheets -->
+    <!-- CSS Modular -->
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/login-components.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Preload crítico -->
+    <link rel="preload" href="img/mundo.png" as="image">
+    <link rel="preload" href="js/main.js" as="script">
+    <link rel="preload" href="js/login.js" as="script">
 </head>
 
-<body class="login-page">
-    <!-- Background Video/Image Container -->
-    <div class="login-background">
-        <div class="login-overlay"></div>
+<body>
+    <!-- Preloader opcional -->
+    <div class="preloader" style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.3s ease;
+    ">
+        <div class="loading"></div>
     </div>
 
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle theme-toggle--floating" id="themeToggle" aria-label="Cambiar tema oscuro/claro">
-        <span class="theme-toggle__icon">
-            <i class="ti ti-brightness-2"></i>
-        </span>
-        <span class="theme-toggle__icon">
-            <i class="ti ti-moon"></i>
-        </span>
-    </button>
+    <div class="login-page">
+        <!-- Botón de regreso -->
+        <button class="back-btn" onclick="window.history.back()" aria-label="Volver">
+            <i class="fas fa-arrow-left"></i>
+        </button>
 
-    <!-- Main Login Container -->
-    <main class="login-container">
-        <div class="login-wrapper">
-            <div class="login-card">
-
-                <!-- Brand Header -->
-                <header class="login-header">
-                    <div class="brand-logo">
-                        <img src="img/mundo.png" alt="High Flight Logo" class="brand-logo__image">
-                    </div>
-                    <h1 class="brand-title">
-                        <span class="brand-title__main">HIGH FLIGHT</span>
-                        <span class="brand-title__sub">AIRLINES</span>
-                    </h1>
-                    <p class="login-subtitle">Bienvenido de vuelta</p>
-                </header>
-
-                <!-- Login Form -->
-                <form id="loginForm" class="login-form" novalidate>
-                    <div class="form-group">
-                        <label for="fullName" class="form-label visually-hidden">Nombre completo</label>
-                        <div class="input-wrapper">
-                            <i class="ti ti-user input-icon"></i>
-                            <input type="text" id="fullName" name="fullName" placeholder="Nombre y Apellidos"
-                                class="form-input" required autocomplete="name">
-                        </div>
-                        <span class="form-error" id="fullNameError"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label visually-hidden">Correo electrónico</label>
-                        <div class="input-wrapper">
-                            <i class="ti ti-mail input-icon"></i>
-                            <input type="email" id="email" name="email" placeholder="Correo electrónico"
-                                class="form-input" required autocomplete="email">
-                        </div>
-                        <span class="form-error" id="emailError"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password" class="form-label visually-hidden">Contraseña</label>
-                        <div class="input-wrapper">
-                            <i class="ti ti-lock input-icon"></i>
-                            <input type="password" id="password" name="password" placeholder="Contraseña"
-                                class="form-input" required autocomplete="current-password">
-                            <button type="button" class="password-toggle" id="passwordToggle"
-                                aria-label="Mostrar/ocultar contraseña">
-                                <i class="ti ti-eye"></i>
-                            </button>
-                        </div>
-                        <span class="form-error" id="passwordError"></span>
-                    </div>
-
-                    <!-- Remember Me & Forgot Password -->
-                    <div class="form-options">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" id="rememberMe" name="rememberMe" class="checkbox-input">
-                            <span class="checkbox-label">Recordarme</span>
-                        </label>
-                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit" class="btn btn--primary btn--full" id="loginButton">
-                        <span class="btn-text">Iniciar Sesión</span>
-                        <div class="btn-spinner" id="loginSpinner">
-                            <i class="ti ti-loader-2"></i>
-                        </div>
-                    </button>
-                </form>
-
-                <!-- Social Login -->
-                <div class="social-login">
-                    <div class="social-divider">
-                        <span>O continúa con</span>
-                    </div>
-                    <div class="social-buttons">
-                        <button type="button" class="social-btn social-btn--facebook"
-                            aria-label="Iniciar sesión con Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </button>
-                        <button type="button" class="social-btn social-btn--instagram"
-                            aria-label="Iniciar sesión con Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </button>
-                        <button type="button" class="social-btn social-btn--twitter"
-                            aria-label="Iniciar sesión con Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </button>
-                    </div>
+        <div class="login-container fade-in">
+            <div class="login-header">
+                <div class="login-logo slide-in">
+                    <img src="img/mundo.png" alt="Logo Destinos Mundiales">
+                    <h1>Destinos Mundiales</h1>
                 </div>
-
-                <!-- Additional Options -->
-                <div class="login-footer">
-                    <p class="signup-link">
-                        ¿No tienes cuenta? <a href="register.html">Regístrate aquí</a>
-                    </p>
-                </div>
-
+                <p class="login-subtitle">Inicia sesión para continuar tu aventura</p>
             </div>
 
-            <!-- Back to Home Button -->
-            <nav class="login-navigation">
-                <a href="index.html" class="back-btn" aria-label="Volver al inicio">
-                    <i class="ti ti-arrow-big-left"></i>
-                    <span>Volver al inicio</span>
-                </a>
-            </nav>
-        </div>
-    </main>
+            <form class="login-form" id="loginForm" data-validate>
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder="Correo electrónico" required
+                        autocomplete="email" aria-describedby="email-error">
+                    <i class="fas fa-envelope input-icon" aria-hidden="true"></i>
+                </div>
 
-    <!-- Language Translator Container (hidden by default) -->
-    <div id="google_translate_element" class="translator-widget"></div>
+                <div class="form-group">
+                    <input type="password" class="form-input" placeholder="Contraseña" required
+                        autocomplete="current-password" aria-describedby="password-error">
+                    <i class="fas fa-lock input-icon" aria-hidden="true"></i>
+                </div>
 
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner">
-            <i class="ti ti-plane"></i>
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Recordarme</label>
+                    </div>
+                    <a href="recuperar-password.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                    Iniciar Sesión
+                </button>
+            </form>
+
+            <div class="divider">
+                <span>O continúa con</span>
+            </div>
+
+            <div class="social-login">
+                <button class="btn-social google" aria-label="Iniciar sesión con Google">
+                    <i class="fab fa-google" aria-hidden="true"></i>
+                </button>
+                <button class="btn-social facebook" aria-label="Iniciar sesión con Facebook">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                </button>
+                <button class="btn-social twitter" aria-label="Iniciar sesión con Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="signup-link">
+                <p>¿No tienes una cuenta?</p>
+                <a href="registro.html">Regístrate aquí</a>
+            </div>
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- JavaScript Modular -->
     <script src="js/main.js"></script>
     <script src="js/login.js"></script>
+
+    <!-- Google Translate (opcional) -->
+    <div id="google_translate_element" style="
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+    "></div>
     <script src="js/translator.js"></script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Service Worker para PWA (opcional) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registrado'))
+                    .catch(error => console.log('SW error'));
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -1,10 +1,9 @@
-// Tu app.js actual (tema toggle)
 const switchButton = document.getElementById('switch') || document.getElementById('themeToggle');
 
 if (switchButton) {
     switchButton.addEventListener('click', () => {
         document.body.classList.toggle('dark');
-        document.body.classList.toggle('dark-theme'); // Para compatibilidad
+        document.body.classList.toggle('dark-theme');
         switchButton.classList.toggle('active');
 
         // Guardar preferencia

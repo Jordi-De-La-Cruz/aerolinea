@@ -1,5 +1,3 @@
-// hotel-booking.js - Funcionalidades específicas para reservas de hoteles
-
 document.addEventListener('DOMContentLoaded', function () {
     initHotelBooking();
     initGallery();
@@ -7,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initMapInteractions();
 });
 
-// Inicializar sistema de reservas
 function initHotelBooking() {
     const bookingForm = document.getElementById('bookingForm');
     if (!bookingForm) return;
@@ -20,7 +17,6 @@ function initHotelBooking() {
     if (checkinInput) checkinInput.min = today;
     if (checkoutInput) checkoutInput.min = today;
 
-    // Validar fechas en tiempo real
     if (checkinInput) {
         checkinInput.addEventListener('change', function () {
             const checkinDate = new Date(this.value);
@@ -52,7 +48,6 @@ function initHotelBooking() {
     if (roomsSelect) roomsSelect.addEventListener('change', calculatePrice);
 }
 
-// Inicializar galería de imágenes
 function initGallery() {
     const galleryImages = document.querySelectorAll('.gallery-thumbnails img');
     const mainImage = document.querySelector('.gallery-main img');
@@ -100,9 +95,9 @@ function calculatePrice() {
     const guests = parseInt(guestsSelect?.value || '1');
     const rooms = parseInt(roomsSelect?.value || '1');
 
-    // Obtener precio base (desde el HTML)
+    // Obtener precio base
     const priceElement = document.querySelector('.price-amount');
-    let basePrice = 120; // Precio por defecto
+    let basePrice = 120;
 
     if (priceElement) {
         const priceText = priceElement.textContent.replace(/[^0-9]/g, '');
@@ -112,7 +107,7 @@ function calculatePrice() {
     // Calcular precios
     const roomPrice = basePrice * rooms;
     const subtotal = roomPrice * nights;
-    const taxes = Math.round(subtotal * 0.15); // 15% de impuestos
+    const taxes = Math.round(subtotal * 0.15);
     const total = subtotal + taxes;
 
     // Actualizar UI
@@ -144,7 +139,6 @@ function updatePriceSummary(roomPrice, nights, subtotal, taxes, total, rooms) {
     `;
 }
 
-// Obtener símbolo de moneda según el hotel
 function getCurrency() {
     const title = document.querySelector('h1')?.textContent || '';
     if (title.includes('Francia') || title.includes('París')) return '€';
@@ -152,7 +146,6 @@ function getCurrency() {
     return '$'; // Por defecto
 }
 
-// Manejar envío de formulario de reserva
 async function handleBookingSubmit(e) {
     e.preventDefault();
 
@@ -165,15 +158,12 @@ async function handleBookingSubmit(e) {
     submitButton.disabled = true;
 
     try {
-        // Simular envío (aquí iría la lógica real de reserva)
         await simulateBookingRequest();
 
         // Mostrar éxito
         showNotification('¡Reserva procesada exitosamente! Te contactaremos pronto.', 'success');
 
-        // Opcional: redireccionar o mostrar confirmación
         setTimeout(() => {
-            // window.location.href = '/confirmacion-reserva';
         }, 2000);
 
     } catch (error) {
@@ -191,8 +181,7 @@ async function handleBookingSubmit(e) {
 function simulateBookingRequest() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            // Simular éxito/error aleatorio para demo
-            if (Math.random() > 0.1) { // 90% éxito
+            if (Math.random() > 0.1) {
                 resolve({ success: true, bookingId: 'HF' + Date.now() });
             } else {
                 reject(new Error('Error de conexión'));
@@ -201,7 +190,6 @@ function simulateBookingRequest() {
     });
 }
 
-// Inicializar interacciones del mapa
 function initMapInteractions() {
     const mapIframe = document.querySelector('.hotel-map');
     if (!mapIframe) return;
@@ -264,7 +252,6 @@ document.addEventListener('click', function (e) {
     }
 });
 
-// Inicializar animaciones de scroll para elementos de hotel
 function initHotelAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -297,7 +284,6 @@ function initHotelAnimations() {
 // Auto-ejecutar animaciones cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', initHotelAnimations);
 
-// Función auxiliar para formatear fechas
 function formatDate(dateString) {
     const date = new Date(dateString);
     return date.toLocaleDateString('es-ES', {
@@ -308,7 +294,6 @@ function formatDate(dateString) {
     });
 }
 
-// Función auxiliar para validar formulario
 function validateBookingForm(formData) {
     const errors = [];
 
@@ -332,7 +317,6 @@ function validateBookingForm(formData) {
     return errors;
 }
 
-// Exportar funciones para uso global si es necesario
 window.HotelBooking = {
     calculatePrice,
     handleBookingSubmit,
@@ -340,7 +324,6 @@ window.HotelBooking = {
     validateBookingForm
 };
 
-// Funcionalidad adicional para mejorar UX
 class HotelExperience {
     constructor() {
         this.initRatingInteraction();
@@ -349,7 +332,6 @@ class HotelExperience {
         this.initKeyboardNavigation();
     }
 
-    // Interacción con ratings
     initRatingInteraction() {
         const reviewCards = document.querySelectorAll('.review-card');
 
@@ -384,7 +366,6 @@ class HotelExperience {
         });
     }
 
-    // Lazy loading mejorado para imágenes
     initImageLazyLoading() {
         const images = document.querySelectorAll('img[loading="lazy"]');
 
@@ -411,7 +392,6 @@ class HotelExperience {
         images.forEach(img => imageObserver.observe(img));
     }
 
-    // Tooltips informativos
     initTooltips() {
         const amenityItems = document.querySelectorAll('.amenity-item');
 
@@ -462,15 +442,12 @@ class HotelExperience {
         return tooltips[amenityText] || null;
     }
 
-    // Navegación por teclado mejorada
     initKeyboardNavigation() {
         document.addEventListener('keydown', (e) => {
-            // Escape para cerrar modales/tooltips
             if (e.key === 'Escape') {
                 this.hideTooltip();
             }
 
-            // Tab navigation enhancement
             if (e.key === 'Tab') {
                 this.highlightFocusedElement();
             }
@@ -493,9 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new HotelExperience();
 });
 
-// Funciones de utilidad para reservas
 const BookingUtils = {
-    // Formatear precio con moneda local - CORREGIDO
     formatPrice(amount, currency = '$') {
         return `${currency}${amount.toLocaleString()}`;
     },
@@ -507,12 +482,12 @@ const BookingUtils = {
         return Math.ceil((end - start) / (1000 * 60 * 60 * 24));
     },
 
-    // Validar disponibilidad (mock) - CORREGIDO
+    // Validar disponibilidad
     async checkAvailability(checkin, checkout, rooms) {
         // Simular consulta de disponibilidad
         return new Promise(resolve => {
             setTimeout(() => {
-                const available = Math.random() > 0.1; // 90% disponibilidad
+                const available = Math.random() > 0.1;
                 resolve({
                     available,
                     message: available ?
@@ -523,7 +498,6 @@ const BookingUtils = {
         });
     },
 
-    // Obtener ofertas especiales - CORREGIDO
     getSpecialOffers() {
         const offers = [
             {
@@ -573,7 +547,6 @@ const BookingUtils = {
     }
 };
 
-// Funcionalidad para comparar hoteles
 class HotelComparison {
     constructor() {
         this.compareList = JSON.parse(localStorage.getItem('hotelCompare') || '[]');
@@ -649,7 +622,6 @@ document.addEventListener('DOMContentLoaded', () => {
     new HotelComparison();
 });
 
-// Agregar estilos CSS dinámicamente para tooltips y elementos mejorados
 const style = document.createElement('style');
 style.textContent = `
     .amenity-tooltip {

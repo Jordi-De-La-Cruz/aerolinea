@@ -1,343 +1,183 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High Flight Airlines - Vuelos Internacionales</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="High Flight Airlines - Tu mejor opción para vuelos internacionales seguros y cómodos. Descubre destinos increíbles con nuestras ofertas especiales.">
-    <meta name="keywords" content="vuelos, aerolínea, viajes, internacional, ofertas, destinos">
-    <meta name="author" content="High Flight Airlines">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://highflight.com/">
-    <meta property="og:title" content="High Flight Airlines - Vuelos Internacionales">
-    <meta property="og:description" content="Tu mejor opción para vuelos internacionales seguros y cómodos">
-    <meta property="og:image" content="img/mundo.png">
-
-    <!-- Favicon -->
-    <link rel="icon" href="img/inicial.jpg" type="image/jpeg">
-
-    <!-- External Stylesheets -->
-    <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/layouts.css">
-    <link rel="stylesheet" href="css/index.css">
-
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Aerolinea High Flight</title>
+    <link rel="icon" href="img/inicial.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- Language Translator -->
-    <div id="google_translate_element" class="translator-widget"></div>
-
-    <!-- Theme Toggle -->
-    <button class="theme-toggle theme-toggle--floating" id="themeToggle" aria-label="Cambiar tema">
-        <span class="theme-toggle__icon">
-            <i class="ti ti-brightness-2"></i>
-        </span>
-        <span class="theme-toggle__icon">
-            <i class="ti ti-moon"></i>
-        </span>
-    </button>
-
-    <!-- Header -->
+    <div id="google_translate_element"></div>
+    <!-- Inicio de header -->
     <header class="header">
-        <nav class="navbar">
-            <a href="index.html" class="logo" aria-label="High Flight Airlines - Inicio">
-                <img src="img/mundo.png" alt="High Flight Logo" class="logo__image">
-                <div class="logo__text">
-                    <span class="logo__brand">HIGH</span>
-                    <span class="logo__brand">FLIGHT</span>
-                </div>
-            </a>
+        <a href="#" class="logo">
+            <img src="img/mundo.png" alt="">
+            <h3>HIGH<br>FLIGHT</h3>
+        </a>
+        <!-- Inicio-Navegacion1 -->
+        <nav class="navegacion1">
+            <a href="login.html" class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-user" width="24" height="24" viewbox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                </svg></a>
 
-            <div class="nav-links">
-                <a href="login.html" class="nav-btn" aria-label="Iniciar sesión">
-                    <i class="ti ti-user"></i>
-                    <span>Iniciar Sesión</span>
-                </a>
-                <a href="ayuda.html" class="nav-btn" aria-label="Ayuda">
-                    <i class="ti ti-help"></i>
-                    <span>Ayuda</span>
-                </a>
-            </div>
+            <a href="ayuda.html" class="boton ">ayuda<svg xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-help" width="24" height="24" viewbox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <line x1="12" y1="17" x2="12" y2="17.01"></line>
+                    <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
+                </svg></a>
         </nav>
+        <!-- Final-navegacion1 -->
     </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="container">
-                <div class="hero-content fade-in">
-                    <h1>Vuelos Internacionales</h1>
-                    <p>Viaja seguro y cómodo con nuestra aerolínea</p>
-                    <a href="#destinos" class="btn btn--large">Explorar Destinos</a>
-                </div>
-            </div>
-        </section>
+    <section class="home" id="home">
+        <div class="contenido">
+            <h1>VUELOS INTERNACIONALES </h1>
+            <p>Viaje seguro en nuestra aerolínea</p>
+        </div>
+    </section>
 
-        <!-- Navigation Menu Section -->
-        <section class="services-nav" id="servicios">
-            <div class="container">
-                <div class="services-grid">
+    <section class="abous" id="aboud">
+        <nav class="navegacion2">
+            <ul class="menu">
+                <li><a href="#"><span class="fas fa-plane-departure"></span>VUELO</a>
+                    <ul class="submenu">
+                        <li><a href="america.html">Continente Americano</a></li>
+                        <li><a href="europa.html">Continente Europeo</a></li>
+                        <li><a href="africa.html">Continente Africano</a></li>
+                        <li><a href="asia.html">Continente Asiatico</a></li>
+                        <li><a href="oceania.html">Continente Ocianico</a></li>
+                    </ul>
+                </li>
+            </ul>
 
-                    <!-- Vuelos Card -->
-                    <div class="service-card hover-lift">
-                        <div class="service-icon">
-                            <i class="fas fa-plane-departure"></i>
-                        </div>
-                        <h3>Vuelos</h3>
-                        <p>Descubre destinos increíbles en todos los continentes</p>
-                        <div class="service-dropdown">
-                            <a href="america.html" class="service-link">Continente Americano</a>
-                            <a href="europa.html" class="service-link">Continente Europeo</a>
-                            <a href="africa.html" class="service-link">Continente Africano</a>
-                            <a href="asia.html" class="service-link">Continente Asiático</a>
-                            <a href="oceania.html" class="service-link">Continente Oceánico</a>
-                        </div>
-                    </div>
+            <ul class="menu">
+                <li><a href="Orden.html"><span class="fas fa-coffee"></span>ORDEN</a>
+                    <ul class="submenu">
+                        <li><a href="comidas.html">Comidas</a></li>
+                        <li><a href="bebidas.html">Bebidas</a></li>
+                    </ul>
+                </li>
+            </ul>
 
-                    <!-- Orden Card -->
-                    <div class="service-card hover-lift">
-                        <div class="service-icon">
-                            <i class="fas fa-coffee"></i>
-                        </div>
-                        <h3>Servicios a Bordo</h3>
-                        <p>Disfruta de nuestra exquisita gastronomía</p>
-                        <div class="service-dropdown">
-                            <a href="comidas.html" class="service-link">Comidas</a>
-                            <a href="bebidas.html" class="service-link">Bebidas</a>
-                            <a href="kawaii.html" class="service-link">Colección Kawaii</a>
-                        </div>
-                    </div>
+            <ul class="menu">
+                <li><a href="Oferta.html"><span class="fas fa-donate"></span>OFERTA</a>
+                    <ul class="submenu">
+                        <li><a href="oferta.html">Ofertas de Hoy</a></li>
+                        <li><a href="oferta.html">Ofertas Navideñas</a></li>
+                        <li><a href="oferta.html">Ofertas de Año Nuevo</a></li>
+                    </ul>
+                </li>
+            </ul>
 
-                    <!-- Ofertas Card -->
-                    <div class="service-card hover-lift">
-                        <div class="service-icon">
-                            <i class="fas fa-tag"></i>
-                        </div>
-                        <h3>Ofertas Especiales</h3>
-                        <p>Aprovecha nuestras promociones exclusivas</p>
-                        <div class="service-dropdown">
-                            <a href="ofertas-hoy.html" class="service-link">Ofertas de Hoy</a>
-                            <a href="ofertas-navidad.html" class="service-link">Ofertas Navideñas</a>
-                            <a href="ofertas-año-nuevo.html" class="service-link">Ofertas de Año Nuevo</a>
-                        </div>
-                    </div>
+            <ul class="menu">
+                <li><a href="hospedaje.html"><span class="fas fa-hotel"></span>HOSPEDAJE</a></li>
+            </ul>
+        </nav>
 
-                    <!-- Hospedaje Card -->
-                    <div class="service-card hover-lift">
-                        <div class="service-icon">
-                            <i class="fas fa-hotel"></i>
-                        </div>
-                        <h3>Hospedaje</h3>
-                        <p>Encuentra el alojamiento perfecto para tu viaje</p>
-                        <div class="service-dropdown">
-                            <a href="hospedaje.html" class="service-link">Buscar Hoteles</a>
-                            <a href="resort.html" class="service-link">Resorts</a>
-                            <a href="apartamentos.html" class="service-link">Apartamentos</a>
-                        </div>
-                    </div>
+    </section>
 
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about" id="about">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="img/des.jpg" alt="Avión High Flight" loading="lazy">
-                    </div>
-                    <div class="about-text">
-                        <h2 class="section-title">High Flight Airlines</h2>
-                        <p>
-                            Somos una aerolínea comprometida con la excelencia en el servicio y la seguridad de nuestros
-                            pasajeros.
-                            Con más de una década de experiencia, hemos conectado miles de destinos alrededor del mundo,
-                            ofreciendo vuelos cómodos, seguros y a precios competitivos.
-                        </p>
-                        <p>
-                            Nuestra flota moderna y nuestro equipo altamente capacitado garantizan que cada viaje sea
-                            una experiencia memorable. Desde vuelos nacionales hasta destinos internacionales,
-                            High Flight Airlines es tu mejor opción para volar.
-                        </p>
-                        <div class="about-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">150+</span>
-                                <span class="stat-label">Destinos</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">50+</span>
-                                <span class="stat-label">Aviones</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">1M+</span>
-                                <span class="stat-label">Pasajeros Anuales</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Information Section -->
-        <section class="company-info" id="informacion">
-            <div class="container">
-                <div class="info-content">
-
-                    <!-- Map Section -->
-                    <div class="map-container">
-                        <iframe class="company-map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.0595820910926!2d-79.03799639778634!3d-8.095406754396853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3ddee38a5a23%3A0x69cbed0ac8430345!2sAv.%20Nicol%C3%A1s%20de%20Pi%C3%A9rola%2C%20Trujillo%2013011!5e0!3m2!1ses!2spe!4v1637026840121!5m2!1ses!2spe"
-                            loading="lazy" allowfullscreen aria-label="Ubicación de High Flight Airlines">
-                        </iframe>
-                    </div>
-
-                    <!-- Company Details -->
-                    <div class="company-details">
-                        <h2 class="section-title">Información Adicional</h2>
-
-                        <div class="details-grid">
-                            <div class="detail-item">
-                                <i class="ti ti-map-pin"></i>
-                                <div>
-                                    <h4>Ubicación</h4>
-                                    <p>Av. Nicolás de Piérola, Trujillo</p>
-                                </div>
-                            </div>
-
-                            <div class="detail-item">
-                                <i class="ti ti-building"></i>
-                                <div>
-                                    <h4>Área</h4>
-                                    <p>150,000 metros cuadrados</p>
-                                </div>
-                            </div>
-
-                            <div class="detail-item">
-                                <i class="ti ti-stairs"></i>
-                                <div>
-                                    <h4>Instalaciones</h4>
-                                    <p>5 pisos / plantas</p>
-                                </div>
-                            </div>
-
-                            <div class="detail-item">
-                                <i class="ti ti-calendar"></i>
-                                <div>
-                                    <h4>Fundación</h4>
-                                    <p>Año 2023</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Section -->
-                        <div class="team-section">
-                            <h3>Nuestro Equipo Fundador</h3>
-                            <div class="team-grid">
-                                <div class="team-member">
-                                    <h4>Jordi Johan De la Cruz Moreno</h4>
-                                    <p>CEO & Fundador</p>
-                                </div>
-                                <div class="team-member">
-                                    <h4>Herlita Milagros Farro Carrero</h4>
-                                    <p>Directora de Operaciones</p>
-                                </div>
-                                <div class="team-member">
-                                    <h4>Mabel Julon Chavez</h4>
-                                    <p>Directora Comercial</p>
-                                </div>
-                                <div class="team-member">
-                                    <h4>Flor Rodríguez Baltazar</h4>
-                                    <p>Directora de Finanzas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Mission Section -->
-        <section class="mission" id="mision">
-            <div class="container">
-                <div class="mission-content">
-                    <h2>Aerolínea High Flight</h2>
-                    <h3>¿Quiénes Somos?</h3>
-                    <p>
-                        High Flight Airlines nace con la visión de revolucionar la industria aérea, ofreciendo
-                        un servicio excepcional que combine seguridad, comodidad y accesibilidad. Somos más que
-                        una aerolínea; somos facilitadores de sueños, conectores de culturas y creadores de experiencias
-                        inolvidables.
-                    </p>
-                    <p>
-                        Nuestro compromiso va más allá del simple transporte. Nos dedicamos a hacer que cada vuelo
-                        sea el inicio de una aventura extraordinaria, cuidando cada detalle desde el momento de la
-                        reserva hasta el destino final. Con un enfoque en la innovación tecnológica y el servicio
-                        personalizado, High Flight Airlines se posiciona como la opción preferida para viajeros
-                        que buscan excelencia en cada trayecto.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <!-- Social Media Links -->
-            <div class="social-links">
-                <a href="#" class="social-link" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="Pinterest">
-                    <i class="fab fa-pinterest"></i>
-                </a>
+    <section class="about" id="about">
+        <div class="row">
+            <div class="image">
+                <img src="img/des.jpg" alt="">
             </div>
 
-            <!-- Copyright -->
-            <div class="footer-text">
-                <p>&copy; 2024 <span>High Flight Airlines</span> | Todos los derechos reservados</p>
+            <div class="contenido">
+                <h2 class="heading">HIGH FLIGHT</h2>
+                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nemo sint numquam ab, adipisci ea
+                    debitis minima illo obcaecati neque veniam earum ipsum quam. In, eveniet itaque et cupiditate minima
+                    consectetur ducimus vitae qui enim reiciendis voluptas dolor architecto odio quos nobis soluta
+                    doloremque ratione molestiae tenetur laboriosam laborum facilis distinctio aliquam optio. Error
+                    voluptate aperiam nemo unde pariatur at nostrum magni, eum aliquam voluptatum iusto labore rem quasi
+                    odio fugiat adipisci commodi libero in. Neque quisquam nihil sed, architecto amet ab nisi voluptates
+                    recusandae expedita reprehenderit. Qui eius nesciunt aliquid magni. Magni voluptate a reiciendis ad,
+                    ipsa necessitatibus!</p>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner">
-            <i class="ti ti-plane"></i>
+    <section class="informacion" id="informacion">
+        <div class="row">
+            <iframe class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.0595820910926!2d-79.03799639778634!3d-8.095406754396853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3ddee38a5a23%3A0x69cbed0ac8430345!2sAv.%20Nicol%C3%A1s%20de%20Pi%C3%A9rola%2C%20Trujillo%2013011!5e0!3m2!1ses!2spe!4v1637026840121!5m2!1ses!2spe"
+                width="1235" height="500" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+
+            <form>
+                <h2 class="heading"> <span>iNFORMACION ADICIONAL</span></h2>
+                <fieldset class="mil">
+                    <label>
+                        <p><b>Ubicacion: </b>Av. Nicolás de Piérola</p>
+                    </label>
+
+                    <label>
+                        <p><b>Área: </b>150000 metros cuadrados</p>
+                    </label>
+
+                    <label>
+                        <p><b>Nº de pisos / plantas: </b>5</p>
+                    </label>
+
+                    <label>
+                        <p><b>Año de construcion: </b>2023</p>
+                    </label>
+
+                    <label>
+                        <h4>SOCIOS:</h4>
+                        <p><b>Socio 1:</b> -De la Cruz Moreno Jordi Johan </p>
+                        <p><b>Socio 2:</b> -Farro Carrero Herlita Milagros </p>
+                        <p><b>Socio 3:</b> -Julon Chavez Mabel</p>
+                        <p class="abajo"><b>Socio 4:</b> -Rodríguez Baltazar Flor</p>
+                    </label>
+                </fieldset>
+            </form>
         </div>
-    </div>
+    </section>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/translator.js"></script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <section class="descripcion">
+        <div class="contenid">
+            <h3>Aerolínea H.F</h3>
+            <h2>¿Quienes Somos?</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus autem, earum ad voluptatem maxime
+                totam accusantium, laudantium porro unde in cum suscipit! Dolore vitae, laboriosam, consectetur tenetur
+                repellat labore laborum esse dolorum unde ab exercitationem quidem dignissimos beatae, ipsa nisi!
+                Delectus incidunt ipsum atque nisi laboriosam dolorum pariatur autem error Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Aspernatur aliquam voluptas officia harum sit facere, obcaecati totam
+                explicabo eveniet id vitae? Porro id quis qui nobis, quo adipisci iste iusto doloremque et quod aut,
+                asperiores ut hic reprehenderit atque ratione praesentium voluptates pariatur reiciendis iure nisi
+                dolorum. Animi, quam blanditiis.</p>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="share">
+            <a href="·" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-pinterest"></a>
+        </div>
+
+        <div class="credit">@2023 <span>creado </span> | por la aerolinea H.F. com</div>
+    </section>
+
+    <script type="text/javascript"></script>
+    <script src="js/traductor.js"></script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 
 </html>
