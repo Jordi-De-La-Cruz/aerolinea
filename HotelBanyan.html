@@ -1,144 +1,518 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Aerolinea High Flight </title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/inicial.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Plata - Puerto Plata, República Dominicana | High Flight Airlines</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Hotel Plata en Puerto Plata, República Dominicana - Resort 4 estrellas frente al mar Caribe. Reserva tu escapada tropical con High Flight Airlines.">
+    <meta name="keywords" content="hotel, república dominicana, puerto plata, resort, caribe, playa">
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/inicial.jpg" type="image/jpeg">
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layouts.css">
+    <link rel="stylesheet" href="css/hotels.css">
 </head>
 
-<body>
+<body class="hotel-page">
+    <!-- Language Translator -->
+    <div id="google_translate_element" class="translator-widget"></div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle theme-toggle--floating" id="themeToggle" aria-label="Cambiar tema">
+        <span class="theme-toggle__icon">
+            <i class="ti ti-brightness-2"></i>
+        </span>
+        <span class="theme-toggle__icon">
+            <i class="ti ti-moon"></i>
+        </span>
+    </button>
+
+    <!-- Header -->
     <header class="header">
-        <a href="index.html" class="logo">
-            <img src="img/mundo.png" alt="">
-            <h3>HIGH<br>FLIGHT</h3>
-        </a>
-        <!-- Inicio-Navegacion1 -->
-        <nav class="navegacion1">
-            <a href="login.html"  class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-            </svg></a>
+        <nav class="navbar">
+            <a href="index.html" class="logo" aria-label="High Flight Airlines - Inicio">
+                <img src="img/mundo.png" alt="High Flight Logo" class="logo__image">
+                <div class="logo__text">
+                    <span class="logo__brand">HIGH</span>
+                    <span class="logo__brand">FLIGHT</span>
+                </div>
+            </a>
+
+            <div class="nav-links">
+                <a href="login.html" class="nav-btn">
+                    <i class="ti ti-user"></i>
+                    <span>Iniciar Sesión</span>
+                </a>
+            </div>
         </nav>
-        <!-- Final-navegacion1 -->
     </header>
 
-    <section class="puerto">
-        <img src="img/banyan1.jpg" alt="">
-        <img src="img/banyan2.jpg" alt="">
-        <img src="img/banyan3.jpg" alt="">
-    </section>
+    <!-- Main Content -->
+    <main class="main-content">
 
-    <section class="Hotel">
-        <div class="hotel">
-            <h1>Hotel plata (Republica Dominicana) </h1>
-            
-
-            <div class="hotel">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
+        <!-- Hotel Gallery Section -->
+        <section class="hotel-gallery">
+            <div class="container">
+                <div class="gallery-grid">
+                    <div class="gallery-main">
+                        <img src="img/banyan1.jpg" alt="Hotel Plata - Vista de la playa" loading="lazy">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img src="img/banyan2.jpg" alt="Hotel Plata - Piscina resort" loading="lazy">
+                        <img src="img/banyan3.jpg" alt="Hotel Plata - Habitaciones vista mar" loading="lazy">
+                        <div class="gallery-more">
+                            <span>+12 fotos</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Hotel Header Info -->
+        <section class="hotel-header">
+            <div class="container">
+                <div class="hotel-title-section">
+                    <div class="hotel-info">
+                        <h1>Hotel Plata Beach Resort</h1>
+                        <div class="hotel-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.0/5 estrellas</span>
+                        </div>
+                        <div class="hotel-location">
+                            <i class="ti ti-map-pin"></i>
+                            <span>Puerto Plata, República Dominicana • A 4.38 km del centro</span>
+                        </div>
+                        <div class="hotel-highlights">
+                            <span class="highlight-badge">
+                                <i class="ti ti-beach"></i>
+                                Frente a la playa
+                            </span>
+                            <span class="highlight-badge">
+                                <i class="ti ti-swimming-pool"></i>
+                                Todo incluido
+                            </span>
+                            <span class="highlight-badge">
+                                <i class="ti ti-wifi"></i>
+                                WiFi gratis
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="hotel-actions">
+                        <div class="price-info">
+                            <span class="price-from">Desde</span>
+                            <span class="price-amount">$95</span>
+                            <span class="price-period">por noche</span>
+                        </div>
+                        <div class="price-note">
+                            <small>*Todo incluido</small>
+                        </div>
+                        <button class="btn btn--primary btn--large">Reservar Ahora</button>
+                        <button class="btn btn--outline">Agregar a Favoritos</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hotel Details -->
+        <section class="hotel-details">
+            <div class="container">
+                <div class="details-grid">
+
+                    <!-- Amenities Section -->
+                    <div class="amenities-section">
+                        <h2>Todo incluido en el paraíso</h2>
+                        <div class="amenities-grid">
+                            <div class="amenity-item">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Aire acondicionado en zonas comunes</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-wifi"></i>
+                                <span>Wi-Fi gratis en zonas comunes</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-swimming-pool"></i>
+                                <span>Múltiples piscinas</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-parking"></i>
+                                <span>Estacionamiento gratis</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-dumbbell"></i>
+                                <span>Gimnasio tropical</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-spa"></i>
+                                <span>Spa y masajes</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-utensils"></i>
+                                <span>4 Restaurantes temáticos</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-cocktail"></i>
+                                <span>5 Bares incluidos</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span>Acceso directo a la playa</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-music"></i>
+                                <span>Entretenimiento nocturno</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-water"></i>
+                                <span>Deportes acuáticos</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-child"></i>
+                                <span>Club infantil</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location Map -->
+                    <div class="location-section">
+                        <h2>Ubicación privilegiada</h2>
+                        <div class="map-container">
+                            <iframe class="hotel-map"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.8392857142857!2d-70.6927!3d19.7633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8838def1b6f5%3A0x6c1e465a5dbc7da!2sPuerto%20Plata%2C%20Dominican%20Republic!5e0!3m2!1sen!2sus!4v1640000000001!5m2!1sen!2sus"
+                                loading="lazy" allowfullscreen aria-label="Ubicación del Hotel Plata en Puerto Plata">
+                            </iframe>
+                        </div>
+
+                        <!-- Nearby Attractions -->
+                        <div class="nearby-attractions">
+                            <h3>Explora los alrededores</h3>
+                            <div class="attraction-list">
+                                <div class="attraction-item">
+                                    <i class="fas fa-umbrella-beach"></i>
+                                    <div class="attraction-info">
+                                        <span class="attraction-name">Playa Tortugas</span>
+                                        <span class="attraction-distance">0.2 km</span>
+                                    </div>
+                                </div>
+                                <div class="attraction-item">
+                                    <i class="fas fa-fish"></i>
+                                    <div class="attraction-info">
+                                        <span class="attraction-name">Acuario Interactivo de Puerto Plata</span>
+                                        <span class="attraction-distance">2.1 km</span>
+                                    </div>
+                                </div>
+                                <div class="attraction-item">
+                                    <i class="fas fa-tree"></i>
+                                    <div class="attraction-info">
+                                        <span class="attraction-name">Parque de las Palapas</span>
+                                        <span class="attraction-distance">1.8 km</span>
+                                    </div>
+                                </div>
+                                <div class="attraction-item">
+                                    <i class="fas fa-mountain"></i>
+                                    <div class="attraction-info">
+                                        <span class="attraction-name">Teleférico al Monte Isabel de Torres</span>
+                                        <span class="attraction-distance">8.5 km</span>
+                                    </div>
+                                </div>
+                                <div class="attraction-item">
+                                    <i class="fas fa-ship"></i>
+                                    <div class="attraction-info">
+                                        <span class="attraction-name">Puerto de Ultramar</span>
+                                        <span class="attraction-distance">3.0 km</span>
+                                    </div>
+                                </div>
+                                <div class="attraction-item">
+                                    <i class="fas fa-plane"></i>
+                                    <div class="attraction-info">
+                                        <span class="attraction-name">Aeropuerto Internacional</span>
+                                        <span class="attraction-distance">22 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Hotel Description -->
+        <section class="hotel-description">
+            <div class="container">
+                <div class="description-content">
+                    <h2>Tu escape tropical perfecto</h2>
+
+                    <div class="description-text">
+                        <p>
+                            El Hotel Plata Beach Resort te invita a descubrir el paraíso caribeño en Puerto Plata,
+                            República Dominicana. Ubicado estratégicamente frente a la hermosa Playa Tortugas,
+                            nuestro resort todo incluido ofrece una experiencia única donde el lujo se encuentra
+                            con la autenticidad dominicana.
+                        </p>
+
+                        <p>
+                            Disfruta de nuestras amplias habitaciones con vista al mar, relájate en nuestras
+                            múltiples piscinas, saborea la gastronomía internacional y local en nuestros 4 restaurantes,
+                            y déjate consentir en nuestro spa con tratamientos inspirados en la cultura caribeña.
+                            Cada momento será una celebración de la vida tropical.
+                        </p>
+                    </div>
+
+                    <!-- Important Information -->
+                    <div class="info-sections">
+                        <div class="info-section">
+                            <h3><i class="ti ti-info-circle"></i> Información del resort:</h3>
+                            <ul>
+                                <li>Sistema todo incluido 24 horas</li>
+                                <li>Check-in a partir de las 15:00 hrs</li>
+                                <li>Check-out hasta las 12:00 hrs</li>
+                                <li>Se habla español, inglés y francés</li>
+                                <li>Actividades para todas las edades</li>
+                                <li>Entretenimiento nocturno en vivo</li>
+                                <li>Deportes acuáticos incluidos</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-section">
+                            <h3><i class="ti ti-compass"></i> Aventuras cercanas:</h3>
+                            <ul>
+                                <li>Acceso directo a Playa Tortugas</li>
+                                <li>A 2.1 km del Acuario Interactivo</li>
+                                <li>A 3 km del Puerto de Ultramar</li>
+                                <li>A 8.5 km del Teleférico Monte Isabel</li>
+                                <li>A 22 km del Aeropuerto Internacional</li>
+                                <li>Tours en catamarán disponibles</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Section -->
+                    <div class="reviews-section">
+                        <h3>Experiencias de nuestros huéspedes</h3>
+                        <div class="reviews-grid">
+                            <div class="review-card">
+                                <div class="review-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span>5.0</span>
+                                </div>
+                                <p>"¡Increíble! La playa es hermosa, la comida deliciosa y el personal súper amable. Las
+                                    actividades para niños son geniales."</p>
+                                <div class="review-author">
+                                    <strong>Carmen Rodríguez</strong>
+                                    <span>Marzo 2024</span>
+                                </div>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span>4.3</span>
+                                </div>
+                                <p>"Excelente relación calidad-precio para un todo incluido. Las piscinas son
+                                    espectaculares y la vista al mar incomparable."</p>
+                                <div class="review-author">
+                                    <strong>Miguel Santos</strong>
+                                    <span>Febrero 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Features -->
+        <section class="special-features">
+            <div class="container">
+                <h2 class="section-title">Experiencias únicas del Caribe</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cocktail"></i>
+                        </div>
+                        <h3>Bares Temáticos</h3>
+                        <p>5 bares únicos incluyendo el famoso Piña Colada Bar y el elegante Bar Faisán con cocteles
+                            premium las 24 horas.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Gastronomía Internacional</h3>
+                        <p>Restaurante El Faisán con buffet internacional, plus 3 restaurantes a la carta con cocina
+                            dominicana, italiana y asiática.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3>Deportes Acuáticos</h3>
+                        <p>Kayak, windsurf, snorkeling y clases de buceo incluidas. Excursiones en catamarán con
+                            descuentos especiales.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Entretenimiento</h3>
+                        <p>Shows en vivo todas las noches, música tradicional dominicana, clases de merengue y bachata
+                            gratuitas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section class="booking-section">
+            <div class="container">
+                <div class="booking-card">
+                    <h2>Reserva tu escape caribeño</h2>
+                    <form class="booking-form" id="bookingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkin">Fecha de llegada</label>
+                                <input type="date" id="checkin" name="checkin" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout">Fecha de salida</label>
+                                <input type="date" id="checkout" name="checkout" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guests">Huéspedes</label>
+                                <select id="guests" name="guests" class="form-input" required>
+                                    <option value="1">1 Huésped</option>
+                                    <option value="2">2 Huéspedes</option>
+                                    <option value="3">3 Huéspedes</option>
+                                    <option value="4">4 Huéspedes</option>
+                                    <option value="5+">5+ Huéspedes</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="rooms">Habitaciones</label>
+                                <select id="rooms" name="rooms" class="form-input" required>
+                                    <option value="1">1 Habitación</option>
+                                    <option value="2">2 Habitaciones</option>
+                                    <option value="3">3 Habitaciones</option>
+                                    <option value="4+">4+ Habitaciones</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="price-summary">
+                            <div class="price-breakdown">
+                                <div class="price-line">
+                                    <span>$95 x 3 noches (Todo incluido)</span>
+                                    <span>$285</span>
+                                </div>
+                                <div class="price-line">
+                                    <span>Impuestos y tasas</span>
+                                    <span>$43</span>
+                                </div>
+                                <div class="price-line price-total">
+                                    <span><strong>Total</strong></span>
+                                    <span><strong>$328</strong></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary btn--full btn--large">
+                            Reservar Todo Incluido
+                        </button>
+
+                        <p class="booking-note">
+                            <i class="ti ti-info-circle"></i>
+                            Incluye todas las comidas, bebidas y actividades. Cancela gratis hasta 48 horas antes.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navigation -->
+    <nav class="page-navigation">
+        <div class="container">
+            <a href="ofertas.html" class="back-btn">
+                <i class="ti ti-arrow-big-left"></i>
+                <span>Volver a ofertas</span>
+            </a>
         </div>
-        <h3>Puerto Plata . A 4,38 km del centro</h3>
-    </section>
+    </nav>
 
-    <section class="Ho1">
-
-        <div class="Hot1">
-            
-            <div class="Hot">
-
-                <h2>El alojamiento ofrece</h2>
-    
-                <div class="tex">
-                    <p>Aire acondicionado en zonas comunes</p>
-                </div>
-                <div class="tex">
-                    <p>Wi-Fi gratis en zonas comunes</p>
-                </div>
-                <div class="tex">
-                    <p>Piscina</p>
-                </div>
-                <div class="tex">
-                    <p>
-                        Estacionamiento gratis</p>
-                </div>
-                <div class="tex">
-                    <p>Gimnasio</p>
-                </div>
-                <div class="tex">
-                    <p>Servicio de spa</p>
-                </div>
-    
-            </div>
-    
-            <div class="Hot">
-    
-                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.0595820910926!2d-79.03799639778634!3d-8.095406754396853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3ddee38a5a23%3A0x69cbed0ac8430345!2sAv.%20Nicol%C3%A1s%20de%20Pi%C3%A9rola%2C%20Trujillo%2013011!5e0!3m2!1ses!2spe!4v1637026840121!5m2!1ses!2spe" width="1235" height="500" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
-    
-                <h2>Explora los alrededores</h2>
-    
-                <p class="tex">Playa Tortugas</p>
-                <p class="tex">Acuario Interactivo de Puerto Plata</p>
-                <p class="tex"> Parque de las Palapas</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="conoce">
-
-        <h2>Conoce un poco más</h2>
-
-        <p>El Cancun Bay Hotel está situado en Playa Tortugas, a 6,5 km del Parque Urbano Kabah, a 15 km de Playa Delfines y a 22 km del Aeropuerto Internacional de Republica Dominicana. Ofrece  asistencia turística y piscina al aire libre.</p>
-        <h3>Necesitas saber:</h3>
-        <p>• Algunos huéspedes consideran que la señal Wi-Fi dentro del hotel podría ser mejor.</p>
-        <p>El hotel cuenta con el restaurante El Faisán, que sirve desayuno tipo buffet incluído en la tarifa, así como almuerzo y cena bajo el régimen todo incluido. Los bares Piña Colada y Faisán brindan cocteles y bebidas selectas.
-        </p>
-        <h3>Brújula:</h3>
-        <p>• A 3 km del Puerto de Ultramar.</p>
-        <p>• El Hotel Cancun Bay se ubica a 9,5 km del Acuario Interactivo.</p>
-        <p>• A 22 km de Isla Mujeres.</p>
-
-
-
-    </section>
-    <div class="sad">
-        <a href="oferta.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-left" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M20 15h-8v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h8a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1z"></path>
-        </svg></a>
-    </div>
-
-   <script type="text/javascript"></script>
-    <script src="js/traductor.js"></script> 
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript"></script>
-
-
-
-
-
+    <!-- Footer -->
     <footer class="footer">
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-            <a href="#" class="fab fa-pinterest"></a>
-        </div>
+        <div class="container">
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Pinterest">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+            </div>
 
-        <p>&copy;2023 creado por la aerolineaH.F.com</p>
+            <!-- Copyright -->
+            <div class="footer-text">
+                <p>&copy; 2024 <span>High Flight Airlines</span> | Todos los derechos reservados</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/hotel-booking.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>

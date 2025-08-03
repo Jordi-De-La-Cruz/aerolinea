@@ -123,6 +123,85 @@
     color: var(--primary);
 }
 
+.hotel-highlights {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.highlight-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: var(--secondary);
+    color: var(--dark);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+}
+
+.price-note {
+    font-size: var(--font-size-small);
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    font-style: italic;
+}
+
+/* Special Features Section */
+.special-features {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--light);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--spacing-md);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+}
+
+.feature-card h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--light);
+}
+
+.feature-card p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.hotel-location i {
+    color: var(--primary);
+}
+
 .hotel-actions {
     text-align: right;
 }
