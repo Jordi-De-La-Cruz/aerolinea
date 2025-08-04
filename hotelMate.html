@@ -1,164 +1,648 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Aerolinea High Flight </title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Hotel Malte París Francia - Hotel boutique 4 estrellas en el corazón de París con spa, gimnasio y ubicación privilegiada">
+    <meta name="keywords" content="hotel, parís, francia, boutique, torre eiffel, louvre, spa, centro">
+    <title>Hotel Malte - París, Francia | Destinos Mundiales</title>
+
+    <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/hotels.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Preload crítico -->
+    <link rel="preload" href="img/mundo.png" as="image">
+    <link rel="preload" href="img/mate1.jpg" as="image">
+    <link rel="preload" href="js/main.js" as="script">
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hotel Malte - Hotel Boutique 4 Estrellas en París">
+    <meta property="og:description"
+        content="Experimenta el encanto parisino en nuestro hotel boutique en el corazón de la Ciudad Luz">
+    <meta property="og:image" content="img/mate1.jpg">
+    <meta property="og:type" content="website">
 </head>
 
 <body>
+    <!-- Google Translate -->
+    <div id="google_translate_element"></div>
+
+    <!-- Header -->
     <header class="header">
-        <a href="index.html" class="logo">
-            <img src="img/mundo.png" alt="">
-            <h3>HIGH<br>FLIGHT</h3>
-        </a>
-        <!-- Inicio-Navegacion1 -->
-        <nav class="navegacion1">
-            <a href="login.html" class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg"
-                    class="icon icon-tabler icon-tabler-user" width="24" height="24" viewbox="0 0 24 24"
-                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                </svg></a>
-        </nav>
-        <!-- Final-navegacion1 -->
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/mundo.png" alt="Logo Destinos Mundiales">
+                <span>Destinos<br>Mundiales</span>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-btn">
+                    <i class="fas fa-home"></i>
+                    Inicio
+                </a>
+                <a href="login.html" class="nav-btn">
+                    <i class="fas fa-user"></i>
+                    Iniciar Sesión
+                </a>
+                <a href="ayuda.html" class="nav-btn">
+                    <i class="fas fa-question-circle"></i>
+                    Ayuda
+                </a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <section class="puerto">
-        <img src="img/mate1.jpg" alt="">
-        <img src="img/mate2.jpg" alt="">
-        <img src="img/mate3.jpeg" alt="">
-    </section>
-
-    <section class="Hotel">
-        <div class="hotel">
-            <h1>Hotel Malte
-                (Francia) </h1>
-
-
-            <div class="hotel">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hotel Gallery -->
+        <section class="hotel-gallery">
+            <div class="container">
+                <div class="gallery-grid">
+                    <div class="gallery-main">
+                        <img src="img/mate1.jpg" alt="Hotel Malte - Fachada elegante en París">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img src="img/mate2.jpg" alt="Hotel Malte - Suite de lujo" loading="lazy">
+                        <img src="img/mate3.jpeg" alt="Hotel Malte - Área común elegante" loading="lazy">
+                        <div class="gallery-more">
+                            <span>+20 fotos más</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Hotel Header -->
+        <section class="hotel-header">
+            <div class="container">
+                <div class="hotel-title-section">
+                    <div class="hotel-info">
+                        <h1>Hotel Malte</h1>
+                        <div class="hotel-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.3/5 (287 reseñas)</span>
+                        </div>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>París, Francia · A 4.38 km del centro histórico</span>
+                        </div>
+                        <div class="hotel-highlights">
+                            <span class="highlight-badge">
+                                <i class="fas fa-wifi"></i>
+                                Wi-Fi Premium
+                            </span>
+                            <span class="highlight-badge">
+                                <i class="fas fa-concierge-bell"></i>
+                                Concierge 24h
+                            </span>
+                            <span class="highlight-badge">
+                                <i class="fas fa-parking"></i>
+                                Valet Parking
+                            </span>
+                            <span class="highlight-badge">
+                                <i class="fas fa-spa"></i>
+                                Spa de Lujo
+                            </span>
+                            <span class="highlight-badge">
+                                <i class="fas fa-monument"></i>
+                                Vista Torre Eiffel
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="hotel-actions">
+                        <div class="price-info">
+                            <span class="price-from">Desde</span>
+                            <span class="price-amount">€180</span>
+                            <span class="price-period">por noche</span>
+                        </div>
+                        <p class="price-note">*Impuestos incluidos, desayuno opcional</p>
+                        <a href="#booking" class="btn btn--large">
+                            <i class="fas fa-calendar-check"></i>
+                            Réserver Maintenant
+                        </a>
+                        <button class="btn btn--outline" data-tooltip="Ajouter aux favoris">
+                            <i class="fas fa-heart"></i>
+                            Agregar a Favoritos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Features -->
+        <section class="special-features">
+            <div class="container">
+                <h2 class="section-title">L'élégance parisienne vous attend</h2>
+                <div class="features-grid">
+                    <div class="feature-card hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-monument"></i>
+                        </div>
+                        <h3>Ubicación Privilegiada</h3>
+                        <p>En el corazón de París, cerca de los Campos Elíseos y la Torre Eiffel</p>
+                    </div>
+                    <div class="feature-card hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h3>Gastronomía Francesa</h3>
+                        <p>Restaurante gourmet con chef estrella Michelin y carta de vinos selecta</p>
+                    </div>
+                    <div class="feature-card hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3>Lujo Boutique</h3>
+                        <p>Habitaciones únicas con decoración artística y amenidades premium</p>
+                    </div>
+                    <div class="feature-card hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-culture"></i>
+                        </div>
+                        <h3>Experiencia Cultural</h3>
+                        <p>Tours privados al Louvre, Versalles y los secretos mejor guardados de París</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hotel Details -->
+        <section class="hotel-details" id="details">
+            <div class="container">
+                <div class="details-grid">
+                    <!-- Amenities -->
+                    <div class="amenities-section">
+                        <h2>El alojamiento ofrece</h2>
+                        <div class="amenities-grid">
+                            <div class="amenity-item animate-on-scroll">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Aire acondicionado individual</span>
+                            </div>
+                            <div class="amenity-item animate-on-scroll">
+                                <i class="fas fa-wifi"></i>
+                                <span>Wi-Fi premium gratuito</span>
+                            </div>
+                            <div class="amenity-item animate-on-scroll">
+                                <i class="fas fa-swimming-pool"></i>
+                                <span>Piscina interior climatizada</span>
+                            </div>
+                            <div class="amenity-item animate-on-scroll">
+                                <i class="fas fa-car"></i>
+                                <span>Servicio de valet parking</span>
+                            </div>
+                            <div class="amenity-item animate-on-scroll">
+                                <i class="fas fa-dumbbell"></i>
+                                <span>Gimnasio equipado 24h</span>
+                            </div>
+                            <div class="amenity-item animate-on-scroll">
+                                <i class="fas fa-spa"></i>
+                                <span>Spa completo y centro wellness</span>
+                            </div>
+                            <div class="amenity-item animate-on-scroll">
+                                <i class="fas fa-utensils"></i>
+                                <span>Restaurante gourmet Le Malte</span>
+                            </div>
+                            <div class="amenity-item animate-on-scroll">
+                                <i class="fas fa-concierge-bell"></i>
+                                <span>Concierge personal 24/7</span>
+                            </div>
+                            <div class="amenity-item animate-on-scroll">
+                                <i class="fas fa-coffee"></i>
+                                <span>Bar lounge con terraza</span>
+                            </div>
+                            <div class="amenity-item animate-on-scroll">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Centro de negocios ejecutivo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location and Map -->
+                    <div class="location-section">
+                        <h2>Explora París desde aquí</h2>
+                        <div class="map-container">
+                            <iframe class="hotel-map"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.991441573862!2d2.3016066156746654!3d48.85837007928743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTorre%20Eiffel!5e0!3m2!1ses!2ses!4v1638525600000!5m2!1ses!2ses"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                title="Ubicación Hotel Malte en París">
+                            </iframe>
+                        </div>
+
+                        <div class="nearby-attractions">
+                            <h3>Iconos Parisinos Cercanos</h3>
+                            <div class="attraction-list">
+                                <div class="attraction-item">
+                                    <i class="fas fa-monument"></i>
+                                    <div class="attraction-info">
+                                        <span class="attraction-name">Torre Eiffel</span>
+                                        <span class="attraction-distance">1.2 km</span>
+                                    </div>
+                                </div>
+                                <div class="attraction-item">
+                                    <i class="fas fa-university"></i>
+                                    <div class="attraction-info">
+                                        <span class="attraction-name">Museo del Louvre</span>
+                                        <span class="attraction-distance">2.8 km</span>
+                                    </div>
+                                </div>
+                                <div class="attraction-item">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    <div class="attraction-info">
+                                        <span class="attraction-name">Campos Elíseos</span>
+                                        <span class="attraction-distance">1.5 km</span>
+                                    </div>
+                                </div>
+                                <div class="attraction-item">
+                                    <i class="fas fa-church"></i>
+                                    <div class="attraction-info">
+                                        <span class="attraction-name">Notre-Dame</span>
+                                        <span class="attraction-distance">3.2 km</span>
+                                    </div>
+                                </div>
+                                <div class="attraction-item">
+                                    <i class="fas fa-palette"></i>
+                                    <div class="attraction-info">
+                                        <span class="attraction-name">Montmartre y Sacré-Cœur</span>
+                                        <span class="attraction-distance">4.1 km</span>
+                                    </div>
+                                </div>
+                                <div class="attraction-item">
+                                    <i class="fas fa-plane"></i>
+                                    <div class="attraction-info">
+                                        <span class="attraction-name">Aeropuerto Charles de Gaulle</span>
+                                        <span class="attraction-distance">32 km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hotel Description -->
+        <section class="hotel-description">
+            <div class="container">
+                <div class="description-content">
+                    <h2>Conoce un poco más</h2>
+
+                    <div class="description-text">
+                        <p>
+                            El Hotel Malte está situado en una elegante avenida parisina, a solo 1.2 km de la Torre
+                            Eiffel
+                            y 2.8 km del Museo del Louvre. Este hotel boutique combina el encanto clásico francés con
+                            amenidades modernas, ofreciendo una experiencia única en el corazón de la Ciudad Luz.
+                        </p>
+                        <p>
+                            El hotel cuenta con el reconocido restaurante "Le Malte", dirigido por el chef Pierre
+                            Dubois,
+                            que sirve alta cocina francesa con ingredientes locales de temporada. El bar lounge
+                            "L'Atelier"
+                            ofrece cócteles artesanales y una selección exclusiva de champagnes franceses.
+                        </p>
+                    </div>
+
+                    <div class="info-sections">
+                        <div class="info-section">
+                            <h3><i class="fas fa-info-circle"></i> Necesitas saber</h3>
+                            <ul>
+                                <li>Wi-Fi de alta velocidad gratuito en todo el hotel</li>
+                                <li>Check-in: 15:00 hrs | Check-out: 12:00 hrs</li>
+                                <li>Servicio de transfer al aeropuerto disponible</li>
+                                <li>Personal multilingüe las 24 horas</li>
+                                <li>Política de mascotas: consultar disponibilidad</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-section">
+                            <h3><i class="fas fa-compass"></i> Brújula Cultural</h3>
+                            <ul>
+                                <li>A 10 minutos a pie de los Jardines de Trocadéro</li>
+                                <li>Estación de metro más cercana: Trocadéro (200m)</li>
+                                <li>A 15 minutos en metro de la Ópera de París</li>
+                                <li>Distrito 16: zona elegante y segura de París</li>
+                                <li>Acceso directo a tours en barco por el Sena</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Section -->
+                    <div class="reviews-section">
+                        <h3>Avis de nos clients</h3>
+                        <div class="reviews-grid">
+                            <div class="review-card">
+                                <div class="review-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span>5.0</span>
+                                </div>
+                                <p>"Magnifique! La vista a la Torre Eiffel desde nuestra suite era espectacular. El
+                                    servicio impecable y la ubicación perfecta para explorar París."</p>
+                                <div class="review-author">
+                                    <strong>Sophie Martín</strong>
+                                    <span>Abril 2024</span>
+                                </div>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span>4.5</span>
+                                </div>
+                                <p>"Hotel boutique excepcional. El restaurante Le Malte superó nuestras expectativas.
+                                    Ideal para una escapada romántica a París."</p>
+                                <div class="review-author">
+                                    <strong>Antonio Vega</strong>
+                                    <span>Marzo 2024</span>
+                                </div>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span>5.0</span>
+                                </div>
+                                <p>"El concierge nos organizó tours privados increíbles. Definitivamente el mejor hotel
+                                    donde nos hemos hospedado en París."</p>
+                                <div class="review-author">
+                                    <strong>Emma Wilson</strong>
+                                    <span>Febrero 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section class="booking-section" id="booking">
+            <div class="container">
+                <div class="booking-card">
+                    <h2>Réservez votre séjour parisien</h2>
+                    <form class="booking-form" id="bookingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkin" class="form-label">Arrivée</label>
+                                <input type="date" id="checkin" name="checkin" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout" class="form-label">Départ</label>
+                                <input type="date" id="checkout" name="checkout" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guests" class="form-label">Invités</label>
+                                <select id="guests" name="guests" class="form-input">
+                                    <option value="1">1 Invité</option>
+                                    <option value="2" selected>2 Invités</option>
+                                    <option value="3">3 Invités</option>
+                                    <option value="4">4 Invités</option>
+                                    <option value="5">5+ Invités</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="rooms" class="form-label">Chambres</label>
+                                <select id="rooms" name="rooms" class="form-input">
+                                    <option value="1" selected>1 Chambre</option>
+                                    <option value="2">2 Chambres</option>
+                                    <option value="3">3 Chambres</option>
+                                    <option value="4">4+ Chambres</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="price-summary">
+                            <div class="price-breakdown">
+                                <div class="price-line">
+                                    <span>Sélectionnez les dates pour voir les prix</span>
+                                    <span>--</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn--large">
+                            <i class="fas fa-calendar-check"></i>
+                            Confirmer la Réservation
+                        </button>
+
+                        <p class="booking-note">
+                            <i class="fas fa-shield-alt"></i>
+                            Réservation sécurisée · Annulation gratuite jusqu'à 24h avant
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Similar Hotels -->
+        <section class="similar-hotels">
+            <div class="container">
+                <h2 class="section-title">Otros hoteles elegantes en París</h2>
+                <div class="hotels-grid">
+                    <div class="hotel-card hover-lift">
+                        <div class="hotel-card__image">
+                            <img src="img/hotel-paris-1.jpg" alt="Hotel Ritz París"
+                                onerror="this.src='https://via.placeholder.com/300x200/2193b0/ffffff?text=Hotel+Ritz+París'">
+                            <span class="hotel-card__badge">Lujo</span>
+                        </div>
+                        <div class="hotel-card__content">
+                            <h3>Hotel Ritz París</h3>
+                            <div class="hotel-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-text">4.9/5</span>
+                            </div>
+                            <div class="hotel-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Place Vendôme</span>
+                            </div>
+                            <div class="hotel-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price-amount">€450</span>
+                                <span class="price-period">/noche</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hotel-card hover-lift">
+                        <div class="hotel-card__image">
+                            <img src="img/hotel-paris-2.jpg" alt="Hotel des Invalides"
+                                onerror="this.src='https://via.placeholder.com/300x200/4ecdc4/ffffff?text=Hotel+des+Invalides'">
+                        </div>
+                        <div class="hotel-card__content">
+                            <h3>Hotel des Invalides</h3>
+                            <div class="hotel-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-text">4.1/5</span>
+                            </div>
+                            <div class="hotel-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>7º Arrondissement</span>
+                            </div>
+                            <div class="hotel-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price-amount">€125</span>
+                                <span class="price-period">/noche</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hotel-card hover-lift">
+                        <div class="hotel-card__image">
+                            <img src="img/hotel-paris-3.jpg" alt="Boutique Hotel Marais"
+                                onerror="this.src='https://via.placeholder.com/300x200/ff6b9d/ffffff?text=Boutique+Hotel+Marais'">
+                            <span class="hotel-card__badge">Boutique</span>
+                        </div>
+                        <div class="hotel-card__content">
+                            <h3>Boutique Hotel Marais</h3>
+                            <div class="hotel-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-text">4.6/5</span>
+                            </div>
+                            <div class="hotel-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Le Marais</span>
+                            </div>
+                            <div class="hotel-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price-amount">€200</span>
+                                <span class="price-period">/noche</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Page Navigation -->
+    <nav class="page-navigation">
+        <div class="container">
+            <a href="ofertas.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Retour aux Offres
+            </a>
         </div>
-        <h3>Francia Paris. A 4,38 km del centro</h3>
-    </section>
+    </nav>
 
-    <section class="Ho1">
-
-        <div class="Hot1">
-            <div class="Hot">
-
-                <h2>El alojamiento ofrece</h2>
-
-                <div class="tex">
-                    <p>Aire acondicionado en zonas comunes</p>
-                </div>
-                <div class="tex">
-                    <p>Wi-Fi gratis en zonas comunes</p>
-                </div>
-                <div class="tex">
-                    <p>Piscina</p>
-                </div>
-                <div class="tex">
-                    <p>
-                        Estacionamiento gratis</p>
-                </div>
-                <div class="tex">
-                    <p>Gimnasio</p>
-                </div>
-                <div class="tex">
-                    <p>Servicio de spa</p>
-                </div>
-
-            </div>
-
-            <div class="Hot">
-
-                <iframe class="map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.0595820910926!2d-79.03799639778634!3d-8.095406754396853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3ddee38a5a23%3A0x69cbed0ac8430345!2sAv.%20Nicol%C3%A1s%20de%20Pi%C3%A9rola%2C%20Trujillo%2013011!5e0!3m2!1ses!2spe!4v1637026840121!5m2!1ses!2spe"
-                    width="1235" height="500" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
-
-                <h2>Explora los alrededores</h2>
-
-                <p class="tex">Playa Tortugas</p>
-                <p class="tex">Acuario Interactivo de Puerto Plata</p>
-                <p class="tex"> Parque de las Palapas</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="conoce">
-
-        <h2>Conoce un poco más</h2>
-
-        <p>El Cancun Bay Hotel está situado en Playa Tortugas, a 6,5 km del Parque Urbano Kabah, a 15 km de Playa
-            Delfines y a 22 km del Aeropuerto Internacional de Republica Dominicana. Ofrece asistencia turística y
-            piscina al aire libre.</p>
-        <h3>Necesitas saber:</h3>
-        <p>• Algunos huéspedes consideran que la señal Wi-Fi dentro del hotel podría ser mejor.</p>
-        <p>El hotel cuenta con el restaurante El Faisán, que sirve desayuno tipo buffet incluído en la tarifa, así como
-            almuerzo y cena bajo el régimen todo incluido. Los bares Piña Colada y Faisán brindan cocteles y bebidas
-            selectas.
-        </p>
-        <h3>Brújula:</h3>
-        <p>• A 3 km del Puerto de Ultramar.</p>
-        <p>• El Hotel Cancun Bay se ubica a 9,5 km del Acuario Interactivo.</p>
-        <p>• A 22 km de Isla Mujeres.</p>
-
-
-
-    </section>
-    <div class="sad">
-        <a href="oferta.html"><svg xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-arrow-big-left" width="24" height="24" viewbox="0 0 24 24"
-                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path
-                    d="M20 15h-8v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h8a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1z">
-                </path>
-            </svg></a>
-    </div>
-
-
-
-
-
-
-    <script type="text/javascript"></script>
-    <script src="js/traductor.js"></script>
-    <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript"></script>
-
-
-
-
-
+    <!-- Footer -->
     <footer class="footer">
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-            <a href="#" class="fab fa-pinterest"></a>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2024 <span>Destinos Mundiales</span> | Hotel Malte, París</p>
+            </div>
         </div>
-
-        <p>&copy;2023 creado por la aerolineaH.F.com</p>
     </footer>
+
+    <!-- JavaScript Modular -->
+    <script src="js/main.js"></script>
+    <script src="js/hotel-booking.js"></script>
+    <script src="js/translator.js"></script>
+
+    <!-- Google Translate Script -->
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Structured Data para SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Hotel",
+        "name": "Hotel Malte",
+        "description": "Hotel boutique 4 estrellas en París con vista a la Torre Eiffel",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "París",
+            "addressCountry": "FR"
+        },
+        "telephone": "+33-1-42-96-85-05",
+        "starRating": {
+            "@type": "Rating",
+            "ratingValue": "4"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.3",
+            "reviewCount": "287"
+        },
+        "amenityFeature": [
+            {"@type": "LocationFeatureSpecification", "name": "Wi-Fi premium gratuito"},
+            {"@type": "LocationFeatureSpecification", "name": "Piscina interior"},
+            {"@type": "LocationFeatureSpecification", "name": "Spa"},
+            {"@type": "LocationFeatureSpecification", "name": "Gimnasio 24h"},
+            {"@type": "LocationFeatureSpecification", "name": "Concierge 24/7"},
+            {"@type": "LocationFeatureSpecification", "name": "Restaurante gourmet"}
+        ],
+        "priceRange": "€180-€450"
+    }
+    </script>
 </body>
 
 </html>
