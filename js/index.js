@@ -1,8 +1,3 @@
-/**
- * index.js - Funcionalidades específicas para la página principal
- * Maneja animaciones, contadores, efectos de servicios y navegación
- */
-
 class IndexManager {
     constructor() {
         this.serviceCards = document.querySelectorAll('.service-card');
@@ -26,7 +21,6 @@ class IndexManager {
         this.initializeFeatures();
     }
 
-    // === TARJETAS DE SERVICIOS ===
     setupServiceCards() {
         this.serviceCards.forEach(card => {
             card.addEventListener('mouseenter', () => this.handleCardHover(card));
@@ -132,9 +126,7 @@ class IndexManager {
         }, 600);
     }
 
-    // === NAVEGACIÓN SUAVE ===
     setupSmoothScrolling() {
-        // Mejorar el scroll suave para enlaces internos
         document.addEventListener('click', (e) => {
             const link = e.target.closest('a[href^="#"]');
             if (!link) return;
@@ -155,7 +147,6 @@ class IndexManager {
                 // Actualizar URL
                 history.pushState(null, null, targetId);
 
-                // Efecto visual en el destino
                 this.highlightTarget(target);
             }
         });
@@ -170,7 +161,6 @@ class IndexManager {
         }, 2000);
     }
 
-    // === CONTADOR DE ESTADÍSTICAS ===
     setupStatsCounter() {
         if (!('IntersectionObserver' in window)) {
             this.animateStatsDirectly();
@@ -198,8 +188,8 @@ class IndexManager {
     animateStats() {
         this.statNumbers.forEach(stat => {
             const target = parseInt(stat.dataset.count);
-            const duration = 2000; // 2 segundos
-            const increment = target / (duration / 16); // 60 FPS
+            const duration = 2000;
+            const increment = target / (duration / 16);
             let current = 0;
 
             const updateCounter = () => {
@@ -223,7 +213,6 @@ class IndexManager {
         });
     }
 
-    // === ANIMACIONES DEL HERO ===
     setupHeroAnimations() {
         if (!('IntersectionObserver' in window)) return;
 
@@ -255,7 +244,6 @@ class IndexManager {
         });
     }
 
-    // === EFECTOS DE SCROLL ===
     setupScrollEffects() {
         let lastScrollTop = 0;
         const header = document.querySelector('.header');
@@ -263,7 +251,6 @@ class IndexManager {
         window.addEventListener('scroll', () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-            // Header que se oculta/muestra
             if (header) {
                 if (scrollTop > lastScrollTop && scrollTop > 100) {
                     // Scrolling down
@@ -284,7 +271,6 @@ class IndexManager {
         });
     }
 
-    // === NAVEGACIÓN DESTACADA ===
     setupNavigationHighlight() {
         if (!('IntersectionObserver' in window)) return;
 
@@ -296,7 +282,6 @@ class IndexManager {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
 
-                    // Remover active de todos los links
                     navLinks.forEach(link => {
                         link.classList.remove('active');
                     });
@@ -317,7 +302,6 @@ class IndexManager {
         });
     }
 
-    // === CARGA LAZY DE CONTENIDO ===
     setupLazyContent() {
         // Carga lazy para el mapa
         const mapContainer = document.querySelector('.map-container');
@@ -344,18 +328,14 @@ class IndexManager {
         }
     }
 
-    // === CARACTERÍSTICAS ADICIONALES ===
     initializeFeatures() {
-        // Agregar estilos CSS dinámicos
         this.addDynamicStyles();
 
-        // Configurar tooltips
         this.setupTooltips();
 
         // Manejar errores de imágenes
         this.setupImageErrorHandling();
 
-        // Configurar eventos de teclado
         this.setupKeyboardNavigation();
     }
 
@@ -485,7 +465,6 @@ class IndexManager {
 
     setupKeyboardNavigation() {
         document.addEventListener('keydown', (e) => {
-            // Navegación con teclado
             if (e.key === 'Tab') {
                 this.handleTabNavigation(e);
             }
@@ -493,11 +472,11 @@ class IndexManager {
             // Atajos de teclado
             if (e.ctrlKey || e.metaKey) {
                 switch (e.key) {
-                    case 'k': // Ctrl+K para buscar
+                    case 'k':
                         e.preventDefault();
                         this.focusSearch();
                         break;
-                    case 'h': // Ctrl+H para ir al inicio
+                    case 'h':
                         e.preventDefault();
                         this.scrollToTop();
                         break;
@@ -539,12 +518,9 @@ class IndexManager {
         });
     }
 
-    // === INTERACCIONES AVANZADAS ===
     setupAdvancedInteractions() {
-        // Efecto parallax para elementos específicos
         this.setupParallaxElements();
 
-        // Animaciones al hacer scroll
         this.setupScrollAnimations();
 
         // Efectos de mouse
@@ -612,15 +588,11 @@ class IndexManager {
         });
     }
 
-    // === OPTIMIZACIÓN DE RENDIMIENTO ===
     setupPerformanceOptimizations() {
-        // Lazy loading para imágenes
         this.setupLazyImages();
 
-        // Debounce para eventos de scroll
         this.setupDebouncedEvents();
 
-        // Preload de páginas importantes
         this.setupPagePreloading();
     }
 
@@ -662,7 +634,7 @@ class IndexManager {
             if (scrollTimeout) {
                 clearTimeout(scrollTimeout);
             }
-            scrollTimeout = setTimeout(originalScrollHandler, 16); // ~60fps
+            scrollTimeout = setTimeout(originalScrollHandler, 16);
         });
 
         window.addEventListener('resize', () => {
@@ -674,13 +646,11 @@ class IndexManager {
     }
 
     handleScroll() {
-        // Lógica optimizada para scroll
         this.updateScrollPosition();
         this.checkElementsInView();
     }
 
     handleResize() {
-        // Lógica para cambio de tamaño
         this.updateLayoutDimensions();
         this.recalculatePositions();
     }
@@ -696,8 +666,6 @@ class IndexManager {
     }
 
     checkElementsInView() {
-        // Verificar elementos en vista de manera eficiente
-        // Esta función se puede expandir según necesidades específicas
     }
 
     updateLayoutDimensions() {
@@ -706,8 +674,6 @@ class IndexManager {
     }
 
     recalculatePositions() {
-        // Recalcular posiciones de elementos posicionados
-        // Útil para elementos sticky o fixed que dependan del tamaño de pantalla
     }
 
     setupPagePreloading() {
@@ -765,9 +731,7 @@ class IndexManager {
         }
     }
 
-    // === MÉTODOS DE LIMPIEZA ===
     destroy() {
-        // Limpiar event listeners y observers
         this.serviceCards.forEach(card => {
             card.removeEventListener('mouseenter', this.handleCardHover);
             card.removeEventListener('mouseleave', this.handleCardLeave);
@@ -780,7 +744,6 @@ class IndexManager {
     }
 }
 
-// === INICIALIZACIÓN ===
 let indexManager;
 
 document.addEventListener('DOMContentLoaded', () => {

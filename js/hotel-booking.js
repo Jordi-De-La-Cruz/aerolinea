@@ -143,7 +143,7 @@ function getCurrency() {
     const title = document.querySelector('h1')?.textContent || '';
     if (title.includes('Francia') || title.includes('París')) return '€';
     if (title.includes('República Dominicana') || title.includes('Dominicana')) return '$';
-    return '$'; // Por defecto
+    return '$';
 }
 
 async function handleBookingSubmit(e) {
@@ -484,7 +484,6 @@ const BookingUtils = {
 
     // Validar disponibilidad
     async checkAvailability(checkin, checkout, rooms) {
-        // Simular consulta de disponibilidad
         return new Promise(resolve => {
             setTimeout(() => {
                 const available = Math.random() > 0.1;

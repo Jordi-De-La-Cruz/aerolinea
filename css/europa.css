@@ -1,0 +1,577 @@
+.hero-europa {
+    min-height: 70vh;
+    background: linear-gradient(135deg, rgba(33, 147, 176, 0.8), rgba(12, 73, 89, 0.9)),
+        url('../img/europa-hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-europa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg,
+            rgba(33, 147, 176, 0.1) 0%,
+            rgba(78, 205, 196, 0.1) 50%,
+            rgba(154, 205, 50, 0.1) 100%);
+    animation: europaShimmer 10s ease-in-out infinite;
+}
+
+@keyframes europaShimmer {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translateX(-10px);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: translateX(10px);
+    }
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-content {
+    color: var(--light);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.hero-title {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ffffff, var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--secondary);
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-description {
+    font-size: var(--font-size-large);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.destinations-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(180deg, var(--light) 0%, var(--gray-light) 100%);
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.destination-card {
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.destination-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    border-radius: var(--border-radius-lg);
+}
+
+.destination-card:hover::before {
+    opacity: 0.03;
+}
+
+.destination-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(33, 147, 176, 0.15);
+}
+
+.card-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.destination-card:hover .card-image img {
+    transform: scale(1.15);
+}
+
+.card-overlay {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    z-index: 3;
+}
+
+.card-rating {
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--light);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+}
+
+.card-rating i {
+    color: #ffd700;
+    font-size: 1.4rem;
+}
+
+.card-content {
+    padding: var(--spacing-lg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+.card-content h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.card-description {
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+    flex-grow: 1;
+    font-size: var(--font-size-base);
+}
+
+.card-features {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.feature-tag {
+    background: linear-gradient(135deg, var(--gray-light), #f0f0f0);
+    color: var(--gray);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 20px;
+    font-size: var(--font-size-small);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.feature-tag:hover {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--light);
+    transform: translateY(-2px);
+}
+
+.feature-tag i {
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
+
+.feature-tag:hover i {
+    color: var(--light);
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: var(--spacing-md);
+    border-top: 2px solid var(--gray-light);
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.price-from {
+    font-size: var(--font-size-small);
+    color: var(--gray);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price-amount {
+    font-size: var(--font-size-xxl);
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+
+/* Europa Tips Section */
+.tips-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--light);
+}
+
+.tips-section .section-title {
+    color: var(--light);
+}
+
+.tips-section .section-title::after {
+    background: var(--secondary);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.tip-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.tip-icon {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-lg);
+    font-size: var(--font-size-xxl);
+    color: var(--light);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tip-card h3 {
+    color: var(--light);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+.tip-card p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    font-size: var(--font-size-base);
+}
+
+.cta-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg,
+            var(--light) 0%,
+            var(--gray-light) 50%,
+            var(--light) 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/europa-pattern.png');
+    opacity: 0.05;
+    background-size: 200px;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-content h2 {
+    font-size: var(--font-size-hero);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.cta-content p {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xl);
+    color: var(--gray);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn--primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(33, 147, 176, 0.3);
+}
+
+.btn--primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transition: left 0.6s;
+}
+
+.btn--primary:hover::before {
+    left: 100%;
+}
+
+.btn--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(33, 147, 176, 0.4);
+}
+
+.btn--outline {
+    background: transparent;
+    color: var(--primary);
+    border: 3px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn--outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn--outline:hover::before {
+    width: 100%;
+}
+
+.btn--outline:hover {
+    color: var(--light);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(33, 147, 176, 0.3);
+}
+
+/* Dark Theme Adjustments */
+.dark-theme .destination-card {
+    background: var(--gray-light);
+    border: 1px solid #444;
+}
+
+.dark-theme .card-content h3 {
+    color: var(--secondary);
+}
+
+.dark-theme .card-description {
+    color: #ddd;
+}
+
+.dark-theme .feature-tag {
+    background: #444;
+    color: #ddd;
+    border-color: #555;
+}
+
+.dark-theme .feature-tag:hover {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--light);
+}
+
+.dark-theme .cta-section {
+    background: linear-gradient(135deg, var(--dark), #2c2c2c);
+}
+
+.dark-theme .cta-content h2 {
+    color: var(--secondary);
+}
+
+.dark-theme .cta-content p {
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .destinations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-europa {
+        min-height: 60vh;
+    }
+
+    .hero-title {
+        font-size: 5rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-large);
+    }
+
+    .hero-description {
+        font-size: var(--font-size-base);
+    }
+
+    .destinations-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .card-features {
+        justify-content: center;
+    }
+
+    .card-footer {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: center;
+        text-align: center;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn--large {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .cta-content h2 {
+        font-size: var(--font-size-xxl);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-europa {
+        min-height: 50vh;
+    }
+
+    .hero-content {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .destinations-section,
+    .tips-section,
+    .cta-section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .card-content {
+        padding: var(--spacing-md);
+    }
+
+    .card-image {
+        height: 220px;
+    }
+
+    .tip-card {
+        padding: var(--spacing-lg);
+    }
+
+    .tip-icon {
+        width: 70px;
+        height: 70px;
+        font-size: var(--font-size-xl);
+    }
+
+    .feature-tag {
+        font-size: 1.2rem;
+        padding: 4px 8px;
+    }
+}

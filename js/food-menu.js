@@ -304,7 +304,6 @@ function filterItems() {
             showItem = false;
         }
 
-        // Filtro de precio
         if (priceFilter) {
             const [min, max] = priceFilter.split('-').map(Number);
             if (max && (price < min || price > max)) {

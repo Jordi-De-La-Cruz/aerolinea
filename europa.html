@@ -1,186 +1,423 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aerolinea High Flight</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="icon" href="img/inicial.jpg">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description"
+    content="Descubre los mejores destinos de Europa. Vuelos a ciudades icónicas, cultura milenaria y paisajes únicos.">
+  <title>Europa - Destinos Mundiales</title>
 
+  <!-- CSS Modular -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/europa.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-  <!-- Inicio de header -->
+  <!-- Header -->
   <header class="header">
-
-    <a href="index.html" class="logo">
-      <img src="img/mundo.png" alt="">
-      <h3 href="index.html">HIGH <br>FLIGHT</h3>
-    </a>
-    <!-- Inicio-Navegacion1 -->
-    <nav class="navegacion1">
-      <a href="login.html" class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-user" width="24" height="24" viewbox="0 0 24 24" stroke-width="2"
-          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <circle cx="12" cy="7" r="4"></circle>
-          <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-        </svg>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="img/mundo.png" alt="Logo Aerolínea">
+        <span>Destinos Mundiales</span>
       </a>
 
-      <a href="ayuda.html" class="boton ">ayuda<svg xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-help" width="24" height="24" viewbox="0 0 24 24" stroke-width="2"
-          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <circle cx="12" cy="12" r="9"></circle>
-          <line x1="12" y1="17" x2="12" y2="17.01"></line>
-          <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
-        </svg>
-      </a>
-    </nav>
-    <!-- Final-navegacion1 -->
+      <nav class="nav">
+        <a href="index.html" class="nav-btn">
+          <i class="fas fa-home"></i>
+          Inicio
+        </a>
+        <a href="login.html" class="nav-btn">
+          <i class="fas fa-user"></i>
+          Iniciar Sesión
+        </a>
+        <a href="ayuda.html" class="nav-btn">
+          <i class="fas fa-question-circle"></i>
+          Ayuda
+        </a>
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <div class="slider">
-      <ul>
-        <li><img src="img/europa1.jpg" alt=""></li>
-        <li><img src="img/europa2.jpg" alt=""></li>
-        <li><img src="img/europa3.jpg" alt=""></li>
-        <li><img src="img/europa4.jpg" alt=""></li>
-        <li><img src="img/europa5.jpg" alt=""></li>
-        <li><img src="img/europa6.jpg" alt=""></li>
-        <li><img src="img/europa7.jpg" alt=""></li>
-        <li><img src="img/europa8.jpg" alt=""></li>
-      </ul>
+  <main class="main">
+    <!-- Hero Section -->
+    <section class="hero-europa">
+      <div class="hero-overlay">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title fade-in">Europa</h1>
+            <p class="hero-subtitle fade-in">Arte, Historia y Cultura Milenaria</p>
+            <p class="hero-description fade-in">
+              Descubre la magia de Europa: desde las románticas calles de París hasta
+              los canales de Venecia, cada destino cuenta una historia única.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations-section">
+      <div class="container">
+        <h2 class="section-title">Destinos Populares en Europa</h2>
+
+        <div class="destinations-grid">
+          <!-- París -->
+          <article class="destination-card hover-lift">
+            <div class="card-image">
+              <img src="img/paris.jpg" alt="Torre Eiffel en París">
+              <div class="card-overlay">
+                <div class="card-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.9</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>París, Francia</h3>
+              <p class="card-description">
+                La Ciudad de la Luz te espera con sus icónicos monumentos,
+                museos de clase mundial y la mejor gastronomía.
+              </p>
+              <div class="card-features">
+                <span class="feature-tag">
+                  <i class="fas fa-monument"></i>
+                  Monumentos
+                </span>
+                <span class="feature-tag">
+                  <i class="fas fa-palette"></i>
+                  Arte
+                </span>
+                <span class="feature-tag">
+                  <i class="fas fa-utensils"></i>
+                  Gastronomía
+                </span>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <span class="price-from">Desde</span>
+                  <span class="price-amount">€899</span>
+                </div>
+                <button class="btn btn--primary">
+                  Reservar
+                  <i class="fas fa-plane"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Roma -->
+          <article class="destination-card hover-lift">
+            <div class="card-image">
+              <img src="img/roma.jpg" alt="Coliseo Romano">
+              <div class="card-overlay">
+                <div class="card-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.8</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Roma, Italia</h3>
+              <p class="card-description">
+                La Ciudad Eterna donde cada piedra cuenta una historia
+                de más de 2000 años de civilización.
+              </p>
+              <div class="card-features">
+                <span class="feature-tag">
+                  <i class="fas fa-landmark"></i>
+                  Historia
+                </span>
+                <span class="feature-tag">
+                  <i class="fas fa-church"></i>
+                  Arquitectura
+                </span>
+                <span class="feature-tag">
+                  <i class="fas fa-pizza-slice"></i>
+                  Comida
+                </span>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <span class="price-from">Desde</span>
+                  <span class="price-amount">€749</span>
+                </div>
+                <button class="btn btn--primary">
+                  Reservar
+                  <i class="fas fa-plane"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Barcelona -->
+          <article class="destination-card hover-lift">
+            <div class="card-image">
+              <img src="img/barcelona.jpg" alt="Sagrada Familia">
+              <div class="card-overlay">
+                <div class="card-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.7</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Barcelona, España</h3>
+              <p class="card-description">
+                Modernismo catalán, playas mediterráneas y una vibrante
+                vida cultural te esperan en esta joya española.
+              </p>
+              <div class="card-features">
+                <span class="feature-tag">
+                  <i class="fas fa-swimmer"></i>
+                  Playas
+                </span>
+                <span class="feature-tag">
+                  <i class="fas fa-building"></i>
+                  Gaudí
+                </span>
+                <span class="feature-tag">
+                  <i class="fas fa-wine-glass"></i>
+                  Tapas
+                </span>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <span class="price-from">Desde</span>
+                  <span class="price-amount">€599</span>
+                </div>
+                <button class="btn btn--primary">
+                  Reservar
+                  <i class="fas fa-plane"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Londres -->
+          <article class="destination-card hover-lift">
+            <div class="card-image">
+              <img src="img/londres.jpg" alt="Big Ben y London Eye">
+              <div class="card-overlay">
+                <div class="card-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.6</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Londres, Reino Unido</h3>
+              <p class="card-description">
+                Tradición y modernidad se fusionan en esta metrópolis
+                llena de historia, teatros y cultura británica.
+              </p>
+              <div class="card-features">
+                <span class="feature-tag">
+                  <i class="fas fa-crown"></i>
+                  Realeza
+                </span>
+                <span class="feature-tag">
+                  <i class="fas fa-theater-masks"></i>
+                  Teatro
+                </span>
+                <span class="feature-tag">
+                  <i class="fas fa-university"></i>
+                  Museos
+                </span>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <span class="price-from">Desde</span>
+                  <span class="price-amount">£699</span>
+                </div>
+                <button class="btn btn--primary">
+                  Reservar
+                  <i class="fas fa-plane"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ámsterdam -->
+          <article class="destination-card hover-lift">
+            <div class="card-image">
+              <img src="img/amsterdam.jpg" alt="Canales de Ámsterdam">
+              <div class="card-overlay">
+                <div class="card-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.5</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Ámsterdam, Países Bajos</h3>
+              <p class="card-description">
+                Canales pintorescos, museos extraordinarios y una
+                atmósfera liberal única en el corazón de Europa.
+              </p>
+              <div class="card-features">
+                <span class="feature-tag">
+                  <i class="fas fa-water"></i>
+                  Canales
+                </span>
+                <span class="feature-tag">
+                  <i class="fas fa-bicycle"></i>
+                  Bicicletas
+                </span>
+                <span class="feature-tag">
+                  <i class="fas fa-cannabis"></i>
+                  Tulipanes
+                </span>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <span class="price-from">Desde</span>
+                  <span class="price-amount">€679</span>
+                </div>
+                <button class="btn btn--primary">
+                  Reservar
+                  <i class="fas fa-plane"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Praga -->
+          <article class="destination-card hover-lift">
+            <div class="card-image">
+              <img src="img/praga.jpg" alt="Castillo de Praga">
+              <div class="card-overlay">
+                <div class="card-rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.4</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Praga, República Checa</h3>
+              <p class="card-description">
+                La "Ciudad de las Cien Torres" te cautivará con su
+                arquitectura medieval y su ambiente bohemio.
+              </p>
+              <div class="card-features">
+                <span class="feature-tag">
+                  <i class="fas fa-chess-rook"></i>
+                  Castillos
+                </span>
+                <span class="feature-tag">
+                  <i class="fas fa-beer"></i>
+                  Cerveza
+                </span>
+                <span class="feature-tag">
+                  <i class="fas fa-bridge"></i>
+                  Puentes
+                </span>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <span class="price-from">Desde</span>
+                  <span class="price-amount">€529</span>
+                </div>
+                <button class="btn btn--primary">
+                  Reservar
+                  <i class="fas fa-plane"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel Tips Section -->
+    <section class="tips-section">
+      <div class="container">
+        <h2 class="section-title">Consejos para Viajar por Europa</h2>
+
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-icon">
+              <i class="fas fa-passport"></i>
+            </div>
+            <h3>Documentación</h3>
+            <p>Revisa los requisitos de visa y documentos necesarios para cada país europeo que planeas visitar.</p>
+          </div>
+
+          <div class="tip-card">
+            <div class="tip-icon">
+              <i class="fas fa-train"></i>
+            </div>
+            <h3>Transporte</h3>
+            <p>Considera el Eurail Pass para moverte entre países de forma económica y práctica.</p>
+          </div>
+
+          <div class="tip-card">
+            <div class="tip-icon">
+              <i class="fas fa-euro-sign"></i>
+            </div>
+            <h3>Moneda</h3>
+            <p>La mayoría de países usan el Euro, pero algunos como Reino Unido tienen su propia moneda.</p>
+          </div>
+
+          <div class="tip-card">
+            <div class="tip-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3>Mejor Época</h3>
+            <p>Primavera y otoño ofrecen temperaturas agradables y menos multitudes que el verano.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>¿Listo para tu Aventura Europea?</h2>
+          <p>Reserva ahora y obtén las mejores tarifas para volar a Europa</p>
+          <div class="cta-buttons">
+            <a href="#reservar" class="btn btn--large btn--primary">
+              Reservar Ahora
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contacto" class="btn btn--large btn--outline">
+              Contactar Agente
+              <i class="fas fa-phone"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+      </div>
+      <div class="footer-text">
+        <p>&copy; 2024 <span>Destinos Mundiales</span> | Aerolínea H.F.</p>
+      </div>
     </div>
-  </section>
+  </footer>
 
-
-  <section class="reserva">
-    <div class="reserva11">
-      <table>
-        <tr>
-          <th>PAIS DE ORIGEN</th>
-          <th>DESTINO</th>
-          <th>PRECIO</th>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Italia</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Francia</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Alemania</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>España</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Portugal</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Bélgica</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Grecia</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Malta</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Irlanda</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Eslovenia</td>
-          <td>$350</td>
-        </tr>
-
-      </table>
-    </div>
-
-    <div class="reserva1">
-      <h2>RESERVAR TU PASAJE</h2>
-
-      <fieldset>
-        <input type="text" placeholder="Nombre ">
-      </fieldset>
-
-      <fieldset>
-        <input type="text" placeholder="Apellidos">
-      </fieldset>
-
-      <fieldset>
-        <input type="text" placeholder="n° de pasajes">
-      </fieldset>
-
-      <fieldset>
-        <input type="text" placeholder="Origen">
-      </fieldset>
-
-      <fieldset>
-        <input type="text" placeholder="Destino">
-      </fieldset>
-
-      <fieldset>
-        <label for="fecha"></label>
-        <input type="date" placeholder="Fecha">
-      </fieldset>
-
-      <a class="bn" href="tarjeta.html">Enviar</a>
-    </div>
-  </section>
-
-  <section class="footer">
-    <div class="share">
-      <a href="#" class="fab fa-facebook-f"></a>
-      <a href="#" class="fab fa-twitter"></a>
-      <a href="#" class="fab fa-instagram"></a>
-      <a href="#" class="fab fa-linkedin"></a>
-      <a href="#" class="fab fa-pinterest"></a>
-    </div>
-
-    <div class="credit">@2023 <span>creado </span> | por la aerolinea H.F. com</div>
-  </section>
-
-  <script type="text/javascript"></script>
-  <script src="js/traductor.js"></script>
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/europa.js"></script>
 </body>
 
 </html>

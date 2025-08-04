@@ -1,9 +1,3 @@
-/**
- * login-components.css - Estilos específicos para la página de login
- * Se usa junto con base.css y layout.css existentes
- */
-
-/* === LOGIN PAGE LAYOUT === */
 .login-page {
     min-height: 100vh;
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
@@ -27,7 +21,6 @@
     z-index: 1;
 }
 
-/* === LOGIN CONTAINER === */
 .login-container {
     background: var(--light);
     border-radius: var(--border-radius-lg);
@@ -54,7 +47,6 @@
     }
 }
 
-/* === LOGIN HEADER === */
 .login-header {
     text-align: center;
     margin-bottom: var(--spacing-lg);
@@ -86,7 +78,6 @@
     margin-bottom: 0;
 }
 
-/* === LOGIN FORM === */
 .login-form {
     display: flex;
     flex-direction: column;
@@ -132,7 +123,6 @@
     color: var(--primary);
 }
 
-/* === FORM OPTIONS === */
 .form-options {
     display: flex;
     justify-content: space-between;
@@ -172,7 +162,6 @@
     text-decoration: underline;
 }
 
-/* === LOGIN BUTTON === */
 .btn-login {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: var(--light);
@@ -221,7 +210,6 @@
     transform: none;
 }
 
-/* === SOCIAL LOGIN === */
 .divider {
     text-align: center;
     margin: var(--spacing-lg) 0;
@@ -285,7 +273,6 @@
     color: #1da1f2;
 }
 
-/* === SIGNUP LINK === */
 .signup-link {
     text-align: center;
     margin-top: var(--spacing-lg);
@@ -310,7 +297,6 @@
     text-decoration: underline;
 }
 
-/* === BACK BUTTON === */
 .back-btn {
     position: absolute;
     top: var(--spacing-md);
@@ -336,7 +322,6 @@
     box-shadow: var(--shadow-md);
 }
 
-/* === ERROR STATES === */
 .form-input.error {
     border-color: var(--danger);
     box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
@@ -349,7 +334,6 @@
     display: block;
 }
 
-/* === PASSWORD TOGGLE === */
 .password-toggle {
     position: absolute;
     right: var(--spacing-sm);
@@ -402,7 +386,6 @@
     color: var(--light);
 }
 
-/* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
     .login-container {
         padding: var(--spacing-lg);
@@ -458,7 +441,6 @@
     }
 }
 
-/* === LOADING STATES === */
 .btn-login .fa-spinner {
     animation: spin 1s linear infinite;
 }
@@ -473,7 +455,6 @@
     }
 }
 
-/* === FOCUS VISIBLE === */
 .form-input:focus-visible,
 .btn-login:focus-visible,
 .btn-social:focus-visible,
@@ -482,7 +463,6 @@
     outline-offset: 2px;
 }
 
-/* === ANIMATIONS === */
 .fade-in {
     animation: fadeIn 0.6s ease-out;
 }

@@ -1,8 +1,3 @@
-/**
- * kawaii.js - Funcionalidades específicas para la página kawaii
- * Maneja animaciones, efectos y interacciones kawaii
- */
-
 class KawaiiManager {
     constructor() {
         this.kawaiiButtons = document.querySelectorAll('.kawaii-btn');
@@ -61,7 +56,6 @@ class KawaiiManager {
         this.initializeKawaiiFeatures();
     }
 
-    // === BOTONES KAWAII ===
     setupKawaiiButtons() {
         this.kawaiiButtons.forEach(button => {
             button.addEventListener('click', (e) => this.handleKawaiiClick(e));
@@ -77,7 +71,7 @@ class KawaiiManager {
         // Efecto de click kawaii
         this.createKawaiiExplosion(button);
 
-        // Sonido kawaii (visual)
+        // Sonido kawaii
         this.showKawaiiSound(button, this.kawaiiSounds.click);
 
         // Mostrar información del destino
@@ -136,7 +130,6 @@ class KawaiiManager {
                 particle.style.opacity = '0';
             });
 
-            // Limpiar después de la animación
             setTimeout(() => {
                 if (particle.parentNode) {
                     particle.parentNode.removeChild(particle);
@@ -189,7 +182,6 @@ class KawaiiManager {
         element.style.transform = '';
     }
 
-    // === EFECTOS DE TARJETAS ===
     setupCardHoverEffects() {
         this.kawaiiCards.forEach(card => {
             card.addEventListener('mouseenter', () => this.animateCardEntry(card));
@@ -203,7 +195,6 @@ class KawaiiManager {
             title.style.animation = 'kawaiiBounce 0.6s ease';
         }
 
-        // Efecto de partículas flotantes
         this.createFloatingHearts(card);
     }
 
@@ -244,7 +235,6 @@ class KawaiiManager {
         }
     }
 
-    // === DECORACIONES FLOTANTES ===
     setupFloatingDecorations() {
         this.decorations.forEach((decoration, index) => {
             this.animateDecoration(decoration, index);
@@ -258,7 +248,6 @@ class KawaiiManager {
         decoration.style.animationDuration = duration + 'ms';
         decoration.style.animationDelay = delay + 'ms';
 
-        // Cambiar emoji ocasionalmente
         setInterval(() => {
             if (Math.random() < 0.3) {
                 this.changeDecorationEmoji(decoration);
@@ -283,7 +272,6 @@ class KawaiiManager {
         }, 200);
     }
 
-    // === ANIMACIONES DE SCROLL ===
     setupScrollAnimations() {
         if (!('IntersectionObserver' in window)) return;
 
@@ -337,7 +325,6 @@ class KawaiiManager {
         }, 1000);
     }
 
-    // === CURSOR KAWAII ===
     setupKawaiiCursor() {
         let cursor = document.querySelector('.kawaii-cursor');
 
@@ -368,7 +355,6 @@ class KawaiiManager {
             cursor.style.opacity = '0';
         });
 
-        // Cambiar emoji del cursor en elementos kawaii
         this.kawaiiCards.forEach(card => {
             card.addEventListener('mouseenter', () => {
                 cursor.textContent = '🌟';
@@ -382,9 +368,7 @@ class KawaiiManager {
         });
     }
 
-    // === EFECTOS DE PARTÍCULAS ===
     setupParticleEffects() {
-        // Crear partículas kawaii ocasionales
         setInterval(() => {
             if (Math.random() < 0.3) {
                 this.createRandomParticle();
@@ -555,13 +539,11 @@ class KawaiiManager {
         // Crear efecto de corazones
         this.createHeartExplosion();
 
-        // Mostrar notificación kawaii
         this.showKawaiiNotification(
             `¡Genial! 🎉 Tu reserva para ${destination.name} está siendo procesada con mucho amor 💖`,
             'success'
         );
 
-        // Simular proceso de reserva
         setTimeout(() => {
             this.showKawaiiNotification(
                 `¡Reserva confirmada! 🌟 Prepárate para la aventura más kawaii con ${destination.name} ${destination.emoji}`,
@@ -710,15 +692,12 @@ class KawaiiManager {
         }, 300);
     }
 
-    // === CARACTERÍSTICAS ADICIONALES ===
     initializeKawaiiFeatures() {
         // Añadir clase kawaii al body
         document.body.classList.add('kawaii-active');
 
-        // Crear estilos CSS dinámicos
         this.addKawaiiStyles();
 
-        // Configurar eventos especiales
         this.setupSpecialEvents();
 
         // Easter eggs
@@ -764,9 +743,8 @@ class KawaiiManager {
     }
 
     setupSpecialEvents() {
-        // Konami code para modo ultra kawaii
         let konamiCode = [];
-        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
 
         document.addEventListener('keydown', (e) => {
             konamiCode.push(e.keyCode);
@@ -782,7 +760,6 @@ class KawaiiManager {
     }
 
     setupEasterEggs() {
-        // Triple click para sorpresa kawaii
         let clickCount = 0;
         let clickTimer;
 
@@ -861,7 +838,6 @@ class KawaiiManager {
     triggerKawaiiSurprise() {
         this.showKawaiiNotification('🎉 ¡Sorpresa kawaii desbloqueada! 🎉', 'success');
 
-        // Cambiar todos los emojis de decoración temporalmente
         this.decorations.forEach(decoration => {
             const originalEmoji = decoration.textContent;
             decoration.textContent = '🎉';

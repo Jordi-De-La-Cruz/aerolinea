@@ -1,8 +1,3 @@
-/**
- * login.js - Funcionalidades específicas del formulario de login
- * Archivo independiente que funciona con main.js existente
- */
-
 class LoginHandler {
     constructor() {
         this.form = document.getElementById('loginForm');
@@ -32,11 +27,9 @@ class LoginHandler {
         this.setupKeyboardEvents();
     }
 
-    // === MANEJO DEL FORMULARIO ===
     setupFormHandling() {
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
 
-        // Validación en tiempo real
         if (this.emailInput) {
             this.emailInput.addEventListener('blur', () => this.validateEmail());
             this.emailInput.addEventListener('input', () => this.clearEmailError());
@@ -86,7 +79,6 @@ class LoginHandler {
     }
 
     async performLogin(data) {
-        // Simulación de autenticación (reemplazar con API real)
         return new Promise((resolve) => {
             setTimeout(() => {
                 // Validación básica para demo
@@ -156,7 +148,6 @@ class LoginHandler {
         this.showError('Formulario bloqueado por seguridad');
     }
 
-    // === VALIDACIÓN ===
     validateForm() {
         const emailValid = this.validateEmail();
         const passwordValid = this.validatePassword();
@@ -219,7 +210,6 @@ class LoginHandler {
         this.clearInputError(this.passwordInput);
     }
 
-    // === TOGGLE DE CONTRASEÑA ===
     setupPasswordToggle() {
         if (!this.passwordInput) return;
 
@@ -242,7 +232,6 @@ class LoginHandler {
         });
     }
 
-    // === EFECTOS DE INPUTS ===
     setupInputEffects() {
         const inputs = this.form.querySelectorAll('.form-input');
 
@@ -259,7 +248,6 @@ class LoginHandler {
         });
     }
 
-    // === BOTONES SOCIALES ===
     setupSocialButtons() {
         const socialBtns = document.querySelectorAll('.btn-social');
 
@@ -282,7 +270,6 @@ class LoginHandler {
     handleSocialLogin(provider) {
         this.showInfo(`Conectando con ${provider}...`);
 
-        // Simular login social
         setTimeout(() => {
             this.showSuccess(`¡Conectado con ${provider}!`);
             setTimeout(() => {
@@ -291,7 +278,6 @@ class LoginHandler {
         }, 2000);
     }
 
-    // === DATOS GUARDADOS ===
     saveUserEmail(email) {
         try {
             localStorage.setItem('savedEmail', email);
@@ -314,7 +300,6 @@ class LoginHandler {
         }
     }
 
-    // === EVENTOS DE TECLADO ===
     setupKeyboardEvents() {
         document.addEventListener('keydown', (e) => {
             // Enter para enviar
@@ -327,7 +312,6 @@ class LoginHandler {
         });
     }
 
-    // === NOTIFICACIONES ===
     showSuccess(message) {
         this.showNotification(message, 'success');
     }
