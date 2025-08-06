@@ -1,298 +1,1041 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aerolinea High Flight</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" href="img/inicial.jpg">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description"
+        content="Menú completo a bordo de Aerolínea High Flight. Desayunos, almuerzos y cenas gourmet para tu vuelo.">
+    <meta name="keywords" content="comida avión, menú aerolínea, comida gourmet, vuelos">
+    <meta name="theme-color" content="#2193b0">
+    <title>Menú Gourmet | Destinos Mundiales</title>
+
+    <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/destinations.css">
+    <link rel="stylesheet" href="css/comidas.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Inicio de header -->
+    <!-- Skip Link -->
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Header -->
     <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/mundo.png" alt="Logo Aerolínea">
+                <span>Destinos Mundiales</span>
+            </a>
 
-        <a href="index.html" class="logo">
-            <img src="img/mundo.png" alt="">
-            <h3 href="index.html">HIGH <br>FLIGHT</h3>
-        </a>
-        <!-- Inicio-Navegacion1 -->
-        <nav class="navegacion1">
-            <a href="login.html"  class="boton ">Inciar Sesión<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-            </svg></a>
-
-            <a href="ayuda.html"  class="boton ">ayuda<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <circle cx="12" cy="12" r="9"></circle>
-            <line x1="12" y1="17" x2="12" y2="17.01"></line>
-            <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
-            </svg></a>
-        </nav>
-        <!-- Final-navegacion1 -->
+            <nav class="nav">
+                <a href="index.html" class="nav-btn">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="login.html" class="nav-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Iniciar Sesión</span>
+                </a>
+                <a href="ayuda.html" class="nav-btn">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Ayuda</span>
+                </a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <section class="popular" id="popular">
-        <div class="heading">
-            <h3>DESAYUNOS</h3>
-        </div>
-    
-        <div class="box-container">
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
+    <main class="main" id="main">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Navegación">
+            <div class="container">
+                <ul class="breadcrumb-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="emiratos.html">Singapur</a></li>
+                    <li>Menú Gourmet</li>
+                </ul>
+            </div>
+        </nav>
 
-                <div class="image">
-                    <img src="img/img1.jpg" alt="">
-                </div>
+        <!-- Hero Section -->
+        <section class="menu-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Menú Gourmet a Bordo</h1>
+                    <p>Disfruta de una experiencia culinaria única durante tu vuelo con platos preparados por chefs
+                        expertos</p>
 
-                <div class="content">
-                    <h3>Avena con fruta</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        
+                    <div class="menu-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-utensils"></i>
+                            <span class="stat-number" data-count="25">0</span>
+                            <span class="stat-label">Platos Gourmet</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-leaf"></i>
+                            <span class="stat-number" data-count="100">0</span>
+                            <span class="stat-label">% Ingredientes Frescos</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-award"></i>
+                            <span class="stat-number" data-count="5">0</span>
+                            <span class="stat-label">Estrellas Michelin</span>
+                        </div>
                     </div>
-
-                    <div class="price">$20.00 <span>$30.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
                 </div>
             </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
+        </section>
 
-                <div class="image">
-                    <img src="img/img7.jpg" alt="">
+        <!-- Menu Categories Filter -->
+        <section class="menu-filters">
+            <div class="container">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-category="all">
+                        <i class="fas fa-utensils"></i>
+                        Todo el Menú
+                    </button>
+                    <button class="filter-tab" data-category="breakfast">
+                        <i class="fas fa-coffee"></i>
+                        Desayunos
+                    </button>
+                    <button class="filter-tab" data-category="lunch">
+                        <i class="fas fa-sun"></i>
+                        Almuerzos
+                    </button>
+                    <button class="filter-tab" data-category="dinner">
+                        <i class="fas fa-moon"></i>
+                        Cenas
+                    </button>
+                    <button class="filter-tab" data-category="beverages">
+                        <i class="fas fa-wine-glass"></i>
+                        Bebidas
+                    </button>
                 </div>
 
-                <div class="content">
-                    <h3>Huevo corazón</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-
-                    <div class="price">$30.00 <span>$35.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/img8.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Bol de avena y fruta</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-
-                    <div class="price">$40.00 <span>$50.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="heading">
-            <h3>ALMUERZOS</h3>
-        </div>
-    
-        <div class="box-container">
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/img2.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>bol de halloumi</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>                      
-                    </div>
-
-                    <div class="price">$10.00 <span>$20.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
+                <div class="dietary-filters">
+                    <button class="dietary-btn" data-filter="vegetarian">
+                        <i class="fas fa-leaf"></i>
+                        Vegetariano
+                    </button>
+                    <button class="dietary-btn" data-filter="vegan">
+                        <i class="fas fa-seedling"></i>
+                        Vegano
+                    </button>
+                    <button class="dietary-btn" data-filter="gluten-free">
+                        <i class="fas fa-wheat"></i>
+                        Sin Gluten
+                    </button>
+                    <button class="dietary-btn" data-filter="keto">
+                        <i class="fas fa-fire"></i>
+                        Keto
+                    </button>
                 </div>
             </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
+        </section>
 
-                <div class="image">
-                    <img src="img/img9.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>escargot</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>                      
+        <!-- Cart Summary (Sticky) -->
+        <div class="cart-summary" id="cartSummary">
+            <div class="container">
+                <div class="cart-content">
+                    <div class="cart-info">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cartCount">0</span> platos seleccionados
                     </div>
-
-                    <div class="price">$60.00 <span>$70.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/img10.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Veggie</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>                      
+                    <div class="cart-total">
+                        Total: $<span id="cartTotal">0.00</span>
                     </div>
-
-                    <div class="price">$40.00 <span>$50.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>    
-        </div>
-
-        <div class="heading">
-            <h3>CENAS</h3>
-        </div>
-    
-        <div class="box-container">
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/img3.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Macarrones </h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>                      
-                    </div>
-
-                    <div class="price">$80.00 <span>$90.00</span></div>
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/img11.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Pavo navideño</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>  
-                    </div>
-
-                    <div class="price">$60.00 <span>$90.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-
-                <div class="image">
-                    <img src="img/img12.jpg" alt="">
-                </div>
-
-                <div class="content">
-                    <h3>Sopa rusa</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-
-                    <div class="price">$30.00 <span>$60.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
+                    <button class="btn btn--primary" id="viewCartBtn">
+                        Ver Carrito
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
 
-    <div class="sad">
-        <a href="orden.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-left" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M20 15h-8v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h8a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1z"></path>
-        </svg></a>
+        <!-- Breakfast Section -->
+        <section class="menu-section breakfast-section" data-category="breakfast">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-sunrise"></i>
+                        Desayunos Gourmet
+                    </h2>
+                    <p class="section-subtitle">Comienza tu día con sabores extraordinarios</p>
+                </div>
+
+                <div class="menu-grid">
+                    <article class="menu-item" data-dietary="vegetarian" data-price="20.00" data-id="avena-fruta">
+                        <div class="menu-item-image">
+                            <img src="img/img1.jpg" alt="Avena con fruta" data-src="img/img1.jpg" class="lazy">
+                            <div class="item-badges">
+                                <span class="badge badge--vegetarian">
+                                    <i class="fas fa-leaf"></i>
+                                    Vegetariano
+                                </span>
+                                <span class="badge badge--popular">
+                                    <i class="fas fa-fire"></i>
+                                    Popular
+                                </span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" data-id="avena-fruta">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <div class="menu-item-content">
+                            <h3>Avena con Fruta Fresca</h3>
+                            <p class="item-description">
+                                Avena orgánica cocida a la perfección con frutas de temporada, miel artesanal y frutos
+                                secos crujientes.
+                            </p>
+
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-fire"></i>
+                                        285 kcal
+                                    </span>
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-clock"></i>
+                                        15 min
+                                    </span>
+                                </div>
+
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.5 (127)</span>
+                                </div>
+                            </div>
+
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$20.00</span>
+                                    <span class="price-original">$30.00</span>
+                                    <span class="discount-badge">-33%</span>
+                                </div>
+                                <button class="btn btn--primary add-to-cart" data-id="avena-fruta"
+                                    data-name="Avena con Fruta Fresca" data-price="20.00">
+                                    <i class="fas fa-plus"></i>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-dietary="vegetarian" data-price="30.00" data-id="huevo-benedict">
+                        <div class="menu-item-image">
+                            <img src="img/img7.jpg" alt="Huevo corazón" data-src="img/img7.jpg" class="lazy">
+                            <div class="item-badges">
+                                <span class="badge badge--premium">
+                                    <i class="fas fa-crown"></i>
+                                    Premium
+                                </span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" data-id="huevo-benedict">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <div class="menu-item-content">
+                            <h3>Huevos Benedict Especiales</h3>
+                            <p class="item-description">
+                                Huevos pochados perfectos sobre pan brioche artesanal, jamón ibérico y salsa holandesa
+                                casera.
+                            </p>
+
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-fire"></i>
+                                        450 kcal
+                                    </span>
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-clock"></i>
+                                        20 min
+                                    </span>
+                                </div>
+
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.7 (89)</span>
+                                </div>
+                            </div>
+
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$30.00</span>
+                                    <span class="price-original">$35.00</span>
+                                </div>
+                                <button class="btn btn--primary add-to-cart" data-id="huevo-benedict"
+                                    data-name="Huevos Benedict Especiales" data-price="30.00">
+                                    <i class="fas fa-plus"></i>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-dietary="vegetarian vegan" data-price="40.00"
+                        data-id="bowl-tropical">
+                        <div class="menu-item-image">
+                            <img src="img/img8.jpg" alt="Bol de avena y fruta" data-src="img/img8.jpg" class="lazy">
+                            <div class="item-badges">
+                                <span class="badge badge--vegan">
+                                    <i class="fas fa-seedling"></i>
+                                    Vegano
+                                </span>
+                                <span class="badge badge--healthy">
+                                    <i class="fas fa-heart"></i>
+                                    Saludable
+                                </span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" data-id="bowl-tropical">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <div class="menu-item-content">
+                            <h3>Bowl Energético Tropical</h3>
+                            <p class="item-description">
+                                Açaí bowl con granola casera, coco rallado, mango, kiwi y semillas de chía
+                                superalimentarias.
+                            </p>
+
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-fire"></i>
+                                        320 kcal
+                                    </span>
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-clock"></i>
+                                        10 min
+                                    </span>
+                                </div>
+
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-text">5.0 (156)</span>
+                                </div>
+                            </div>
+
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$40.00</span>
+                                    <span class="price-original">$50.00</span>
+                                </div>
+                                <button class="btn btn--primary add-to-cart" data-id="bowl-tropical"
+                                    data-name="Bowl Energético Tropical" data-price="40.00">
+                                    <i class="fas fa-plus"></i>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lunch Section -->
+        <section class="menu-section lunch-section" data-category="lunch">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-sun"></i>
+                        Almuerzos Ejecutivos
+                    </h2>
+                    <p class="section-subtitle">Platos principales para recargar energías</p>
+                </div>
+
+                <div class="menu-grid">
+                    <article class="menu-item" data-dietary="vegetarian" data-price="60.00" data-id="bowl-halloumi">
+                        <div class="menu-item-image">
+                            <img src="img/img2.jpg" alt="Bowl de halloumi" data-src="img/img2.jpg" class="lazy">
+                            <div class="item-badges">
+                                <span class="badge badge--chef">
+                                    <i class="fas fa-chef-hat"></i>
+                                    Chef's Choice
+                                </span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" data-id="bowl-halloumi">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <div class="menu-item-content">
+                            <h3>Bowl Mediterráneo de Halloumi</h3>
+                            <p class="item-description">
+                                Queso halloumi grillado sobre quinoa, vegetables asados, hummus casero y vinagreta de
+                                limón.
+                            </p>
+
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-fire"></i>
+                                        520 kcal
+                                    </span>
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-clock"></i>
+                                        25 min
+                                    </span>
+                                </div>
+
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.6 (203)</span>
+                                </div>
+                            </div>
+
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$60.00</span>
+                                    <span class="price-original">$70.00</span>
+                                </div>
+                                <button class="btn btn--primary add-to-cart" data-id="bowl-halloumi"
+                                    data-name="Bowl Mediterráneo de Halloumi" data-price="60.00">
+                                    <i class="fas fa-plus"></i>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-dietary="gluten-free" data-price="75.00" data-id="escargot">
+                        <div class="menu-item-image">
+                            <img src="img/img9.jpg" alt="Escargot" data-src="img/img9.jpg" class="lazy">
+                            <div class="item-badges">
+                                <span class="badge badge--premium">
+                                    <i class="fas fa-crown"></i>
+                                    Premium
+                                </span>
+                                <span class="badge badge--french">
+                                    🇫🇷 Francés
+                                </span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" data-id="escargot">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <div class="menu-item-content">
+                            <h3>Escargots de Bourgogne</h3>
+                            <p class="item-description">
+                                Caracoles de Borgoña en mantequilla de ajo y perejil, servidos con pan baguette
+                                crujiente.
+                            </p>
+
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-fire"></i>
+                                        380 kcal
+                                    </span>
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-clock"></i>
+                                        30 min
+                                    </span>
+                                </div>
+
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-text">4.9 (67)</span>
+                                </div>
+                            </div>
+
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$75.00</span>
+                                </div>
+                                <button class="btn btn--primary add-to-cart" data-id="escargot"
+                                    data-name="Escargots de Bourgogne" data-price="75.00">
+                                    <i class="fas fa-plus"></i>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-dietary="vegan vegetarian" data-price="45.00" data-id="veggie-bowl">
+                        <div class="menu-item-image">
+                            <img src="img/img10.jpg" alt="Plato veggie" data-src="img/img10.jpg" class="lazy">
+                            <div class="item-badges">
+                                <span class="badge badge--healthy">
+                                    <i class="fas fa-heart"></i>
+                                    Saludable
+                                </span>
+                                <span class="badge badge--vegan">
+                                    <i class="fas fa-seedling"></i>
+                                    Vegano
+                                </span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" data-id="veggie-bowl">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <div class="menu-item-content">
+                            <h3>Garden Fresh Veggie Bowl</h3>
+                            <p class="item-description">
+                                Variedad de vegetales orgánicos salteados, tofu marinado y salsa teriyaki casera sobre
+                                arroz integral.
+                            </p>
+
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-fire"></i>
+                                        420 kcal
+                                    </span>
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-clock"></i>
+                                        20 min
+                                    </span>
+                                </div>
+
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.4 (192)</span>
+                                </div>
+                            </div>
+
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$45.00</span>
+                                    <span class="price-original">$50.00</span>
+                                </div>
+                                <button class="btn btn--primary add-to-cart" data-id="veggie-bowl"
+                                    data-name="Garden Fresh Veggie Bowl" data-price="45.00">
+                                    <i class="fas fa-plus"></i>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dinner Section -->
+        <section class="menu-section dinner-section" data-category="dinner">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-moon"></i>
+                        Cenas de Gala
+                    </h2>
+                    <p class="section-subtitle">Experiencias gastronómicas inolvidables</p>
+                </div>
+
+                <div class="menu-grid">
+                    <article class="menu-item" data-dietary="keto" data-price="95.00" data-id="truffle-pasta">
+                        <div class="menu-item-image">
+                            <img src="img/img3.jpg" alt="Macarrones" data-src="img/img3.jpg" class="lazy">
+                            <div class="item-badges">
+                                <span class="badge badge--signature">
+                                    <i class="fas fa-signature"></i>
+                                    Signature
+                                </span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" data-id="truffle-pasta">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <div class="menu-item-content">
+                            <h3>Pasta Truffle Carbonara</h3>
+                            <p class="item-description">
+                                Pasta artesanal con salsa carbonara de trufa negra, pancetta crujiente y parmesano aged
+                                24 meses.
+                            </p>
+
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-fire"></i>
+                                        680 kcal
+                                    </span>
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-clock"></i>
+                                        35 min
+                                    </span>
+                                </div>
+
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-text">4.8 (324)</span>
+                                </div>
+                            </div>
+
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$95.00</span>
+                                    <span class="price-original">$120.00</span>
+                                </div>
+                                <button class="btn btn--primary add-to-cart" data-id="truffle-pasta"
+                                    data-name="Pasta Truffle Carbonara" data-price="95.00">
+                                    <i class="fas fa-plus"></i>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-dietary="gluten-free" data-price="85.00" data-id="pavo-navideno">
+                        <div class="menu-item-image">
+                            <img src="img/img11.jpg" alt="Pavo navideño" data-src="img/img11.jpg" class="lazy">
+                            <div class="item-badges">
+                                <span class="badge badge--seasonal">
+                                    <i class="fas fa-snowflake"></i>
+                                    Temporada
+                                </span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" data-id="pavo-navideno">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <div class="menu-item-content">
+                            <h3>Pavo Glaseado Navideño</h3>
+                            <p class="item-description">
+                                Pechuga de pavo con glaseado de arándanos, puré de castañas y vegetales de temporada
+                                asados.
+                            </p>
+
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-fire"></i>
+                                        590 kcal
+                                    </span>
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-clock"></i>
+                                        40 min
+                                    </span>
+                                </div>
+
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.7 (145)</span>
+                                </div>
+                            </div>
+
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$85.00</span>
+                                    <span class="price-original">$100.00</span>
+                                </div>
+                                <button class="btn btn--primary add-to-cart" data-id="pavo-navideno"
+                                    data-name="Pavo Glaseado Navideño" data-price="85.00">
+                                    <i class="fas fa-plus"></i>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-dietary="vegetarian" data-price="65.00" data-id="borscht">
+                        <div class="menu-item-image">
+                            <img src="img/img12.jpg" alt="Sopa rusa" data-src="img/img12.jpg" class="lazy">
+                            <div class="item-badges">
+                                <span class="badge badge--comfort">
+                                    <i class="fas fa-home"></i>
+                                    Comfort Food
+                                </span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" data-id="borscht">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <div class="menu-item-content">
+                            <h3>Borscht Tradicional</h3>
+                            <p class="item-description">
+                                Sopa rusa de remolacha con crema agria, eneldo fresco y pan negro artesanal. Receta
+                                tradicional.
+                            </p>
+
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-fire"></i>
+                                        280 kcal
+                                    </span>
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-clock"></i>
+                                        25 min
+                                    </span>
+                                </div>
+
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.5 (98)</span>
+                                </div>
+                            </div>
+
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$65.00</span>
+                                    <span class="price-original">$75.00</span>
+                                </div>
+                                <button class="btn btn--primary add-to-cart" data-id="borscht"
+                                    data-name="Borscht Tradicional" data-price="65.00">
+                                    <i class="fas fa-plus"></i>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beverages Section -->
+        <section class="menu-section beverages-section" data-category="beverages">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-wine-glass"></i>
+                        Bebidas Premium
+                    </h2>
+                    <p class="section-subtitle">Maridajes perfectos para cada ocasión</p>
+                </div>
+
+                <div class="menu-grid">
+                    <article class="menu-item" data-dietary="vegan" data-price="25.00" data-id="cafe-especial">
+                        <div class="menu-item-image">
+                            <img src="img/cafe-premium.jpg" alt="Café especial" data-src="img/cafe-premium.jpg"
+                                class="lazy">
+                            <div class="item-badges">
+                                <span class="badge badge--premium">
+                                    <i class="fas fa-crown"></i>
+                                    Premium
+                                </span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" data-id="cafe-especial">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <div class="menu-item-content">
+                            <h3>Café de Especialidad Colombiano</h3>
+                            <p class="item-description">
+                                Café 100% arábica de las montañas de Colombia, tostado artesanalmente y preparado en
+                                prensa francesa.
+                            </p>
+
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-fire"></i>
+                                        5 kcal
+                                    </span>
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-clock"></i>
+                                        5 min
+                                    </span>
+                                </div>
+
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-text">4.9 (412)</span>
+                                </div>
+                            </div>
+
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$25.00</span>
+                                </div>
+                                <button class="btn btn--primary add-to-cart" data-id="cafe-especial"
+                                    data-name="Café de Especialidad Colombiano" data-price="25.00">
+                                    <i class="fas fa-plus"></i>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-dietary="vegan" data-price="35.00" data-id="vino-premium">
+                        <div class="menu-item-image">
+                            <img src="img/vino-premium.jpg" alt="Vino premium" data-src="img/vino-premium.jpg"
+                                class="lazy">
+                            <div class="item-badges">
+                                <span class="badge badge--signature">
+                                    <i class="fas fa-signature"></i>
+                                    Signature
+                                </span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" data-id="vino-premium">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <div class="menu-item-content">
+                            <h3>Vino Tinto Reserva Especial</h3>
+                            <p class="item-description">
+                                Cabernet Sauvignon reserva de viñedos selectos, con notas de frutas rojas y crianza en
+                                barrica de roble.
+                            </p>
+
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-percentage"></i>
+                                        14% Vol
+                                    </span>
+                                    <span class="nutrition-item">
+                                        <i class="fas fa-wine-glass"></i>
+                                        150ml
+                                    </span>
+                                </div>
+
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.6 (89)</span>
+                                </div>
+                            </div>
+
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$35.00</span>
+                                </div>
+                                <button class="btn btn--primary add-to-cart" data-id="vino-premium"
+                                    data-name="Vino Tinto Reserva Especial" data-price="35.00">
+                                    <i class="fas fa-plus"></i>
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chef's Recommendations -->
+        <section class="chef-recommendations">
+            <div class="container">
+                <div class="chef-section">
+                    <div class="chef-profile">
+                        <img src="img/chef-profile.jpg" alt="Chef principal" class="chef-image">
+                        <div class="chef-info">
+                            <h3>Chef Marcus Dubois</h3>
+                            <p class="chef-title">Chef Ejecutivo</p>
+                            <div class="chef-credentials">
+                                <span class="credential">
+                                    <i class="fas fa-star"></i>
+                                    2 Estrellas Michelin
+                                </span>
+                                <span class="credential">
+                                    <i class="fas fa-award"></i>
+                                    James Beard Award
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chef-message">
+                        <blockquote>
+                            "Cada plato que servimos a bordo está diseñado para ofrecer una experiencia gastronómica
+                            excepcional a 35,000 pies de altura. Utilizamos únicamente ingredientes de primera calidad
+                            y técnicas culinarias innovadoras."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Back -->
+        <section class="navigation-section">
+            <div class="container">
+                <div class="nav-back">
+                    <a href="emiratos.html" class="btn btn--outline btn--large">
+                        <i class="fas fa-arrow-left"></i>
+                        Volver al Paquete Singapur
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>
+                        <i class="fas fa-shopping-cart"></i>
+                        Tu Selección de Menú
+                    </h2>
+                    <button class="modal-close" id="closeCartModal" aria-label="Cerrar carrito">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems">
+                        <!-- Cart items will be populated by JavaScript -->
+                        <div class="empty-cart" id="emptyCart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Tu carrito está vacío</p>
+                            <small>Agrega algunos platos deliciosos para continuar</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="cart-total-section">
+                        <div class="total-breakdown">
+                            <div class="total-line">
+                                <span>Subtotal:</span>
+                                <span id="modalSubtotal">$0.00</span>
+                            </div>
+                            <div class="total-line">
+                                <span>Servicio:</span>
+                                <span id="modalService">$5.00</span>
+                            </div>
+                            <div class="total-line">
+                                <span>IVA (10%):</span>
+                                <span id="modalTax">$0.00</span>
+                            </div>
+                            <div class="total-line total">
+                                <strong>Total:</strong>
+                                <strong id="modalTotal">$5.00</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn btn--outline" id="clearCartBtn">
+                            <i class="fas fa-trash"></i>
+                            Limpiar Carrito
+                        </button>
+                        <button class="btn btn--primary btn--large" id="confirmOrderBtn">
+                            <i class="fas fa-check"></i>
+                            Confirmar Pedido
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <section class="footer">
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-            <a href="#" class="fab fa-pinterest"></a>
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="success-content">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>¡Pedido Confirmado!</h2>
+                    <p>Tu selección de menú ha sido registrada exitosamente. Recibirás estos platos durante tu vuelo.
+                    </p>
+                    <div class="order-details">
+                        <p><strong>Número de orden:</strong> <span id="orderNumber">#ORD-2024-001</span></p>
+                        <p><strong>Vuelo:</strong> Singapur - Emiratos</p>
+                    </div>
+                    <button class="btn btn--primary" id="closeSuccessModal">
+                        <i class="fas fa-plane"></i>
+                        Continuar con mi Viaje
+                    </button>
+                </div>
+            </div>
         </div>
-    
-        <div class="credit">@2023 <span>creado </span> | por la aerolinea H.F. com</div>
-    </section> 
+    </div>
 
-    <script type="text/javascript"></script>
-    <script src="js/traductor.js"></script> 
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
- 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2024 <span>Destinos Mundiales</span> | Aerolínea H.F.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Translate Widget -->
+    <div id="google_translate_element"></div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="js/comidas.js"></script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>
