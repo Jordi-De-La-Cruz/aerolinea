@@ -49,8 +49,9 @@
 
 .gallery-more {
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../img/puerto3.jpg') center/cover;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../img/puerto3.jpg") center/cover;
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
@@ -62,8 +63,9 @@
 }
 
 .gallery-more:hover {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('../img/puerto3.jpg') center/cover;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("../img/puerto3.jpg") center/cover;
 }
 
 .hotel-header {
@@ -159,6 +161,7 @@
 
 .feature-card {
     background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius-lg);
@@ -410,7 +413,7 @@
 }
 
 .info-section li::before {
-    content: '✓';
+    content: "✓";
     position: absolute;
     left: 0;
     color: var(--primary);

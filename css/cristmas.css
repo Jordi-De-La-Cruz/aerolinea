@@ -9,7 +9,9 @@
 }
 
 .christmas-hero {
-    background: linear-gradient(135deg, var(--christmas-red), var(--christmas-green));
+    background: linear-gradient(135deg,
+            var(--christmas-red),
+            var(--christmas-green));
     color: white;
     padding: var(--spacing-xl) 0;
     text-align: center;
@@ -20,7 +22,7 @@
 }
 
 .christmas-hero::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -190,7 +192,9 @@
 }
 
 .christmas-promotions {
-    background: linear-gradient(135deg, var(--christmas-green), var(--winter-blue));
+    background: linear-gradient(135deg,
+            var(--christmas-green),
+            var(--winter-blue));
     color: white;
     padding: var(--spacing-xl);
     border-radius: var(--border-radius-lg);
@@ -208,6 +212,7 @@
     background: rgba(255, 255, 255, 0.1);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius-lg);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;

@@ -1,20 +1,28 @@
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'es',
-        includedLanguages: 'en,es,fr,de,it,pt,ja,ko,zh',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false,
-        multilanguagePage: true
-    }, 'google_translate_element');
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: "es",
+            includedLanguages: "en,es,fr,de,it,pt,ja,ko,zh",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+            multilanguagePage: true,
+        },
+        "google_translate_element",
+    );
 }
 
 // Mejorar la apariencia del traductor cuando se cargue
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     const observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
-            if (mutation.type === 'childList') {
-                const translateElement = document.querySelector('#google_translate_element');
-                if (translateElement && translateElement.querySelector('.goog-te-combo')) {
+            if (mutation.type === "childList") {
+                const translateElement = document.querySelector(
+                    "#google_translate_element",
+                );
+                if (
+                    translateElement &&
+                    translateElement.querySelector(".goog-te-combo")
+                ) {
                     styleTranslator();
                     observer.disconnect();
                 }
@@ -24,42 +32,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
     observer.observe(document.body, {
         childList: true,
-        subtree: true
+        subtree: true,
     });
 });
 
 function styleTranslator() {
-    const banner = document.querySelector('.goog-te-banner-frame');
+    const banner = document.querySelector(".goog-te-banner-frame");
     if (banner) {
-        banner.style.display = 'none';
+        banner.style.display = "none";
     }
 
-    document.body.style.marginTop = '0';
+    document.body.style.marginTop = "0";
 
-    const selectElement = document.querySelector('.goog-te-combo');
+    const selectElement = document.querySelector(".goog-te-combo");
     if (selectElement) {
-        selectElement.style.background = 'white';
-        selectElement.style.border = 'none';
-        selectElement.style.borderRadius = '0.5rem';
-        selectElement.style.padding = '0.5rem';
-        selectElement.style.fontSize = '1.4rem';
-        selectElement.style.color = '#333';
-        selectElement.style.outline = 'none';
-        selectElement.style.cursor = 'pointer';
-        selectElement.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+        selectElement.style.background = "white";
+        selectElement.style.border = "none";
+        selectElement.style.borderRadius = "0.5rem";
+        selectElement.style.padding = "0.5rem";
+        selectElement.style.fontSize = "1.4rem";
+        selectElement.style.color = "#333";
+        selectElement.style.outline = "none";
+        selectElement.style.cursor = "pointer";
+        selectElement.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
 
-        const icon = document.createElement('i');
-        icon.className = 'fas fa-globe';
-        icon.style.marginRight = '0.5rem';
-        icon.style.color = '#2193b0';
+        const icon = document.createElement("i");
+        icon.className = "fas fa-globe";
+        icon.style.marginRight = "0.5rem";
+        icon.style.color = "#2193b0";
 
-        const wrapper = document.createElement('div');
-        wrapper.style.display = 'flex';
-        wrapper.style.alignItems = 'center';
-        wrapper.style.background = 'rgba(255, 255, 255, 0.9)';
-        wrapper.style.borderRadius = '0.5rem';
-        wrapper.style.padding = '0.5rem';
-        wrapper.style.backdropFilter = 'blur(10px)';
+        const wrapper = document.createElement("div");
+        wrapper.style.display = "flex";
+        wrapper.style.alignItems = "center";
+        wrapper.style.background = "rgba(255, 255, 255, 0.9)";
+        wrapper.style.borderRadius = "0.5rem";
+        wrapper.style.padding = "0.5rem";
+        wrapper.style.backdropFilter = "blur(10px)";
 
         selectElement.parentNode.insertBefore(wrapper, selectElement);
         wrapper.appendChild(icon);
@@ -67,19 +75,29 @@ function styleTranslator() {
     }
 
     const unwantedElements = document.querySelectorAll(
-        '.goog-te-gadget-icon, .goog-te-gadget-simple .goog-te-menu-value span:first-child'
+        ".goog-te-gadget-icon, .goog-te-gadget-simple .goog-te-menu-value span:first-child",
     );
-    unwantedElements.forEach(element => {
-        element.style.display = 'none';
+    unwantedElements.forEach((element) => {
+        element.style.display = "none";
     });
 }
 
 function detectUserLanguage() {
     const userLang = navigator.language || navigator.userLanguage;
-    const supportedLanguages = ['en', 'es', 'fr', 'de', 'it', 'pt', 'ja', 'ko', 'zh'];
-    const langCode = userLang.split('-')[0];
+    const supportedLanguages = [
+        "en",
+        "es",
+        "fr",
+        "de",
+        "it",
+        "pt",
+        "ja",
+        "ko",
+        "zh",
+    ];
+    const langCode = userLang.split("-")[0];
 
-    if (supportedLanguages.includes(langCode) && langCode !== 'es') {
+    if (supportedLanguages.includes(langCode) && langCode !== "es") {
         setTimeout(() => {
             showTranslationSuggestion(langCode);
         }, 2000);
@@ -88,16 +106,16 @@ function detectUserLanguage() {
 
 function showTranslationSuggestion(langCode) {
     const suggestions = {
-        'en': 'Would you like to translate this page to English?',
-        'fr': 'Souhaitez-vous traduire cette page en français?',
-        'de': 'Möchten Sie diese Seite ins Deutsche übersetzen?',
-        'it': 'Vuoi tradurre questa pagina in italiano?',
-        'pt': 'Gostaria de traduzir esta página para português?'
+        en: "Would you like to translate this page to English?",
+        fr: "Souhaitez-vous traduire cette page en français?",
+        de: "Möchten Sie diese Seite ins Deutsche übersetzen?",
+        it: "Vuoi tradurre questa pagina in italiano?",
+        pt: "Gostaria de traduzir esta página para português?",
     };
 
     const message = suggestions[langCode];
-    if (message && !localStorage.getItem('translation-suggestion-dismissed')) {
-        const notification = document.createElement('div');
+    if (message && !localStorage.getItem("translation-suggestion-dismissed")) {
+        const notification = document.createElement("div");
         notification.innerHTML = `
       <div style="
         position: fixed;
@@ -145,34 +163,34 @@ function showTranslationSuggestion(langCode) {
 }
 
 window.acceptTranslation = function (langCode) {
-    const selectElement = document.querySelector('.goog-te-combo');
+    const selectElement = document.querySelector(".goog-te-combo");
     if (selectElement) {
         selectElement.value = langCode;
-        selectElement.dispatchEvent(new Event('change'));
+        selectElement.dispatchEvent(new Event("change"));
     }
     dismissTranslationSuggestion();
 };
 
 window.dismissTranslationSuggestion = function () {
-    const notification = document.querySelector('.translation-suggestion');
+    const notification = document.querySelector(".translation-suggestion");
     if (notification) {
         notification.remove();
     }
-    localStorage.setItem('translation-suggestion-dismissed', 'true');
+    localStorage.setItem("translation-suggestion-dismissed", "true");
 };
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     setTimeout(detectUserLanguage, 1000);
 });
 
 function cleanupTranslationPreferences() {
-    const lastCleanup = localStorage.getItem('translation-cleanup');
+    const lastCleanup = localStorage.getItem("translation-cleanup");
     const now = Date.now();
     const oneDay = 24 * 60 * 60 * 1000;
 
-    if (!lastCleanup || (now - parseInt(lastCleanup)) > oneDay) {
-        localStorage.removeItem('translation-suggestion-dismissed');
-        localStorage.setItem('translation-cleanup', now.toString());
+    if (!lastCleanup || now - parseInt(lastCleanup) > oneDay) {
+        localStorage.removeItem("translation-suggestion-dismissed");
+        localStorage.setItem("translation-cleanup", now.toString());
     }
 }
 

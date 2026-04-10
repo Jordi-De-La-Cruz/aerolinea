@@ -1,7 +1,7 @@
 let favorites = new Set();
 
 // Inicialización
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     loadFavoritesFromStorage();
     updateFavoritesDisplay();
     initializeAnimations();
@@ -9,34 +9,34 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadFavoritesFromStorage() {
-    const savedFavorites = localStorage.getItem('highflight-favorites');
+    const savedFavorites = localStorage.getItem("highflight-favorites");
     if (savedFavorites) {
         favorites = new Set(JSON.parse(savedFavorites));
     }
 }
 
 function saveFavoritesToStorage() {
-    localStorage.setItem('highflight-favorites', JSON.stringify([...favorites]));
+    localStorage.setItem("highflight-favorites", JSON.stringify([...favorites]));
 }
 
 function toggleFavorite(button) {
-    const offerCard = button.closest('.offer-card');
+    const offerCard = button.closest(".offer-card");
     if (!offerCard) return;
 
-    const offerTitle = offerCard.querySelector('h3').textContent.trim();
-    const offerId = offerTitle.toLowerCase().replace(/\s+/g, '-');
-    const icon = button.querySelector('i');
+    const offerTitle = offerCard.querySelector("h3").textContent.trim();
+    const offerId = offerTitle.toLowerCase().replace(/\s+/g, "-");
+    const icon = button.querySelector("i");
 
     if (favorites.has(offerId)) {
         favorites.delete(offerId);
-        icon.className = 'far fa-heart';
-        button.classList.remove('active');
-        showNotification('Eliminado de favoritos', 'info');
+        icon.className = "far fa-heart";
+        button.classList.remove("active");
+        showNotification("Eliminado de favoritos", "info");
     } else {
         favorites.add(offerId);
-        icon.className = 'fas fa-heart';
-        button.classList.add('active');
-        showNotification('Agregado a favoritos', 'success');
+        icon.className = "fas fa-heart";
+        button.classList.add("active");
+        showNotification("Agregado a favoritos", "success");
     }
 
     saveFavoritesToStorage();
@@ -45,21 +45,21 @@ function toggleFavorite(button) {
 
 // Actualizar display de favoritos
 function updateFavoritesDisplay() {
-    const favoriteButtons = document.querySelectorAll('.action-btn.favorite');
+    const favoriteButtons = document.querySelectorAll(".action-btn.favorite");
 
-    favoriteButtons.forEach(button => {
-        const offerCard = button.closest('.offer-card');
+    favoriteButtons.forEach((button) => {
+        const offerCard = button.closest(".offer-card");
         if (offerCard) {
-            const offerTitle = offerCard.querySelector('h3').textContent.trim();
-            const offerId = offerTitle.toLowerCase().replace(/\s+/g, '-');
-            const icon = button.querySelector('i');
+            const offerTitle = offerCard.querySelector("h3").textContent.trim();
+            const offerId = offerTitle.toLowerCase().replace(/\s+/g, "-");
+            const icon = button.querySelector("i");
 
             if (favorites.has(offerId)) {
-                icon.className = 'fas fa-heart';
-                button.classList.add('active');
+                icon.className = "fas fa-heart";
+                button.classList.add("active");
             } else {
-                icon.className = 'far fa-heart';
-                button.classList.remove('active');
+                icon.className = "far fa-heart";
+                button.classList.remove("active");
             }
         }
     });
@@ -67,31 +67,36 @@ function updateFavoritesDisplay() {
 
 function initializeAnimations() {
     // Animación de entrada para las cards
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-            }
-        });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("fade-in");
+                }
+            });
+        },
+        { threshold: 0.1 },
+    );
 
-    const cards = document.querySelectorAll('.offer-card');
+    const cards = document.querySelectorAll(".offer-card");
     cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
+        card.style.opacity = "0";
+        card.style.transform = "translateY(30px)";
         card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
         observer.observe(card);
     });
 
-    const heroElements = document.querySelectorAll('.offers-hero h1, .offers-hero p, .hero-features');
+    const heroElements = document.querySelectorAll(
+        ".offers-hero h1, .offers-hero p, .hero-features",
+    );
     heroElements.forEach((element, index) => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
+        element.style.opacity = "0";
+        element.style.transform = "translateY(20px)";
         element.style.transition = `opacity 0.8s ease ${index * 0.2}s, transform 0.8s ease ${index * 0.2}s`;
 
         setTimeout(() => {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
         }, 100);
     });
 }
@@ -99,10 +104,10 @@ function initializeAnimations() {
 function animateFavorite(button) {
     if (!button) return;
 
-    button.style.transform = 'scale(1.3)';
+    button.style.transform = "scale(1.3)";
 
     setTimeout(() => {
-        button.style.transform = 'scale(1)';
+        button.style.transform = "scale(1)";
     }, 200);
 }
 
@@ -111,21 +116,22 @@ function initializeFilters() {
     createFilterControls();
 
     // Event listeners para filtros
-    const categoryFilter = document.getElementById('categoryFilter');
-    const discountFilter = document.getElementById('discountFilter');
-    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById("categoryFilter");
+    const discountFilter = document.getElementById("discountFilter");
+    const searchInput = document.getElementById("searchInput");
 
-    if (categoryFilter) categoryFilter.addEventListener('change', applyFilters);
-    if (discountFilter) discountFilter.addEventListener('change', applyFilters);
-    if (searchInput) searchInput.addEventListener('input', debounce(applyFilters, 300));
+    if (categoryFilter) categoryFilter.addEventListener("change", applyFilters);
+    if (discountFilter) discountFilter.addEventListener("change", applyFilters);
+    if (searchInput)
+        searchInput.addEventListener("input", debounce(applyFilters, 300));
 }
 
 function createFilterControls() {
-    const firstSection = document.querySelector('.offers-section');
+    const firstSection = document.querySelector(".offers-section");
     if (!firstSection) return;
 
-    const filterContainer = document.createElement('div');
-    filterContainer.className = 'filter-controls';
+    const filterContainer = document.createElement("div");
+    filterContainer.className = "filter-controls";
     filterContainer.innerHTML = `
     <div class="filters-row">
       <div class="filter-group">
@@ -160,16 +166,19 @@ function createFilterControls() {
     </div>
   `;
 
-    firstSection.insertBefore(filterContainer, firstSection.querySelector('.offers-grid'));
+    firstSection.insertBefore(
+        filterContainer,
+        firstSection.querySelector(".offers-grid"),
+    );
 
     addFilterStyles();
 }
 
 function addFilterStyles() {
-    if (document.getElementById('filter-styles')) return;
+    if (document.getElementById("filter-styles")) return;
 
-    const style = document.createElement('style');
-    style.id = 'filter-styles';
+    const style = document.createElement("style");
+    style.id = "filter-styles";
     style.textContent = `
     .filter-controls {
       margin-bottom: 2rem;
@@ -230,18 +239,21 @@ function addFilterStyles() {
 }
 
 function applyFilters() {
-    const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
-    const categoryFilter = document.getElementById('categoryFilter')?.value || '';
-    const discountFilter = document.getElementById('discountFilter')?.value || '';
+    const searchTerm =
+        document.getElementById("searchInput")?.value.toLowerCase() || "";
+    const categoryFilter = document.getElementById("categoryFilter")?.value || "";
+    const discountFilter = document.getElementById("discountFilter")?.value || "";
 
-    const offers = document.querySelectorAll('.offer-card');
+    const offers = document.querySelectorAll(".offer-card");
     let visibleCount = 0;
 
-    offers.forEach(offer => {
-        const title = offer.querySelector('h3').textContent.toLowerCase();
+    offers.forEach((offer) => {
+        const title = offer.querySelector("h3").textContent.toLowerCase();
         const category = detectCategory(title);
-        const discountBadge = offer.querySelector('.discount-badge');
-        const discount = discountBadge ? parseInt(discountBadge.textContent.replace(/[-%]/g, '')) : 0;
+        const discountBadge = offer.querySelector(".discount-badge");
+        const discount = discountBadge
+            ? parseInt(discountBadge.textContent.replace(/[-%]/g, ""))
+            : 0;
 
         let showOffer = true;
 
@@ -259,7 +271,7 @@ function applyFilters() {
             showOffer = false;
         }
 
-        offer.style.display = showOffer ? 'flex' : 'none';
+        offer.style.display = showOffer ? "flex" : "none";
         if (showOffer) visibleCount++;
     });
 
@@ -267,19 +279,19 @@ function applyFilters() {
 }
 
 function detectCategory(title) {
-    if (title.includes('comida') || title.includes('pizza')) return 'comida';
-    if (title.includes('hotel')) return 'hotel';
-    if (title.includes('viaje')) return 'viaje';
-    return '';
+    if (title.includes("comida") || title.includes("pizza")) return "comida";
+    if (title.includes("hotel")) return "hotel";
+    if (title.includes("viaje")) return "viaje";
+    return "";
 }
 
 function updateNoResultsMessage(visibleCount) {
-    let noResultsMsg = document.querySelector('.no-results-message');
+    let noResultsMsg = document.querySelector(".no-results-message");
 
     if (visibleCount === 0) {
         if (!noResultsMsg) {
-            noResultsMsg = document.createElement('div');
-            noResultsMsg.className = 'no-results-message';
+            noResultsMsg = document.createElement("div");
+            noResultsMsg.className = "no-results-message";
             noResultsMsg.innerHTML = `
         <div style="text-align: center; padding: 3rem; color: var(--gray);">
           <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem;"></i>
@@ -288,30 +300,30 @@ function updateNoResultsMessage(visibleCount) {
         </div>
       `;
 
-            const firstGrid = document.querySelector('.offers-grid');
+            const firstGrid = document.querySelector(".offers-grid");
             if (firstGrid) {
                 firstGrid.parentNode.insertBefore(noResultsMsg, firstGrid.nextSibling);
             }
         }
-        noResultsMsg.style.display = 'block';
+        noResultsMsg.style.display = "block";
     } else {
         if (noResultsMsg) {
-            noResultsMsg.style.display = 'none';
+            noResultsMsg.style.display = "none";
         }
     }
 }
 
 function clearFilters() {
-    const searchInput = document.getElementById('searchInput');
-    const categoryFilter = document.getElementById('categoryFilter');
-    const discountFilter = document.getElementById('discountFilter');
+    const searchInput = document.getElementById("searchInput");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const discountFilter = document.getElementById("discountFilter");
 
-    if (searchInput) searchInput.value = '';
-    if (categoryFilter) categoryFilter.value = '';
-    if (discountFilter) discountFilter.value = '';
+    if (searchInput) searchInput.value = "";
+    if (categoryFilter) categoryFilter.value = "";
+    if (discountFilter) discountFilter.value = "";
 
     applyFilters();
-    showNotification('Filtros limpiados', 'info');
+    showNotification("Filtros limpiados", "info");
 }
 
 function debounce(func, wait) {
@@ -327,47 +339,62 @@ function debounce(func, wait) {
 }
 
 function shareOffer(offerElement) {
-    const title = offerElement.querySelector('h3').textContent;
+    const title = offerElement.querySelector("h3").textContent;
     const url = window.location.href;
 
     if (navigator.share) {
-        navigator.share({
-            title: `Oferta: ${title}`,
-            text: `¡Mira esta increíble oferta de High Flight!`,
-            url: url
-        }).catch(console.error);
+        navigator
+            .share({
+                title: `Oferta: ${title}`,
+                text: `¡Mira esta increíble oferta de High Flight!`,
+                url: url,
+            })
+            .catch(console.error);
     } else {
-        navigator.clipboard.writeText(`${title} - ${url}`)
-            .then(() => showNotification('Enlace copiado al portapapeles', 'success'))
-            .catch(() => showNotification('No se pudo copiar el enlace', 'error'));
+        navigator.clipboard
+            .writeText(`${title} - ${url}`)
+            .then(() => showNotification("Enlace copiado al portapapeles", "success"))
+            .catch(() => showNotification("No se pudo copiar el enlace", "error"));
     }
 }
 
 // Ordenamiento de ofertas
 function sortOffers(criteria) {
-    const sections = document.querySelectorAll('.offers-section');
+    const sections = document.querySelectorAll(".offers-section");
 
-    sections.forEach(section => {
-        const grid = section.querySelector('.offers-grid');
+    sections.forEach((section) => {
+        const grid = section.querySelector(".offers-grid");
         if (!grid) return;
 
-        const offers = Array.from(grid.querySelectorAll('.offer-card'));
+        const offers = Array.from(grid.querySelectorAll(".offer-card"));
 
         offers.sort((a, b) => {
             switch (criteria) {
-                case 'discount':
-                    const discountA = parseInt(a.querySelector('.discount-badge')?.textContent.replace(/[-%]/g, '') || '0');
-                    const discountB = parseInt(b.querySelector('.discount-badge')?.textContent.replace(/[-%]/g, '') || '0');
+                case "discount":
+                    const discountA = parseInt(
+                        a
+                            .querySelector(".discount-badge")
+                            ?.textContent.replace(/[-%]/g, "") || "0",
+                    );
+                    const discountB = parseInt(
+                        b
+                            .querySelector(".discount-badge")
+                            ?.textContent.replace(/[-%]/g, "") || "0",
+                    );
                     return discountB - discountA;
 
-                case 'rating':
-                    const ratingA = parseFloat(a.querySelector('.rating-value')?.textContent || '0');
-                    const ratingB = parseFloat(b.querySelector('.rating-value')?.textContent || '0');
+                case "rating":
+                    const ratingA = parseFloat(
+                        a.querySelector(".rating-value")?.textContent || "0",
+                    );
+                    const ratingB = parseFloat(
+                        b.querySelector(".rating-value")?.textContent || "0",
+                    );
                     return ratingB - ratingA;
 
-                case 'name':
-                    const nameA = a.querySelector('h3').textContent.toLowerCase();
-                    const nameB = b.querySelector('h3').textContent.toLowerCase();
+                case "name":
+                    const nameA = a.querySelector("h3").textContent.toLowerCase();
+                    const nameB = b.querySelector("h3").textContent.toLowerCase();
                     return nameA.localeCompare(nameB);
 
                 default:
@@ -375,16 +402,16 @@ function sortOffers(criteria) {
             }
         });
 
-        offers.forEach(offer => grid.appendChild(offer));
+        offers.forEach((offer) => grid.appendChild(offer));
     });
 }
 
 function createSortControls() {
-    const mainContainer = document.querySelector('.main .container');
-    if (!mainContainer || document.querySelector('.sort-controls')) return;
+    const mainContainer = document.querySelector(".main .container");
+    if (!mainContainer || document.querySelector(".sort-controls")) return;
 
-    const sortContainer = document.createElement('div');
-    sortContainer.className = 'sort-controls';
+    const sortContainer = document.createElement("div");
+    sortContainer.className = "sort-controls";
     sortContainer.innerHTML = `
     <div class="sort-row">
       <span class="sort-label">Ordenar por:</span>
@@ -397,15 +424,15 @@ function createSortControls() {
     </div>
   `;
 
-    const firstSection = mainContainer.querySelector('.offers-section');
+    const firstSection = mainContainer.querySelector(".offers-section");
     if (firstSection) {
         mainContainer.insertBefore(sortContainer, firstSection);
     }
 
-    const sortSelect = document.getElementById('sortSelect');
+    const sortSelect = document.getElementById("sortSelect");
     if (sortSelect) {
-        sortSelect.addEventListener('change', (e) => {
-            if (e.target.value !== 'default') {
+        sortSelect.addEventListener("change", (e) => {
+            if (e.target.value !== "default") {
                 sortOffers(e.target.value);
             } else {
                 location.reload();
@@ -417,10 +444,10 @@ function createSortControls() {
 }
 
 function addSortStyles() {
-    if (document.getElementById('sort-styles')) return;
+    if (document.getElementById("sort-styles")) return;
 
-    const style = document.createElement('style');
-    style.id = 'sort-styles';
+    const style = document.createElement("style");
+    style.id = "sort-styles";
     style.textContent = `
     .sort-controls {
       margin-bottom: 2rem;
@@ -469,23 +496,25 @@ function addSortStyles() {
 }
 
 function showOfferStats() {
-    const totalOffers = document.querySelectorAll('.offer-card').length;
-    const featuredOffers = document.querySelectorAll('.offer-card.featured').length;
+    const totalOffers = document.querySelectorAll(".offer-card").length;
+    const featuredOffers = document.querySelectorAll(
+        ".offer-card.featured",
+    ).length;
     const averageDiscount = calculateAverageDiscount();
 
-    console.log('📊 Estadísticas de ofertas:', {
+    console.log("📊 Estadísticas de ofertas:", {
         total: totalOffers,
         destacadas: featuredOffers,
-        descuentoPromedio: `${averageDiscount}%`
+        descuentoPromedio: `${averageDiscount}%`,
     });
 }
 
 function calculateAverageDiscount() {
-    const discountBadges = document.querySelectorAll('.discount-badge');
+    const discountBadges = document.querySelectorAll(".discount-badge");
     if (discountBadges.length === 0) return 0;
 
     const total = Array.from(discountBadges).reduce((sum, badge) => {
-        const discount = parseInt(badge.textContent.replace(/[-%]/g, ''));
+        const discount = parseInt(badge.textContent.replace(/[-%]/g, ""));
         return sum + discount;
     }, 0);
 
@@ -493,7 +522,7 @@ function calculateAverageDiscount() {
 }
 
 // Inicializar funcionalidades adicionales
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
         createSortControls();
         showOfferStats();
@@ -503,46 +532,46 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function addTooltips() {
-    const favoriteButtons = document.querySelectorAll('.action-btn.favorite');
-    const viewButtons = document.querySelectorAll('.action-btn.view');
+    const favoriteButtons = document.querySelectorAll(".action-btn.favorite");
+    const viewButtons = document.querySelectorAll(".action-btn.view");
 
-    favoriteButtons.forEach(btn => {
-        btn.title = 'Agregar a favoritos';
+    favoriteButtons.forEach((btn) => {
+        btn.title = "Agregar a favoritos";
     });
 
-    viewButtons.forEach(btn => {
-        btn.title = 'Ver detalles';
+    viewButtons.forEach((btn) => {
+        btn.title = "Ver detalles";
     });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const images = document.querySelectorAll('.offer-image img');
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".offer-image img");
 
-    images.forEach(img => {
-        img.addEventListener('error', function () {
-            this.src = 'img/placeholder.jpg';
-            this.alt = 'Imagen no disponible';
+    images.forEach((img) => {
+        img.addEventListener("error", function () {
+            this.src = "img/placeholder.jpg";
+            this.alt = "Imagen no disponible";
         });
     });
 });
 
 function initLazyLoading() {
-    const images = document.querySelectorAll('.offer-image img');
+    const images = document.querySelectorAll(".offer-image img");
 
     const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 const img = entry.target;
                 if (img.dataset.src) {
                     img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
+                    img.removeAttribute("data-src");
                 }
                 imageObserver.unobserve(img);
             }
         });
     });
 
-    images.forEach(img => {
+    images.forEach((img) => {
         if (img.dataset.src) {
             imageObserver.observe(img);
         }
@@ -554,4 +583,4 @@ window.clearFilters = clearFilters;
 window.shareOffer = shareOffer;
 
 // Auto-inicializar lazy loading
-document.addEventListener('DOMContentLoaded', initLazyLoading);
+document.addEventListener("DOMContentLoaded", initLazyLoading);

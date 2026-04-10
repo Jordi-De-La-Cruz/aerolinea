@@ -1,6 +1,7 @@
 .header {
-    background: linear-gradient(rgba(50, 50, 50, 0.8), rgba(50, 50, 50, 0.8)),
-        url('../img/fondo.jpg') center/cover;
+    background:
+        linear-gradient(rgba(50, 50, 50, 0.8), rgba(50, 50, 50, 0.8)),
+        url("../img/fondo.jpg") center/cover;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: sticky;
     top: 0;
@@ -104,7 +105,7 @@
 }
 
 .section-title::after {
-    content: '';
+    content: "";
     display: block;
     width: 80px;
     height: 3px;
@@ -164,7 +165,12 @@
 
 /* Twitter */
 .social-links a:nth-child(3):hover {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg,
+            #f09433 0%,
+            #e6683c 25%,
+            #dc2743 50%,
+            #cc2366 75%,
+            #bc1888 100%);
 }
 
 /* Instagram */

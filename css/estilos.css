@@ -5,9 +5,9 @@
 }
 
 body {
-    background-color: #bce4e1;
-    background: #7aa5af; 
-	font-family: 'Lato', sans-serif;
+	background-color: #bce4e1;
+	background: #7aa5af;
+	font-family: "Lato", sans-serif;
 }
 
 .contenedor {
@@ -26,7 +26,7 @@ body {
 	max-width: 550px;
 	position: relative;
 	color: #fff;
-	transition: .3s ease all;
+	transition: 0.3s ease all;
 	transform: rotateY(0deg);
 	transform-style: preserve-3d;
 	cursor: pointer;
@@ -37,14 +37,14 @@ body {
 	transform: rotateY(180deg);
 }
 
-.tarjeta > div {
+.tarjeta>div {
 	padding: 30px;
 	border-radius: 15px;
 	min-height: 315px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
+	box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3);
 }
 
 /* ---------- Tarjeta Delantera ----------*/
@@ -53,7 +53,6 @@ body {
 	width: 100%;
 	background: url(../img/bg-tarjeta-01.jpg);
 	background-size: cover;
-    
 }
 
 .delantera .logo-marca {
@@ -96,7 +95,7 @@ body {
 
 /* ---------- Tarjeta Trasera ----------*/
 .trasera {
-    width: 100%;
+	width: 100%;
 	background: url(../img/bg-tarjeta-01.jpg);
 	background-size: cover;
 	position: absolute;
@@ -130,12 +129,15 @@ body {
 
 .trasera .datos #firma .firma {
 	height: 40px;
-	background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px);
+	background: repeating-linear-gradient(skyblue 0,
+			skyblue 5px,
+			orange 5px,
+			orange 10px);
 }
 
 .trasera .datos #firma .firma p {
 	line-height: 40px;
-	font-family: 'Liu Jian Mao Cao', cursive;
+	font-family: "Liu Jian Mao Cao", cursive;
 	color: #000;
 	font-size: 30px;
 	padding: 0 10px;
@@ -176,9 +178,9 @@ body {
 	top: -25px;
 	z-index: 3;
 	border-radius: 100%;
-	box-shadow: -5px 4px 8px rgba(24,56,182,0.4);
+	box-shadow: -5px 4px 8px rgba(24, 56, 182, 0.4);
 	padding: 5px;
-	transition: all .2s ease;
+	transition: all 0.2s ease;
 	border: none;
 	cursor: pointer;
 }
@@ -202,7 +204,7 @@ body {
 	top: -150px;
 	z-index: 1;
 	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-	transition: clip-path .3s ease-out;
+	transition: clip-path 0.3s ease-out;
 }
 
 .formulario-tarjeta.active {
@@ -220,24 +222,24 @@ body {
 .formulario-tarjeta select,
 .btn-enviar {
 	text-decoration: none;
-	border: 2px solid #CED6E0;
+	border: 2px solid #ced6e0;
 	font-size: 18px;
 	height: 50px;
 	width: 100%;
 	padding: 5px 12px;
-	transition: .3s ease all;
+	transition: 0.3s ease all;
 	border-radius: 5px;
 }
 
 .formulario-tarjeta input:hover,
 .formulario-tarjeta select:hover {
-	border: 2px solid #93BDED;
+	border: 2px solid #93bded;
 }
 
 .formulario-tarjeta input:focus,
 .formulario-tarjeta select:focus {
-	outline: rgb(4,4,4);
-	box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3);
+	outline: rgb(4, 4, 4);
+	box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3);
 }
 
 .formulario-tarjeta input {
@@ -266,14 +268,15 @@ body {
 
 .formulario-tarjeta select {
 	-webkit-appearance: none;
+	appearance: none;
 }
 
 .formulario-tarjeta .grupo-select i {
 	position: absolute;
-	color: #CED6E0;
+	color: #ced6e0;
 	top: 18px;
 	right: 15px;
-	transition: .3s ease all;
+	transition: 0.3s ease all;
 }
 
 .formulario-tarjeta .grupo-select:hover i {
@@ -282,13 +285,13 @@ body {
 
 .formulario-tarjeta .btn-enviar {
 	border: none;
-    margin-left: 17rem;
-    width: 8rem;
+	margin-left: 17rem;
+	width: 8rem;
 	padding: 10px;
 	font-size: 22px;
 	color: #fff;
 	background: #2364d2;
-	box-shadow: 2px 2px 10px 0px rgba(0,85,212,0.4);
+	box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
 	cursor: pointer;
 }
 

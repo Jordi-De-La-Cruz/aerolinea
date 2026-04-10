@@ -6,7 +6,7 @@
 }
 
 .kawaii-page::before {
-    content: '';
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
@@ -32,7 +32,7 @@
 }
 
 .kawaii-page .page-header::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -50%;
     left: -50%;
@@ -51,7 +51,7 @@
 .kawaii-page .page-title {
     color: #d63384;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
-    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
     font-size: var(--font-size-hero);
     margin-bottom: var(--spacing-sm);
     animation: kawaiiBounce 2s ease-in-out infinite;
@@ -87,7 +87,7 @@
 }
 
 .kawaii-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -113,13 +113,15 @@
 }
 
 .kawaii-card__image::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, rgba(255, 107, 157, 0.1), rgba(196, 69, 105, 0.1));
+    background: linear-gradient(45deg,
+            rgba(255, 107, 157, 0.1),
+            rgba(196, 69, 105, 0.1));
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -144,13 +146,14 @@
 .kawaii-card__content {
     padding: var(--spacing-lg);
     background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     position: relative;
 }
 
 .kawaii-card__title {
     color: #e91e63;
-    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
     font-size: var(--font-size-xxl);
     text-align: center;
     margin-bottom: var(--spacing-md);
@@ -159,7 +162,7 @@
 }
 
 .kawaii-card__title::after {
-    content: '✨';
+    content: "✨";
     position: absolute;
     right: -30px;
     top: -5px;
@@ -183,7 +186,7 @@
     background: linear-gradient(45deg, #ff6b9d, #e91e63) !important;
     color: white !important;
     border: none !important;
-    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif !important;
+    font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif !important;
     font-weight: 600 !important;
     text-transform: none !important;
     letter-spacing: normal !important;
@@ -195,13 +198,16 @@
 }
 
 .kawaii-btn::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
     transition: left 0.6s ease;
 }
 
@@ -228,7 +234,7 @@
 }
 
 .kawaii-page .cta-section::before {
-    content: '🌟 ⭐ ✨ 💫 🌟 ⭐ ✨ 💫';
+    content: "🌟 ⭐ ✨ 💫 🌟 ⭐ ✨ 💫";
     position: absolute;
     top: 0;
     left: 0;
@@ -250,7 +256,7 @@
 
 .kawaii-page .cta-content h2 {
     color: #e91e63;
-    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
     margin-bottom: var(--spacing-md);
 }
@@ -391,7 +397,7 @@
 
 .kawaii-modal-header h2 {
     color: #e91e63;
-    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
     text-align: center;
     margin-bottom: var(--spacing-lg);
     font-size: var(--font-size-xxl);
@@ -407,7 +413,7 @@
 .kawaii-locations h3,
 .kawaii-features h3 {
     color: #e91e63;
-    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
     margin-bottom: var(--spacing-md);
     font-size: var(--font-size-large);
 }
@@ -460,7 +466,7 @@
     top: 20px;
     right: 20px;
     border-radius: 15px;
-    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
     font-size: var(--font-size-base);
     font-weight: 600;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -653,7 +659,7 @@
 
 /* === HOVER EFFECTS === */
 .kawaii-card:hover::after {
-    content: '💖 ✨ 🌟 💫 💖 ✨ 🌟 💫';
+    content: "💖 ✨ 🌟 💫 💖 ✨ 🌟 💫";
     position: absolute;
     top: 0;
     left: 0;

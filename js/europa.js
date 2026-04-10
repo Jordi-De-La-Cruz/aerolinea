@@ -1,12 +1,12 @@
 class EuropaPage {
     constructor() {
         this.destinations = [];
-        this.currentCurrency = 'EUR';
+        this.currentCurrency = "EUR";
         this.exchangeRates = {
-            'EUR': 1,
-            'USD': 1.08,
-            'GBP': 0.86,
-            'JPY': 161.50
+            EUR: 1,
+            USD: 1.08,
+            GBP: 0.86,
+            JPY: 161.5,
         };
 
         this.init();
@@ -24,103 +24,105 @@ class EuropaPage {
     initDestinations() {
         this.destinations = [
             {
-                id: 'paris',
-                name: 'París, Francia',
-                country: 'Francia',
+                id: "paris",
+                name: "París, Francia",
+                country: "Francia",
                 basePrice: 899,
-                currency: 'EUR',
+                currency: "EUR",
                 rating: 4.9,
-                image: 'img/paris.jpg',
-                features: ['Monumentos', 'Arte', 'Gastronomía'],
-                description: 'La Ciudad de la Luz te espera con sus icónicos monumentos...',
+                image: "img/paris.jpg",
+                features: ["Monumentos", "Arte", "Gastronomía"],
+                description:
+                    "La Ciudad de la Luz te espera con sus icónicos monumentos...",
                 season: {
                     high: [6, 7, 8],
-                    low: [1, 2, 11, 12]
-                }
+                    low: [1, 2, 11, 12],
+                },
             },
             {
-                id: 'roma',
-                name: 'Roma, Italia',
-                country: 'Italia',
+                id: "roma",
+                name: "Roma, Italia",
+                country: "Italia",
                 basePrice: 749,
-                currency: 'EUR',
+                currency: "EUR",
                 rating: 4.8,
-                image: 'img/roma.jpg',
-                features: ['Historia', 'Arquitectura', 'Comida'],
-                description: 'La Ciudad Eterna donde cada piedra cuenta una historia...',
+                image: "img/roma.jpg",
+                features: ["Historia", "Arquitectura", "Comida"],
+                description:
+                    "La Ciudad Eterna donde cada piedra cuenta una historia...",
                 season: {
                     high: [5, 6, 7, 8, 9],
-                    low: [1, 2, 12]
-                }
+                    low: [1, 2, 12],
+                },
             },
             {
-                id: 'barcelona',
-                name: 'Barcelona, España',
-                country: 'España',
+                id: "barcelona",
+                name: "Barcelona, España",
+                country: "España",
                 basePrice: 599,
-                currency: 'EUR',
+                currency: "EUR",
                 rating: 4.7,
-                image: 'img/barcelona.jpg',
-                features: ['Playas', 'Gaudí', 'Tapas'],
-                description: 'Modernismo catalán, playas mediterráneas...',
+                image: "img/barcelona.jpg",
+                features: ["Playas", "Gaudí", "Tapas"],
+                description: "Modernismo catalán, playas mediterráneas...",
                 season: {
                     high: [6, 7, 8, 9],
-                    low: [1, 2, 3, 12]
-                }
+                    low: [1, 2, 3, 12],
+                },
             },
             {
-                id: 'londres',
-                name: 'Londres, Reino Unido',
-                country: 'Reino Unido',
+                id: "londres",
+                name: "Londres, Reino Unido",
+                country: "Reino Unido",
                 basePrice: 699,
-                currency: 'GBP',
+                currency: "GBP",
                 rating: 4.6,
-                image: 'img/londres.jpg',
-                features: ['Realeza', 'Teatro', 'Museos'],
-                description: 'Tradición y modernidad se fusionan...',
+                image: "img/londres.jpg",
+                features: ["Realeza", "Teatro", "Museos"],
+                description: "Tradición y modernidad se fusionan...",
                 season: {
                     high: [6, 7, 8],
-                    low: [1, 2, 11, 12]
-                }
+                    low: [1, 2, 11, 12],
+                },
             },
             {
-                id: 'amsterdam',
-                name: 'Ámsterdam, Países Bajos',
-                country: 'Países Bajos',
+                id: "amsterdam",
+                name: "Ámsterdam, Países Bajos",
+                country: "Países Bajos",
                 basePrice: 679,
-                currency: 'EUR',
+                currency: "EUR",
                 rating: 4.5,
-                image: 'img/amsterdam.jpg',
-                features: ['Canales', 'Bicicletas', 'Tulipanes'],
-                description: 'Canales pintorescos, museos extraordinarios...',
+                image: "img/amsterdam.jpg",
+                features: ["Canales", "Bicicletas", "Tulipanes"],
+                description: "Canales pintorescos, museos extraordinarios...",
                 season: {
                     high: [4, 5, 6, 7, 8],
-                    low: [1, 2, 11, 12]
-                }
+                    low: [1, 2, 11, 12],
+                },
             },
             {
-                id: 'praga',
-                name: 'Praga, República Checa',
-                country: 'República Checa',
+                id: "praga",
+                name: "Praga, República Checa",
+                country: "República Checa",
                 basePrice: 529,
-                currency: 'EUR',
+                currency: "EUR",
                 rating: 4.4,
-                image: 'img/praga.jpg',
-                features: ['Castillos', 'Cerveza', 'Puentes'],
+                image: "img/praga.jpg",
+                features: ["Castillos", "Cerveza", "Puentes"],
                 description: 'La "Ciudad de las Cien Torres"...',
                 season: {
                     high: [5, 6, 7, 8, 9],
-                    low: [1, 2, 3, 11, 12]
-                }
-            }
+                    low: [1, 2, 3, 11, 12],
+                },
+            },
         ];
     }
 
     initBookingForms() {
-        const bookingButtons = document.querySelectorAll('.btn[data-destination]');
+        const bookingButtons = document.querySelectorAll(".btn[data-destination]");
 
-        bookingButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
+        bookingButtons.forEach((button) => {
+            button.addEventListener("click", (e) => {
                 e.preventDefault();
                 const destinationId = button.dataset.destination;
                 this.openBookingModal(destinationId);
@@ -128,9 +130,11 @@ class EuropaPage {
         });
 
         // Alternative: redirect to booking page
-        const reservarButtons = document.querySelectorAll('.card-footer .btn--primary');
+        const reservarButtons = document.querySelectorAll(
+            ".card-footer .btn--primary",
+        );
         reservarButtons.forEach((button, index) => {
-            button.addEventListener('click', (e) => {
+            button.addEventListener("click", (e) => {
                 e.preventDefault();
                 const destination = this.destinations[index];
                 if (destination) {
@@ -145,11 +149,14 @@ class EuropaPage {
         this.showBookingAnimation();
 
         // Save destination to localStorage for booking page
-        localStorage.setItem('selectedDestination', JSON.stringify(destination));
+        localStorage.setItem("selectedDestination", JSON.stringify(destination));
 
         setTimeout(() => {
-            if (typeof showNotification === 'function') {
-                showNotification(`Redirigiendo a reservas para ${destination.name}...`, 'info');
+            if (typeof showNotification === "function") {
+                showNotification(
+                    `Redirigiendo a reservas para ${destination.name}...`,
+                    "info",
+                );
             }
 
             setTimeout(() => {
@@ -164,12 +171,12 @@ class EuropaPage {
 
         button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
         button.disabled = true;
-        button.style.opacity = '0.7';
+        button.style.opacity = "0.7";
 
         setTimeout(() => {
             button.innerHTML = originalText;
             button.disabled = false;
-            button.style.opacity = '1';
+            button.style.opacity = "1";
         }, 2000);
     }
 
@@ -180,13 +187,19 @@ class EuropaPage {
 
     updatePricesWithSeason() {
         const currentMonth = new Date().getMonth() + 1;
-        const priceElements = document.querySelectorAll('.price-amount');
+        const priceElements = document.querySelectorAll(".price-amount");
 
         priceElements.forEach((element, index) => {
             const destination = this.destinations[index];
             if (destination) {
-                const adjustedPrice = this.calculateSeasonalPrice(destination, currentMonth);
-                element.textContent = this.formatPrice(adjustedPrice, destination.currency);
+                const adjustedPrice = this.calculateSeasonalPrice(
+                    destination,
+                    currentMonth,
+                );
+                element.textContent = this.formatPrice(
+                    adjustedPrice,
+                    destination.currency,
+                );
             }
         });
     }
@@ -205,21 +218,21 @@ class EuropaPage {
 
     formatPrice(price, currency) {
         const symbols = {
-            'EUR': '€',
-            'USD': '$',
-            'GBP': '£',
-            'JPY': '¥'
+            EUR: "€",
+            USD: "$",
+            GBP: "£",
+            JPY: "¥",
         };
 
-        return `${symbols[currency] || '€'}${price.toLocaleString()}`;
+        return `${symbols[currency] || "€"}${price.toLocaleString()}`;
     }
 
     initCurrencyConverter() {
         this.createCurrencySelector();
 
-        const currencySelector = document.getElementById('currencySelector');
+        const currencySelector = document.getElementById("currencySelector");
         if (currencySelector) {
-            currencySelector.addEventListener('change', (e) => {
+            currencySelector.addEventListener("change", (e) => {
                 this.currentCurrency = e.target.value;
                 this.convertAllPrices();
             });
@@ -227,11 +240,11 @@ class EuropaPage {
     }
 
     createCurrencySelector() {
-        const heroContent = document.querySelector('.hero-content');
-        if (!heroContent || document.getElementById('currencySelector')) return;
+        const heroContent = document.querySelector(".hero-content");
+        if (!heroContent || document.getElementById("currencySelector")) return;
 
-        const currencyDiv = document.createElement('div');
-        currencyDiv.className = 'currency-selector';
+        const currencyDiv = document.createElement("div");
+        currencyDiv.className = "currency-selector";
         currencyDiv.innerHTML = `
             <div style="margin-top: 2rem; display: inline-flex; align-items: center; gap: 1rem; 
                         background: rgba(255, 255, 255, 0.1); padding: 1rem 2rem; 
@@ -253,15 +266,25 @@ class EuropaPage {
     }
 
     convertAllPrices() {
-        const priceElements = document.querySelectorAll('.price-amount');
+        const priceElements = document.querySelectorAll(".price-amount");
 
         priceElements.forEach((element, index) => {
             const destination = this.destinations[index];
             if (destination) {
                 const currentMonth = new Date().getMonth() + 1;
-                const basePrice = this.calculateSeasonalPrice(destination, currentMonth);
-                const convertedPrice = this.convertPrice(basePrice, destination.currency, this.currentCurrency);
-                element.textContent = this.formatPrice(convertedPrice, this.currentCurrency);
+                const basePrice = this.calculateSeasonalPrice(
+                    destination,
+                    currentMonth,
+                );
+                const convertedPrice = this.convertPrice(
+                    basePrice,
+                    destination.currency,
+                    this.currentCurrency,
+                );
+                element.textContent = this.formatPrice(
+                    convertedPrice,
+                    this.currentCurrency,
+                );
             }
         });
     }
@@ -285,47 +308,49 @@ class EuropaPage {
     initScrollAnimations() {
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: "0px 0px -100px 0px",
         };
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.style.animationDelay = `${Math.random() * 0.5}s`;
-                    entry.target.classList.add('fade-in');
+                    entry.target.classList.add("fade-in");
                 }
             });
         }, observerOptions);
 
-        const animateElements = document.querySelectorAll('.destination-card, .tip-card');
-        animateElements.forEach(el => observer.observe(el));
+        const animateElements = document.querySelectorAll(
+            ".destination-card, .tip-card",
+        );
+        animateElements.forEach((el) => observer.observe(el));
     }
 
     initHoverAnimations() {
-        const cards = document.querySelectorAll('.destination-card');
+        const cards = document.querySelectorAll(".destination-card");
 
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
+        cards.forEach((card) => {
+            card.addEventListener("mouseenter", () => {
                 // Add subtle animation to feature tags
-                const tags = card.querySelectorAll('.feature-tag');
+                const tags = card.querySelectorAll(".feature-tag");
                 tags.forEach((tag, index) => {
                     setTimeout(() => {
-                        tag.style.transform = 'translateY(-2px) scale(1.05)';
+                        tag.style.transform = "translateY(-2px) scale(1.05)";
                     }, index * 100);
                 });
             });
 
-            card.addEventListener('mouseleave', () => {
-                const tags = card.querySelectorAll('.feature-tag');
-                tags.forEach(tag => {
-                    tag.style.transform = 'translateY(0) scale(1)';
+            card.addEventListener("mouseleave", () => {
+                const tags = card.querySelectorAll(".feature-tag");
+                tags.forEach((tag) => {
+                    tag.style.transform = "translateY(0) scale(1)";
                 });
             });
         });
     }
 
     initCounterAnimations() {
-        const ratings = document.querySelectorAll('.card-rating span');
+        const ratings = document.querySelectorAll(".card-rating span");
 
         const animateRating = (element) => {
             const finalValue = parseFloat(element.textContent);
@@ -343,7 +368,7 @@ class EuropaPage {
         };
 
         const ratingObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     animateRating(entry.target);
                     ratingObserver.unobserve(entry.target);
@@ -351,7 +376,7 @@ class EuropaPage {
             });
         });
 
-        ratings.forEach(rating => ratingObserver.observe(rating));
+        ratings.forEach((rating) => ratingObserver.observe(rating));
     }
 
     initInteractiveFeatures() {
@@ -361,10 +386,10 @@ class EuropaPage {
     }
 
     initFeatureTagInteractions() {
-        const featureTags = document.querySelectorAll('.feature-tag');
+        const featureTags = document.querySelectorAll(".feature-tag");
 
-        featureTags.forEach(tag => {
-            tag.addEventListener('click', () => {
+        featureTags.forEach((tag) => {
+            tag.addEventListener("click", () => {
                 const feature = tag.textContent.trim();
                 this.showFeatureInfo(feature);
             });
@@ -373,25 +398,31 @@ class EuropaPage {
 
     showFeatureInfo(feature) {
         const featureInfo = {
-            'Monumentos': 'Descubre los monumentos más icónicos y su historia fascinante.',
-            'Arte': 'Explora museos y galerías de arte de renombre mundial.',
-            'Gastronomía': 'Disfruta de la auténtica cocina local y restaurantes premiados.',
-            'Historia': 'Sumérgete en siglos de historia y cultura ancestral.',
-            'Arquitectura': 'Admira estilos arquitectónicos únicos y construcciones legendarias.',
-            'Playas': 'Relájate en hermosas costas y playas mediterráneas.',
-            'Realeza': 'Conoce palacios, castillos y la rica tradición monárquica.',
-            'Teatro': 'Disfruta de espectáculos teatrales en venues históricos.',
-            'Museos': 'Visita colecciones artísticas y culturales excepcionales.',
-            'Canales': 'Navega por pintorescos canales y arquitectura acuática.',
-            'Bicicletas': 'Explora la ciudad de forma ecológica y divertida.',
-            'Tulipanes': 'Admira campos de flores y jardines espectaculares.',
-            'Castillos': 'Visita fortalezas medievales y palacios históricos.',
-            'Cerveza': 'Degusta cervezas artesanales y tradiciones cerveceras.',
-            'Puentes': 'Cruza puentes históricos con vistas panorámicas.'
+            Monumentos:
+                "Descubre los monumentos más icónicos y su historia fascinante.",
+            Arte: "Explora museos y galerías de arte de renombre mundial.",
+            Gastronomía:
+                "Disfruta de la auténtica cocina local y restaurantes premiados.",
+            Historia: "Sumérgete en siglos de historia y cultura ancestral.",
+            Arquitectura:
+                "Admira estilos arquitectónicos únicos y construcciones legendarias.",
+            Playas: "Relájate en hermosas costas y playas mediterráneas.",
+            Realeza: "Conoce palacios, castillos y la rica tradición monárquica.",
+            Teatro: "Disfruta de espectáculos teatrales en venues históricos.",
+            Museos: "Visita colecciones artísticas y culturales excepcionales.",
+            Canales: "Navega por pintorescos canales y arquitectura acuática.",
+            Bicicletas: "Explora la ciudad de forma ecológica y divertida.",
+            Tulipanes: "Admira campos de flores y jardines espectaculares.",
+            Castillos: "Visita fortalezas medievales y palacios históricos.",
+            Cerveza: "Degusta cervezas artesanales y tradiciones cerveceras.",
+            Puentes: "Cruza puentes históricos con vistas panorámicas.",
         };
 
-        if (typeof showNotification === 'function') {
-            showNotification(`${feature}: ${featureInfo[feature] || 'Información no disponible'}`, 'info');
+        if (typeof showNotification === "function") {
+            showNotification(
+                `${feature}: ${featureInfo[feature] || "Información no disponible"}`,
+                "info",
+            );
         }
     }
 
@@ -399,18 +430,18 @@ class EuropaPage {
         const compareButton = this.createCompareButton();
         this.selectedDestinations = new Set();
 
-        const cards = document.querySelectorAll('.destination-card');
+        const cards = document.querySelectorAll(".destination-card");
         cards.forEach((card, index) => {
             this.addCompareCheckbox(card, index);
         });
     }
 
     createCompareButton() {
-        const heroContent = document.querySelector('.hero-content');
+        const heroContent = document.querySelector(".hero-content");
         if (!heroContent) return;
 
-        const compareDiv = document.createElement('div');
-        compareDiv.className = 'compare-section';
+        const compareDiv = document.createElement("div");
+        compareDiv.className = "compare-section";
         compareDiv.innerHTML = `
             <button id="compareBtn" class="btn btn--outline" style="margin-top: 2rem; display: none;">
                 <i class="fas fa-balance-scale"></i>
@@ -420,15 +451,15 @@ class EuropaPage {
 
         heroContent.appendChild(compareDiv);
 
-        const compareBtn = document.getElementById('compareBtn');
-        compareBtn.addEventListener('click', () => this.showComparison());
+        const compareBtn = document.getElementById("compareBtn");
+        compareBtn.addEventListener("click", () => this.showComparison());
 
         return compareBtn;
     }
 
     addCompareCheckbox(card, index) {
-        const checkbox = document.createElement('div');
-        checkbox.className = 'compare-checkbox';
+        const checkbox = document.createElement("div");
+        checkbox.className = "compare-checkbox";
         checkbox.innerHTML = `
             <input type="checkbox" id="compare-${index}" class="compare-input">
             <label for="compare-${index}" class="compare-label">
@@ -448,11 +479,11 @@ class EuropaPage {
             backdrop-filter: blur(10px);
         `;
 
-        card.style.position = 'relative';
+        card.style.position = "relative";
         card.appendChild(checkbox);
 
-        const input = checkbox.querySelector('input');
-        input.addEventListener('change', (e) => {
+        const input = checkbox.querySelector("input");
+        input.addEventListener("change", (e) => {
             if (e.target.checked) {
                 this.selectedDestinations.add(index);
             } else {
@@ -463,8 +494,8 @@ class EuropaPage {
     }
 
     updateCompareButton() {
-        const compareBtn = document.getElementById('compareBtn');
-        const compareCount = document.getElementById('compareCount');
+        const compareBtn = document.getElementById("compareBtn");
+        const compareCount = document.getElementById("compareCount");
 
         if (!compareBtn || !compareCount) return;
 
@@ -472,19 +503,23 @@ class EuropaPage {
         compareCount.textContent = count;
 
         if (count >= 2) {
-            compareBtn.style.display = 'inline-flex';
+            compareBtn.style.display = "inline-flex";
         } else {
-            compareBtn.style.display = 'none';
+            compareBtn.style.display = "none";
         }
     }
 
     showComparison() {
-        const selectedDestinations = Array.from(this.selectedDestinations)
-            .map(index => this.destinations[index]);
+        const selectedDestinations = Array.from(this.selectedDestinations).map(
+            (index) => this.destinations[index],
+        );
 
         if (selectedDestinations.length < 2) {
-            if (typeof showNotification === 'function') {
-                showNotification('Selecciona al menos 2 destinos para comparar', 'warning');
+            if (typeof showNotification === "function") {
+                showNotification(
+                    "Selecciona al menos 2 destinos para comparar",
+                    "warning",
+                );
             }
             return;
         }
@@ -493,8 +528,8 @@ class EuropaPage {
     }
 
     createComparisonModal(destinations) {
-        const modal = document.createElement('div');
-        modal.className = 'comparison-modal';
+        const modal = document.createElement("div");
+        modal.className = "comparison-modal";
         modal.innerHTML = `
             <div class="modal-overlay">
                 <div class="modal-content">
@@ -523,11 +558,11 @@ class EuropaPage {
 
         document.body.appendChild(modal);
 
-        const closeButton = modal.querySelector('.modal-close');
-        const overlay = modal.querySelector('.modal-overlay');
+        const closeButton = modal.querySelector(".modal-close");
+        const overlay = modal.querySelector(".modal-overlay");
 
-        closeButton.addEventListener('click', () => modal.remove());
-        overlay.addEventListener('click', (e) => {
+        closeButton.addEventListener("click", () => modal.remove());
+        overlay.addEventListener("click", (e) => {
             if (e.target === overlay) modal.remove();
         });
     }
@@ -540,33 +575,45 @@ class EuropaPage {
                 <thead>
                     <tr style="background: var(--primary); color: white;">
                         <th style="padding: 1rem; text-align: left;">Aspecto</th>
-                        ${destinations.map(dest => `<th style="padding: 1rem; text-align: center;">${dest.name}</th>`).join('')}
+                        ${destinations.map((dest) => `<th style="padding: 1rem; text-align: center;">${dest.name}</th>`).join("")}
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td style="padding: 1rem; font-weight: bold;">Precio</td>
-                        ${destinations.map(dest => `
+                        ${destinations
+                .map(
+                    (dest) => `
                             <td style="padding: 1rem; text-align: center; color: var(--primary); font-weight: bold;">
                                 ${this.formatPrice(this.calculateSeasonalPrice(dest, currentMonth), dest.currency)}
                             </td>
-                        `).join('')}
+                        `,
+                )
+                .join("")}
                     </tr>
                     <tr style="background: var(--gray-light);">
                         <td style="padding: 1rem; font-weight: bold;">Rating</td>
-                        ${destinations.map(dest => `
+                        ${destinations
+                .map(
+                    (dest) => `
                             <td style="padding: 1rem; text-align: center;">
                                 <span style="color: #ffd700;">★</span> ${dest.rating}
                             </td>
-                        `).join('')}
+                        `,
+                )
+                .join("")}
                     </tr>
                     <tr>
                         <td style="padding: 1rem; font-weight: bold;">Características</td>
-                        ${destinations.map(dest => `
+                        ${destinations
+                .map(
+                    (dest) => `
                             <td style="padding: 1rem; text-align: center;">
-                                ${dest.features.map(f => `<span style="display: inline-block; background: var(--secondary); color: white; padding: 0.2rem 0.5rem; margin: 0.1rem; border-radius: 1rem; font-size: 0.8rem;">${f}</span>`).join('')}
+                                ${dest.features.map((f) => `<span style="display: inline-block; background: var(--secondary); color: white; padding: 0.2rem 0.5rem; margin: 0.1rem; border-radius: 1rem; font-size: 0.8rem;">${f}</span>`).join("")}
                             </td>
-                        `).join('')}
+                        `,
+                )
+                .join("")}
                     </tr>
                 </tbody>
             </table>
@@ -578,11 +625,11 @@ class EuropaPage {
     }
 
     createFilterControls() {
-        const destinationsSection = document.querySelector('.destinations-section');
+        const destinationsSection = document.querySelector(".destinations-section");
         if (!destinationsSection) return;
 
-        const filterDiv = document.createElement('div');
-        filterDiv.className = 'filter-controls';
+        const filterDiv = document.createElement("div");
+        filterDiv.className = "filter-controls";
         filterDiv.innerHTML = `
             <div style="display: flex; justify-content: center; gap: 1rem; margin: 2rem 0; flex-wrap: wrap;">
                 <button class="filter-btn active" data-filter="all">
@@ -603,14 +650,14 @@ class EuropaPage {
             </div>
         `;
 
-        const sectionTitle = destinationsSection.querySelector('.section-title');
+        const sectionTitle = destinationsSection.querySelector(".section-title");
         sectionTitle.after(filterDiv);
 
-        const filterButtons = filterDiv.querySelectorAll('.filter-btn');
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+        const filterButtons = filterDiv.querySelectorAll(".filter-btn");
+        filterButtons.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                filterButtons.forEach((b) => b.classList.remove("active"));
+                btn.classList.add("active");
                 this.filterDestinations(btn.dataset.filter);
             });
         });
@@ -619,7 +666,7 @@ class EuropaPage {
     }
 
     styleFilterButtons(buttons) {
-        buttons.forEach(btn => {
+        buttons.forEach((btn) => {
             btn.style.cssText = `
                 background: rgba(33, 147, 176, 0.1);
                 border: 2px solid var(--primary);
@@ -634,62 +681,68 @@ class EuropaPage {
                 gap: 0.5rem;
             `;
 
-            btn.addEventListener('mouseenter', () => {
-                if (!btn.classList.contains('active')) {
-                    btn.style.background = 'var(--primary)';
-                    btn.style.color = 'white';
-                    btn.style.transform = 'translateY(-2px)';
+            btn.addEventListener("mouseenter", () => {
+                if (!btn.classList.contains("active")) {
+                    btn.style.background = "var(--primary)";
+                    btn.style.color = "white";
+                    btn.style.transform = "translateY(-2px)";
                 }
             });
 
-            btn.addEventListener('mouseleave', () => {
-                if (!btn.classList.contains('active')) {
-                    btn.style.background = 'rgba(33, 147, 176, 0.1)';
-                    btn.style.color = 'var(--primary)';
-                    btn.style.transform = 'translateY(0)';
+            btn.addEventListener("mouseleave", () => {
+                if (!btn.classList.contains("active")) {
+                    btn.style.background = "rgba(33, 147, 176, 0.1)";
+                    btn.style.color = "var(--primary)";
+                    btn.style.transform = "translateY(0)";
                 }
             });
         });
 
         // Style active button
-        const activeBtn = document.querySelector('.filter-btn.active');
+        const activeBtn = document.querySelector(".filter-btn.active");
         if (activeBtn) {
-            activeBtn.style.background = 'var(--primary)';
-            activeBtn.style.color = 'white';
+            activeBtn.style.background = "var(--primary)";
+            activeBtn.style.color = "white";
         }
     }
 
     filterDestinations(filterType) {
-        const cards = document.querySelectorAll('.destination-card');
+        const cards = document.querySelectorAll(".destination-card");
 
         cards.forEach((card, index) => {
             const destination = this.destinations[index];
             let shouldShow = true;
 
             switch (filterType) {
-                case 'budget':
+                case "budget":
                     shouldShow = destination.basePrice < 650;
                     break;
-                case 'luxury':
+                case "luxury":
                     shouldShow = destination.basePrice >= 750;
                     break;
-                case 'cultural':
-                    shouldShow = destination.features.some(f =>
-                        ['Historia', 'Arte', 'Monumentos', 'Arquitectura', 'Museos'].includes(f)
+                case "cultural":
+                    shouldShow = destination.features.some((f) =>
+                        [
+                            "Historia",
+                            "Arte",
+                            "Monumentos",
+                            "Arquitectura",
+                            "Museos",
+                        ].includes(f),
                     );
                     break;
-                case 'coastal':
-                    shouldShow = destination.features.includes('Playas');
+                case "coastal":
+                    shouldShow = destination.features.includes("Playas");
                     break;
                 default:
                     shouldShow = true;
             }
 
             if (shouldShow) {
-                card.style.display = 'flex';
-                card.style.animation = 'fadeIn 0.5s ease';
+                card.style.display = "flex";
+                card.style.animation = "fadeIn 0.5s ease";
             } else {
-                card.style.display = 'none';
+                card.style.display = "none";
             }
         });
     }
@@ -704,8 +757,8 @@ class EuropaPage {
     }
 
     showLoadingState() {
-        const priceElements = document.querySelectorAll('.price-amount');
-        priceElements.forEach(el => {
+        const priceElements = document.querySelectorAll(".price-amount");
+        priceElements.forEach((el) => {
             el.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
         });
     }
@@ -717,10 +770,10 @@ class EuropaPage {
     updateWithRealTimeData() {
         const flightData = {
             availability: Math.random() * 100,
-            demandMultiplier: 0.9 + (Math.random() * 0.2)
+            demandMultiplier: 0.9 + Math.random() * 0.2,
         };
 
-        this.destinations.forEach(dest => {
+        this.destinations.forEach((dest) => {
             dest.availability = flightData.availability;
             dest.demandMultiplier = flightData.demandMultiplier;
         });
@@ -729,27 +782,27 @@ class EuropaPage {
     }
 
     showAvailabilityInfo() {
-        const cards = document.querySelectorAll('.destination-card');
+        const cards = document.querySelectorAll(".destination-card");
 
         cards.forEach((card, index) => {
             const destination = this.destinations[index];
             const availability = Math.round(destination.availability);
 
-            let statusClass = 'high';
-            let statusText = 'Alta disponibilidad';
-            let statusIcon = 'fa-check-circle';
+            let statusClass = "high";
+            let statusText = "Alta disponibilidad";
+            let statusIcon = "fa-check-circle";
 
             if (availability < 30) {
-                statusClass = 'low';
-                statusText = 'Pocas plazas';
-                statusIcon = 'fa-exclamation-triangle';
+                statusClass = "low";
+                statusText = "Pocas plazas";
+                statusIcon = "fa-exclamation-triangle";
             } else if (availability < 60) {
-                statusClass = 'medium';
-                statusText = 'Disponibilidad media';
-                statusIcon = 'fa-info-circle';
+                statusClass = "medium";
+                statusText = "Disponibilidad media";
+                statusIcon = "fa-info-circle";
             }
 
-            const statusBadge = document.createElement('div');
+            const statusBadge = document.createElement("div");
             statusBadge.className = `availability-badge ${statusClass}`;
             statusBadge.innerHTML = `
                 <i class="fas ${statusIcon}"></i>
@@ -773,21 +826,23 @@ class EuropaPage {
             `;
 
             const colors = {
-                high: '#27ae60',
-                medium: '#f39c12',
-                low: '#e74c3c'
+                high: "#27ae60",
+                medium: "#f39c12",
+                low: "#e74c3c",
             };
 
             statusBadge.style.color = colors[statusClass];
 
-            card.querySelector('.card-image').appendChild(statusBadge);
+            card.querySelector(".card-image").appendChild(statusBadge);
         });
     }
 
     destroy() {
         // Limpiar event listeners
-        const buttons = document.querySelectorAll('.btn, .filter-btn, .compare-input');
-        buttons.forEach(btn => {
+        const buttons = document.querySelectorAll(
+            ".btn, .filter-btn, .compare-input",
+        );
+        buttons.forEach((btn) => {
             btn.replaceWith(btn.cloneNode(true));
         });
 
@@ -798,12 +853,12 @@ class EuropaPage {
 }
 
 // Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     window.europaPage = new EuropaPage();
 });
 
 // Limpiar al salir de la página
-window.addEventListener('beforeunload', () => {
+window.addEventListener("beforeunload", () => {
     if (window.europaPage) {
         window.europaPage.destroy();
     }

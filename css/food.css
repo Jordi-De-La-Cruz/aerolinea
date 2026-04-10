@@ -34,6 +34,7 @@
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: 20px;
     font-size: var(--font-size-small);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }

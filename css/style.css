@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 
 * {
     font-family: "Roboto", sans-serif;
@@ -9,7 +9,7 @@
     border: none;
     text-decoration: none;
     text-transform: capitalize;
-    transition: .2s linear;
+    transition: 0.2s linear;
 }
 
 body.dark {
@@ -47,8 +47,8 @@ body.dark {
     left: 0;
     right: unset;
     border-radius: 2rem;
-    transition: all .5s ease;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .5);
+    transition: all 0.5s ease;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
     content: "";
 }
 
@@ -75,7 +75,7 @@ html {
 }
 
 html::-webkit-scrollbar {
-    width: .8rem;
+    width: 0.8rem;
 }
 
 html::-webkit-scrollbar-track {
@@ -113,12 +113,12 @@ section {
 .btn {
     display: inline-block;
     margin-top: 1rem;
-    padding: .7rem 1.8rem;
+    padding: 0.7rem 1.8rem;
     font-size: 1.7rem;
     cursor: pointer;
     color: #fff;
     background: rgb(3, 62, 85);
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 }
 
 .btn:hover {
@@ -131,7 +131,7 @@ section {
 }
 
 .heading span {
-    font-family: 'Satisfy', cursive;
+    font-family: "Satisfy", cursive;
     font-size: 3.5rem;
     color: white;
 }
@@ -148,7 +148,7 @@ section {
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem 7%;
-    border-bottom: .1rem solid rgba(255, 255, 255, .3);
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
     background-color: rgb(50, 50, 50);
     background-blend-mode: soft-light;
     top: 0;
@@ -169,7 +169,7 @@ section {
 }
 
 .logo h3:hover {
-    color: #4ECDC4;
+    color: #4ecdc4;
 }
 
 .header .logo {
@@ -272,7 +272,6 @@ section {
 
 .navegacion2 .menu a {
     display: flex;
-
 }
 
 .navegacion2 .menu .fa-plane-departure,
@@ -293,13 +292,15 @@ section {
     font-weight: 700;
     padding: 15px 70px;
     color: white;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     text-decoration: none;
 }
 
 .menu li a:hover {
     color: white;
-    transition: all .3s;
+    transition: all 0.3s;
 }
 
 .submenu {
@@ -320,7 +321,9 @@ section {
     margin-bottom: 2rem;
     text-align: center;
     color: var(--bg);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     text-decoration: none;
 }
 
@@ -328,7 +331,6 @@ section {
     font-size: 30px;
     text-align: center;
     margin-top: 5rem;
-
 }
 
 .products h1 {
@@ -373,7 +375,7 @@ section {
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: 700;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     width: 90%;
     border: none;
 }
@@ -387,7 +389,7 @@ section {
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: 700;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     width: 90%;
     border: none;
 }
@@ -445,9 +447,9 @@ section {
 }
 
 .logo h3:hover {
-    color: #4ECDC4;
-    color: -webkit-linear-gradient(to right, #556270, #4ECDC4);
-    color: linear-gradient(to right, #556270, #4ECDC4);
+    color: #4ecdc4;
+    color: -webkit-linear-gradient(to right, #556270, #4ecdc4);
+    color: linear-gradient(to right, #556270, #4ecdc4);
 }
 
 .abajo {
@@ -524,7 +526,7 @@ section {
 
 .descripcion h2 {
     font-size: 2rem;
-    margin: 3rem
+    margin: 3rem;
 }
 
 .descripcion p {
@@ -560,7 +562,7 @@ section {
     font-size: 2rem;
     color: #fff;
     border: var(--border);
-    margin: .3rem;
+    margin: 0.3rem;
     border-radius: 50%;
 }
 
@@ -577,21 +579,21 @@ section {
 }
 
 .footer .share .fa-twitter:hover {
-    background: #56CCF2;
-    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
-    background: linear-gradient(to right, #2F80ED, #56CCF2);
+    background: #56ccf2;
+    background: -webkit-linear-gradient(to right, #2f80ed, #56ccf2);
+    background: linear-gradient(to right, #2f80ed, #56ccf2);
 }
 
 .footer .share .fa-pinterest:hover {
-    background: #CB356B;
-    background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);
-    background: linear-gradient(to right, #BD3F32, #CB356B);
+    background: #cb356b;
+    background: -webkit-linear-gradient(to right, #bd3f32, #cb356b);
+    background: linear-gradient(to right, #bd3f32, #cb356b);
 }
 
 .footer .share .fa-linkedin:hover {
-    background: #0575E6;
-    background: -webkit-linear-gradient(to right, #021B79, #0575E6);
-    background: linear-gradient(to right, #021B79, #0575E6);
+    background: #0575e6;
+    background: -webkit-linear-gradient(to right, #021b79, #0575e6);
+    background: linear-gradient(to right, #021b79, #0575e6);
 }
 
 .footer .credit {
@@ -602,7 +604,7 @@ section {
 }
 
 .footer .credit span {
-    color: cadetblue
+    color: cadetblue;
 }
 
 /* AYUDA */
@@ -611,7 +613,7 @@ section {
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem 7%;
-    border-bottom: .1rem solid rgba(255, 255, 255, .3);
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
     background-color: brown;
     top: 0;
     left: 0;
@@ -698,7 +700,7 @@ section {
 .category {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
+    -ms-grid-columns: (minmax(16rem, 1fr)) [auto-fit];
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: 1.5rem;
     padding-bottom: 5rem;
@@ -731,13 +733,13 @@ section {
 .popular .box-container {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+    -ms-grid-columns: (minmax(25rem, 1fr)) [auto-fit];
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 1.5rem;
 }
 
 .popular .box-container .box {
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     position: relative;
     background: #f7f7f7;
     padding: 2rem;
@@ -817,9 +819,9 @@ section {
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
     border: 0.1rem solid rgba(0, 0, 0, 0.2);
     padding: 2rem;
-    border-radius: .5rem;
-    -webkit-animation: fadeUp .4s linear;
-    animation: fadeUp .4s linear;
+    border-radius: 0.5rem;
+    -webkit-animation: fadeUp 0.4s linear;
+    animation: fadeUp 0.4s linear;
 }
 
 .login-form-container form h3 {
@@ -830,8 +832,8 @@ section {
 }
 
 .login-form-container form .box {
-    margin: .7rem 0;
-    border-radius: .5rem;
+    margin: 0.7rem 0;
+    border-radius: 0.5rem;
     background: #f7f7f7;
     padding: 1rem 1.2rem;
     font-size: 1.6rem;
@@ -848,7 +850,7 @@ section {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
 }
 
 .login-form-container form .remember label {
@@ -881,7 +883,7 @@ section {
 .products .box-container {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+    -ms-grid-columns: (minmax(25rem, 1fr)) [auto-fit];
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 1.5rem;
 }
@@ -983,7 +985,6 @@ section {
 }
 
 .rou {
-
     display: flex;
     padding-right: 5rem;
     padding-left: 5rem;
@@ -1010,7 +1011,6 @@ section {
 }
 
 .fap {
-
     margin-top: 10px;
     display: flex;
     font-size: 20px;
@@ -1138,7 +1138,6 @@ fieldset {
 }
 
 .b .hospedaje {
-
     margin-top: 10rem;
     margin-left: 25rem;
     background-color: rgb(34, 120, 123);
@@ -1153,7 +1152,6 @@ fieldset {
 }
 
 .b .hospedaje label {
-
     font-weight: 800;
     font-size: 2rem;
 }
@@ -1245,7 +1243,7 @@ fieldset {
 }
 
 #login input::placeholder {
-    font-family: 'Overpass', sans-serif;
+    font-family: "Overpass", sans-serif;
     color: #b4b2b2;
 }
 
@@ -1283,9 +1281,9 @@ fieldset {
 }
 
 .share .fa-twitter:hover {
-    background: #56CCF2;
-    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
-    background: linear-gradient(to right, #2F80ED, #56CCF2);
+    background: #56ccf2;
+    background: -webkit-linear-gradient(to right, #2f80ed, #56ccf2);
+    background: linear-gradient(to right, #2f80ed, #56ccf2);
 }
 
 .share {
@@ -1305,7 +1303,7 @@ fieldset {
     font-size: 2rem;
     color: black;
     border: var(--border);
-    margin: .3rem;
+    margin: 0.3rem;
     border-radius: 50%;
 }
 
@@ -1349,7 +1347,6 @@ fieldset {
 }
 
 .america {
-
     margin-top: 1rem;
     gap: 2rem;
     display: flex;
@@ -1397,7 +1394,6 @@ fieldset {
     padding: 0;
     width: 400%;
     animation: cambio 8s infinite;
-
 }
 
 .slider li {
@@ -1461,7 +1457,6 @@ td {
     padding-right: 7rem;
 }
 
-
 .reserva {
     display: flex;
 }
@@ -1477,11 +1472,9 @@ td {
     font-weight: 700;
     text-align: center;
     margin-top: 1rem;
-
 }
 
 fieldset {
-
     width: 10rem;
 }
 
@@ -1519,13 +1512,11 @@ fieldset {
 }
 
 .b .hospedaje label {
-
     font-weight: 800;
     font-size: 2rem;
 }
 
 .b .hospedaje input {
-
     width: 12rem;
     margin-top: 1rem;
 }
@@ -1571,11 +1562,9 @@ fieldset {
     font-weight: 700;
     text-align: center;
     margin-top: 1rem;
-
 }
 
 .pasaje {
-
     width: 10rem;
 }
 
@@ -1585,12 +1574,9 @@ fieldset {
 
 .b .hospedaje {
     margin-left: 7rem;
-
-
 }
 
 .bn {
-
     text-align: center;
     background-color: grey;
     padding: 1rem;
@@ -1599,7 +1585,7 @@ fieldset {
 }
 
 .b .habit2 .habit .hab1 {
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background: #dbdada;
     padding: 1rem;
     text-align: center;
@@ -1611,12 +1597,10 @@ fieldset {
     display: -ms-grid;
     display: flex;
     gap: 1rem;
-
-
 }
 
 .b .habit2 .habit1 .hab1 {
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background: #dbdada;
     padding: 1rem;
     text-align: center;
@@ -1627,7 +1611,6 @@ fieldset {
     display: -ms-grid;
     display: flex;
     gap: 1rem;
-
 }
 
 .hab1 img {
@@ -1679,11 +1662,9 @@ i {
 .Hot .fas {
     font-size: 2rem;
     padding: 1rem;
-
 }
 
 .Hot1 {
-
     display: flex;
     gap: 3rem;
 }
@@ -1701,14 +1682,9 @@ i {
 
 .Ho1 .Hot1 .Hot .Paq p {
     font-size: 1rem;
-
 }
 
-
-
-
 .Ho1 .Hot .map {
-
     margin: 1rem 2rem 1rem 5rem;
     width: 40rem;
     height: 15rem;
@@ -1722,7 +1698,6 @@ i {
 }
 
 .conoce h2 {
-
     font-size: 3rem;
 }
 
@@ -1760,7 +1735,6 @@ i {
     width: 20rem;
     height: 15rem;
     padding: 0.2rem;
-
 }
 
 .SI {
@@ -1785,7 +1759,6 @@ i {
     margin-top: 1.5rem;
 }
 
-
 .paq {
     margin-top: 3rem;
     margin-left: 8.5rem;
@@ -1793,14 +1766,12 @@ i {
 }
 
 .Paq {
-
     margin-top: 1.5rem;
     display: flex;
     gap: 1rem;
 }
 
 .Paquete {
-
     /* width: 110rem; */
     /* background: rgb(241, 241, 241); */
     margin: 1rem 8rem;
@@ -1815,12 +1786,10 @@ i {
     box-shadow: 2px 2px 2px grey;
     width: 20rem;
     height: 20rem;
-
 }
 
 .Kaw .kaw {
     margin-left: 3rem;
-
 }
 
 .Kaw h2 {
@@ -1832,7 +1801,6 @@ i {
     text-align: justify;
     margin-top: 1rem;
     font-size: 1.5rem;
-
 }
 
 @media (max-width: 600px) {
@@ -1845,13 +1813,11 @@ i {
     }
 
     form {
-
         width: 3rem;
     }
 
     fieldset {
         width: -12rem;
-
     }
 
     .mil {
@@ -1863,13 +1829,11 @@ i {
     .mil label p {
         font-size: 1.5rem;
         margin-left: -3rem;
-
     }
 
     label h4 {
         margin-left: -20rem;
     }
-
 
     label p {
         font-size: 1rem;
@@ -1900,12 +1864,10 @@ i {
     }
 
     .ruler h3 {
-
         text-align: center;
     }
 
     .rou {
-
         width: 5rem;
         align-items: center;
         margin-left: -2rem;
@@ -1913,7 +1875,6 @@ i {
 
     .rou input {
         width: 3rem;
-
     }
 
     .thor {
@@ -1923,9 +1884,7 @@ i {
     .thor button {
         width: 15rem;
         text-align: center;
-
     }
-
 }
 
 @media (max-width: 600px) {
@@ -1942,7 +1901,6 @@ i {
     .header .navegacion2 {
         flex-direction: column;
     }
-
 }
 
 @media (max-width: 600px) {
@@ -1984,11 +1942,9 @@ i {
 @media (max-width: 600px) {
     .content h3 {
         text-align: center;
-
     }
 
     .header {
-
         flex-direction: column;
     }
 
@@ -2001,12 +1957,11 @@ i {
     }
 
     #loginform {
-
         width: auto;
     }
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
     .reserva {
         flex-direction: column;
         /* margin-inline: -10rem; */
@@ -2017,12 +1972,10 @@ i {
         margin-top: 1rem;
         margin-left: -1rem;
         width: auto;
-
     }
 
     .reserva1 a {
         margin-left: 12rem;
-
     }
 
     th,
@@ -2037,7 +1990,7 @@ i {
     .reserva11 {
         margin-top: 1rem;
         margin-left: -10rem;
-        min-width: none
+        min-width: none;
     }
 
     .habit2 {
@@ -2046,6 +1999,5 @@ i {
 
     .heading {
         margin-left: -1rem;
-
     }
 }

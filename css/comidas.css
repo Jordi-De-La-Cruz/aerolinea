@@ -4,10 +4,9 @@
 
 /* Menu Hero Section */
 .menu-hero {
-    background: linear-gradient(135deg,
-            rgba(33, 147, 176, 0.95),
-            rgba(12, 73, 89, 0.95)),
-        url('../img/menu-hero-bg.jpg') center/cover;
+    background:
+        linear-gradient(135deg, rgba(33, 147, 176, 0.95), rgba(12, 73, 89, 0.95)),
+        url("../img/menu-hero-bg.jpg") center/cover;
     color: var(--light);
     padding: var(--spacing-xl) 0;
     text-align: center;
@@ -808,7 +807,7 @@
 }
 
 .menu-item.loading .menu-item-image::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -845,7 +844,7 @@
 }
 
 .menu-item.added .add-to-cart i::before {
-    content: '\f00c';
+    content: "\f00c";
     /* Font Awesome check icon */
 }
 

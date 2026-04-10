@@ -6,10 +6,10 @@ class ComidasPage {
     constructor() {
         this.cart = [];
         this.favorites = new Set();
-        this.currentCategory = 'all';
+        this.currentCategory = "all";
         this.activeFilters = new Set();
-        this.serviceCharge = 5.00;
-        this.taxRate = 0.10;
+        this.serviceCharge = 5.0;
+        this.taxRate = 0.1;
 
         this.init();
     }
@@ -26,17 +26,17 @@ class ComidasPage {
 
     // Filter System
     initFilters() {
-        const categoryTabs = document.querySelectorAll('.filter-tab');
-        const dietaryFilters = document.querySelectorAll('.dietary-btn');
+        const categoryTabs = document.querySelectorAll(".filter-tab");
+        const dietaryFilters = document.querySelectorAll(".dietary-btn");
 
-        categoryTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
+        categoryTabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
                 this.handleCategoryFilter(tab);
             });
         });
 
-        dietaryFilters.forEach(filter => {
-            filter.addEventListener('click', () => {
+        dietaryFilters.forEach((filter) => {
+            filter.addEventListener("click", () => {
                 this.handleDietaryFilter(filter);
             });
         });
@@ -44,16 +44,20 @@ class ComidasPage {
 
     handleCategoryFilter(tab) {
         // Update active tab
-        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
+        document
+            .querySelectorAll(".filter-tab")
+            .forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
 
         this.currentCategory = tab.dataset.category;
         this.filterMenuItems();
 
         // Smooth scroll to menu section
-        const targetSection = document.querySelector(`[data-category="${this.currentCategory}"]`);
-        if (targetSection && this.currentCategory !== 'all') {
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const targetSection = document.querySelector(
+            `[data-category="${this.currentCategory}"]`,
+        );
+        if (targetSection && this.currentCategory !== "all") {
+            targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     }
 
@@ -62,62 +66,66 @@ class ComidasPage {
 
         if (this.activeFilters.has(filterType)) {
             this.activeFilters.delete(filterType);
-            filter.classList.remove('active');
+            filter.classList.remove("active");
         } else {
             this.activeFilters.add(filterType);
-            filter.classList.add('active');
+            filter.classList.add("active");
         }
 
         this.filterMenuItems();
     }
 
     filterMenuItems() {
-        const menuItems = document.querySelectorAll('.menu-item');
-        const menuSections = document.querySelectorAll('.menu-section');
+        const menuItems = document.querySelectorAll(".menu-item");
+        const menuSections = document.querySelectorAll(".menu-section");
 
-        menuSections.forEach(section => {
+        menuSections.forEach((section) => {
             const sectionCategory = section.dataset.category;
-            const shouldShowSection = this.currentCategory === 'all' ||
+            const shouldShowSection =
+                this.currentCategory === "all" ||
                 this.currentCategory === sectionCategory;
 
             if (shouldShowSection) {
-                section.style.display = 'block';
+                section.style.display = "block";
             } else {
-                section.style.display = 'none';
+                section.style.display = "none";
                 return;
             }
         });
 
-        menuItems.forEach(item => {
-            const itemSection = item.closest('.menu-section');
+        menuItems.forEach((item) => {
+            const itemSection = item.closest(".menu-section");
             const sectionCategory = itemSection.dataset.category;
-            const itemDietary = item.dataset.dietary.split(' ');
+            const itemDietary = item.dataset.dietary.split(" ");
 
             let shouldShow = true;
 
             // Category filter
-            if (this.currentCategory !== 'all' && this.currentCategory !== sectionCategory) {
+            if (
+                this.currentCategory !== "all" &&
+                this.currentCategory !== sectionCategory
+            ) {
                 shouldShow = false;
             }
 
             // Dietary filters
             if (this.activeFilters.size > 0) {
-                const hasMatchingDiet = Array.from(this.activeFilters).some(filter =>
-                    itemDietary.includes(filter)
+                const hasMatchingDiet = Array.from(this.activeFilters).some((filter) =>
+                    itemDietary.includes(filter),
                 );
                 if (!hasMatchingDiet) shouldShow = false;
             }
 
             if (shouldShow) {
-                item.classList.remove('filtered-out');
-                item.classList.add('filtered-in');
-                item.style.display = 'block';
+                item.classList.remove("filtered-out");
+                item.classList.add("filtered-in");
+                item.style.display = "block";
             } else {
-                item.classList.add('filtered-out');
-                item.classList.remove('filtered-in');
+                item.classList.add("filtered-out");
+                item.classList.remove("filtered-in");
                 setTimeout(() => {
-                    if (item.classList.contains('filtered-out')) {
-                        item.style.display = 'none';
+                    if (item.classList.contains("filtered-out")) {
+                        item.style.display = "none";
                     }
                 }, 300);
             }
@@ -126,39 +134,42 @@ class ComidasPage {
 
     // Cart System
     initCart() {
-        const addToCartBtns = document.querySelectorAll('.add-to-cart');
-        const viewCartBtn = document.getElementById('viewCartBtn');
-        const closeCartModal = document.getElementById('closeCartModal');
-        const clearCartBtn = document.getElementById('clearCartBtn');
-        const confirmOrderBtn = document.getElementById('confirmOrderBtn');
+        const addToCartBtns = document.querySelectorAll(".add-to-cart");
+        const viewCartBtn = document.getElementById("viewCartBtn");
+        const closeCartModal = document.getElementById("closeCartModal");
+        const clearCartBtn = document.getElementById("clearCartBtn");
+        const confirmOrderBtn = document.getElementById("confirmOrderBtn");
 
-        addToCartBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
+        addToCartBtns.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
                 this.addToCart(e.currentTarget);
             });
         });
 
         if (viewCartBtn) {
-            viewCartBtn.addEventListener('click', () => this.showCartModal());
+            viewCartBtn.addEventListener("click", () => this.showCartModal());
         }
 
         if (closeCartModal) {
-            closeCartModal.addEventListener('click', () => this.hideCartModal());
+            closeCartModal.addEventListener("click", () => this.hideCartModal());
         }
 
         if (clearCartBtn) {
-            clearCartBtn.addEventListener('click', () => this.clearCart());
+            clearCartBtn.addEventListener("click", () => this.clearCart());
         }
 
         if (confirmOrderBtn) {
-            confirmOrderBtn.addEventListener('click', () => this.confirmOrder());
+            confirmOrderBtn.addEventListener("click", () => this.confirmOrder());
         }
 
         // Close modal on overlay click
-        const cartModal = document.getElementById('cartModal');
+        const cartModal = document.getElementById("cartModal");
         if (cartModal) {
-            cartModal.addEventListener('click', (e) => {
-                if (e.target === cartModal || e.target.classList.contains('modal-overlay')) {
+            cartModal.addEventListener("click", (e) => {
+                if (
+                    e.target === cartModal ||
+                    e.target.classList.contains("modal-overlay")
+                ) {
                     this.hideCartModal();
                 }
             });
@@ -170,11 +181,13 @@ class ComidasPage {
             id: button.dataset.id,
             name: button.dataset.name,
             price: parseFloat(button.dataset.price),
-            quantity: 1
+            quantity: 1,
         };
 
         // Check if item already exists
-        const existingItemIndex = this.cart.findIndex(item => item.id === itemData.id);
+        const existingItemIndex = this.cart.findIndex(
+            (item) => item.id === itemData.id,
+        );
 
         if (existingItemIndex >= 0) {
             this.cart[existingItemIndex].quantity += 1;
@@ -188,13 +201,13 @@ class ComidasPage {
         this.saveCartData();
 
         // Show notification
-        if (typeof showNotification === 'function') {
-            showNotification(`${itemData.name} agregado al carrito`, 'success');
+        if (typeof showNotification === "function") {
+            showNotification(`${itemData.name} agregado al carrito`, "success");
         }
     }
 
     showAddToCartAnimation(button) {
-        const menuItem = button.closest('.menu-item');
+        const menuItem = button.closest(".menu-item");
 
         // Add loading state
         button.disabled = true;
@@ -202,25 +215,25 @@ class ComidasPage {
 
         setTimeout(() => {
             button.innerHTML = '<i class="fas fa-check"></i> Agregado';
-            menuItem.classList.add('added');
+            menuItem.classList.add("added");
 
             setTimeout(() => {
                 button.innerHTML = '<i class="fas fa-plus"></i> Agregar';
                 button.disabled = false;
-                menuItem.classList.remove('added');
+                menuItem.classList.remove("added");
             }, 1500);
         }, 800);
     }
 
     removeFromCart(itemId) {
-        this.cart = this.cart.filter(item => item.id !== itemId);
+        this.cart = this.cart.filter((item) => item.id !== itemId);
         this.updateCartDisplay();
         this.updateCartModal();
         this.saveCartData();
     }
 
     updateQuantity(itemId, newQuantity) {
-        const item = this.cart.find(item => item.id === itemId);
+        const item = this.cart.find((item) => item.id === itemId);
         if (item) {
             if (newQuantity <= 0) {
                 this.removeFromCart(itemId);
@@ -234,9 +247,9 @@ class ComidasPage {
     }
 
     updateCartDisplay() {
-        const cartCount = document.getElementById('cartCount');
-        const cartTotal = document.getElementById('cartTotal');
-        const cartSummary = document.getElementById('cartSummary');
+        const cartCount = document.getElementById("cartCount");
+        const cartTotal = document.getElementById("cartTotal");
+        const cartSummary = document.getElementById("cartSummary");
 
         const totalItems = this.cart.reduce((sum, item) => sum + item.quantity, 0);
         const totalPrice = this.calculateTotal().subtotal;
@@ -247,15 +260,18 @@ class ComidasPage {
         // Show/hide cart summary
         if (cartSummary) {
             if (totalItems > 0) {
-                cartSummary.classList.add('visible');
+                cartSummary.classList.add("visible");
             } else {
-                cartSummary.classList.remove('visible');
+                cartSummary.classList.remove("visible");
             }
         }
     }
 
     calculateTotal() {
-        const subtotal = this.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const subtotal = this.cart.reduce(
+            (sum, item) => sum + item.price * item.quantity,
+            0,
+        );
         const tax = subtotal * this.taxRate;
         const total = subtotal + this.serviceCharge + tax;
 
@@ -263,46 +279,52 @@ class ComidasPage {
             subtotal,
             service: this.serviceCharge,
             tax,
-            total
+            total,
         };
     }
 
     showCartModal() {
-        const cartModal = document.getElementById('cartModal');
+        const cartModal = document.getElementById("cartModal");
         if (cartModal) {
-            cartModal.classList.add('visible');
-            document.body.style.overflow = 'hidden';
+            cartModal.classList.add("visible");
+            document.body.style.overflow = "hidden";
             this.updateCartModal();
         }
     }
 
     hideCartModal() {
-        const cartModal = document.getElementById('cartModal');
+        const cartModal = document.getElementById("cartModal");
         if (cartModal) {
-            cartModal.classList.remove('visible');
-            document.body.style.overflow = '';
+            cartModal.classList.remove("visible");
+            document.body.style.overflow = "";
         }
     }
 
     updateCartModal() {
-        const cartItems = document.getElementById('cartItems');
-        const emptyCart = document.getElementById('emptyCart');
+        const cartItems = document.getElementById("cartItems");
+        const emptyCart = document.getElementById("emptyCart");
         const totals = this.calculateTotal();
 
         // Update totals
-        document.getElementById('modalSubtotal').textContent = `$${totals.subtotal.toFixed(2)}`;
-        document.getElementById('modalService').textContent = `$${totals.service.toFixed(2)}`;
-        document.getElementById('modalTax').textContent = `$${totals.tax.toFixed(2)}`;
-        document.getElementById('modalTotal').textContent = `$${totals.total.toFixed(2)}`;
+        document.getElementById("modalSubtotal").textContent =
+            `$${totals.subtotal.toFixed(2)}`;
+        document.getElementById("modalService").textContent =
+            `$${totals.service.toFixed(2)}`;
+        document.getElementById("modalTax").textContent =
+            `$${totals.tax.toFixed(2)}`;
+        document.getElementById("modalTotal").textContent =
+            `$${totals.total.toFixed(2)}`;
 
         if (this.cart.length === 0) {
-            emptyCart.style.display = 'block';
-            cartItems.innerHTML = '';
+            emptyCart.style.display = "block";
+            cartItems.innerHTML = "";
             return;
         }
 
-        emptyCart.style.display = 'none';
-        cartItems.innerHTML = this.cart.map(item => `
+        emptyCart.style.display = "none";
+        cartItems.innerHTML = this.cart
+            .map(
+                (item) => `
             <div class="cart-item" data-id="${item.id}">
                 <div class="cart-item-info">
                     <h4>${item.name}</h4>
@@ -324,7 +346,9 @@ class ComidasPage {
                     $${(item.price * item.quantity).toFixed(2)}
                 </div>
             </div>
-        `).join('');
+        `,
+            )
+            .join("");
     }
 
     clearCart() {
@@ -333,15 +357,15 @@ class ComidasPage {
         this.updateCartModal();
         this.saveCartData();
 
-        if (typeof showNotification === 'function') {
-            showNotification('Carrito vaciado', 'info');
+        if (typeof showNotification === "function") {
+            showNotification("Carrito vaciado", "info");
         }
     }
 
     confirmOrder() {
         if (this.cart.length === 0) {
-            if (typeof showNotification === 'function') {
-                showNotification('Tu carrito está vacío', 'warning');
+            if (typeof showNotification === "function") {
+                showNotification("Tu carrito está vacío", "warning");
             }
             return;
         }
@@ -355,10 +379,10 @@ class ComidasPage {
             items: [...this.cart],
             totals: this.calculateTotal(),
             timestamp: new Date().toISOString(),
-            flight: 'Singapur - Emiratos'
+            flight: "Singapur - Emiratos",
         };
 
-        localStorage.setItem('lastOrder', JSON.stringify(orderData));
+        localStorage.setItem("lastOrder", JSON.stringify(orderData));
 
         // Clear cart
         this.clearCart();
@@ -373,39 +397,41 @@ class ComidasPage {
     generateOrderNumber() {
         const date = new Date();
         const year = date.getFullYear();
-        const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+        const random = Math.floor(Math.random() * 1000)
+            .toString()
+            .padStart(3, "0");
         return `#ORD-${year}-${random}`;
     }
 
     showSuccessModal(orderNumber) {
-        const successModal = document.getElementById('successModal');
-        const orderNumberSpan = document.getElementById('orderNumber');
-        const closeSuccessBtn = document.getElementById('closeSuccessModal');
+        const successModal = document.getElementById("successModal");
+        const orderNumberSpan = document.getElementById("orderNumber");
+        const closeSuccessBtn = document.getElementById("closeSuccessModal");
 
         if (orderNumberSpan) {
             orderNumberSpan.textContent = orderNumber;
         }
 
         if (successModal) {
-            successModal.classList.add('visible');
-            document.body.style.overflow = 'hidden';
+            successModal.classList.add("visible");
+            document.body.style.overflow = "hidden";
         }
 
         if (closeSuccessBtn) {
-            closeSuccessBtn.addEventListener('click', () => {
-                successModal.classList.remove('visible');
-                document.body.style.overflow = '';
-                window.location.href = 'emiratos.html';
+            closeSuccessBtn.addEventListener("click", () => {
+                successModal.classList.remove("visible");
+                document.body.style.overflow = "";
+                window.location.href = "emiratos.html";
             });
         }
     }
 
     // Favorites System
     initFavorites() {
-        const favoriteBtns = document.querySelectorAll('.favorite-btn');
+        const favoriteBtns = document.querySelectorAll(".favorite-btn");
 
-        favoriteBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
+        favoriteBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
                 this.toggleFavorite(btn);
             });
         });
@@ -416,35 +442,38 @@ class ComidasPage {
 
         if (this.favorites.has(itemId)) {
             this.favorites.delete(itemId);
-            button.classList.remove('active');
+            button.classList.remove("active");
         } else {
             this.favorites.add(itemId);
-            button.classList.add('active');
+            button.classList.add("active");
         }
 
         this.saveFavoritesData();
 
         // Animate button
-        button.style.transform = 'scale(1.2)';
+        button.style.transform = "scale(1.2)";
         setTimeout(() => {
-            button.style.transform = '';
+            button.style.transform = "";
         }, 200);
     }
 
     // Statistics Counters
     initStatCounters() {
-        const statNumbers = document.querySelectorAll('.stat-number');
+        const statNumbers = document.querySelectorAll(".stat-number");
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    this.animateCounter(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        this.animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.5 },
+        );
 
-        statNumbers.forEach(counter => {
+        statNumbers.forEach((counter) => {
             observer.observe(counter);
         });
     }
@@ -470,18 +499,20 @@ class ComidasPage {
     initScrollAnimations() {
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: "0px 0px -50px 0px",
         };
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
+                    entry.target.classList.add("fade-in-up");
                 }
             });
         }, observerOptions);
 
-        const animateElements = document.querySelectorAll('.menu-item, .section-header');
+        const animateElements = document.querySelectorAll(
+            ".menu-item, .section-header",
+        );
         animateElements.forEach((el, index) => {
             el.style.animationDelay = `${index * 0.1}s`;
             observer.observe(el);
@@ -490,40 +521,42 @@ class ComidasPage {
 
     // Data Persistence
     saveCartData() {
-        localStorage.setItem('menuCart', JSON.stringify(this.cart));
+        localStorage.setItem("menuCart", JSON.stringify(this.cart));
     }
 
     saveFavoritesData() {
-        localStorage.setItem('menuFavorites', JSON.stringify([...this.favorites]));
+        localStorage.setItem("menuFavorites", JSON.stringify([...this.favorites]));
     }
 
     loadSavedData() {
         // Load cart
-        const savedCart = localStorage.getItem('menuCart');
+        const savedCart = localStorage.getItem("menuCart");
         if (savedCart) {
             try {
                 this.cart = JSON.parse(savedCart);
                 this.updateCartDisplay();
             } catch (e) {
-                console.error('Error loading cart data:', e);
+                console.error("Error loading cart data:", e);
                 this.cart = [];
             }
         }
 
         // Load favorites
-        const savedFavorites = localStorage.getItem('menuFavorites');
+        const savedFavorites = localStorage.getItem("menuFavorites");
         if (savedFavorites) {
             try {
                 const favoritesArray = JSON.parse(savedFavorites);
                 this.favorites = new Set(favoritesArray);
 
                 // Update UI
-                this.favorites.forEach(itemId => {
-                    const btn = document.querySelector(`[data-id="${itemId}"].favorite-btn`);
-                    if (btn) btn.classList.add('active');
+                this.favorites.forEach((itemId) => {
+                    const btn = document.querySelector(
+                        `[data-id="${itemId}"].favorite-btn`,
+                    );
+                    if (btn) btn.classList.add("active");
                 });
             } catch (e) {
-                console.error('Error loading favorites data:', e);
+                console.error("Error loading favorites data:", e);
                 this.favorites = new Set();
             }
         }
@@ -532,13 +565,13 @@ class ComidasPage {
     // Event Binding
     bindEvents() {
         // Keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
                 this.hideCartModal();
-                const successModal = document.getElementById('successModal');
-                if (successModal && successModal.classList.contains('visible')) {
-                    successModal.classList.remove('visible');
-                    document.body.style.overflow = '';
+                const successModal = document.getElementById("successModal");
+                if (successModal && successModal.classList.contains("visible")) {
+                    successModal.classList.remove("visible");
+                    document.body.style.overflow = "";
                 }
             }
         });
@@ -552,10 +585,10 @@ class ComidasPage {
 
     initSearch() {
         // Create search input if it doesn't exist
-        const filtersContainer = document.querySelector('.menu-filters .container');
-        if (!document.getElementById('menuSearch') && filtersContainer) {
-            const searchDiv = document.createElement('div');
-            searchDiv.className = 'menu-search';
+        const filtersContainer = document.querySelector(".menu-filters .container");
+        if (!document.getElementById("menuSearch") && filtersContainer) {
+            const searchDiv = document.createElement("div");
+            searchDiv.className = "menu-search";
             searchDiv.innerHTML = `
                 <div class="search-container">
                     <i class="fas fa-search"></i>
@@ -569,60 +602,65 @@ class ComidasPage {
             filtersContainer.appendChild(searchDiv);
         }
 
-        const searchInput = document.getElementById('menuSearch');
-        const clearSearch = document.getElementById('clearSearch');
+        const searchInput = document.getElementById("menuSearch");
+        const clearSearch = document.getElementById("clearSearch");
 
         if (searchInput) {
-            searchInput.addEventListener('input', (e) => {
+            searchInput.addEventListener("input", (e) => {
                 this.handleSearch(e.target.value);
-                clearSearch.style.display = e.target.value ? 'block' : 'none';
+                clearSearch.style.display = e.target.value ? "block" : "none";
             });
         }
 
         if (clearSearch) {
-            clearSearch.addEventListener('click', () => {
-                searchInput.value = '';
-                this.handleSearch('');
-                clearSearch.style.display = 'none';
+            clearSearch.addEventListener("click", () => {
+                searchInput.value = "";
+                this.handleSearch("");
+                clearSearch.style.display = "none";
                 searchInput.focus();
             });
         }
     }
 
     handleSearch(query) {
-        const menuItems = document.querySelectorAll('.menu-item');
+        const menuItems = document.querySelectorAll(".menu-item");
         const searchTerm = query.toLowerCase().trim();
 
-        menuItems.forEach(item => {
-            const itemName = item.querySelector('h3').textContent.toLowerCase();
-            const itemDescription = item.querySelector('.item-description').textContent.toLowerCase();
+        menuItems.forEach((item) => {
+            const itemName = item.querySelector("h3").textContent.toLowerCase();
+            const itemDescription = item
+                .querySelector(".item-description")
+                .textContent.toLowerCase();
 
-            const matches = itemName.includes(searchTerm) || itemDescription.includes(searchTerm);
+            const matches =
+                itemName.includes(searchTerm) || itemDescription.includes(searchTerm);
 
-            if (searchTerm === '' || matches) {
-                item.style.display = 'block';
-                item.classList.remove('search-hidden');
+            if (searchTerm === "" || matches) {
+                item.style.display = "block";
+                item.classList.remove("search-hidden");
             } else {
-                item.style.display = 'none';
-                item.classList.add('search-hidden');
+                item.style.display = "none";
+                item.classList.add("search-hidden");
             }
         });
 
         // Show/hide sections based on visible items
-        const menuSections = document.querySelectorAll('.menu-section');
-        menuSections.forEach(section => {
-            const visibleItems = section.querySelectorAll('.menu-item:not(.search-hidden)');
-            section.style.display = visibleItems.length > 0 ? 'block' : 'none';
+        const menuSections = document.querySelectorAll(".menu-section");
+        menuSections.forEach((section) => {
+            const visibleItems = section.querySelectorAll(
+                ".menu-item:not(.search-hidden)",
+            );
+            section.style.display = visibleItems.length > 0 ? "block" : "none";
         });
     }
 
     initSectionNavigation() {
         // Add smooth scrolling to section headers
-        const sectionTitles = document.querySelectorAll('.section-title');
-        sectionTitles.forEach(title => {
-            title.style.cursor = 'pointer';
-            title.addEventListener('click', () => {
-                title.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const sectionTitles = document.querySelectorAll(".section-title");
+        sectionTitles.forEach((title) => {
+            title.style.cursor = "pointer";
+            title.addEventListener("click", () => {
+                title.scrollIntoView({ behavior: "smooth", block: "start" });
             });
         });
     }
@@ -645,26 +683,26 @@ class ComidasPage {
         return {
             items: [...this.cart],
             totals: this.calculateTotal(),
-            itemCount: this.getCartItemCount()
+            itemCount: this.getCartItemCount(),
         };
     }
 
     // Analytics and Tracking
     trackMenuInteraction(action, itemId, additionalData = {}) {
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'menu_interaction', {
+        if (typeof gtag !== "undefined") {
+            gtag("event", "menu_interaction", {
                 action: action,
                 item_id: itemId,
-                ...additionalData
+                ...additionalData,
             });
         }
 
         // Console log for development
-        console.log('Menu Interaction:', {
+        console.log("Menu Interaction:", {
             action,
             itemId,
             timestamp: new Date().toISOString(),
-            ...additionalData
+            ...additionalData,
         });
     }
 
@@ -672,8 +710,11 @@ class ComidasPage {
     handleError(error, context) {
         console.error(`Error in ${context}:`, error);
 
-        if (typeof showNotification === 'function') {
-            showNotification('Ha ocurrido un error. Por favor, inténtalo de nuevo.', 'error');
+        if (typeof showNotification === "function") {
+            showNotification(
+                "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
+                "error",
+            );
         }
     }
 
@@ -684,8 +725,10 @@ class ComidasPage {
         this.saveFavoritesData();
 
         // Remove event listeners
-        const buttons = document.querySelectorAll('.add-to-cart, .favorite-btn, .filter-tab, .dietary-btn');
-        buttons.forEach(btn => {
+        const buttons = document.querySelectorAll(
+            ".add-to-cart, .favorite-btn, .filter-tab, .dietary-btn",
+        );
+        buttons.forEach((btn) => {
             btn.replaceWith(btn.cloneNode(true));
         });
     }
@@ -912,17 +955,17 @@ const searchStyles = `
 `;
 
 // Add styles to page
-const styleSheet = document.createElement('style');
+const styleSheet = document.createElement("style");
 styleSheet.textContent = searchStyles;
 document.head.appendChild(styleSheet);
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     window.comidasPage = new ComidasPage();
 });
 
 // Cleanup on page unload
-window.addEventListener('beforeunload', () => {
+window.addEventListener("beforeunload", () => {
     if (window.comidasPage) {
         window.comidasPage.destroy();
     }

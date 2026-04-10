@@ -1,39 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Encuentra y reserva los mejores hoteles del mundo con Destinos Mundiales. Compara precios, ubicaciones y servicios.">
-    <meta name="keywords" content="hoteles, reservas, hospedaje, alojamiento, viajes, destinos">
+        content="Encuentra y reserva los mejores hoteles del mundo con Destinos Mundiales. Compara precios, ubicaciones y servicios." />
+    <meta name="keywords" content="hoteles, reservas, hospedaje, alojamiento, viajes, destinos" />
     <title>Hospedaje - Encuentra tu Hotel Perfecto | Destinos Mundiales</title>
 
     <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/hospedaje.css">
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/hospedaje.css" />
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet" />
 
     <!-- Preload crítico -->
-    <link rel="preload" href="img/mundo.png" as="image">
-    <link rel="preload" href="js/main.js" as="script">
+    <link rel="preload" href="img/mundo.png" as="image" />
+    <link rel="preload" href="js/main.js" as="script" />
 
     <!-- Favicon -->
-    <link rel="icon" href="img/inicial.jpg">
+    <link rel="icon" href="img/inicial.jpg" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Hospedaje - Los Mejores Hoteles del Mundo">
+    <meta property="og:title" content="Hospedaje - Los Mejores Hoteles del Mundo" />
     <meta property="og:description"
-        content="Descubre hoteles únicos desde resorts tropicales hasta boutique hotels urbanos">
-    <meta property="og:image" content="img/dormitorio1.jpg">
-    <meta property="og:type" content="website">
+        content="Descubre hoteles únicos desde resorts tropicales hasta boutique hotels urbanos" />
+    <meta property="og:image" content="img/dormitorio1.jpg" />
+    <meta property="og:type" content="website" />
 </head>
 
 <body>
@@ -44,8 +45,8 @@
     <header class="header">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="img/mundo.png" alt="Logo Destinos Mundiales">
-                <span>Destinos<br>Mundiales</span>
+                <img src="img/mundo.png" alt="Logo Destinos Mundiales" />
+                <span>Destinos<br />Mundiales</span>
             </a>
 
             <nav class="nav">
@@ -61,7 +62,7 @@
                     <i class="fas fa-question-circle"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
                     <i class="fas fa-moon"></i>
                 </button>
             </nav>
@@ -74,13 +75,13 @@
             <div class="container">
                 <div class="search-content">
                     <h1 class="fade-in">Encuentra tu Hotel Perfecto</h1>
-                    <p class="fade-in" style="animation-delay: 0.2s">
-                        Desde resorts de lujo hasta hoteles boutique, tenemos el alojamiento ideal para tu próxima
-                        aventura
+                    <p class="fade-in fade-in-delay-1">
+                        Desde resorts de lujo hasta hoteles boutique, tenemos el
+                        alojamiento ideal para tu próxima aventura
                     </p>
 
                     <!-- Hotel Search Form -->
-                    <form class="hotel-search-form fade-in" style="animation-delay: 0.4s" id="hotelSearchForm">
+                    <form class="hotel-search-form fade-in" id="hotelSearchForm">
                         <div class="search-fields">
                             <div class="search-field">
                                 <label class="search-label">
@@ -88,7 +89,7 @@
                                     Destino
                                 </label>
                                 <input type="text" class="search-input" placeholder="¿A dónde quieres ir?"
-                                    id="destinationInput" autocomplete="off">
+                                    id="destinationInput" autocomplete="off" />
                                 <div class="search-suggestions" id="destinationSuggestions"></div>
                             </div>
 
@@ -97,7 +98,8 @@
                                     <i class="fas fa-calendar"></i>
                                     Entrada
                                 </label>
-                                <input type="date" class="search-input" id="checkinDate" required>
+                                <input type="date" class="search-input" id="checkinDate" title="Fecha de entrada"
+                                    required />
                             </div>
 
                             <div class="search-field">
@@ -105,7 +107,8 @@
                                     <i class="fas fa-calendar"></i>
                                     Salida
                                 </label>
-                                <input type="date" class="search-input" id="checkoutDate" required>
+                                <input type="date" class="search-input" id="checkoutDate" title="Fecha de salida"
+                                    required />
                             </div>
 
                             <div class="search-field">
@@ -113,7 +116,7 @@
                                     <i class="fas fa-users"></i>
                                     Huéspedes
                                 </label>
-                                <select class="search-input" id="guestsSelect">
+                                <select class="search-input" id="guestsSelect" title="Número de huéspedes">
                                     <option value="1">1 Huésped</option>
                                     <option value="2" selected>2 Huéspedes</option>
                                     <option value="3">3 Huéspedes</option>
@@ -127,7 +130,7 @@
                                     <i class="fas fa-bed"></i>
                                     Habitaciones
                                 </label>
-                                <select class="search-input" id="roomsSelect">
+                                <select class="search-input" id="roomsSelect" title="Número de habitaciones">
                                     <option value="1" selected>1 Habitación</option>
                                     <option value="2">2 Habitaciones</option>
                                     <option value="3">3 Habitaciones</option>
@@ -156,7 +159,7 @@
                     <!-- Hotel Buenos Aires -->
                     <article class="hotel-card hover-lift" data-aos="fade-up" data-aos-delay="100">
                         <div class="hotel-card__image">
-                            <img src="img/dormitorio1.jpg" alt="Hotel Buenos Aires - Argentina" loading="lazy">
+                            <img src="img/dormitorio1.jpg" alt="Hotel Buenos Aires - Argentina" loading="lazy" />
                             <span class="hotel-card__badge">Oferta</span>
                             <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
                                 <i class="far fa-heart"></i>
@@ -201,7 +204,7 @@
                     <!-- Hotel Cool By -->
                     <article class="hotel-card hover-lift" data-aos="fade-up" data-aos-delay="200">
                         <div class="hotel-card__image">
-                            <img src="img/dormitorio3.jpg" alt="Hotel Cool By - Colombia" loading="lazy">
+                            <img src="img/dormitorio3.jpg" alt="Hotel Cool By - Colombia" loading="lazy" />
                             <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
                                 <i class="far fa-heart"></i>
                             </button>
@@ -245,7 +248,7 @@
                     <!-- Hotel Meilk -->
                     <article class="hotel-card hover-lift" data-aos="fade-up" data-aos-delay="300">
                         <div class="hotel-card__image">
-                            <img src="img/dormitorio4.jpg" alt="Hotel Meilk - Perú" loading="lazy">
+                            <img src="img/dormitorio4.jpg" alt="Hotel Meilk - Perú" loading="lazy" />
                             <span class="hotel-card__badge">Premium</span>
                             <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
                                 <i class="far fa-heart"></i>
@@ -290,7 +293,7 @@
                     <!-- Hotel Drankl -->
                     <article class="hotel-card hover-lift" data-aos="fade-up" data-aos-delay="400">
                         <div class="hotel-card__image">
-                            <img src="img/dormitorio5.jpg" alt="Hotel Drankl - Venezuela" loading="lazy">
+                            <img src="img/dormitorio5.jpg" alt="Hotel Drankl - Venezuela" loading="lazy" />
                             <span class="hotel-card__badge">Económico</span>
                             <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
                                 <i class="far fa-heart"></i>
@@ -335,7 +338,7 @@
                     <!-- Hotel Camilo -->
                     <article class="hotel-card hover-lift" data-aos="fade-up" data-aos-delay="500">
                         <div class="hotel-card__image">
-                            <img src="img/dormitorio6.jpg" alt="Hotel Camilo - Ecuador" loading="lazy">
+                            <img src="img/dormitorio6.jpg" alt="Hotel Camilo - Ecuador" loading="lazy" />
                             <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
                                 <i class="far fa-heart"></i>
                             </button>
@@ -379,7 +382,7 @@
                     <!-- Hotel Greey -->
                     <article class="hotel-card hover-lift" data-aos="fade-up" data-aos-delay="600">
                         <div class="hotel-card__image">
-                            <img src="img/dormitorio7.jpg" alt="Hotel Greey - Estados Unidos" loading="lazy">
+                            <img src="img/dormitorio7.jpg" alt="Hotel Greey - Estados Unidos" loading="lazy" />
                             <span class="hotel-card__badge">Lujo</span>
                             <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
                                 <i class="far fa-heart"></i>
@@ -423,7 +426,7 @@
                 </div>
 
                 <!-- Load More Button -->
-                <div class="text-center" style="margin-top: var(--spacing-xl);">
+                <div class="text-center load-more-container">
                     <button class="btn btn--outline" id="loadMoreBtn">
                         <i class="fas fa-plus"></i>
                         Cargar Más Hoteles
@@ -436,12 +439,14 @@
         <section class="premium-hotels">
             <div class="container">
                 <h2 class="section-title">Hoteles Premium</h2>
-                <p class="section-subtitle">Descubre nuestros hoteles de lujo más exclusivos</p>
+                <p class="section-subtitle">
+                    Descubre nuestros hoteles de lujo más exclusivos
+                </p>
 
                 <div class="premium-grid">
                     <div class="premium-card hover-lift">
                         <div class="premium-card__image">
-                            <img src="img/puerto1.jpg" alt="Hotel Plata - República Dominicana" loading="lazy">
+                            <img src="img/puerto1.jpg" alt="Hotel Plata - República Dominicana" loading="lazy" />
                         </div>
                         <div class="premium-card__content">
                             <h3>Hotel Plata</h3>
@@ -453,7 +458,7 @@
 
                     <div class="premium-card hover-lift">
                         <div class="premium-card__image">
-                            <img src="img/mate1.jpg" alt="Hotel Malte - París, Francia" loading="lazy">
+                            <img src="img/mate1.jpg" alt="Hotel Malte - París, Francia" loading="lazy" />
                         </div>
                         <div class="premium-card__content">
                             <h3>Hotel Malte</h3>
@@ -465,7 +470,7 @@
 
                     <div class="premium-card hover-lift">
                         <div class="premium-card__image">
-                            <img src="img/banyan1.jpg" alt="Hotel Banyan Tree - Resort de Lujo" loading="lazy">
+                            <img src="img/banyan1.jpg" alt="Hotel Banyan Tree - Resort de Lujo" loading="lazy" />
                         </div>
                         <div class="premium-card__content">
                             <h3>Hotel Banyan Tree</h3>
@@ -489,7 +494,9 @@
                             <i class="fas fa-search"></i>
                         </div>
                         <h3>Búsqueda Inteligente</h3>
-                        <p>Encuentra el hotel perfecto con nuestro avanzado sistema de búsqueda y filtros personalizados
+                        <p>
+                            Encuentra el hotel perfecto con nuestro avanzado sistema de
+                            búsqueda y filtros personalizados
                         </p>
                     </div>
 
@@ -498,7 +505,10 @@
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <h3>Reservas Seguras</h3>
-                        <p>Transacciones protegidas con encriptación SSL y política de cancelación flexible</p>
+                        <p>
+                            Transacciones protegidas con encriptación SSL y política de
+                            cancelación flexible
+                        </p>
                     </div>
 
                     <div class="feature-item hover-lift">
@@ -506,7 +516,10 @@
                             <i class="fas fa-award"></i>
                         </div>
                         <h3>Hoteles Verificados</h3>
-                        <p>Todos nuestros hoteles están verificados y cuentan con certificaciones de calidad</p>
+                        <p>
+                            Todos nuestros hoteles están verificados y cuentan con
+                            certificaciones de calidad
+                        </p>
                     </div>
 
                     <div class="feature-item hover-lift">
@@ -514,7 +527,10 @@
                             <i class="fas fa-headset"></i>
                         </div>
                         <h3>Soporte 24/7</h3>
-                        <p>Nuestro equipo de expertos está disponible las 24 horas para ayudarte en tu viaje</p>
+                        <p>
+                            Nuestro equipo de expertos está disponible las 24 horas para
+                            ayudarte en tu viaje
+                        </p>
                     </div>
                 </div>
             </div>
@@ -543,11 +559,12 @@
     <script src="js/translator.js"></script>
 
     <!-- Google Translate Script -->
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <!-- Structured Data para SEO -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "TravelAgency",
         "name": "Destinos Mundiales - Hospedaje",
@@ -555,26 +572,26 @@
         "url": "https://destinosmundiales.com/hospedaje",
         "telephone": "+51-44-123456",
         "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Av. Nicolás de Piérola",
-            "addressLocality": "Trujillo",
-            "addressCountry": "PE"
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Nicolás de Piérola",
+          "addressLocality": "Trujillo",
+          "addressCountry": "PE"
         },
         "offers": [
-            {
-                "@type": "Offer",
-                "name": "Hotel Buenos Aires",
-                "price": "110",
-                "priceCurrency": "USD"
-            },
-            {
-                "@type": "Offer", 
-                "name": "Hotel Banyan Tree",
-                "price": "450",
-                "priceCurrency": "USD"
-            }
+          {
+            "@type": "Offer",
+            "name": "Hotel Buenos Aires",
+            "price": "110",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Hotel Banyan Tree",
+            "price": "450",
+            "priceCurrency": "USD"
+          }
         ]
-    }
+      }
     </script>
 </body>
 

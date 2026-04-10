@@ -1,8 +1,8 @@
 class IndexManager {
     constructor() {
-        this.serviceCards = document.querySelectorAll('.service-card');
-        this.statNumbers = document.querySelectorAll('.stat-number');
-        this.heroActions = document.querySelector('.hero-actions');
+        this.serviceCards = document.querySelectorAll(".service-card");
+        this.statNumbers = document.querySelectorAll(".stat-number");
+        this.heroActions = document.querySelector(".hero-actions");
 
         this.isStatsAnimated = false;
         this.isHeroVisible = false;
@@ -22,31 +22,31 @@ class IndexManager {
     }
 
     setupServiceCards() {
-        this.serviceCards.forEach(card => {
-            card.addEventListener('mouseenter', () => this.handleCardHover(card));
-            card.addEventListener('mouseleave', () => this.handleCardLeave(card));
-            card.addEventListener('click', () => this.handleCardClick(card));
+        this.serviceCards.forEach((card) => {
+            card.addEventListener("mouseenter", () => this.handleCardHover(card));
+            card.addEventListener("mouseleave", () => this.handleCardLeave(card));
+            card.addEventListener("click", () => this.handleCardClick(card));
         });
     }
 
     handleCardHover(card) {
         // Animar icono
-        const icon = card.querySelector('.service-icon');
+        const icon = card.querySelector(".service-icon");
         if (icon) {
-            icon.style.transform = 'scale(1.1) rotate(5deg)';
+            icon.style.transform = "scale(1.1) rotate(5deg)";
         }
 
         // Mostrar dropdown con animación
-        const dropdown = card.querySelector('.service-dropdown');
+        const dropdown = card.querySelector(".service-dropdown");
         if (dropdown) {
-            dropdown.style.display = 'flex';
-            dropdown.style.opacity = '0';
-            dropdown.style.transform = 'translateY(-10px)';
+            dropdown.style.display = "flex";
+            dropdown.style.opacity = "0";
+            dropdown.style.transform = "translateY(-10px)";
 
             requestAnimationFrame(() => {
-                dropdown.style.transition = 'all 0.3s ease-out';
-                dropdown.style.opacity = '1';
-                dropdown.style.transform = 'translateY(0)';
+                dropdown.style.transition = "all 0.3s ease-out";
+                dropdown.style.opacity = "1";
+                dropdown.style.transform = "translateY(0)";
             });
         }
 
@@ -56,20 +56,20 @@ class IndexManager {
 
     handleCardLeave(card) {
         // Resetear icono
-        const icon = card.querySelector('.service-icon');
+        const icon = card.querySelector(".service-icon");
         if (icon) {
-            icon.style.transform = '';
+            icon.style.transform = "";
         }
 
         // Ocultar dropdown
-        const dropdown = card.querySelector('.service-dropdown');
+        const dropdown = card.querySelector(".service-dropdown");
         if (dropdown) {
-            dropdown.style.opacity = '0';
-            dropdown.style.transform = 'translateY(-10px)';
+            dropdown.style.opacity = "0";
+            dropdown.style.transform = "translateY(-10px)";
 
             setTimeout(() => {
-                if (dropdown && !card.matches(':hover')) {
-                    dropdown.style.display = 'none';
+                if (dropdown && !card.matches(":hover")) {
+                    dropdown.style.display = "none";
                 }
             }, 300);
         }
@@ -80,9 +80,9 @@ class IndexManager {
 
     handleCardClick(card) {
         // Efecto de pulsación
-        card.style.transform = 'scale(0.98)';
+        card.style.transform = "scale(0.98)";
         setTimeout(() => {
-            card.style.transform = '';
+            card.style.transform = "";
         }, 150);
 
         // Crear efecto de ondas
@@ -90,15 +90,15 @@ class IndexManager {
     }
 
     addGlowEffect(element) {
-        element.style.boxShadow = '0 10px 40px rgba(33, 147, 176, 0.3)';
+        element.style.boxShadow = "0 10px 40px rgba(33, 147, 176, 0.3)";
     }
 
     removeGlowEffect(element) {
-        element.style.boxShadow = '';
+        element.style.boxShadow = "";
     }
 
     createRippleEffect(element) {
-        const ripple = document.createElement('div');
+        const ripple = document.createElement("div");
         const rect = element.getBoundingClientRect();
 
         ripple.style.cssText = `
@@ -115,8 +115,8 @@ class IndexManager {
             z-index: 1;
         `;
 
-        element.style.position = 'relative';
-        element.style.overflow = 'hidden';
+        element.style.position = "relative";
+        element.style.overflow = "hidden";
         element.appendChild(ripple);
 
         setTimeout(() => {
@@ -127,21 +127,22 @@ class IndexManager {
     }
 
     setupSmoothScrolling() {
-        document.addEventListener('click', (e) => {
+        document.addEventListener("click", (e) => {
             const link = e.target.closest('a[href^="#"]');
             if (!link) return;
 
             e.preventDefault();
-            const targetId = link.getAttribute('href');
+            const targetId = link.getAttribute("href");
             const target = document.querySelector(targetId);
 
             if (target) {
-                const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+                const headerHeight =
+                    document.querySelector(".header")?.offsetHeight || 0;
                 const offsetTop = target.offsetTop - headerHeight - 20;
 
                 window.scrollTo({
                     top: offsetTop,
-                    behavior: 'smooth'
+                    behavior: "smooth",
                 });
 
                 // Actualizar URL
@@ -153,40 +154,43 @@ class IndexManager {
     }
 
     highlightTarget(target) {
-        target.style.transition = 'box-shadow 0.3s ease';
-        target.style.boxShadow = '0 0 20px rgba(33, 147, 176, 0.3)';
+        target.style.transition = "box-shadow 0.3s ease";
+        target.style.boxShadow = "0 0 20px rgba(33, 147, 176, 0.3)";
 
         setTimeout(() => {
-            target.style.boxShadow = '';
+            target.style.boxShadow = "";
         }, 2000);
     }
 
     setupStatsCounter() {
-        if (!('IntersectionObserver' in window)) {
+        if (!("IntersectionObserver" in window)) {
             this.animateStatsDirectly();
             return;
         }
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !this.isStatsAnimated) {
-                    this.animateStats();
-                    this.isStatsAnimated = true;
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.5
-        });
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !this.isStatsAnimated) {
+                        this.animateStats();
+                        this.isStatsAnimated = true;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.5,
+            },
+        );
 
-        const aboutSection = document.querySelector('.about');
+        const aboutSection = document.querySelector(".about");
         if (aboutSection) {
             observer.observe(aboutSection);
         }
     }
 
     animateStats() {
-        this.statNumbers.forEach(stat => {
+        this.statNumbers.forEach((stat) => {
             const target = parseInt(stat.dataset.count);
             const duration = 2000;
             const increment = target / (duration / 16);
@@ -207,62 +211,66 @@ class IndexManager {
     }
 
     animateStatsDirectly() {
-        this.statNumbers.forEach(stat => {
+        this.statNumbers.forEach((stat) => {
             const target = parseInt(stat.dataset.count);
             stat.textContent = target.toLocaleString();
         });
     }
 
     setupHeroAnimations() {
-        if (!('IntersectionObserver' in window)) return;
+        if (!("IntersectionObserver" in window)) return;
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !this.isHeroVisible) {
-                    this.animateHeroContent();
-                    this.isHeroVisible = true;
-                }
-            });
-        }, {
-            threshold: 0.3
-        });
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !this.isHeroVisible) {
+                        this.animateHeroContent();
+                        this.isHeroVisible = true;
+                    }
+                });
+            },
+            {
+                threshold: 0.3,
+            },
+        );
 
-        const hero = document.querySelector('.hero');
+        const hero = document.querySelector(".hero");
         if (hero) {
             observer.observe(hero);
         }
     }
 
     animateHeroContent() {
-        const elements = document.querySelectorAll('.hero .fade-in');
+        const elements = document.querySelectorAll(".hero .fade-in");
         elements.forEach((element, index) => {
             setTimeout(() => {
-                element.classList.add('animate');
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
+                element.classList.add("animate");
+                element.style.opacity = "1";
+                element.style.transform = "translateY(0)";
             }, index * 200);
         });
     }
 
     setupScrollEffects() {
         let lastScrollTop = 0;
-        const header = document.querySelector('.header');
+        const header = document.querySelector(".header");
 
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        window.addEventListener("scroll", () => {
+            const scrollTop =
+                window.pageYOffset || document.documentElement.scrollTop;
 
             if (header) {
                 if (scrollTop > lastScrollTop && scrollTop > 100) {
                     // Scrolling down
-                    header.style.transform = 'translateY(-100%)';
+                    header.style.transform = "translateY(-100%)";
                 } else {
                     // Scrolling up
-                    header.style.transform = 'translateY(0)';
+                    header.style.transform = "translateY(0)";
                 }
             }
 
             // Parallax sutil en el hero
-            const hero = document.querySelector('.hero');
+            const hero = document.querySelector(".hero");
             if (hero && scrollTop < window.innerHeight) {
                 hero.style.transform = `translateY(${scrollTop * 0.5}px)`;
             }
@@ -272,59 +280,65 @@ class IndexManager {
     }
 
     setupNavigationHighlight() {
-        if (!('IntersectionObserver' in window)) return;
+        if (!("IntersectionObserver" in window)) return;
 
-        const sections = document.querySelectorAll('section[id]');
+        const sections = document.querySelectorAll("section[id]");
         const navLinks = document.querySelectorAll('a[href^="#"]');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute("id");
 
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                    });
+                        navLinks.forEach((link) => {
+                            link.classList.remove("active");
+                        });
 
-                    // Agregar active al link correspondiente
-                    const activeLink = document.querySelector(`a[href="#${id}"]`);
-                    if (activeLink) {
-                        activeLink.classList.add('active');
+                        // Agregar active al link correspondiente
+                        const activeLink = document.querySelector(`a[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add("active");
+                        }
                     }
-                }
-            });
-        }, {
-            threshold: 0.6
-        });
+                });
+            },
+            {
+                threshold: 0.6,
+            },
+        );
 
-        sections.forEach(section => {
+        sections.forEach((section) => {
             observer.observe(section);
         });
     }
 
     setupLazyContent() {
         // Carga lazy para el mapa
-        const mapContainer = document.querySelector('.map-container');
-        if (mapContainer && 'IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        this.loadMap();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                rootMargin: '100px'
-            });
+        const mapContainer = document.querySelector(".map-container");
+        if (mapContainer && "IntersectionObserver" in window) {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            this.loadMap();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    rootMargin: "100px",
+                },
+            );
 
             observer.observe(mapContainer);
         }
     }
 
     loadMap() {
-        const iframe = document.querySelector('.company-map');
+        const iframe = document.querySelector(".company-map");
         if (iframe && !iframe.src) {
-            iframe.src = iframe.dataset.src || iframe.getAttribute('data-src');
+            iframe.src = iframe.dataset.src || iframe.getAttribute("data-src");
         }
     }
 
@@ -340,7 +354,7 @@ class IndexManager {
     }
 
     addDynamicStyles() {
-        const style = document.createElement('style');
+        const style = document.createElement("style");
         style.textContent = `
             @keyframes ripple {
                 to {
@@ -378,56 +392,56 @@ class IndexManager {
     }
 
     setupTooltips() {
-        const elementsWithTooltip = document.querySelectorAll('[data-tooltip]');
+        const elementsWithTooltip = document.querySelectorAll("[data-tooltip]");
 
-        elementsWithTooltip.forEach(element => {
-            element.addEventListener('mouseenter', (e) => {
+        elementsWithTooltip.forEach((element) => {
+            element.addEventListener("mouseenter", (e) => {
                 this.showTooltip(e.target);
             });
 
-            element.addEventListener('mouseleave', (e) => {
+            element.addEventListener("mouseleave", (e) => {
                 this.hideTooltip(e.target);
             });
         });
     }
 
     showTooltip(element) {
-        const text = element.getAttribute('data-tooltip');
+        const text = element.getAttribute("data-tooltip");
         if (!text) return;
 
-        const tooltip = document.createElement('div');
-        tooltip.className = 'custom-tooltip';
+        const tooltip = document.createElement("div");
+        tooltip.className = "custom-tooltip";
         tooltip.textContent = text;
 
         Object.assign(tooltip.style, {
-            position: 'absolute',
-            bottom: '100%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            marginBottom: '8px',
-            padding: '8px 12px',
-            background: 'rgba(0, 0, 0, 0.8)',
-            color: 'white',
-            borderRadius: '4px',
-            fontSize: '14px',
-            whiteSpace: 'nowrap',
-            zIndex: '1000',
-            opacity: '0',
-            transition: 'opacity 0.3s ease'
+            position: "absolute",
+            bottom: "100%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            marginBottom: "8px",
+            padding: "8px 12px",
+            background: "rgba(0, 0, 0, 0.8)",
+            color: "white",
+            borderRadius: "4px",
+            fontSize: "14px",
+            whiteSpace: "nowrap",
+            zIndex: "1000",
+            opacity: "0",
+            transition: "opacity 0.3s ease",
         });
 
-        element.style.position = 'relative';
+        element.style.position = "relative";
         element.appendChild(tooltip);
 
         requestAnimationFrame(() => {
-            tooltip.style.opacity = '1';
+            tooltip.style.opacity = "1";
         });
     }
 
     hideTooltip(element) {
-        const tooltip = element.querySelector('.custom-tooltip');
+        const tooltip = element.querySelector(".custom-tooltip");
         if (tooltip) {
-            tooltip.style.opacity = '0';
+            tooltip.style.opacity = "0";
             setTimeout(() => {
                 if (tooltip.parentNode) {
                     tooltip.parentNode.removeChild(tooltip);
@@ -437,12 +451,12 @@ class IndexManager {
     }
 
     setupImageErrorHandling() {
-        const images = document.querySelectorAll('img');
+        const images = document.querySelectorAll("img");
 
-        images.forEach(img => {
-            img.addEventListener('error', () => {
+        images.forEach((img) => {
+            img.addEventListener("error", () => {
                 // Crear placeholder si la imagen falla
-                const placeholder = document.createElement('div');
+                const placeholder = document.createElement("div");
                 placeholder.style.cssText = `
                     width: ${img.offsetWidth || 300}px;
                     height: ${img.offsetHeight || 200}px;
@@ -454,7 +468,7 @@ class IndexManager {
                     font-size: 14px;
                     border-radius: 8px;
                 `;
-                placeholder.textContent = 'Imagen no disponible';
+                placeholder.textContent = "Imagen no disponible";
 
                 if (img.parentNode) {
                     img.parentNode.replaceChild(placeholder, img);
@@ -464,19 +478,19 @@ class IndexManager {
     }
 
     setupKeyboardNavigation() {
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Tab') {
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Tab") {
                 this.handleTabNavigation(e);
             }
 
             // Atajos de teclado
             if (e.ctrlKey || e.metaKey) {
                 switch (e.key) {
-                    case 'k':
+                    case "k":
                         e.preventDefault();
                         this.focusSearch();
                         break;
-                    case 'h':
+                    case "h":
                         e.preventDefault();
                         this.scrollToTop();
                         break;
@@ -488,7 +502,7 @@ class IndexManager {
     handleTabNavigation(e) {
         // Mejorar la navegación por tabulador
         const focusableElements = document.querySelectorAll(
-            'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+            'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])',
         );
 
         const firstElement = focusableElements[0];
@@ -505,7 +519,9 @@ class IndexManager {
 
     focusSearch() {
         // Enfocar elemento de búsqueda si existe
-        const searchInput = document.querySelector('input[type="search"], .search-input');
+        const searchInput = document.querySelector(
+            'input[type="search"], .search-input',
+        );
         if (searchInput) {
             searchInput.focus();
         }
@@ -514,7 +530,7 @@ class IndexManager {
     scrollToTop() {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: "smooth",
         });
     }
 
@@ -528,14 +544,14 @@ class IndexManager {
     }
 
     setupParallaxElements() {
-        const parallaxElements = document.querySelectorAll('.parallax-element');
+        const parallaxElements = document.querySelectorAll(".parallax-element");
 
         if (parallaxElements.length === 0) return;
 
-        window.addEventListener('scroll', () => {
+        window.addEventListener("scroll", () => {
             const scrolled = window.pageYOffset;
 
-            parallaxElements.forEach(element => {
+            parallaxElements.forEach((element) => {
                 const rate = scrolled * -0.5;
                 element.style.transform = `translateY(${rate}px)`;
             });
@@ -543,32 +559,35 @@ class IndexManager {
     }
 
     setupScrollAnimations() {
-        if (!('IntersectionObserver' in window)) return;
+        if (!("IntersectionObserver" in window)) return;
 
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        const animatedElements = document.querySelectorAll(".animate-on-scroll");
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px",
+            },
+        );
 
-        animatedElements.forEach(element => {
+        animatedElements.forEach((element) => {
             observer.observe(element);
         });
     }
 
     setupMouseEffects() {
         // Efecto de seguimiento del mouse en elementos especiales
-        const interactiveElements = document.querySelectorAll('.mouse-interactive');
+        const interactiveElements = document.querySelectorAll(".mouse-interactive");
 
-        interactiveElements.forEach(element => {
-            element.addEventListener('mousemove', (e) => {
+        interactiveElements.forEach((element) => {
+            element.addEventListener("mousemove", (e) => {
                 const rect = element.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
@@ -576,14 +595,14 @@ class IndexManager {
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
 
-                const rotateX = (y - centerY) / centerY * 10;
-                const rotateY = (centerX - x) / centerX * 10;
+                const rotateX = ((y - centerY) / centerY) * 10;
+                const rotateY = ((centerX - x) / centerX) * 10;
 
                 element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             });
 
-            element.addEventListener('mouseleave', () => {
-                element.style.transform = '';
+            element.addEventListener("mouseleave", () => {
+                element.style.transform = "";
             });
         });
     }
@@ -597,27 +616,27 @@ class IndexManager {
     }
 
     setupLazyImages() {
-        if ('loading' in HTMLImageElement.prototype) {
+        if ("loading" in HTMLImageElement.prototype) {
             // Navegador soporta lazy loading nativo
-            const images = document.querySelectorAll('img[data-src]');
-            images.forEach(img => {
+            const images = document.querySelectorAll("img[data-src]");
+            images.forEach((img) => {
                 img.src = img.dataset.src;
-                img.removeAttribute('data-src');
+                img.removeAttribute("data-src");
             });
         } else {
             // Fallback con Intersection Observer
             const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
+                entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         const img = entry.target;
                         img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
+                        img.removeAttribute("data-src");
                         imageObserver.unobserve(img);
                     }
                 });
             });
 
-            document.querySelectorAll('img[data-src]').forEach(img => {
+            document.querySelectorAll("img[data-src]").forEach((img) => {
                 imageObserver.observe(img);
             });
         }
@@ -630,14 +649,14 @@ class IndexManager {
         const originalScrollHandler = this.handleScroll.bind(this);
         const originalResizeHandler = this.handleResize.bind(this);
 
-        window.addEventListener('scroll', () => {
+        window.addEventListener("scroll", () => {
             if (scrollTimeout) {
                 clearTimeout(scrollTimeout);
             }
             scrollTimeout = setTimeout(originalScrollHandler, 16);
         });
 
-        window.addEventListener('resize', () => {
+        window.addEventListener("resize", () => {
             if (resizeTimeout) {
                 clearTimeout(resizeTimeout);
             }
@@ -657,35 +676,37 @@ class IndexManager {
 
     updateScrollPosition() {
         // Actualizar indicador de progreso de scroll si existe
-        const scrollProgress = document.querySelector('.scroll-progress');
+        const scrollProgress = document.querySelector(".scroll-progress");
         if (scrollProgress) {
-            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const windowHeight =
+                document.documentElement.scrollHeight - window.innerHeight;
             const scrolled = (window.pageYOffset / windowHeight) * 100;
             scrollProgress.style.width = `${scrolled}%`;
         }
     }
 
-    checkElementsInView() {
-    }
+    checkElementsInView() { }
 
     updateLayoutDimensions() {
         // Actualizar dimensiones del layout
-        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+        document.documentElement.style.setProperty(
+            "--vh",
+            `${window.innerHeight * 0.01}px`,
+        );
     }
 
-    recalculatePositions() {
-    }
+    recalculatePositions() { }
 
     setupPagePreloading() {
         // Precargar páginas importantes al hover
         const importantLinks = document.querySelectorAll('a[href$=".html"]');
 
-        importantLinks.forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                const href = link.getAttribute('href');
+        importantLinks.forEach((link) => {
+            link.addEventListener("mouseenter", () => {
+                const href = link.getAttribute("href");
                 if (!document.querySelector(`link[href="${href}"]`)) {
-                    const preloadLink = document.createElement('link');
-                    preloadLink.rel = 'prefetch';
+                    const preloadLink = document.createElement("link");
+                    preloadLink.rel = "prefetch";
                     preloadLink.href = href;
                     document.head.appendChild(preloadLink);
                 }
@@ -694,9 +715,9 @@ class IndexManager {
     }
 
     // === UTILIDADES PÚBLICAS ===
-    showNotification(message, type = 'info') {
+    showNotification(message, type = "info") {
         // Usar el sistema de notificaciones global si está disponible
-        if (window.app && typeof window.app.showNotification === 'function') {
+        if (window.app && typeof window.app.showNotification === "function") {
             window.app.showNotification(message, type);
         } else {
             // Fallback simple
@@ -705,13 +726,13 @@ class IndexManager {
     }
 
     getCurrentSection() {
-        const sections = document.querySelectorAll('section[id]');
-        let current = '';
+        const sections = document.querySelectorAll("section[id]");
+        let current = "";
 
-        sections.forEach(section => {
+        sections.forEach((section) => {
             const rect = section.getBoundingClientRect();
             if (rect.top <= 100 && rect.bottom >= 100) {
-                current = section.getAttribute('id');
+                current = section.getAttribute("id");
             }
         });
 
@@ -721,46 +742,46 @@ class IndexManager {
     scrollToSection(sectionId) {
         const section = document.getElementById(sectionId);
         if (section) {
-            const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+            const headerHeight = document.querySelector(".header")?.offsetHeight || 0;
             const offsetTop = section.offsetTop - headerHeight - 20;
 
             window.scrollTo({
                 top: offsetTop,
-                behavior: 'smooth'
+                behavior: "smooth",
             });
         }
     }
 
     destroy() {
-        this.serviceCards.forEach(card => {
-            card.removeEventListener('mouseenter', this.handleCardHover);
-            card.removeEventListener('mouseleave', this.handleCardLeave);
-            card.removeEventListener('click', this.handleCardClick);
+        this.serviceCards.forEach((card) => {
+            card.removeEventListener("mouseenter", this.handleCardHover);
+            card.removeEventListener("mouseleave", this.handleCardLeave);
+            card.removeEventListener("click", this.handleCardClick);
         });
 
         // Limpiar otros recursos si es necesario
-        window.removeEventListener('scroll', this.handleScroll);
-        window.removeEventListener('resize', this.handleResize);
+        window.removeEventListener("scroll", this.handleScroll);
+        window.removeEventListener("resize", this.handleResize);
     }
 }
 
 let indexManager;
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     indexManager = new IndexManager();
 });
 
 // === COMPATIBILIDAD CON TEMA OSCURO ===
-window.addEventListener('themeChanged', (e) => {
-    const isDark = e.detail.theme === 'dark';
+window.addEventListener("themeChanged", (e) => {
+    const isDark = e.detail.theme === "dark";
 
     // Ajustar elementos específicos del index para el tema oscuro
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach(card => {
+    const serviceCards = document.querySelectorAll(".service-card");
+    serviceCards.forEach((card) => {
         if (isDark) {
-            card.classList.add('dark-variant');
+            card.classList.add("dark-variant");
         } else {
-            card.classList.remove('dark-variant');
+            card.classList.remove("dark-variant");
         }
     });
 });

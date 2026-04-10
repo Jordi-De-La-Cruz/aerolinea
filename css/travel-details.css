@@ -202,7 +202,7 @@
 }
 
 .amenities li::before {
-    content: '✓';
+    content: "✓";
     color: var(--success);
     font-weight: bold;
 }

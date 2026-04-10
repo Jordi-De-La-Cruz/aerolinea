@@ -1,34 +1,34 @@
-const themeToggle = document.getElementById('themeToggle');
+const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 
 // Tema oscuro/claro
 function initTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
         enableDarkMode();
     }
 }
 
 function enableDarkMode() {
-    body.classList.add('dark-theme');
-    const icon = themeToggle.querySelector('i');
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-    localStorage.setItem('theme', 'dark');
+    body.classList.add("dark-theme");
+    const icon = themeToggle.querySelector("i");
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun");
+    localStorage.setItem("theme", "dark");
 }
 
 function enableLightMode() {
-    body.classList.remove('dark-theme');
-    const icon = themeToggle.querySelector('i');
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
-    localStorage.setItem('theme', 'light');
+    body.classList.remove("dark-theme");
+    const icon = themeToggle.querySelector("i");
+    icon.classList.remove("fa-sun");
+    icon.classList.add("fa-moon");
+    localStorage.setItem("theme", "light");
 }
 
 function toggleTheme() {
-    if (body.classList.contains('dark-theme')) {
+    if (body.classList.contains("dark-theme")) {
         enableLightMode();
     } else {
         enableDarkMode();
@@ -39,18 +39,18 @@ function toggleTheme() {
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: "0px 0px -50px 0px",
     };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
+                entry.target.classList.add("fade-in");
             }
         });
     }, observerOptions);
 
-    const cards = document.querySelectorAll('.destination-card');
+    const cards = document.querySelectorAll(".destination-card");
     cards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
         observer.observe(card);
@@ -59,14 +59,14 @@ function initScrollAnimations() {
 
 // Navegación suave
 function initSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(this.getAttribute("href"));
             if (target) {
                 target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                    behavior: "smooth",
+                    block: "start",
                 });
             }
         });
@@ -74,51 +74,51 @@ function initSmoothScrolling() {
 }
 
 function initPreloader() {
-    window.addEventListener('load', () => {
-        const preloader = document.querySelector('.preloader');
+    window.addEventListener("load", () => {
+        const preloader = document.querySelector(".preloader");
         if (preloader) {
-            preloader.style.opacity = '0';
+            preloader.style.opacity = "0";
             setTimeout(() => {
-                preloader.style.display = 'none';
+                preloader.style.display = "none";
             }, 300);
         }
     });
 }
 
 function initLazyLoading() {
-    const images = document.querySelectorAll('img[data-src]');
+    const images = document.querySelectorAll("img[data-src]");
 
     const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 const img = entry.target;
                 img.src = img.dataset.src;
-                img.classList.remove('lazy');
+                img.classList.remove("lazy");
                 imageObserver.unobserve(img);
             }
         });
     });
 
-    images.forEach(img => imageObserver.observe(img));
+    images.forEach((img) => imageObserver.observe(img));
 }
 
 function validateForm(form) {
-    const inputs = form.querySelectorAll('.form-input[required]');
+    const inputs = form.querySelectorAll(".form-input[required]");
     let isValid = true;
 
-    inputs.forEach(input => {
+    inputs.forEach((input) => {
         const value = input.value.trim();
-        const errorElement = input.parentNode.querySelector('.error-message');
+        const errorElement = input.parentNode.querySelector(".error-message");
 
         if (errorElement) {
             errorElement.remove();
         }
 
         if (!value) {
-            showError(input, 'Este campo es obligatorio');
+            showError(input, "Este campo es obligatorio");
             isValid = false;
-        } else if (input.type === 'email' && !isValidEmail(value)) {
-            showError(input, 'Ingresa un email válido');
+        } else if (input.type === "email" && !isValidEmail(value)) {
+            showError(input, "Ingresa un email válido");
             isValid = false;
         }
     });
@@ -127,13 +127,13 @@ function validateForm(form) {
 }
 
 function showError(input, message) {
-    const errorElement = document.createElement('span');
-    errorElement.className = 'error-message';
-    errorElement.style.color = 'var(--danger)';
-    errorElement.style.fontSize = 'var(--font-size-small)';
+    const errorElement = document.createElement("span");
+    errorElement.className = "error-message";
+    errorElement.style.color = "var(--danger)";
+    errorElement.style.fontSize = "var(--font-size-small)";
     errorElement.textContent = message;
     input.parentNode.appendChild(errorElement);
-    input.classList.add('error');
+    input.classList.add("error");
 }
 
 function isValidEmail(email) {
@@ -141,29 +141,29 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-function showNotification(message, type = 'success') {
-    const notification = document.createElement('div');
+function showNotification(message, type = "success") {
+    const notification = document.createElement("div");
     notification.className = `notification notification--${type}`;
     notification.textContent = message;
 
     Object.assign(notification.style, {
-        position: 'fixed',
-        top: '20px',
-        right: '20px',
-        padding: 'var(--spacing-sm) var(--spacing-md)',
-        borderRadius: 'var(--border-radius)',
-        color: 'white',
-        fontWeight: '600',
-        zIndex: '9999',
-        transform: 'translateX(100%)',
-        transition: 'transform 0.3s ease'
+        position: "fixed",
+        top: "20px",
+        right: "20px",
+        padding: "var(--spacing-sm) var(--spacing-md)",
+        borderRadius: "var(--border-radius)",
+        color: "white",
+        fontWeight: "600",
+        zIndex: "9999",
+        transform: "translateX(100%)",
+        transition: "transform 0.3s ease",
     });
 
     const colors = {
-        success: '#27ae60',
-        warning: '#f39c12',
-        error: '#e74c3c',
-        info: '#3498db'
+        success: "#27ae60",
+        warning: "#f39c12",
+        error: "#e74c3c",
+        info: "#3498db",
     };
 
     notification.style.backgroundColor = colors[type] || colors.success;
@@ -172,11 +172,11 @@ function showNotification(message, type = 'success') {
 
     // Animar entrada
     setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
+        notification.style.transform = "translateX(0)";
     }, 100);
 
     setTimeout(() => {
-        notification.style.transform = 'translateX(100%)';
+        notification.style.transform = "translateX(100%)";
         setTimeout(() => {
             if (notification.parentNode) {
                 notification.parentNode.removeChild(notification);
@@ -186,7 +186,7 @@ function showNotification(message, type = 'success') {
 }
 
 // Inicialización
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     initTheme();
     initScrollAnimations();
     initSmoothScrolling();
@@ -195,26 +195,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listeners
     if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
+        themeToggle.addEventListener("click", toggleTheme);
     }
 
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
+    const forms = document.querySelectorAll("form");
+    forms.forEach((form) => {
+        form.addEventListener("submit", (e) => {
             if (!validateForm(form)) {
                 e.preventDefault();
-                showNotification('Por favor completa todos los campos obligatorios', 'error');
+                showNotification(
+                    "Por favor completa todos los campos obligatorios",
+                    "error",
+                );
             }
         });
     });
 
-    body.classList.add('loaded');
+    body.classList.add("loaded");
 });
 
-window.addEventListener('error', (e) => {
-    console.error('Error en la aplicación:', e.error);
+window.addEventListener("error", (e) => {
+    console.error("Error en la aplicación:", e.error);
 });
 
-if ('ontouchstart' in window) {
-    document.body.classList.add('touch-device');
+if ("ontouchstart" in window) {
+    document.body.classList.add("touch-device");
 }

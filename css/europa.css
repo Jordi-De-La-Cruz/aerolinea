@@ -1,7 +1,8 @@
 .hero-europa {
     min-height: 70vh;
-    background: linear-gradient(135deg, rgba(33, 147, 176, 0.8), rgba(12, 73, 89, 0.9)),
-        url('../img/europa-hero.jpg') center/cover no-repeat;
+    background:
+        linear-gradient(135deg, rgba(33, 147, 176, 0.8), rgba(12, 73, 89, 0.9)),
+        url("../img/europa-hero.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +11,7 @@
 }
 
 .hero-europa::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -106,7 +107,7 @@
 }
 
 .destination-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -162,6 +163,7 @@
     gap: var(--spacing-xs);
     font-size: var(--font-size-small);
     font-weight: 700;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -285,6 +287,7 @@
 
 .tip-card {
     background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: var(--spacing-xl);
     border-radius: var(--border-radius-lg);
@@ -338,13 +341,13 @@
 }
 
 .cta-section::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../img/europa-pattern.png');
+    background-image: url("../img/europa-pattern.png");
     opacity: 0.05;
     background-size: 200px;
 }
@@ -386,7 +389,7 @@
 }
 
 .btn--primary::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
@@ -417,7 +420,7 @@
 }
 
 .btn--outline::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;

@@ -1,10 +1,10 @@
 class LoginHandler {
     constructor() {
-        this.form = document.getElementById('loginForm');
+        this.form = document.getElementById("loginForm");
         this.passwordInput = document.querySelector('input[type="password"]');
         this.emailInput = document.querySelector('input[type="email"]');
-        this.rememberCheckbox = document.querySelector('#remember');
-        this.submitButton = this.form?.querySelector('.btn-login');
+        this.rememberCheckbox = document.querySelector("#remember");
+        this.submitButton = this.form?.querySelector(".btn-login");
 
         this.isSubmitting = false;
         this.maxAttempts = 3;
@@ -15,7 +15,7 @@ class LoginHandler {
 
     init() {
         if (!this.form) {
-            console.warn('Formulario de login no encontrado');
+            console.warn("Formulario de login no encontrado");
             return;
         }
 
@@ -28,16 +28,20 @@ class LoginHandler {
     }
 
     setupFormHandling() {
-        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        this.form.addEventListener("submit", (e) => this.handleSubmit(e));
 
         if (this.emailInput) {
-            this.emailInput.addEventListener('blur', () => this.validateEmail());
-            this.emailInput.addEventListener('input', () => this.clearEmailError());
+            this.emailInput.addEventListener("blur", () => this.validateEmail());
+            this.emailInput.addEventListener("input", () => this.clearEmailError());
         }
 
         if (this.passwordInput) {
-            this.passwordInput.addEventListener('blur', () => this.validatePassword());
-            this.passwordInput.addEventListener('input', () => this.clearPasswordError());
+            this.passwordInput.addEventListener("blur", () =>
+                this.validatePassword(),
+            );
+            this.passwordInput.addEventListener("input", () =>
+                this.clearPasswordError(),
+            );
         }
     }
 
@@ -47,12 +51,12 @@ class LoginHandler {
         if (this.isSubmitting) return;
 
         if (!this.validateForm()) {
-            this.showError('Por favor completa todos los campos correctamente');
+            this.showError("Por favor completa todos los campos correctamente");
             return;
         }
 
         if (this.attemptCount >= this.maxAttempts) {
-            this.showError('Demasiados intentos. Espera unos minutos.');
+            this.showError("Demasiados intentos. Espera unos minutos.");
             return;
         }
 
@@ -62,7 +66,7 @@ class LoginHandler {
             const loginData = {
                 email: this.emailInput.value.trim(),
                 password: this.passwordInput.value,
-                remember: this.rememberCheckbox?.checked || false
+                remember: this.rememberCheckbox?.checked || false,
             };
 
             const success = await this.performLogin(loginData);
@@ -73,7 +77,7 @@ class LoginHandler {
                 this.handleLoginFailure();
             }
         } catch (error) {
-            console.error('Error en login:', error);
+            console.error("Error en login:", error);
             this.handleLoginError();
         }
     }
@@ -82,7 +86,7 @@ class LoginHandler {
         return new Promise((resolve) => {
             setTimeout(() => {
                 // Validación básica para demo
-                const isValid = data.email.includes('@') && data.password.length >= 6;
+                const isValid = data.email.includes("@") && data.password.length >= 6;
                 resolve(isValid);
             }, 2000);
         });
@@ -92,30 +96,33 @@ class LoginHandler {
         this.isSubmitting = true;
         if (this.submitButton) {
             this.submitButton.disabled = true;
-            this.submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Iniciando sesión...';
+            this.submitButton.innerHTML =
+                '<i class="fas fa-spinner fa-spin"></i> Iniciando sesión...';
         }
     }
 
     handleLoginSuccess(data) {
         if (this.submitButton) {
             this.submitButton.innerHTML = '<i class="fas fa-check"></i> ¡Bienvenido!';
-            this.submitButton.style.background = 'var(--success)';
+            this.submitButton.style.background = "var(--success)";
         }
 
-        this.showSuccess('¡Inicio de sesión exitoso!');
+        this.showSuccess("¡Inicio de sesión exitoso!");
 
         if (data.remember) {
             this.saveUserEmail(data.email);
         }
 
         setTimeout(() => {
-            window.location.href = 'index.html';
+            window.location.href = "index.html";
         }, 1500);
     }
 
     handleLoginFailure() {
         this.attemptCount++;
-        this.showError(`Credenciales incorrectas (${this.attemptCount}/${this.maxAttempts})`);
+        this.showError(
+            `Credenciales incorrectas (${this.attemptCount}/${this.maxAttempts})`,
+        );
         this.resetLoginButton();
 
         if (this.attemptCount >= this.maxAttempts) {
@@ -124,7 +131,7 @@ class LoginHandler {
     }
 
     handleLoginError() {
-        this.showError('Error de conexión. Intenta nuevamente.');
+        this.showError("Error de conexión. Intenta nuevamente.");
         this.resetLoginButton();
     }
 
@@ -132,20 +139,21 @@ class LoginHandler {
         this.isSubmitting = false;
         if (this.submitButton) {
             this.submitButton.disabled = false;
-            this.submitButton.innerHTML = '<i class="fas fa-sign-in-alt"></i> Iniciar Sesión';
-            this.submitButton.style.background = '';
+            this.submitButton.innerHTML =
+                '<i class="fas fa-sign-in-alt"></i> Iniciar Sesión';
+            this.submitButton.style.background = "";
         }
     }
 
     lockForm() {
-        const inputs = this.form.querySelectorAll('input');
-        inputs.forEach(input => input.disabled = true);
+        const inputs = this.form.querySelectorAll("input");
+        inputs.forEach((input) => (input.disabled = true));
 
         if (this.submitButton) {
             this.submitButton.innerHTML = '<i class="fas fa-lock"></i> Bloqueado';
         }
 
-        this.showError('Formulario bloqueado por seguridad');
+        this.showError("Formulario bloqueado por seguridad");
     }
 
     validateForm() {
@@ -161,7 +169,7 @@ class LoginHandler {
         const isValid = email && this.isValidEmail(email);
 
         if (!isValid) {
-            this.showInputError(this.emailInput, 'Ingresa un email válido');
+            this.showInputError(this.emailInput, "Ingresa un email válido");
         }
 
         return isValid;
@@ -174,7 +182,10 @@ class LoginHandler {
         const isValid = password && password.length >= 6;
 
         if (!isValid) {
-            this.showInputError(this.passwordInput, 'La contraseña debe tener al menos 6 caracteres');
+            this.showInputError(
+                this.passwordInput,
+                "La contraseña debe tener al menos 6 caracteres",
+            );
         }
 
         return isValid;
@@ -187,16 +198,16 @@ class LoginHandler {
     showInputError(input, message) {
         this.clearInputError(input);
 
-        input.classList.add('error');
-        const errorSpan = document.createElement('span');
-        errorSpan.className = 'error-message';
+        input.classList.add("error");
+        const errorSpan = document.createElement("span");
+        errorSpan.className = "error-message";
         errorSpan.textContent = message;
         input.parentNode.appendChild(errorSpan);
     }
 
     clearInputError(input) {
-        input.classList.remove('error');
-        const errorMsg = input.parentNode.querySelector('.error-message');
+        input.classList.remove("error");
+        const errorMsg = input.parentNode.querySelector(".error-message");
         if (errorMsg) {
             errorMsg.remove();
         }
@@ -213,46 +224,46 @@ class LoginHandler {
     setupPasswordToggle() {
         if (!this.passwordInput) return;
 
-        const toggleBtn = document.createElement('button');
-        toggleBtn.type = 'button';
-        toggleBtn.className = 'password-toggle';
+        const toggleBtn = document.createElement("button");
+        toggleBtn.type = "button";
+        toggleBtn.className = "password-toggle";
         toggleBtn.innerHTML = '<i class="fas fa-eye"></i>';
-        toggleBtn.setAttribute('aria-label', 'Mostrar contraseña');
+        toggleBtn.setAttribute("aria-label", "Mostrar contraseña");
 
-        this.passwordInput.parentNode.style.position = 'relative';
-        this.passwordInput.style.paddingRight = '4rem';
+        this.passwordInput.parentNode.style.position = "relative";
+        this.passwordInput.style.paddingRight = "4rem";
         this.passwordInput.parentNode.appendChild(toggleBtn);
 
-        toggleBtn.addEventListener('click', () => {
-            const isPassword = this.passwordInput.type === 'password';
-            this.passwordInput.type = isPassword ? 'text' : 'password';
+        toggleBtn.addEventListener("click", () => {
+            const isPassword = this.passwordInput.type === "password";
+            this.passwordInput.type = isPassword ? "text" : "password";
 
-            const icon = toggleBtn.querySelector('i');
-            icon.className = isPassword ? 'fas fa-eye-slash' : 'fas fa-eye';
+            const icon = toggleBtn.querySelector("i");
+            icon.className = isPassword ? "fas fa-eye-slash" : "fas fa-eye";
         });
     }
 
     setupInputEffects() {
-        const inputs = this.form.querySelectorAll('.form-input');
+        const inputs = this.form.querySelectorAll(".form-input");
 
-        inputs.forEach(input => {
-            input.addEventListener('focus', () => {
-                input.parentNode.classList.add('focused');
+        inputs.forEach((input) => {
+            input.addEventListener("focus", () => {
+                input.parentNode.classList.add("focused");
             });
 
-            input.addEventListener('blur', () => {
+            input.addEventListener("blur", () => {
                 if (!input.value) {
-                    input.parentNode.classList.remove('focused');
+                    input.parentNode.classList.remove("focused");
                 }
             });
         });
     }
 
     setupSocialButtons() {
-        const socialBtns = document.querySelectorAll('.btn-social');
+        const socialBtns = document.querySelectorAll(".btn-social");
 
-        socialBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
+        socialBtns.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
                 e.preventDefault();
                 const provider = this.getSocialProvider(btn);
                 this.handleSocialLogin(provider);
@@ -261,10 +272,10 @@ class LoginHandler {
     }
 
     getSocialProvider(button) {
-        if (button.classList.contains('google')) return 'Google';
-        if (button.classList.contains('facebook')) return 'Facebook';
-        if (button.classList.contains('twitter')) return 'Twitter';
-        return 'Social';
+        if (button.classList.contains("google")) return "Google";
+        if (button.classList.contains("facebook")) return "Facebook";
+        if (button.classList.contains("twitter")) return "Twitter";
+        return "Social";
     }
 
     handleSocialLogin(provider) {
@@ -273,22 +284,22 @@ class LoginHandler {
         setTimeout(() => {
             this.showSuccess(`¡Conectado con ${provider}!`);
             setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = "index.html";
             }, 1000);
         }, 2000);
     }
 
     saveUserEmail(email) {
         try {
-            localStorage.setItem('savedEmail', email);
+            localStorage.setItem("savedEmail", email);
         } catch (e) {
-            console.warn('No se pudo guardar el email');
+            console.warn("No se pudo guardar el email");
         }
     }
 
     loadSavedData() {
         try {
-            const savedEmail = localStorage.getItem('savedEmail');
+            const savedEmail = localStorage.getItem("savedEmail");
             if (savedEmail && this.emailInput) {
                 this.emailInput.value = savedEmail;
                 if (this.rememberCheckbox) {
@@ -296,37 +307,37 @@ class LoginHandler {
                 }
             }
         } catch (e) {
-            console.warn('No se pudo cargar datos guardados');
+            console.warn("No se pudo cargar datos guardados");
         }
     }
 
     setupKeyboardEvents() {
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener("keydown", (e) => {
             // Enter para enviar
-            if (e.key === 'Enter' && this.form.contains(e.target)) {
-                if (e.target.tagName !== 'BUTTON') {
+            if (e.key === "Enter" && this.form.contains(e.target)) {
+                if (e.target.tagName !== "BUTTON") {
                     e.preventDefault();
-                    this.form.dispatchEvent(new Event('submit'));
+                    this.form.dispatchEvent(new Event("submit"));
                 }
             }
         });
     }
 
     showSuccess(message) {
-        this.showNotification(message, 'success');
+        this.showNotification(message, "success");
     }
 
     showError(message) {
-        this.showNotification(message, 'error');
+        this.showNotification(message, "error");
     }
 
     showInfo(message) {
-        this.showNotification(message, 'info');
+        this.showNotification(message, "info");
     }
 
-    showNotification(message, type = 'info') {
+    showNotification(message, type = "info") {
         // Usar el sistema de notificaciones global si existe
-        if (window.app && typeof window.app.showNotification === 'function') {
+        if (window.app && typeof window.app.showNotification === "function") {
             window.app.showNotification(message, type);
             return;
         }
@@ -336,13 +347,13 @@ class LoginHandler {
     }
 
     createSimpleNotification(message, type) {
-        const notification = document.createElement('div');
+        const notification = document.createElement("div");
 
         const colors = {
-            success: '#27ae60',
-            error: '#e74c3c',
-            info: '#3498db',
-            warning: '#f39c12'
+            success: "#27ae60",
+            error: "#e74c3c",
+            info: "#3498db",
+            warning: "#f39c12",
         };
 
         notification.style.cssText = `
@@ -366,12 +377,12 @@ class LoginHandler {
 
         // Animar entrada
         requestAnimationFrame(() => {
-            notification.style.transform = 'translateX(0)';
+            notification.style.transform = "translateX(0)";
         });
 
         // Auto-eliminar
         setTimeout(() => {
-            notification.style.transform = 'translateX(100%)';
+            notification.style.transform = "translateX(100%)";
             setTimeout(() => {
                 if (notification.parentNode) {
                     notification.parentNode.removeChild(notification);
@@ -382,12 +393,12 @@ class LoginHandler {
 }
 
 // === INICIALIZACIÓN ===
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     new LoginHandler();
 });
 
 // === ESTILOS CSS DINÁMICOS ===
-const loginStyles = document.createElement('style');
+const loginStyles = document.createElement("style");
 loginStyles.textContent = `
     .form-input.error {
         border-color: var(--danger, #e74c3c);
