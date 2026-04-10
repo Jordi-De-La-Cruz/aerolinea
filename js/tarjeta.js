@@ -9,7 +9,6 @@ const tarjeta = document.querySelector("#tarjeta"),
 	yearExpiracion = document.querySelector("#tarjeta .year");
 ccv = document.querySelector("#tarjeta .ccv");
 
-// * Volteamos la tarjeta para mostrar el frente.
 const mostrarFrente = () => {
 	if (tarjeta.classList.contains("active")) {
 		tarjeta.classList.remove("active");
@@ -27,7 +26,6 @@ btnAbrirFormulario.addEventListener("click", () => {
 	formulario.classList.toggle("active");
 });
 
-// * Select del mes generado dinamicamente.
 for (let i = 1; i <= 12; i++) {
 	let opcion = document.createElement("option");
 	opcion.value = i;
@@ -49,13 +47,9 @@ formulario.inputNumero.addEventListener("keyup", (e) => {
 	let valorInput = e.target.value;
 
 	formulario.inputNumero.value = valorInput
-		// Eliminamos espacios en blanco
 		.replace(/\s/g, "")
-		// Eliminar las letras
 		.replace(/\D/g, "")
-		// Ponemos espacio cada cuatro numeros
 		.replace(/([0-9]{4})/g, "$1 ")
-		// Elimina el ultimo espaciado
 		.trim();
 
 	numeroTarjeta.textContent = valorInput;
@@ -78,7 +72,6 @@ formulario.inputNumero.addEventListener("keyup", (e) => {
 		logoMarca.appendChild(imagen);
 	}
 
-	// Volteamos la tarjeta para que el usuario vea el frente.
 	mostrarFrente();
 });
 
@@ -116,9 +109,7 @@ formulario.inputCCV.addEventListener("keyup", () => {
 	}
 
 	formulario.inputCCV.value = formulario.inputCCV.value
-		// Eliminar los espacios
 		.replace(/\s/g, "")
-		// Eliminar las letras
 		.replace(/\D/g, "");
 
 	ccv.textContent = formulario.inputCCV.value;

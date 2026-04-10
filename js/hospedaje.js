@@ -560,7 +560,6 @@ class HospedajeManager {
         const searchLocation = searchData.destination.toLowerCase();
         const hotelLocationLower = hotelLocation.toLowerCase();
 
-        // Búsqueda flexible
         return (
             hotelLocationLower.includes(searchLocation) ||
             searchLocation.includes(hotelLocationLower.split(",")[0])

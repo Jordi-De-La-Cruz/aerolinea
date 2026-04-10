@@ -843,7 +843,6 @@ class KawaiiManager {
         // Lluvia de emojis
         this.createEmojiRain();
 
-        // Cambiar cursor a unicornio
         document.body.style.cursor =
             "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E🦄%3C/text%3E%3C/svg%3E\"), auto";
 
