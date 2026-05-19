@@ -42,11 +42,59 @@
 }
 
 .dark-theme {
-    --light: #323232;
-    --dark: #ffffff;
-    --gray-light: #444444;
+    --light: #1a1a1a;
+    --dark: #f5f5f5;
+    --gray-light: #2d2d2d;
+    --gray: #b0b0b0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.7);
+    
     background-color: var(--light);
     color: var(--dark);
+}
+
+.dark-theme img {
+    filter: brightness(0.8) contrast(1.2);
+}
+
+.dark-theme .service-card,
+.dark-theme .destination-card,
+.dark-theme .menu-item,
+.dark-theme .consejo,
+.dark-theme fieldset,
+.dark-theme .reserva1,
+.dark-theme .hab1,
+.dark-theme .Hot,
+.dark-theme .sing,
+.dark-theme .conoce,
+.dark-theme .about,
+.dark-theme .services-nav,
+.dark-theme .company-info,
+.dark-theme .mission,
+.dark-theme .hero,
+.dark-theme .login-container,
+.dark-theme .contenedor,
+.dark-theme .formulario-tarjeta,
+.dark-theme .pasaje {
+    background-color: var(--gray-light) !important;
+    color: var(--dark) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+    background-color: #333 !important;
+    color: #fff !important;
+    border: 1px solid #444 !important;
+}
+
+.dark-theme th,
+.dark-theme td {
+    background-color: #2c3e50 !important;
+    color: #ecf0f1 !important;
+    border-color: #34495e !important;
 }
 
 * {

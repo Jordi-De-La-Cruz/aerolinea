@@ -1,44 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
+<title>Hotel Malte - París, Francia | Destinos Mundiales</title>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Hotel Malte París Francia - Hotel boutique 4 estrellas en el corazón de París con spa, gimnasio y ubicación privilegiada" />
-    <meta name="keywords" content="hotel, parís, francia, boutique, torre eiffel, louvre, spa, centro" />
-    <title>Hotel Malte - París, Francia | Destinos Mundiales</title>
-
+    <link rel="icon" href="img/inicial.jpg" />
+    
     <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/legacy.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/hotels.css" />
+    <link rel="stylesheet" href="css/hotelMate.css" />
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
 
-    <!-- Preload crítico -->
-    <link rel="preload" href="img/mundo.png" as="image" />
-    <link rel="preload" href="img/mate1.jpg" as="image" />
-    <link rel="preload" href="js/main.js" as="script" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="img/inicial.jpg" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Hotel Malte - Hotel Boutique 4 Estrellas en París" />
-    <meta property="og:description"
-        content="Experimenta el encanto parisino en nuestro hotel boutique en el corazón de la Ciudad Luz" />
-    <meta property="og:image" content="img/mate1.jpg" />
-    <meta property="og:type" content="website" />
 </head>
-
 <body>
+
     <!-- Google Translate -->
     <div id="google_translate_element"></div>
 
@@ -51,10 +35,6 @@
             </a>
 
             <nav class="nav">
-                <a href="index.html" class="nav-btn">
-                    <i class="fas fa-home"></i>
-                    Inicio
-                </a>
                 <a href="login.html" class="nav-btn">
                     <i class="fas fa-user"></i>
                     Iniciar Sesión
@@ -70,7 +50,8 @@
         </div>
     </header>
 
-    <main class="main">
+<main class="main">
+    <div class="container">
         <!-- Hotel Gallery -->
         <section class="hotel-gallery">
             <div class="container">
@@ -607,12 +588,18 @@
     <!-- Page Navigation -->
     <nav class="page-navigation">
         <div class="container">
-            <a href="ofertas.html" class="back-btn">
+            <a href="#" class="back-btn">
                 <i class="fas fa-arrow-left"></i>
                 Retour aux Offres
             </a>
         </div>
     </nav>
+
+    <!-- Footer -->
+    
+    <!-- Footer -->
+    </div>
+</main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -626,7 +613,7 @@
             </div>
             <div class="footer-text">
                 <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Hotel Malte, París
+                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
                 </p>
             </div>
         </div>
@@ -634,54 +621,8 @@
 
     <!-- JavaScript Modular -->
     <script src="js/main.js"></script>
-    <script src="js/hotel-booking.js"></script>
-    <script src="js/translator.js"></script>
+    <script src="js/hotelMate.js"></script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <script type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <!-- Structured Data para SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Hotel",
-        "name": "Hotel Malte",
-        "description": "Hotel boutique 4 estrellas en París con vista a la Torre Eiffel",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "París",
-          "addressCountry": "FR"
-        },
-        "telephone": "+33-1-42-96-85-05",
-        "starRating": {
-          "@type": "Rating",
-          "ratingValue": "4"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.3",
-          "reviewCount": "287"
-        },
-        "amenityFeature": [
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Wi-Fi premium gratuito"
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Piscina interior"
-          },
-          { "@type": "LocationFeatureSpecification", "name": "Spa" },
-          { "@type": "LocationFeatureSpecification", "name": "Gimnasio 24h" },
-          { "@type": "LocationFeatureSpecification", "name": "Concierge 24/7" },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Restaurante gourmet"
-          }
-        ],
-        "priceRange": "€180-€450"
-      }
-    </script>
 </body>
-
 </html>

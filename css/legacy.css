@@ -1,0 +1,677 @@
+.a {
+    font-weight: 700;
+    font-size: 4rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.america .am h2 {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--bg);
+}
+
+.america .am img {
+    border-radius: 1rem;
+    margin-top: 2rem;
+    width: 35rem;
+    height: 25rem;
+}
+
+.america {
+    margin-top: 1rem;
+    gap: 2rem;
+    display: flex;
+}
+
+.consejos {
+    display: flex;
+}
+
+.consejos .consejo {
+    background-color: rgb(247, 241, 241);
+    border-radius: 1rem;
+    width: 60rem;
+}
+
+.consejos .consejo p {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.consejos .consejo h4 {
+    font-size: 1.8rem;
+    color: var(--bg);
+    text-align: center;
+    font-weight: 700;
+}
+
+.cons {
+    margin-top: 6rem;
+    font-size: 3rem;
+    font-weight: 900;
+    color: steelblue;
+    text-align: center;
+}
+
+.slider {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: cambio 8s infinite;
+}
+
+.slider li {
+    width: 100%;
+    list-style: none;
+}
+
+.slider img {
+    width: 50rem;
+    height: 25rem;
+}
+
+@keyframes cambio {
+    0% {
+        margin-left: 0;
+    }
+
+    20% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    45% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+}
+
+table,
+th,
+td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    margin-left: 11rem;
+}
+
+th,
+td {
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: #86d1d1;
+    padding: 6px;
+    padding-right: 7rem;
+}
+
+.reserva {
+    display: flex;
+}
+
+.reserva1 {
+    background-color: darkcyan;
+    height: 48rem;
+
+    margin-inline: 10rem;
+}
+
+.reserva1 h2 {
+    font-weight: 700;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+fieldset {
+    width: 10rem;
+}
+
+.bn {
+    color: #080808;
+    font-weight: 900;
+    font-size: 13px;
+    text-align: center;
+    background-color: grey;
+    padding: 1rem;
+    margin-left: 10rem;
+    width: 8rem;
+}
+
+fieldset {
+    align-items: center;
+    margin: 2.5rem;
+    margin-bottom: 3rem;
+    width: 10rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.b .hospedaje {
+    height: 50rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    background-color: rgb(21, 96, 99);
+}
+
+.b .hospedaje h2 {
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-left: 3rem;
+}
+
+.b .hospedaje label {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.b .hospedaje input {
+    width: 12rem;
+    margin-top: 1rem;
+}
+
+.b fieldset .buy {
+    font-size: 1.5rem;
+    background-color: var(--bg);
+    color: white;
+    margin-left: 15rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
+
+.b fieldset .buy:hover {
+    background-color: grey;
+}
+
+.b .hospedaje .fa-search {
+    margin-left: 25rem;
+}
+
+.b .hospedaje .fa-search:hover {
+    color: gray;
+}
+
+.b .hospedaje .fa-bed,
+.fa-map-marker {
+    margin-left: 25rem;
+}
+
+.reserva {
+    display: flex;
+}
+
+.reserva1 {
+    background-color: darkcyan;
+    height: 48rem;
+
+    margin-inline: 10rem;
+}
+
+.reserva1 h2 {
+    font-weight: 700;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.pasaje {
+    width: 10rem;
+}
+
+.b .habit2 {
+    margin-top: 3rem;
+}
+
+.b .hospedaje {
+    margin-left: 7rem;
+}
+
+.bn {
+    text-align: center;
+    background-color: grey;
+    padding: 1rem;
+    margin-left: 7rem;
+    width: 8rem;
+}
+
+.b .habit2 .habit .hab1 {
+    border-radius: 0.5rem;
+    background: #dbdada;
+    padding: 1rem;
+    text-align: center;
+    height: 6rem;
+}
+
+.b .habit2 .habit1 {
+    margin-top: 19rem;
+    display: -ms-grid;
+    display: flex;
+    gap: 1rem;
+}
+
+.b .habit2 .habit1 .hab1 {
+    border-radius: 0.5rem;
+    background: #dbdada;
+    padding: 1rem;
+    text-align: center;
+    height: 6rem;
+}
+
+.b .habit2 .habit {
+    display: -ms-grid;
+    display: flex;
+    gap: 1rem;
+}
+
+.hab1 img {
+    width: 20rem;
+    height: 15rem;
+}
+
+.google_translate_element {
+    background-color: black;
+}
+
+.puerto img {
+    box-shadow: 0 0 15px 0 grey;
+    width: 35rem;
+    height: 25rem;
+    padding: 0.2rem;
+}
+
+.hotel {
+    gap: 1rem;
+    display: flex;
+}
+
+.Hotel .hotel h1,
+i {
+    font-size: 3rem;
+}
+
+.Hotel .hotel i {
+    color: rgb(175, 175, 22);
+    margin-top: 2rem;
+}
+
+.Hotel .hotel i:hover {
+    color: yellow;
+}
+
+.Hotel h3 {
+    color: grey;
+}
+
+.Ho1 .Hot {
+    box-shadow: 0 0 15px 0 grey;
+    padding: 3rem 3rem 1rem 1rem;
+    /* background: rgb(241, 241, 241); */
+    width: 50rem;
+}
+
+.Hot .fas {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.Hot1 {
+    display: flex;
+    gap: 3rem;
+}
+
+.Ho1 .Hot1 .Hot h2 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.Ho1 .Hot1 .Hot .tex {
+    margin-left: 8rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.Ho1 .Hot1 .Hot .Paq p {
+    font-size: 1rem;
+}
+
+.Ho1 .Hot .map {
+    margin: 1rem 2rem 1rem 5rem;
+    width: 40rem;
+    height: 15rem;
+}
+
+.conoce {
+    box-shadow: 0 0 15px 0 grey;
+    margin: 3rem 15rem 2rem 9rem;
+    /* background: rgb(241, 241, 241); */
+    /* background: rgb(236, 235, 235); */
+}
+
+.conoce h2 {
+    font-size: 3rem;
+}
+
+.conoce p {
+    text-align: justify;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+.conoce h3 {
+    color: grey;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+.Sing {
+    display: flex;
+}
+
+.sing {
+    box-shadow: 0 0 15px 0 grey;
+    margin-right: 1rem;
+    width: 70rem;
+    height: 40rem;
+}
+
+.sin {
+    box-shadow: 0 0 15px 0 grey;
+    width: 40rem;
+    height: 25rem;
+}
+
+.si {
+    box-shadow: 0 0 15px 0 grey;
+    width: 20rem;
+    height: 15rem;
+    padding: 0.2rem;
+}
+
+.SI {
+    display: flex;
+}
+
+.S h1 {
+    font-size: 3rem;
+}
+
+.S h3 {
+    color: grey;
+}
+
+.Paq .fas {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.Paq .pl {
+    margin-left: auto;
+    margin-top: 1.5rem;
+}
+
+.paq {
+    margin-top: 3rem;
+    margin-left: 8.5rem;
+    font-size: 2.5rem;
+}
+
+.Paq {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.Paquete {
+    /* width: 110rem; */
+    /* background: rgb(241, 241, 241); */
+    margin: 1rem 8rem;
+}
+
+.Kaw {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.Kaw img {
+    box-shadow: 2px 2px 2px grey;
+    width: 20rem;
+    height: 20rem;
+}
+
+.Kaw .kaw {
+    margin-left: 3rem;
+}
+
+.Kaw h2 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+}
+
+.Kaw p {
+    text-align: justify;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    body {
+        width: none;
+    }
+
+    .image img {
+        width: 35rem;
+    }
+
+    form {
+        width: 3rem;
+    }
+
+    fieldset {
+        width: -12rem;
+    }
+
+    .mil {
+        margin-left: -4rem;
+        border-color: transparent;
+        margin-bottom: -8rem;
+    }
+
+    .mil label p {
+        font-size: 1.5rem;
+        margin-left: -3rem;
+    }
+
+    label h4 {
+        margin-left: -20rem;
+    }
+
+    label p {
+        font-size: 1rem;
+        min-width: none;
+    }
+
+    label h4 {
+        min-width: none;
+    }
+
+    .contenid {
+        min-width: none;
+        margin-inline: -3rem;
+    }
+
+    .contenid p {
+        align-items: center;
+        width: auto;
+        font-size: 1rem;
+    }
+
+    .ruler .fap {
+        flex-direction: column;
+    }
+
+    .miau {
+        width: auto;
+    }
+
+    .ruler h3 {
+        text-align: center;
+    }
+
+    .rou {
+        width: 5rem;
+        align-items: center;
+        margin-left: -2rem;
+    }
+
+    .rou input {
+        width: 3rem;
+    }
+
+    .thor {
+        flex-direction: column;
+    }
+
+    .thor button {
+        width: 15rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        width: auto;
+        height: auto;
+    }
+
+    .abous .navegacion2 {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .header .navegacion2 {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .america .am img {
+        width: none;
+    }
+
+    .america {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .cons {
+        font-size: 2.7rem;
+    }
+
+    .consejos {
+        width: auto;
+        flex-direction: column;
+    }
+
+    .consejos .consejo {
+        width: auto;
+        /* margin-inline: 1rem; */
+    }
+}
+
+@media (max-width: 600px) {
+    .box {
+        background-color: none;
+    }
+
+    .image img {
+        width: 25rem;
+        min-width: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .content h3 {
+        text-align: center;
+    }
+
+    .header {
+        flex-direction: column;
+    }
+
+    .header .logo {
+        align-items: center;
+    }
+
+    .header .navegacion1 .boton {
+        font-size: 8px;
+    }
+
+    #loginform {
+        width: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .reserva {
+        flex-direction: column;
+        /* margin-inline: -10rem; */
+    }
+
+    .reserva1 {
+        align-items: center;
+        margin-top: 1rem;
+        margin-left: -1rem;
+        width: auto;
+    }
+
+    .reserva1 a {
+        margin-left: 12rem;
+    }
+
+    th,
+    td {
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: #86d1d1;
+        padding: 3px;
+        padding-right: 3rem;
+    }
+
+    .reserva11 {
+        margin-top: 1rem;
+        margin-left: -10rem;
+        min-width: none;
+    }
+
+    .habit2 {
+        flex-direction: column;
+    }
+
+    .heading {
+        margin-left: -1rem;
+    }
+}

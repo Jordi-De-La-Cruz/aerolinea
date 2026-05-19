@@ -8,13 +8,14 @@
     <title>Iniciar Sesión - Destinos Mundiales</title>
 
     <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/legacy.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/login-components.css" />
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
@@ -24,6 +25,20 @@
     <link rel="preload" href="img/mundo.png" as="image" />
     <link rel="preload" href="js/main.js" as="script" />
     <link rel="preload" href="js/login.js" as="script" />
+
+    <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/legacy.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/login.css" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -64,7 +79,7 @@
                         <input type="checkbox" id="remember" name="remember" />
                         <label for="remember">Recordarme</label>
                     </div>
-                    <a href="recuperar-password.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 </div>
 
                 <button type="submit" class="btn-login">
@@ -91,29 +106,27 @@
 
             <div class="signup-link">
                 <p>¿No tienes una cuenta?</p>
-                <a href="registro.html">Regístrate aquí</a>
+                <a href="#">Regístrate aquí</a>
             </div>
         </div>
     </div>
 
     <!-- JavaScript Modular -->
-    <script src="js/main.js"></script>
-    <script src="js/login.js"></script>
+    
+    
 
     <!-- Google Translate -->
     <div id="google_translate_element" class="google-translate-element"></div>
-    <script src="js/translator.js"></script>
+    
 
-    <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker
-                    .register("/sw.js")
-                    .then((registration) => console.log("SW registrado"))
-                    .catch((error) => console.log("SW error"));
-            });
-        }
-    </script>
+    
+
+    <!-- JavaScript Modular -->
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 
 </html>

@@ -1,46 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
+<title>Destinos Mundiales</title>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Hotel Banyan Tree - Resort de lujo 5 estrellas en un paraíso tropical con spa award-winning, villas privadas y experiencias únicas" />
-    <meta name="keywords" content="hotel, banyan tree, resort lujo, spa, villas privadas, tropical, asia, wellness" />
-    <title>
-        Hotel Banyan Tree - Resort de Lujo Tropical | Destinos Mundiales
-    </title>
-
+    <link rel="icon" href="img/inicial.jpg" />
+    
     <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/legacy.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/hotels.css" />
+    <link rel="stylesheet" href="css/HotelBanyan.css" />
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
 
-    <!-- Preload crítico -->
-    <link rel="preload" href="img/mundo.png" as="image" />
-    <link rel="preload" href="img/banyan1.jpg" as="image" />
-    <link rel="preload" href="js/main.js" as="script" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="img/inicial.jpg" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Hotel Banyan Tree - Resort de Lujo en Paraíso Tropical" />
-    <meta property="og:description"
-        content="Experimenta el lujo asiático en nuestro resort exclusivo con spa galardonado y villas privadas" />
-    <meta property="og:image" content="img/banyan1.jpg" />
-    <meta property="og:type" content="website" />
 </head>
-
 <body>
+
     <!-- Google Translate -->
     <div id="google_translate_element"></div>
 
@@ -53,10 +35,6 @@
             </a>
 
             <nav class="nav">
-                <a href="index.html" class="nav-btn">
-                    <i class="fas fa-home"></i>
-                    Inicio
-                </a>
                 <a href="login.html" class="nav-btn">
                     <i class="fas fa-user"></i>
                     Iniciar Sesión
@@ -65,14 +43,15 @@
                     <i class="fas fa-question-circle"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle" title="Alternar tema oscuro/claro">
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
                     <i class="fas fa-moon"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-    <main class="main">
+<main class="main">
+    <div class="container">
         <!-- Hotel Gallery -->
         <section class="hotel-gallery">
             <div class="container">
@@ -624,12 +603,18 @@
     <!-- Page Navigation -->
     <nav class="page-navigation">
         <div class="container">
-            <a href="ofertas.html" class="back-btn">
+            <a href="#" class="back-btn">
                 <i class="fas fa-arrow-left"></i>
                 Volver a Ofertas Premium
             </a>
         </div>
     </nav>
+
+    <!-- Footer -->
+    
+    <!-- Footer -->
+    </div>
+</main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -643,8 +628,7 @@
             </div>
             <div class="footer-text">
                 <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Hotel Banyan Tree
-                    Luxury Resort
+                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
                 </p>
             </div>
         </div>
@@ -652,65 +636,8 @@
 
     <!-- JavaScript Modular -->
     <script src="js/main.js"></script>
-    <script src="js/hotel-booking.js"></script>
-    <script src="js/translator.js"></script>
+    <script src="js/HotelBanyan.js"></script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <script type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <!-- Structured Data para SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Resort",
-        "name": "Hotel Banyan Tree",
-        "description": "Resort de lujo 5 estrellas con villas privadas, spa galardonado y laguna tropical",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Paraíso Tropical",
-          "addressRegion": "Asia",
-          "addressCountry": "Tropical Islands"
-        },
-        "telephone": "+62-361-701-888",
-        "starRating": {
-          "@type": "Rating",
-          "ratingValue": "5"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "reviewCount": "891"
-        },
-        "amenityFeature": [
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Spa galardonado"
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Villas con piscina privada"
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Mayordomo personal 24h"
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "5 restaurantes gourmet"
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Centro de deportes acuáticos"
-          },
-          { "@type": "LocationFeatureSpecification", "name": "Helipad VIP" },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Laguna tropical privada"
-          }
-        ],
-        "priceRange": "$450-$1200"
-      }
-    </script>
 </body>
-
 </html>

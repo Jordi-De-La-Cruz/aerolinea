@@ -1,60 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
+<title>Mundo Kawaii - Destinos Mundiales</title>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Descubre el mundo kawaii más adorable - Destinos Mundiales" />
-    <meta name="keywords" content="kawaii, cute, adorable, viajes, destinos, animales tiernos" />
-    <title>Mundo Kawaii - Destinos Mundiales</title>
-
+    <link rel="icon" href="img/inicial.jpg" />
+    
     <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/legacy.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/kawaii.css" />
+    <link rel="stylesheet" href="css/Kawaii.css" />
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
 
-    <!-- Preload -->
-    <link rel="preload" href="img/mundo.png" as="image" />
-    <link rel="preload" href="js/main.js" as="script" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="img/inicial.jpg" />
 </head>
+<body>
 
-<body class="kawaii-page">
-    <div class="kawaii-decorations">
-        <div class="kawaii-decoration">🐰</div>
-        <div class="kawaii-decoration">🐱</div>
-        <div class="kawaii-decoration">🐣</div>
-        <div class="kawaii-decoration">💖</div>
-        <div class="kawaii-decoration">✨</div>
-        <div class="kawaii-decoration">🌟</div>
-        <div class="kawaii-decoration">💫</div>
-        <div class="kawaii-decoration">🎀</div>
-    </div>
+    <!-- Google Translate -->
+    <div id="google_translate_element"></div>
 
     <!-- Header -->
     <header class="header">
         <div class="container">
             <a href="index.html" class="logo">
                 <img src="img/mundo.png" alt="Logo Destinos Mundiales" />
-                <span>Destinos Mundiales</span>
+                <span>Destinos<br />Mundiales</span>
             </a>
 
             <nav class="nav">
-                <a href="index.html" class="nav-btn">
-                    <i class="fas fa-home"></i>
-                    Inicio
-                </a>
                 <a href="login.html" class="nav-btn">
                     <i class="fas fa-user"></i>
                     Iniciar Sesión
@@ -70,9 +50,9 @@
         </div>
     </header>
 
-    <main class="main">
-        <div class="container">
-            <!-- Hero Section -->
+<main class="main">
+    <div class="container">
+        <!-- Hero Section -->
             <section class="page-header">
                 <div class="page-header__content">
                     <h1 class="page-title">🌸 Mundo Kawaii 🌸</h1>
@@ -248,11 +228,11 @@
                         imaginado
                     </p>
                     <div class="cta-actions">
-                        <a href="reservas.html" class="btn btn--large">
+                        <a href="#" class="btn btn--large">
                             <i class="fas fa-plane"></i>
                             Reservar Aventura Kawaii
                         </a>
-                        <a href="galeria-kawaii.html" class="btn btn--outline">
+                        <a href="#" class="btn btn--outline">
                             <i class="fas fa-images"></i>
                             Ver Galería
                         </a>
@@ -261,6 +241,12 @@
             </section>
         </div>
     </main>
+
+    <!-- Footer -->
+    
+    <!-- Footer -->
+    </div>
+</main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -274,23 +260,16 @@
             </div>
             <div class="footer-text">
                 <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Mundo Kawaii Edition
-                    🌸
+                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
-
     <!-- JavaScript Modular -->
     <script src="js/main.js"></script>
-    <script src="js/kawaii.js"></script>
-    <script src="js/translator.js"></script>
+    <script src="js/Kawaii.js"></script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <script type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
-
 </html>

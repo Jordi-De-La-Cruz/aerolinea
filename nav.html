@@ -1,41 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
+<title>Comida Navideña - High Flight</title>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Comida navideña especial - High Flight Airlines" />
-    <title>Comida Navideña - High Flight</title>
-
-    <!-- Preconnect para mejor performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+    <link rel="icon" href="img/inicial.jpg" />
+    
+    <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/legacy.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/food.css" />
-    <link rel="stylesheet" href="css/christmas.css" />
+    <link rel="stylesheet" href="css/nav.css" />
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="img/inicial.jpg" />
-</head>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
 
+</head>
 <body>
+
+    <!-- Google Translate -->
+    <div id="google_translate_element"></div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="img/mundo.png" alt="Logo High Flight" />
-                <div class="logo-text">
-                    <span>HIGH</span>
-                    <span>FLIGHT</span>
-                </div>
+                <img src="img/mundo.png" alt="Logo Destinos Mundiales" />
+                <span>Destinos<br />Mundiales</span>
             </a>
 
             <nav class="nav">
@@ -43,10 +39,10 @@
                     <i class="fas fa-user"></i>
                     Iniciar Sesión
                 </a>
-
-                <!-- Traductor -->
-                <div id="google_translate_element" class="translator"></div>
-
+                <a href="ayuda.html" class="nav-btn">
+                    <i class="fas fa-question-circle"></i>
+                    Ayuda
+                </a>
                 <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -54,9 +50,9 @@
         </div>
     </header>
 
-    <main class="main">
-        <div class="container">
-            <!-- Hero navideño -->
+<main class="main">
+    <div class="container">
+        <!-- Hero navideño -->
             <section class="christmas-hero">
                 <div class="hero-content">
                     <div class="christmas-decoration">
@@ -434,6 +430,12 @@
     </main>
 
     <!-- Footer -->
+    
+    <!-- Footer -->
+    </div>
+</main>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
@@ -445,18 +447,16 @@
             </div>
             <div class="footer-text">
                 <p>
-                    &copy; 2024 <span>High Flight</span> | Sabores navideños de altura
+                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript Modular -->
     <script src="js/main.js"></script>
-    <script src="js/food-menu.js"></script>
-    <script src="js/translator.js"></script>
-    <script type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
+    <script src="js/nav.js"></script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+</body>
 </html>
