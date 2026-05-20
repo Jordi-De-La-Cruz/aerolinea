@@ -1,1 +1,411 @@
-/* Estilos específicos para america */
+.section-padded {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-alt {
+    background: var(--gray-light);
+}
+
+.dark-theme .section-alt {
+    background: #1e1e1e;
+}
+
+/* HERO DE PÁGINA INTERIOR */
+.page-hero {
+    background:
+        linear-gradient(rgba(50, 50, 50, 0.65), rgba(12, 73, 89, 0.8)),
+        url("../img/fondo.jpg") center / cover no-repeat;
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.page-title {
+    font-size: var(--font-size-hero);
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: var(--spacing-sm);
+}
+
+.page-subtitle {
+    font-size: var(--font-size-large);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+}
+
+/* GRID DE DESTINOS */
+.america {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    justify-items: center;
+}
+
+.am-card {
+    display: block;
+    width: 100%;
+    color: inherit;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.am-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.am {
+    background: var(--light);
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.am img {
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.am-card:hover .am img {
+    transform: scale(1.05);
+}
+
+.am h2 {
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    color: var(--primary);
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-xs);
+    margin-bottom: 0;
+}
+
+.am p {
+    font-size: var(--font-size-small);
+    color: var(--gray);
+    padding: 0 var(--spacing-md) var(--spacing-md);
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+/* SLIDER DE IMÁGENES */
+.slider {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    margin: var(--spacing-md) 0;
+}
+
+.slider ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 400%;
+    animation: sliderMove 12s ease-in-out infinite;
+}
+
+.slider li {
+    width: 25%;
+    flex-shrink: 0;
+}
+
+.slider img {
+    width: 100%;
+    height: 28rem;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes sliderMove {
+
+    0%,
+    22% {
+        transform: translateX(0);
+    }
+
+    25%,
+    47% {
+        transform: translateX(-25%);
+    }
+
+    50%,
+    72% {
+        transform: translateX(-50%);
+    }
+
+    75%,
+    97% {
+        transform: translateX(-75%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* CONSEJOS DE VIAJE */
+.consejos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.consejo {
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    border-top: 4px solid var(--primary);
+    transition: var(--transition);
+}
+
+.consejo:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.consejo h4 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-base);
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.consejo h4 i {
+    font-size: var(--font-size-large);
+    color: var(--secondary);
+    flex-shrink: 0;
+}
+
+.consejo p {
+    font-size: var(--font-size-small);
+    text-align: justify;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 0;
+}
+
+/* TABLA DE VUELOS */
+.flights-table {
+    width: 100%;
+    overflow-x: auto;
+    margin: var(--spacing-lg) 0;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.flights-table table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+.flights-table th {
+    background-color: var(--primary);
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    font-size: var(--font-size-small);
+    padding: 12px 16px;
+}
+
+.flights-table td {
+    text-align: center;
+    font-size: var(--font-size-small);
+    background-color: #e8f7f7;
+    padding: 10px 16px;
+    color: var(--dark);
+    border-bottom: 1px solid rgba(33, 147, 176, 0.15);
+}
+
+.flights-table tr:hover td {
+    background-color: #d0f0f0;
+}
+
+/* SECCIÓN DE RESERVA */
+.reserva {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.reserva1 {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    color: #ffffff;
+}
+
+.reserva1 h2 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    color: #ffffff;
+    font-size: var(--font-size-xl);
+}
+
+.pasaje {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.reserva1 fieldset {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.08);
+    width: 100%;
+}
+
+.reserva1 fieldset legend {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: var(--font-size-small);
+    padding: 0 var(--spacing-xs);
+}
+
+.reserva1 label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-small);
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.reserva1 input[type="text"],
+.reserva1 input[type="date"],
+.reserva1 select {
+    width: 100%;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--dark);
+    font-size: var(--font-size-small);
+    margin-top: var(--spacing-xs);
+}
+
+.bn,
+.reserva1 .buy {
+    display: block;
+    width: 100%;
+    background: var(--secondary);
+    color: var(--dark);
+    font-weight: 700;
+    font-size: var(--font-size-base);
+    text-align: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+    margin-top: var(--spacing-md);
+}
+
+.bn:hover,
+.reserva1 .buy:hover {
+    background: var(--accent);
+    transform: translateY(-1px);
+}
+
+/* IMAGEN DESTACADA */
+.puerto img {
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    max-width: 35rem;
+    height: 25rem;
+    object-fit: cover;
+    border-radius: var(--border-radius-lg);
+}
+
+/* TEMA OSCURO */
+.dark-theme .am {
+    background: #2d2d2d;
+}
+
+.dark-theme .am h2 {
+    color: var(--secondary);
+}
+
+.dark-theme .am p {
+    color: #bbb;
+}
+
+.dark-theme .consejo {
+    background: #2d2d2d;
+    border-top-color: var(--secondary);
+}
+
+.dark-theme .consejo p {
+    color: #ccc;
+}
+
+.dark-theme .flights-table td {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    border-bottom-color: #34495e;
+}
+
+.dark-theme .flights-table tr:hover td {
+    background-color: #34495e;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: var(--font-size-xxl);
+        letter-spacing: 1px;
+    }
+
+    .page-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .slider img {
+        height: 20rem;
+    }
+
+    .reserva {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .page-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .am img {
+        height: 18rem;
+    }
+
+    .slider img {
+        height: 16rem;
+    }
+
+    .consejo {
+        padding: var(--spacing-md);
+    }
+}

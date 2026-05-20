@@ -7,105 +7,85 @@ function googleTranslateElementInit() {
             autoDisplay: false,
             multilanguagePage: true,
         },
-        "google_translate_element",
+        "google_translate_element"
     );
 }
 
-// Mejorar la apariencia del traductor cuando se cargue
-document.addEventListener("DOMContentLoaded", function () {
-    const observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-            if (mutation.type === "childList") {
-                const translateElement = document.querySelector(
-                    "#google_translate_element",
-                );
-                if (
-                    translateElement &&
-                    translateElement.querySelector(".goog-te-combo")
-                ) {
-                    styleTranslator();
-                    observer.disconnect();
-                }
-            }
-        });
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-    });
-});
-
+/* ESTILOS DEL WIDGET */
 function styleTranslator() {
+    /* Ocultar el banner nativo de Google */
     const banner = document.querySelector(".goog-te-banner-frame");
-    if (banner) {
-        banner.style.display = "none";
-    }
-
+    if (banner) banner.style.display = "none";
     document.body.style.marginTop = "0";
 
-    const selectElement = document.querySelector(".goog-te-combo");
-    if (selectElement) {
-        selectElement.style.background = "white";
-        selectElement.style.border = "none";
-        selectElement.style.borderRadius = "0.5rem";
-        selectElement.style.padding = "0.5rem";
-        selectElement.style.fontSize = "1.4rem";
-        selectElement.style.color = "#333";
-        selectElement.style.outline = "none";
-        selectElement.style.cursor = "pointer";
-        selectElement.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+    const select = document.querySelector(".goog-te-combo");
+    if (!select) return;
 
-        const icon = document.createElement("i");
-        icon.className = "fas fa-globe";
-        icon.style.marginRight = "0.5rem";
-        icon.style.color = "#2193b0";
-
-        const wrapper = document.createElement("div");
-        wrapper.style.display = "flex";
-        wrapper.style.alignItems = "center";
-        wrapper.style.background = "rgba(255, 255, 255, 0.9)";
-        wrapper.style.borderRadius = "0.5rem";
-        wrapper.style.padding = "0.5rem";
-        wrapper.style.backdropFilter = "blur(10px)";
-
-        selectElement.parentNode.insertBefore(wrapper, selectElement);
-        wrapper.appendChild(icon);
-        wrapper.appendChild(selectElement);
-    }
-
-    const unwantedElements = document.querySelectorAll(
-        ".goog-te-gadget-icon, .goog-te-gadget-simple .goog-te-menu-value span:first-child",
-    );
-    unwantedElements.forEach((element) => {
-        element.style.display = "none";
+    Object.assign(select.style, {
+        background: "white",
+        border: "none",
+        borderRadius: "0.5rem",
+        padding: "0.5rem",
+        fontSize: "1.4rem",
+        color: "#333",
+        outline: "none",
+        cursor: "pointer",
+        boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
     });
+
+    /* Envolver en contenedor con ícono */
+    const wrapper = document.createElement("div");
+    Object.assign(wrapper.style, {
+        display: "flex",
+        alignItems: "center",
+        background: "rgba(255, 255, 255, 0.9)",
+        borderRadius: "0.5rem",
+        padding: "0.5rem",
+        backdropFilter: "blur(10px)",
+    });
+
+    const icon = document.createElement("i");
+    icon.className = "fas fa-globe";
+    icon.setAttribute("aria-hidden", "true");
+    icon.style.cssText = "margin-right: 0.5rem; color: #2193b0;";
+
+    select.parentNode.insertBefore(wrapper, select);
+    wrapper.appendChild(icon);
+    wrapper.appendChild(select);
+
+    /* Ocultar elementos innecesarios del gadget */
+    document.querySelectorAll(
+        ".goog-te-gadget-icon, .goog-te-gadget-simple .goog-te-menu-value span:first-child"
+    ).forEach((el) => (el.style.display = "none"));
 }
 
-function detectUserLanguage() {
-    const userLang = navigator.language || navigator.userLanguage;
-    const supportedLanguages = [
-        "en",
-        "es",
-        "fr",
-        "de",
-        "it",
-        "pt",
-        "ja",
-        "ko",
-        "zh",
-    ];
-    const langCode = userLang.split("-")[0];
+/* OBSERVAR LA CARGA DEL WIDGET */
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new MutationObserver((mutations, obs) => {
+        const combo = document.querySelector("#google_translate_element .goog-te-combo");
+        if (combo) {
+            styleTranslator();
+            obs.disconnect();
+        }
+    });
 
-    if (supportedLanguages.includes(langCode) && langCode !== "es") {
-        setTimeout(() => {
-            showTranslationSuggestion(langCode);
-        }, 2000);
+    observer.observe(document.body, { childList: true, subtree: true });
+});
+
+/* SUGERENCIA DE TRADUCCIÓN AUTOMÁTICA */
+function detectUserLanguage() {
+    const langCode = (navigator.language || navigator.userLanguage || "").split("-")[0];
+    const supported = ["en", "fr", "de", "it", "pt", "ja", "ko", "zh"];
+
+    if (supported.includes(langCode)) {
+        setTimeout(() => showTranslationSuggestion(langCode), 2000);
     }
 }
 
 function showTranslationSuggestion(langCode) {
-    const suggestions = {
+    if (localStorage.getItem("translation-suggestion-dismissed")) return;
+
+    const messages = {
         en: "Would you like to translate this page to English?",
         fr: "Souhaitez-vous traduire cette page en français?",
         de: "Möchten Sie diese Seite ins Deutsche übersetzen?",
@@ -113,85 +93,75 @@ function showTranslationSuggestion(langCode) {
         pt: "Gostaria de traduzir esta página para português?",
     };
 
-    const message = suggestions[langCode];
-    if (message && !localStorage.getItem("translation-suggestion-dismissed")) {
-        const notification = document.createElement("div");
-        notification.innerHTML = `
-      <div style="
+    const message = messages[langCode];
+    if (!message) return;
+
+    const banner = document.createElement("div");
+    banner.className = "translation-suggestion";
+    banner.style.cssText = `
         position: fixed;
         top: 20px;
         right: 20px;
         background: var(--primary);
         color: white;
-        padding: 1rem;
+        padding: 1.5rem;
         border-radius: 0.5rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         z-index: 10000;
         max-width: 300px;
         font-size: 1.4rem;
-      ">
-        <p style="margin: 0 0 1rem 0;">${message}</p>
-        <div style="display: flex; gap: 0.5rem;">
-          <button onclick="acceptTranslation('${langCode}')" style="
-            background: white;
-            color: var(--primary);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-            cursor: pointer;
-            font-size: 1.2rem;
-          ">Yes</button>
-          <button onclick="dismissTranslationSuggestion()" style="
-            background: transparent;
-            color: white;
-            border: 1px solid white;
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-            cursor: pointer;
-            font-size: 1.2rem;
-          ">No</button>
-        </div>
-      </div>
     `;
 
-        document.body.appendChild(notification);
+    banner.innerHTML = `
+        <p style="margin: 0 0 1rem 0;">${message}</p>
+        <div style="display: flex; gap: 0.5rem;">
+            <button
+                onclick="window.acceptTranslation('${langCode}')"
+                style="background:white; color:var(--primary); border:none; padding:0.5rem 1rem; border-radius:0.25rem; cursor:pointer; font-size:1.2rem; font-weight:600;">
+                Yes
+            </button>
+            <button
+                onclick="window.dismissTranslationSuggestion()"
+                style="background:transparent; color:white; border:1px solid white; padding:0.5rem 1rem; border-radius:0.25rem; cursor:pointer; font-size:1.2rem;">
+                No
+            </button>
+        </div>
+    `;
 
-        setTimeout(() => {
-            dismissTranslationSuggestion();
-        }, 10000);
-    }
+    document.body.appendChild(banner);
+
+    /* Auto-cerrar después de 10 segundos */
+    setTimeout(() => window.dismissTranslationSuggestion(), 10000);
 }
 
 window.acceptTranslation = function (langCode) {
-    const selectElement = document.querySelector(".goog-te-combo");
-    if (selectElement) {
-        selectElement.value = langCode;
-        selectElement.dispatchEvent(new Event("change"));
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event("change"));
     }
-    dismissTranslationSuggestion();
+    window.dismissTranslationSuggestion();
 };
 
 window.dismissTranslationSuggestion = function () {
-    const notification = document.querySelector(".translation-suggestion");
-    if (notification) {
-        notification.remove();
-    }
+    document.querySelector(".translation-suggestion")?.remove();
     localStorage.setItem("translation-suggestion-dismissed", "true");
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(detectUserLanguage, 1000);
-});
-
+/* LIMPIAR PREFERENCIAS UNA VEZ AL DÍA */
 function cleanupTranslationPreferences() {
     const lastCleanup = localStorage.getItem("translation-cleanup");
     const now = Date.now();
     const oneDay = 24 * 60 * 60 * 1000;
 
-    if (!lastCleanup || now - parseInt(lastCleanup) > oneDay) {
+    if (!lastCleanup || now - parseInt(lastCleanup, 10) > oneDay) {
         localStorage.removeItem("translation-suggestion-dismissed");
-        localStorage.setItem("translation-cleanup", now.toString());
+        localStorage.setItem("translation-cleanup", String(now));
     }
 }
 
 cleanupTranslationPreferences();
+
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(detectUserLanguage, 1000);
+});

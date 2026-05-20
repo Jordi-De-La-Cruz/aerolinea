@@ -1,29 +1,22 @@
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 
-// Tema oscuro/claro
-function initTheme() {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-        enableDarkMode();
-    }
-}
-
+/* TEMA OSCURO / CLARO */
 function enableDarkMode() {
     body.classList.add("dark-theme");
-    const icon = themeToggle.querySelector("i");
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
+    const icon = themeToggle?.querySelector("i");
+    if (icon) {
+        icon.classList.replace("fa-moon", "fa-sun");
+    }
     localStorage.setItem("theme", "dark");
 }
 
 function enableLightMode() {
     body.classList.remove("dark-theme");
-    const icon = themeToggle.querySelector("i");
-    icon.classList.remove("fa-sun");
-    icon.classList.add("fa-moon");
+    const icon = themeToggle?.querySelector("i");
+    if (icon) {
+        icon.classList.replace("fa-sun", "fa-moon");
+    }
     localStorage.setItem("theme", "light");
 }
 
@@ -35,90 +28,86 @@ function toggleTheme() {
     }
 }
 
-// Animaciones en scroll
+function initTheme() {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        enableDarkMode();
+    }
+}
+
+/* ANIMACIONES AL HACER SCROLL */
 function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-    };
+    if (!("IntersectionObserver" in window)) return;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("fade-in");
-            }
-        });
-    }, observerOptions);
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("fade-in");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
 
-    const cards = document.querySelectorAll(".destination-card");
-    cards.forEach((card, index) => {
+    document.querySelectorAll(".destination-card").forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
         observer.observe(card);
     });
 }
 
-// Navegación suave
+/* SCROLL SUAVE */
 function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            const target = document.querySelector(targetId);
+            if (!target) return;
+
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
-            }
+            const headerHeight = document.querySelector(".header")?.offsetHeight || 0;
+            const offsetTop = target.offsetTop - headerHeight - 20;
+
+            window.scrollTo({ top: offsetTop, behavior: "smooth" });
         });
     });
 }
 
-function initPreloader() {
-    window.addEventListener("load", () => {
-        const preloader = document.querySelector(".preloader");
-        if (preloader) {
-            preloader.style.opacity = "0";
-            setTimeout(() => {
-                preloader.style.display = "none";
-            }, 300);
-        }
-    });
+/* VALIDACIÓN DE FORMULARIOS */
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-function initLazyLoading() {
-    const images = document.querySelectorAll("img[data-src]");
+function showFieldError(input, message) {
+    input.parentNode.querySelector(".error-message")?.remove();
 
-    const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove("lazy");
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-
-    images.forEach((img) => imageObserver.observe(img));
+    const error = document.createElement("span");
+    error.className = "error-message";
+    error.style.cssText = "color: var(--danger); font-size: var(--font-size-small); display: block; margin-top: 4px;";
+    error.textContent = message;
+    input.parentNode.appendChild(error);
+    input.classList.add("error");
 }
 
 function validateForm(form) {
-    const inputs = form.querySelectorAll(".form-input[required]");
     let isValid = true;
 
-    inputs.forEach((input) => {
-        const value = input.value.trim();
-        const errorElement = input.parentNode.querySelector(".error-message");
+    form.querySelectorAll(".form-input[required]").forEach((input) => {
+        input.parentNode.querySelector(".error-message")?.remove();
+        input.classList.remove("error");
 
-        if (errorElement) {
-            errorElement.remove();
-        }
+        const value = input.value.trim();
 
         if (!value) {
-            showError(input, "Este campo es obligatorio");
+            showFieldError(input, "Este campo es obligatorio");
             isValid = false;
         } else if (input.type === "email" && !isValidEmail(value)) {
-            showError(input, "Ingresa un email válido");
+            showFieldError(input, "Ingresa un email válido");
             isValid = false;
         }
     });
@@ -126,39 +115,8 @@ function validateForm(form) {
     return isValid;
 }
 
-function showError(input, message) {
-    const errorElement = document.createElement("span");
-    errorElement.className = "error-message";
-    errorElement.style.color = "var(--danger)";
-    errorElement.style.fontSize = "var(--font-size-small)";
-    errorElement.textContent = message;
-    input.parentNode.appendChild(errorElement);
-    input.classList.add("error");
-}
-
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
+/* NOTIFICACIONES */
 function showNotification(message, type = "success") {
-    const notification = document.createElement("div");
-    notification.className = `notification notification--${type}`;
-    notification.textContent = message;
-
-    Object.assign(notification.style, {
-        position: "fixed",
-        top: "20px",
-        right: "20px",
-        padding: "var(--spacing-sm) var(--spacing-md)",
-        borderRadius: "var(--border-radius)",
-        color: "white",
-        fontWeight: "600",
-        zIndex: "9999",
-        transform: "translateX(100%)",
-        transition: "transform 0.3s ease",
-    });
-
     const colors = {
         success: "#27ae60",
         warning: "#f39c12",
@@ -166,58 +124,82 @@ function showNotification(message, type = "success") {
         info: "#3498db",
     };
 
-    notification.style.backgroundColor = colors[type] || colors.success;
-
+    const notification = document.createElement("div");
+    notification.setAttribute("role", "alert");
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 1.2rem 2rem;
+        border-radius: 0.5rem;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+        z-index: 9999;
+        transform: translateX(calc(100% + 20px));
+        transition: transform 0.3s ease;
+        background-color: ${colors[type] || colors.success};
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        max-width: 320px;
+    `;
+    notification.textContent = message;
     document.body.appendChild(notification);
 
-    // Animar entrada
-    setTimeout(() => {
+    requestAnimationFrame(() => {
         notification.style.transform = "translateX(0)";
-    }, 100);
+    });
 
     setTimeout(() => {
-        notification.style.transform = "translateX(100%)";
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.parentNode.removeChild(notification);
-            }
-        }, 300);
+        notification.style.transform = "translateX(calc(100% + 20px))";
+        setTimeout(() => notification.remove(), 300);
     }, 4000);
 }
 
-// Inicialización
-document.addEventListener("DOMContentLoaded", () => {
-    initTheme();
-    initScrollAnimations();
-    initSmoothScrolling();
-    initPreloader();
-    initLazyLoading();
+/* CARGA LAZY DE IMÁGENES */
+function initLazyLoading() {
+    if ("loading" in HTMLImageElement.prototype) return; // soporte nativo, no hace falta
 
-    // Event listeners
-    if (themeToggle) {
-        themeToggle.addEventListener("click", toggleTheme);
-    }
+    if (!("IntersectionObserver" in window)) return;
 
-    const forms = document.querySelectorAll("form");
-    forms.forEach((form) => {
-        form.addEventListener("submit", (e) => {
-            if (!validateForm(form)) {
-                e.preventDefault();
-                showNotification(
-                    "Por favor completa todos los campos obligatorios",
-                    "error",
-                );
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute("data-src");
+                }
+                imageObserver.unobserve(img);
             }
         });
     });
 
-    body.classList.add("loaded");
+    document.querySelectorAll("img[data-src]").forEach((img) => imageObserver.observe(img));
+}
+
+/* INICIALIZACIÓN */
+document.addEventListener("DOMContentLoaded", () => {
+    initTheme();
+    initScrollAnimations();
+    initSmoothScrolling();
+    initLazyLoading();
+
+    themeToggle?.addEventListener("click", toggleTheme);
+
+    document.querySelectorAll("form").forEach((form) => {
+        form.addEventListener("submit", (e) => {
+            if (!validateForm(form)) {
+                e.preventDefault();
+                showNotification("Por favor completa todos los campos obligatorios", "error");
+            }
+        });
+    });
 });
 
 window.addEventListener("error", (e) => {
     console.error("Error en la aplicación:", e.error);
 });
 
-if ("ontouchstart" in window) {
-    document.body.classList.add("touch-device");
-}
+/* EXPORTAR PARA USO GLOBAL */
+window.showNotification = showNotification;
+window.validateForm = validateForm;

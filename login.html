@@ -7,49 +7,25 @@
     <meta name="description" content="Inicia sesión en Destinos Mundiales" />
     <title>Iniciar Sesión - Destinos Mundiales</title>
 
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/login-components.css" />
-
-    <!-- Icons -->
-    
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
-        rel="stylesheet" />
-
     <!-- Preload crítico -->
     <link rel="preload" href="img/mundo.png" as="image" />
-    <link rel="preload" href="js/main.js" as="script" />
-    <link rel="preload" href="js/login.js" as="script" />
 
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
+    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/login.css" />
 
-    <!-- Icons -->
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="preloader">
-        <div class="loading"></div>
-    </div>
-
     <div class="login-page">
         <!-- Botón de regreso -->
-        <button class="back-btn" onclick="window.history.back()" aria-label="Volver">
-            <i class="fas fa-arrow-left"></i>
+        <button class="back-btn" onclick="window.history.back()" aria-label="Volver atrás">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i>
         </button>
 
         <div class="login-container fade-in">
@@ -61,16 +37,16 @@
                 <p class="login-subtitle">Inicia sesión para continuar tu aventura</p>
             </div>
 
-            <form class="login-form" id="loginForm" data-validate>
+            <form class="login-form" id="loginForm" novalidate>
                 <div class="form-group">
-                    <input type="email" class="form-input" placeholder="Correo electrónico" required
-                        autocomplete="email" aria-describedby="email-error" />
+                    <input type="email" id="email" class="form-input" placeholder="Correo electrónico" required
+                        autocomplete="email" aria-label="Correo electrónico" aria-describedby="email-error" />
                     <i class="fas fa-envelope input-icon" aria-hidden="true"></i>
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-input" placeholder="Contraseña" required
-                        autocomplete="current-password" aria-describedby="password-error" />
+                    <input type="password" id="password" class="form-input" placeholder="Contraseña" required
+                        autocomplete="current-password" aria-label="Contraseña" aria-describedby="password-error" />
                     <i class="fas fa-lock input-icon" aria-hidden="true"></i>
                 </div>
 
@@ -111,22 +87,9 @@
         </div>
     </div>
 
-    <!-- JavaScript Modular -->
-    
-    
-
-    <!-- Google Translate -->
-    <div id="google_translate_element" class="google-translate-element"></div>
-    
-
-    
-
-    <!-- JavaScript Modular -->
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/login.js"></script>
-
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </body>
 
 </html>

@@ -1,11 +1,12 @@
 .header {
     background:
         linear-gradient(rgba(50, 50, 50, 0.8), rgba(50, 50, 50, 0.8)),
-        url("../img/fondo.jpg") center/cover;
+        url("../img/fondo.jpg") center / cover;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: transform var(--transition);
 }
 
 .header .container {
@@ -13,8 +14,10 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--spacing-sm) var(--spacing-md);
+    gap: var(--spacing-md);
 }
 
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
@@ -22,6 +25,7 @@
     color: #ffffff;
     font-weight: 700;
     font-size: var(--font-size-large);
+    flex-shrink: 0;
 }
 
 .logo img {
@@ -33,10 +37,11 @@
     color: var(--secondary);
 }
 
+/* Navegación */
 .nav {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
 }
 
 .nav-btn {
@@ -45,11 +50,12 @@
     gap: var(--spacing-xs);
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--border-radius);
     font-size: var(--font-size-base);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: var(--transition);
+    white-space: nowrap;
 }
 
 .nav-btn:hover {
@@ -61,12 +67,17 @@
 .theme-toggle {
     background: none;
     border: none;
-    color: var(--light);
+    color: #ffffff;
     font-size: var(--font-size-large);
     cursor: pointer;
     padding: var(--spacing-xs);
     border-radius: 50%;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
 }
 
 .theme-toggle:hover {
@@ -74,59 +85,12 @@
     transform: scale(1.1);
 }
 
-.main {
-    min-height: calc(100vh - 200px);
-    padding: var(--spacing-xl) 0;
-}
-
-.hero {
-    text-align: center;
-    margin-bottom: var(--spacing-xl);
-}
-
-.hero h1 {
-    color: var(--primary);
-    margin-bottom: var(--spacing-sm);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.hero p {
-    font-size: var(--font-size-large);
-    color: var(--gray);
-    margin-bottom: var(--spacing-lg);
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-    color: var(--primary);
-    position: relative;
-}
-
-.section-title::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background: var(--accent);
-    margin: var(--spacing-sm) auto 0;
-    border-radius: var(--border-radius);
-}
-
-.destinations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
-}
-
+/* FOOTER */
 .footer {
     background: #1a1a1a;
     color: #ffffff;
     text-align: center;
     padding: var(--spacing-lg) 0;
-    margin-top: auto;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -141,11 +105,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 5rem;
+    height: 5rem;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     font-size: var(--font-size-large);
+    color: #ffffff;
     transition: var(--transition);
 }
 
@@ -154,32 +119,23 @@
     box-shadow: var(--shadow-md);
 }
 
-/* Social media colors */
+/* Colores por red social */
 .social-links a:nth-child(1):hover {
     background: #1877f2;
 }
 
-/* Facebook */
 .social-links a:nth-child(2):hover {
     background: #1da1f2;
 }
 
-/* Twitter */
 .social-links a:nth-child(3):hover {
-    background: linear-gradient(45deg,
-            #f09433 0%,
-            #e6683c 25%,
-            #dc2743 50%,
-            #cc2366 75%,
-            #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
-/* Instagram */
 .social-links a:nth-child(4):hover {
     background: #0077b5;
 }
 
-/* LinkedIn */
 .social-links a:nth-child(5):hover {
     background: #bd081c;
 }
@@ -194,39 +150,13 @@
     font-weight: 600;
 }
 
-/* Responsive Design */
+/* RESPONSIVE — Header */
 @media (max-width: 768px) {
     .header .container {
-        flex-direction: column;
-        gap: var(--spacing-sm);
+        flex-wrap: wrap;
         padding: var(--spacing-sm);
     }
 
-    .nav {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .nav-btn {
-        font-size: var(--font-size-small);
-        padding: var(--spacing-xs) var(--spacing-sm);
-    }
-
-    .hero h1 {
-        font-size: var(--font-size-xxl);
-    }
-
-    .destinations-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-
-    .container {
-        padding: 0 var(--spacing-sm);
-    }
-}
-
-@media (max-width: 480px) {
     .logo {
         font-size: var(--font-size-base);
     }
@@ -235,11 +165,14 @@
         height: 4rem;
     }
 
-    .hero h1 {
-        font-size: var(--font-size-xl);
+    .nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .hero p {
-        font-size: var(--font-size-base);
+    .nav-btn {
+        font-size: var(--font-size-small);
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
 }

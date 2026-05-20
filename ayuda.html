@@ -1,31 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<title>Aerolinea High Flight</title>
 
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Centro de ayuda - Destinos Mundiales" />
+    <title>Ayuda - Destinos Mundiales</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg" />
-    
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
+
+    <!-- Preload crítico -->
+    <link rel="preload" href="img/mundo.png" as="image" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/ayuda.css" />
 
-    <!-- Icons -->
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -34,174 +33,304 @@
                 <span>Destinos<br />Mundiales</span>
             </a>
 
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegación principal">
+                <div id="google_translate_element"></div>
+
                 <a href="login.html" class="nav-btn">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     Iniciar Sesión
                 </a>
-                <a href="ayuda.html" class="nav-btn">
-                    <i class="fas fa-question-circle"></i>
+                <a href="ayuda.html" class="nav-btn" aria-current="page">
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-<main class="main">
-    <div class="container">
-        <section>
-        <div class="boy">
-            <h2>¿Cómo podemos ayudarte?</h2>
+    <main>
+        <!-- Hero de búsqueda -->
+        <section class="help-hero" aria-label="Búsqueda de ayuda">
+            <div class="container">
+                <h1>¿Cómo podemos ayudarte?</h1>
+                <p>Encuentra respuestas rápidas a tus preguntas más frecuentes</p>
 
-            <fieldset class="rou">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24"
-                    height="18" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <circle cx="10" cy="10" r="7"></circle>
-                    <line x1="21" y1="21" x2="15" y2="15"></line>
-                </svg>
+                <div class="help-search">
+                    <label for="helpSearchInput" class="visually-hidden">Buscar en el centro de ayuda</label>
+                    <div class="help-search__field">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input type="search" id="helpSearchInput" class="help-search__input"
+                            placeholder="Busca tu pregunta aquí…" autocomplete="off" />
+                        <button class="help-search__btn" type="button" aria-label="Buscar">
+                            Buscar
+                        </button>
+                    </div>
+                    <div class="help-search__results" id="searchResults" role="status" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
 
-                <input type="text" placeholder="Buscar" required />
-            </fieldset>
-        </div>
-    </section>
+        <!-- Categorías más consultadas -->
+        <section class="help-categories section-padded" aria-label="Categorías de ayuda">
+            <div class="container">
+                <h2 class="section-title">Categorías más consultadas</h2>
 
-    <section class="ruler">
-        <h3>Categorias mas consultadas</h3>
+                <div class="categories-grid">
+                    <div class="category-card hover-lift" tabindex="0" role="button" aria-expanded="false">
+                        <div class="category-icon">
+                            <i class="fas fa-suitcase-rolling" aria-hidden="true"></i>
+                        </div>
+                        <h3>Equipaje</h3>
+                        <p>
+                            Conoce las políticas de equipaje, dimensiones permitidas, restricciones
+                            y cómo gestionar el equipaje adicional para tu vuelo.
+                        </p>
+                        <span class="category-link">
+                            Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-        <div class="fap">
-            <fieldset class="miau">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-briefcase" width="100"
-                    height="100" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <rect x="3" y="7" width="18" height="13" rx="2"></rect>
-                    <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path>
-                    <line x1="12" y1="12" x2="12" y2="12.01"></line>
-                    <path d="M3 13a20 20 0 0 0 18 0"></path>
-                </svg>
+                    <div class="category-card hover-lift" tabindex="0" role="button" aria-expanded="false">
+                        <div class="category-icon">
+                            <i class="fas fa-clipboard-list" aria-hidden="true"></i>
+                        </div>
+                        <h3>Estado de mi reserva</h3>
+                        <p>
+                            Consulta el estado de tu reserva, realiza cambios de fecha,
+                            actualiza tus datos de pasajero y descarga tu itinerario.
+                        </p>
+                        <span class="category-link">
+                            Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-                <h4>Equipaje</h4>
+                    <div class="category-card hover-lift" tabindex="0" role="button" aria-expanded="false">
+                        <div class="category-icon">
+                            <i class="fas fa-calendar-times" aria-hidden="true"></i>
+                        </div>
+                        <h3>Cancelaciones</h3>
+                        <p>
+                            Infórmate sobre nuestra política de cancelación, reembolsos,
+                            plazos y cómo gestionar la cancelación de tu vuelo o hotel.
+                        </p>
+                        <span class="category-link">
+                            Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime,
-                    beatae non, hic, enim deleniti suscipit inventore quia nemo
-                    accusamus corporis ut et sit officiis similique atque praesentium
-                    deserunt omnis ullam.
-                </p>
-            </fieldset>
+                    <div class="category-card hover-lift" tabindex="0" role="button" aria-expanded="false">
+                        <div class="category-icon">
+                            <i class="fas fa-credit-card" aria-hidden="true"></i>
+                        </div>
+                        <h3>Pagos y Facturación</h3>
+                        <p>
+                            Información sobre métodos de pago aceptados, facturación electrónica,
+                            reembolsos y gestión de tu tarjeta de viajero frecuente.
+                        </p>
+                        <span class="category-link">
+                            Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-            <fieldset class="miau">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard-list" width="100"
-                    height="100" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"></path>
-                    <rect x="9" y="3" width="6" height="4" rx="2"></rect>
-                    <line x1="9" y1="12" x2="9.01" y2="12"></line>
-                    <line x1="13" y1="12" x2="15" y2="12"></line>
-                    <line x1="9" y1="16" x2="9.01" y2="16"></line>
-                    <line x1="13" y1="16" x2="15" y2="16"></line>
-                </svg>
+                    <div class="category-card hover-lift" tabindex="0" role="button" aria-expanded="false">
+                        <div class="category-icon">
+                            <i class="fas fa-passport" aria-hidden="true"></i>
+                        </div>
+                        <h3>Documentación</h3>
+                        <p>
+                            Requisitos de documentación por destino, visas, pasaportes,
+                            vacunas requeridas y trámites de migración.
+                        </p>
+                        <span class="category-link">
+                            Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-                <h4>Estado de mi reserva</h4>
+                    <div class="category-card hover-lift" tabindex="0" role="button" aria-expanded="false">
+                        <div class="category-icon">
+                            <i class="fas fa-plane-arrival" aria-hidden="true"></i>
+                        </div>
+                        <h3>Check-in</h3>
+                        <p>
+                            Cómo hacer el check-in en línea, horarios, selección de asientos
+                            y todo lo que necesitas saber antes de llegar al aeropuerto.
+                        </p>
+                        <span class="category-link">
+                            Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime,
-                    beatae non, hic, enim deleniti suscipit inventore quia nemo
-                    accusamus corporis ut et sit officiis similique atque praesentium
-                    deserunt omnis ullam.
-                </p>
-            </fieldset>
+        <!-- Preguntas frecuentes -->
+        <section class="help-faq section-padded section-alt" aria-label="Preguntas frecuentes">
+            <div class="container">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
 
-            <fieldset class="miau">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" width="100"
-                    height="100" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <rect x="4" y="5" width="16" height="16" rx="2"></rect>
-                    <line x1="16" y1="3" x2="16" y2="7"></line>
-                    <line x1="8" y1="3" x2="8" y2="7"></line>
-                    <line x1="4" y1="11" x2="20" y2="11"></line>
-                    <line x1="11" y1="15" x2="12" y2="15"></line>
-                    <line x1="12" y1="15" x2="12" y2="18"></line>
-                </svg>
+                <div class="faq-list" id="faqList">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            ¿Con cuánta anticipación debo hacer el check-in?
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" hidden>
+                            <p>Recomendamos hacer el check-in en línea entre 48 y 2 horas antes del vuelo. En el
+                                aeropuerto, los mostradores cierran 45 minutos antes de la salida para vuelos nacionales
+                                y 60 minutos para internacionales.</p>
+                        </div>
+                    </div>
 
-                <h4>Cancelaciones</h4>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            ¿Cuál es la política de equipaje de mano?
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" hidden>
+                            <p>Cada pasajero puede llevar una pieza de equipaje de mano de hasta 10 kg y dimensiones
+                                máximas de 55×40×20 cm, más un artículo personal como bolso o mochila pequeña.</p>
+                        </div>
+                    </div>
 
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime,
-                    beatae non, hic, enim deleniti suscipit inventore quia nemo
-                    accusamus corporis ut et sit officiis similique atque praesentium
-                    deserunt omnis ullam.
-                </p>
-            </fieldset>
-        </div>
-    </section>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            ¿Puedo cambiar la fecha de mi vuelo?
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" hidden>
+                            <p>Sí, puedes cambiar la fecha de tu vuelo sujeto a disponibilidad y a la tarifa de cambio
+                                según tu tipo de billete. Los cambios pueden realizarse hasta 24 horas antes de la
+                                salida del vuelo original.</p>
+                        </div>
+                    </div>
 
-    <div class="kei">
-        <h3>¿Todavia no encontraste lo que estas buscando?</h3>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            ¿Cómo solicito un reembolso?
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" hidden>
+                            <p>Los reembolsos se gestionan desde tu área de cliente. El plazo de devolución es de 7 a 15
+                                días hábiles según el método de pago original. Los billetes no reembolsables pueden
+                                canjearse por crédito de viaje.</p>
+                        </div>
+                    </div>
 
-        <div class="thor">
-            <img src="img/img20.png" alt="" />
-            <button>Escribenos</button>
-            <div class="video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ap7jWV4rfNQ"
-                    title="YouTube video player" frameborder="0" allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-            " allowfullscreen></iframe>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            ¿Qué documentos necesito para viajar al extranjero?
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" hidden>
+                            <p>Los requisitos varían según el destino. En general necesitarás pasaporte vigente con al
+                                menos 6 meses de validez, y en algunos casos visa o certificado de vacunación. Te
+                                recomendamos consultar los requisitos específicos de tu destino con anticipación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section class="help-contact section-padded" aria-label="Contacto">
+            <div class="container">
+                <h2 class="section-title">¿Todavía no encontraste lo que buscas?</h2>
+                <p class="help-contact__subtitle">Nuestro equipo está disponible para ayudarte</p>
+
+                <div class="contact-grid">
+                    <div class="contact-card hover-lift">
+                        <div class="contact-icon">
+                            <i class="fas fa-comments" aria-hidden="true"></i>
+                        </div>
+                        <h3>Chat en Vivo</h3>
+                        <p>Respuesta inmediata de lunes a viernes de 8:00 a 20:00 hrs</p>
+                        <button class="btn" id="chatBtn">
+                            <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                            Iniciar Chat
+                        </button>
+                    </div>
+
+                    <div class="contact-card hover-lift">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <h3>Escríbenos</h3>
+                        <p>Respondemos en menos de 24 horas hábiles</p>
+                        <button class="btn" id="emailBtn">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            Enviar Mensaje
+                        </button>
+                    </div>
+
+                    <div class="contact-card hover-lift">
+                        <div class="contact-icon">
+                            <i class="fas fa-video" aria-hidden="true"></i>
+                        </div>
+                        <h3>Video Tutorial</h3>
+                        <p>Aprende a gestionar tu reserva paso a paso</p>
+                        <button class="btn btn--outline" id="videoBtn">
+                            <i class="fas fa-play" aria-hidden="true"></i>
+                            Ver Video
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Modal de video -->
+                <div class="video-modal" id="videoModal" hidden role="dialog" aria-modal="true"
+                    aria-label="Tutorial en video">
+                    <div class="video-modal__backdrop"></div>
+                    <div class="video-modal__content">
+                        <button class="video-modal__close" id="closeVideo" aria-label="Cerrar video">
+                            <i class="fas fa-times" aria-hidden="true"></i>
+                        </button>
+                        <div class="video-modal__frame">
+                            <iframe id="tutorialVideo" width="100%" height="100%" src=""
+                                data-src="https://www.youtube.com/embed/ap7jWV4rfNQ?autoplay=1"
+                                title="Tutorial de gestión de reservas" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volver al inicio -->
+        <div class="back-to-home">
+            <div class="container">
+                <a href="index.html" class="btn btn--outline">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    Volver al Inicio
+                </a>
             </div>
         </div>
-    </div>
-
-    <div class="sad">
-        <a href="index.html" title="Volver a inicio"><svg xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-arrow-big-left" width="24" height="24" viewbox="0 0 24 24"
-                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path
-                    d="M20 15h-8v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h8a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1z">
-                </path>
-            </svg></a>
-    </div>
-
-    
-    <!-- Footer -->
-    
-    </div>
-</main>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
             </div>
-            <div class="footer-text">
-                <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
-                </p>
-            </div>
+            <p class="footer-text">
+                &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+            </p>
         </div>
     </footer>
 
-    <!-- JavaScript Modular -->
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/ayuda.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="js/translator.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>

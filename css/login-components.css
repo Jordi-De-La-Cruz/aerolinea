@@ -1,28 +1,26 @@
+/* ============================================================
+   LOGIN.CSS — Estilos exclusivos de la página de inicio de sesión
+   Nota: .fade-in, .slide-up y animaciones base vienen de components.css
+   ============================================================ */
+
+/* ============================================================
+   PÁGINA CONTENEDOR
+   ============================================================ */
 .login-page {
     min-height: 100vh;
-    background: linear-gradient(135deg,
-            var(--primary) 0%,
-            var(--primary-dark) 100%);
+    background:
+        linear-gradient(rgba(50, 50, 50, 0.75), rgba(12, 73, 89, 0.9)),
+        url("../img/fondo.jpg") center / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: var(--spacing-md);
     position: relative;
-    overflow: hidden;
 }
 
-.login-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("../img/fondo.jpg") center/cover;
-    opacity: 0.1;
-    z-index: 1;
-}
-
+/* ============================================================
+   TARJETA DE LOGIN
+   ============================================================ */
 .login-container {
     background: var(--light);
     border-radius: var(--border-radius-lg);
@@ -31,11 +29,8 @@
     width: 100%;
     max-width: 450px;
     position: relative;
-    z-index: 2;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    animation: slideInUp 0.6s ease-out;
+    animation: slideInUp 0.6s ease-out both;
 }
 
 @keyframes slideInUp {
@@ -43,13 +38,15 @@
         opacity: 0;
         transform: translateY(30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* ============================================================
+   CABECERA
+   ============================================================ */
 .login-header {
     text-align: center;
     margin-bottom: var(--spacing-lg);
@@ -61,6 +58,18 @@
     justify-content: center;
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-md);
+    animation: slideInLeft 0.8s ease-out both;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .login-logo img {
@@ -81,35 +90,22 @@
     margin-bottom: 0;
 }
 
+/* ============================================================
+   FORMULARIO
+   ============================================================ */
 .login-form {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
 }
 
-.form-group {
+/* Sobreescritura del form-input para incluir padding del ícono */
+.login-form .form-group {
     position: relative;
 }
 
-.form-input {
-    width: 100%;
-    padding: var(--spacing-md) var(--spacing-sm);
+.login-form .form-input {
     padding-left: 4.5rem;
-    border: 2px solid var(--gray-light);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-base);
-    background: var(--light);
-    transition: var(--transition);
-    outline: none;
-}
-
-.form-input:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.1);
-}
-
-.form-input::placeholder {
-    color: var(--gray);
 }
 
 .input-icon {
@@ -119,18 +115,20 @@
     transform: translateY(-50%);
     color: var(--gray);
     font-size: var(--font-size-large);
-    transition: var(--transition);
+    pointer-events: none;
+    transition: color var(--transition);
 }
 
-.form-input:focus+.input-icon {
+.login-form .form-input:focus ~ .input-icon,
+.login-form .form-input:focus + .input-icon {
     color: var(--primary);
 }
 
+/* Opciones: recordarme + olvidé contraseña */
 .form-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: var(--spacing-sm) 0;
     flex-wrap: wrap;
     gap: var(--spacing-sm);
 }
@@ -144,13 +142,14 @@
 .remember-me input[type="checkbox"] {
     accent-color: var(--primary);
     cursor: pointer;
+    width: 1.6rem;
+    height: 1.6rem;
 }
 
 .remember-me label {
     font-size: var(--font-size-small);
     color: var(--gray);
     cursor: pointer;
-    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -158,7 +157,6 @@
     font-size: var(--font-size-small);
     color: var(--primary);
     transition: var(--transition);
-    text-decoration: none;
 }
 
 .forgot-password:hover {
@@ -166,11 +164,12 @@
     text-decoration: underline;
 }
 
+/* ============================================================
+   BOTÓN PRINCIPAL DE LOGIN
+   ============================================================ */
 .btn-login {
-    background: linear-gradient(135deg,
-            var(--primary) 0%,
-            var(--primary-dark) 100%);
-    color: var(--light);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #ffffff;
     border: none;
     border-radius: var(--border-radius);
     padding: var(--spacing-md);
@@ -184,8 +183,11 @@
     align-items: center;
     justify-content: center;
     gap: var(--spacing-xs);
+    width: 100%;
+    min-height: 48px;
 }
 
+/* Efecto de brillo al hover */
 .btn-login::before {
     content: "";
     position: absolute;
@@ -193,11 +195,8 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg,
-            transparent,
-            rgba(255, 255, 255, 0.2),
-            transparent);
-    transition: left 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
 }
 
 .btn-login:hover::before {
@@ -219,6 +218,24 @@
     transform: none;
 }
 
+.btn-login:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Spinner dentro del botón */
+.btn-login .fa-spinner {
+    animation: spinIcon 1s linear infinite;
+}
+
+@keyframes spinIcon {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   SEPARADOR
+   ============================================================ */
 .divider {
     text-align: center;
     margin: var(--spacing-lg) 0;
@@ -236,12 +253,16 @@
 }
 
 .divider span {
+    position: relative;
     background: var(--light);
     padding: 0 var(--spacing-md);
     color: var(--gray);
     font-size: var(--font-size-small);
 }
 
+/* ============================================================
+   BOTONES SOCIALES
+   ============================================================ */
 .social-login {
     display: flex;
     gap: var(--spacing-sm);
@@ -260,6 +281,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 46px;
 }
 
 .btn-social:hover {
@@ -267,21 +289,18 @@
     box-shadow: var(--shadow-sm);
 }
 
-.btn-social.google:hover {
-    border-color: #db4437;
-    color: #db4437;
+.btn-social:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
-.btn-social.facebook:hover {
-    border-color: #4267b2;
-    color: #4267b2;
-}
+.btn-social.google:hover   { border-color: #db4437; color: #db4437; }
+.btn-social.facebook:hover { border-color: #4267b2; color: #4267b2; }
+.btn-social.twitter:hover  { border-color: #1da1f2; color: #1da1f2; }
 
-.btn-social.twitter:hover {
-    border-color: #1da1f2;
-    color: #1da1f2;
-}
-
+/* ============================================================
+   ENLACE DE REGISTRO
+   ============================================================ */
 .signup-link {
     text-align: center;
     margin-top: var(--spacing-lg);
@@ -298,7 +317,6 @@
     color: var(--primary);
     font-weight: 600;
     transition: var(--transition);
-    text-decoration: none;
 }
 
 .signup-link a:hover {
@@ -306,43 +324,43 @@
     text-decoration: underline;
 }
 
+/* ============================================================
+   BOTÓN DE REGRESO
+   ============================================================ */
 .back-btn {
-    position: absolute;
+    position: fixed;
     top: var(--spacing-md);
     left: var(--spacing-md);
     background: rgba(255, 255, 255, 0.9);
     color: var(--primary);
     border: none;
     border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
+    width: 4.4rem;
+    height: 4.4rem;
     font-size: var(--font-size-large);
     cursor: pointer;
     transition: var(--transition);
-    z-index: 3;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--shadow-sm);
 }
 
 .back-btn:hover {
-    background: var(--light);
+    background: #ffffff;
     transform: scale(1.1);
     box-shadow: var(--shadow-md);
 }
 
-.form-input.error {
-    border-color: var(--danger);
-    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+.back-btn:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
-.error-message {
-    color: var(--danger);
-    font-size: var(--font-size-small);
-    margin-top: var(--spacing-xs);
-    display: block;
-}
-
+/* ============================================================
+   TOGGLE DE CONTRASEÑA
+   ============================================================ */
 .password-toggle {
     position: absolute;
     right: var(--spacing-sm);
@@ -357,6 +375,9 @@
     transition: var(--transition);
     padding: var(--spacing-xs);
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .password-toggle:hover {
@@ -364,41 +385,54 @@
     background: rgba(33, 147, 176, 0.1);
 }
 
-/* === DARK THEME === */
+/* ============================================================
+   TEMA OSCURO
+   ============================================================ */
 .dark-theme .login-container {
     background: var(--gray-light);
-    border: 1px solid #555;
+    border-color: #555;
 }
 
-.dark-theme .form-input {
+.dark-theme .login-form .form-input {
     background: #444;
     border-color: #555;
-    color: var(--light);
+    color: #ffffff;
 }
 
-.dark-theme .form-input::placeholder {
+.dark-theme .login-form .form-input::placeholder {
     color: #aaa;
+}
+
+.dark-theme .divider::before {
+    background: #555;
 }
 
 .dark-theme .divider span {
     background: var(--gray-light);
+    color: #ccc;
 }
 
 .dark-theme .btn-social {
     background: #444;
     border-color: #555;
-    color: var(--light);
+    color: #ccc;
 }
 
 .dark-theme .back-btn {
     background: rgba(68, 68, 68, 0.9);
-    color: var(--light);
+    color: #ffffff;
 }
 
+.dark-theme .signup-link {
+    border-top-color: #555;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 @media (max-width: 768px) {
     .login-container {
         padding: var(--spacing-lg);
-        margin: var(--spacing-sm);
     }
 
     .login-logo h1 {
@@ -408,36 +442,17 @@
     .social-login {
         flex-direction: column;
     }
-
-    .btn-social {
-        justify-content: center;
-        gap: var(--spacing-sm);
-    }
-
-    .back-btn {
-        width: 3.5rem;
-        height: 3.5rem;
-        top: var(--spacing-sm);
-        left: var(--spacing-sm);
-    }
 }
 
 @media (max-width: 480px) {
     .login-page {
         padding: var(--spacing-sm);
+        align-items: flex-start;
+        padding-top: 6rem;
     }
 
     .login-container {
         padding: var(--spacing-md);
-    }
-
-    .form-options {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .form-input {
-        padding-left: 4rem;
     }
 
     .login-logo {
@@ -448,58 +463,13 @@
     .login-logo img {
         height: 4rem;
     }
-}
 
-.btn-login .fa-spinner {
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.form-input:focus-visible,
-.btn-login:focus-visible,
-.btn-social:focus-visible,
-.back-btn:focus-visible {
-    outline: 2px solid var(--primary);
-    outline-offset: 2px;
-}
-
-.fade-in {
-    animation: fadeIn 0.6s ease-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.slide-in {
-    animation: slideIn 0.8s ease-out;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
+    .login-form .form-input {
+        padding-left: 4rem;
     }
 }

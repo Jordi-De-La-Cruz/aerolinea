@@ -1,31 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<title>Aerolinea High Flight</title>
 
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vuelos al Continente Americano - Destinos Mundiales" />
+    <title>Continente Americano - Destinos Mundiales</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg" />
-    
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
+
+    <!-- Preload crítico -->
+    <link rel="preload" href="img/mundo.png" as="image" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/america.css" />
 
-    <!-- Icons -->
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -34,131 +33,142 @@
                 <span>Destinos<br />Mundiales</span>
             </a>
 
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegación principal">
+                <div id="google_translate_element"></div>
+
                 <a href="login.html" class="nav-btn">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     Iniciar Sesión
                 </a>
                 <a href="ayuda.html" class="nav-btn">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-<main class="main">
-    <div class="container">
-        <h3 class="a">CONTINENTE AMERICANO</h3>
-
-    <section class="america">
-        <a href="sur.html">
-            <div class="am">
-                <img src="img/america_sur.jpg" alt="" />
-                <h2>Vuelos en América del Sur</h2>
+    <main>
+        <!-- Hero de sección -->
+        <section class="page-hero" aria-label="Continente Americano">
+            <div class="container">
+                <h1 class="page-title">Continente Americano</h1>
+                <p class="page-subtitle">Descubre los destinos más increíbles de América</p>
             </div>
-        </a>
+        </section>
 
-        <a href="norte.html">
-            <div class="am">
-                <img src="img/america_norte.jpg" alt="" />
-                <h2>Vuelos en América del Norte</h2>
+        <!-- Destinos -->
+        <section class="section-padded" aria-label="Destinos en América">
+            <div class="container">
+                <div class="america">
+                    <a href="sur.html" class="am-card">
+                        <div class="am">
+                            <img src="img/america_sur.jpg" alt="Paisaje de América del Sur" />
+                            <h2>América del Sur</h2>
+                            <p>Explora la diversidad natural y cultural del sur del continente</p>
+                        </div>
+                    </a>
+
+                    <a href="norte.html" class="am-card">
+                        <div class="am">
+                            <img src="img/america_norte.jpg" alt="Ciudad de América del Norte" />
+                            <h2>América del Norte</h2>
+                            <p>Grandes ciudades, paisajes únicos y experiencias inolvidables</p>
+                        </div>
+                    </a>
+
+                    <a href="caribe.html" class="am-card">
+                        <div class="am">
+                            <img src="img/america_caribe.jpg" alt="Playa del Caribe" />
+                            <h2>El Caribe</h2>
+                            <p>Playas paradisíacas, aguas turquesas y cultura vibrante</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </a>
+        </section>
 
-        <a href="caribe.html">
-            <div class="am">
-                <img src="img/america_caribe.jpg" alt="" />
-                <h2>Vuelos en América del Caribe</h2>
+        <!-- Consejos -->
+        <section class="section-padded section-alt" aria-label="Consejos para elegir tu vuelo">
+            <div class="container">
+                <h2 class="section-title">Consejos para Elegir tu Vuelo</h2>
+
+                <div class="consejos">
+                    <div class="consejo">
+                        <h4>
+                            <i class="fas fa-compass" aria-hidden="true"></i>
+                            Identifica la finalidad de tu viaje
+                        </h4>
+                        <p>
+                            Antes de reservar, define si tu viaje es por turismo, negocios o
+                            visita familiar. Esto determina el tipo de vuelo, la clase y los
+                            servicios que mejor se adaptan a tus necesidades y presupuesto.
+                        </p>
+                    </div>
+
+                    <div class="consejo">
+                        <h4>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                            Verifica de cuánto tiempo dispones
+                        </h4>
+                        <p>
+                            El tiempo disponible influye directamente en el destino y la
+                            duración del vuelo. Considera las escalas, los husos horarios y
+                            el tiempo de adaptación para aprovechar cada día de tu viaje.
+                        </p>
+                    </div>
+
+                    <div class="consejo">
+                        <h4>
+                            <i class="fas fa-wallet" aria-hidden="true"></i>
+                            Define tu presupuesto
+                        </h4>
+                        <p>
+                            Compara precios con anticipación y aprovecha nuestras ofertas de
+                            temporada. Reservar con al menos 6 semanas de antelación puede
+                            reducir significativamente el costo de tu vuelo internacional.
+                        </p>
+                    </div>
+
+                    <div class="consejo">
+                        <h4>
+                            <i class="fas fa-globe-americas" aria-hidden="true"></i>
+                            ¿Qué cultura deseas conocer?
+                        </h4>
+                        <p>
+                            América ofrece una riqueza cultural extraordinaria: desde las
+                            civilizaciones precolombinas hasta las metrópolis modernas. Elige
+                            el destino que más resuene con tus intereses y curiosidades.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </a>
-    </section>
-
-    <h3 class="cons">CONSEJOS PARA ELEGIR TU VUELO</h3>
-
-    <section class="consejos">
-        <fieldset class="consejo">
-            <h4>Identifica la finalidad de tu viaje</h4>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique ab
-                quisquam sequi praesentium ex. Sint rerum sequi iusto maxime provident
-                ab omnis architecto recusandae suscipit voluptate doloremque in
-                ducimus delectus labore repellendus itaque temporibus, mollitia
-                molestias magni eaque laudantium nostrum. Dolorum, veritatis. Nisi a
-                quia corrupti. Ex eligendi laborum saepe.
-            </p>
-        </fieldset>
-
-        <fieldset class="consejo">
-            <h4>Verifica de cuanto tiempo dispones</h4>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nesciunt
-                optio nemo fugit consequuntur. Soluta ipsa quasi consequatur adipisci
-                nesciunt recusandae, neque a porro voluptas laudantium magnam
-                obcaecati molestiae architecto nulla aut aspernatur commodi modi,
-                minima cum, voluptatibus fugit. Ea explicabo eaque harum eius. Omnis
-                natus illum fugiat enim dicta.
-            </p>
-        </fieldset>
-
-        <fieldset class="consejo">
-            <h4>Cuál es tu presupuesto</h4>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius non
-                neque recusandae facilis velit numquam consequatur sunt et est beatae,
-                maiores sit eveniet quasi nemo reiciendis, dolore veritatis similique.
-                Maiores inventore veritatis animi debitis assumenda possimus mollitia
-                repellendus porro sint at explicabo totam facilis ipsam, pariatur
-                beatae molestias ducimus necessitatibus.
-            </p>
-        </fieldset>
-
-        <fieldset class="consejo">
-            <h4>Que cultura deseas conocer</h4>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-                quibusdam harum unde, iste minima officia sapiente enim dicta debitis
-                quia accusantium magni temporibus ipsa nam. Ad reiciendis aperiam,
-                repellendus ea expedita dolores tempore? Esse itaque eos maiores
-                saepe, possimus molestiae illo harum, optio nihil pariatur perferendis
-                sint reiciendis quasi et.
-            </p>
-        </fieldset>
-    </section>
-
-    
-    <!-- Footer -->
-    
-    <!-- Footer -->
-    
-    </div>
-</main>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
             </div>
-            <div class="footer-text">
-                <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
-                </p>
-            </div>
+            <p class="footer-text">
+                &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+            </p>
         </div>
     </footer>
 
-    <!-- JavaScript Modular -->
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
-    <script src="js/america.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="js/translator.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>

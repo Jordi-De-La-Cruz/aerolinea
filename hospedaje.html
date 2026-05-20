@@ -1,31 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<title>Hospedaje - Encuentra tu Hotel Perfecto | Destinos Mundiales</title>
 
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Encuentra tu hotel perfecto - Destinos Mundiales" />
+    <title>Hospedaje - Encuentra tu Hotel Perfecto | Destinos Mundiales</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg" />
-    
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
+
+    <!-- Preload crítico -->
+    <link rel="preload" href="img/mundo.png" as="image" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/hospedaje.css" />
+    <link rel="stylesheet" href="css/hospedaje-page.css" />
 
-    <!-- Icons -->
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -34,406 +33,373 @@
                 <span>Destinos<br />Mundiales</span>
             </a>
 
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegación principal">
+                <div id="google_translate_element"></div>
+
                 <a href="login.html" class="nav-btn">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     Iniciar Sesión
                 </a>
                 <a href="ayuda.html" class="nav-btn">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-<main class="main">
-    <div class="container">
-        <!-- Search Hero Section -->
-        <section class="search-hero">
-            <div class="container">
-                <div class="search-content">
-                    <h1 class="fade-in">Encuentra tu Hotel Perfecto</h1>
-                    <p class="fade-in fade-in-delay-1">
-                        Desde resorts de lujo hasta hoteles boutique, tenemos el
-                        alojamiento ideal para tu próxima aventura
-                    </p>
+    <main>
+        <!-- Hero de búsqueda -->
+        <section class="search-hero" aria-label="Búsqueda de hoteles">
+            <div class="search-content">
+                <h1 class="fade-in">Encuentra tu Hotel Perfecto</h1>
+                <p class="fade-in delay-2">
+                    Desde resorts de lujo hasta hoteles boutique, tenemos el alojamiento ideal para tu próxima aventura
+                </p>
 
-                    <!-- Hotel Search Form -->
-                    <form class="hotel-search-form fade-in" id="hotelSearchForm">
-                        <div class="search-fields">
-                            <div class="search-field">
-                                <label class="search-label">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Destino
-                                </label>
-                                <input type="text" class="search-input" placeholder="¿A dónde quieres ir?"
-                                    id="destinationInput" autocomplete="off" />
-                                <div class="search-suggestions" id="destinationSuggestions"></div>
-                            </div>
+                <form class="hotel-search-form fade-in delay-4" id="hotelSearchForm" novalidate>
+                    <div class="search-fields">
+                        <div class="search-field">
+                            <label class="search-label" id="destinationLabel" for="destinationInput">
 
-                            <div class="search-field">
-                                <label class="search-label">
-                                    <i class="fas fa-calendar"></i>
-                                    Entrada
-                                </label>
-                                <input type="date" class="search-input" id="checkinDate" title="Fecha de entrada"
-                                    required />
-                            </div>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                Destino
+                            </label>
 
-                            <div class="search-field">
-                                <label class="search-label">
-                                    <i class="fas fa-calendar"></i>
-                                    Salida
-                                </label>
-                                <input type="date" class="search-input" id="checkoutDate" title="Fecha de salida"
-                                    required />
-                            </div>
+                            <input type="text" class="search-input" id="destinationInput"
+                                placeholder="¿A dónde quieres ir?" autocomplete="off" aria-labelledby="destinationLabel"
+                                aria-autocomplete="list" aria-controls="destinationSuggestions">
 
-                            <div class="search-field">
-                                <label class="search-label">
-                                    <i class="fas fa-users"></i>
-                                    Huéspedes
-                                </label>
-                                <select class="search-input" id="guestsSelect" title="Número de huéspedes">
-                                    <option value="1">1 Huésped</option>
-                                    <option value="2" selected>2 Huéspedes</option>
-                                    <option value="3">3 Huéspedes</option>
-                                    <option value="4">4 Huéspedes</option>
-                                    <option value="5">5+ Huéspedes</option>
-                                </select>
-                            </div>
-
-                            <div class="search-field">
-                                <label class="search-label">
-                                    <i class="fas fa-bed"></i>
-                                    Habitaciones
-                                </label>
-                                <select class="search-input" id="roomsSelect" title="Número de habitaciones">
-                                    <option value="1" selected>1 Habitación</option>
-                                    <option value="2">2 Habitaciones</option>
-                                    <option value="3">3 Habitaciones</option>
-                                    <option value="4">4+ Habitaciones</option>
-                                </select>
-                            </div>
-
-                            <div class="search-field">
-                                <button type="submit" class="search-btn">
-                                    <i class="fas fa-search"></i>
-                                    Buscar Hoteles
-                                </button>
+                            <div class="search-suggestions" id="destinationSuggestions" role="listbox"
+                                aria-label="Sugerencias de destino">
                             </div>
                         </div>
-                    </form>
-                </div>
+
+                        <div class="search-field">
+                            <label class="search-label" for="checkinDate">
+                                <i class="fas fa-calendar" aria-hidden="true"></i>
+                                Entrada
+                            </label>
+                            <input type="date" class="search-input" id="checkinDate" required
+                                aria-label="Fecha de entrada" />
+                        </div>
+
+                        <div class="search-field">
+                            <label class="search-label" for="checkoutDate">
+                                <i class="fas fa-calendar" aria-hidden="true"></i>
+                                Salida
+                            </label>
+                            <input type="date" class="search-input" id="checkoutDate" required
+                                aria-label="Fecha de salida" />
+                        </div>
+
+                        <div class="search-field">
+                            <label class="search-label" for="guestsSelect">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                                Huéspedes
+                            </label>
+                            <select class="search-input" id="guestsSelect">
+                                <option value="1">1 Huésped</option>
+                                <option value="2" selected>2 Huéspedes</option>
+                                <option value="3">3 Huéspedes</option>
+                                <option value="4">4 Huéspedes</option>
+                                <option value="5">5+ Huéspedes</option>
+                            </select>
+                        </div>
+
+                        <div class="search-field">
+                            <label class="search-label" for="roomsSelect">
+                                <i class="fas fa-bed" aria-hidden="true"></i>
+                                Habitaciones
+                            </label>
+                            <select class="search-input" id="roomsSelect">
+                                <option value="1" selected>1 Habitación</option>
+                                <option value="2">2 Habitaciones</option>
+                                <option value="3">3 Habitaciones</option>
+                                <option value="4">4+ Habitaciones</option>
+                            </select>
+                        </div>
+
+                        <div class="search-field search-field--btn">
+                            <button type="submit" class="search-btn">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                                Buscar Hoteles
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </section>
 
-        <!-- Featured Hotels -->
-        <section class="featured-hotels">
+        <!-- Hoteles destacados -->
+        <section class="featured-hotels section-padded" aria-label="Hoteles destacados">
             <div class="container">
                 <h2 class="section-title">Hoteles Destacados</h2>
 
                 <div class="hotels-grid">
-                    <!-- Hotel Buenos Aires -->
-                    <article class="hotel-card hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <article class="hotel-card hover-lift">
                         <div class="hotel-card__image">
                             <img src="img/dormitorio1.jpg" alt="Hotel Buenos Aires - Argentina" loading="lazy" />
                             <span class="hotel-card__badge">Oferta</span>
                             <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div class="hotel-card__content">
                             <h3>Hotel Buenos Aires</h3>
                             <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Buenos Aires, Argentina</span>
                             </div>
                             <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
+                                <div class="stars" aria-label="4 de 5 estrellas">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
                                 </div>
                                 <span>4.2/5 (156 reseñas)</span>
                             </div>
                             <div class="hotel-amenities">
-                                <span class="amenity-tag">
-                                    <i class="fas fa-wifi"></i> Wi-Fi
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="fas fa-parking"></i> Parking
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="fas fa-utensils"></i> Restaurante
-                                </span>
+                                <span class="amenity-tag"><i class="fas fa-wifi" aria-hidden="true"></i> Wi-Fi</span>
+                                <span class="amenity-tag"><i class="fas fa-parking" aria-hidden="true"></i>
+                                    Parking</span>
+                                <span class="amenity-tag"><i class="fas fa-utensils" aria-hidden="true"></i>
+                                    Restaurante</span>
                             </div>
                             <div class="hotel-price">
                                 <span class="price-from">Desde</span>
                                 <span class="price-amount">$110</span>
-                                <span class="price-period">por noche</span>
+                                <span class="price-period">/ noche</span>
                             </div>
                             <a href="#" class="btn btn--secondary">Ver Detalles</a>
                         </div>
                     </article>
 
-                    <!-- Hotel Cool By -->
-                    <article class="hotel-card hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <article class="hotel-card hover-lift">
                         <div class="hotel-card__image">
-                            <img src="img/dormitorio3.jpg" alt="Hotel Cool By - Colombia" loading="lazy" />
+                            <img src="img/dormitorio3.jpg" alt="Hotel Cool By - Medellín, Colombia" loading="lazy" />
                             <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div class="hotel-card__content">
                             <h3>Hotel Cool By</h3>
                             <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Medellín, Colombia</span>
                             </div>
                             <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                <div class="stars" aria-label="5 de 5 estrellas">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
                                 </div>
                                 <span>4.6/5 (203 reseñas)</span>
                             </div>
                             <div class="hotel-amenities">
-                                <span class="amenity-tag">
-                                    <i class="fas fa-swimming-pool"></i> Piscina
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="fas fa-spa"></i> Spa
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="fas fa-cocktail"></i> Bar
-                                </span>
+                                <span class="amenity-tag"><i class="fas fa-swimming-pool" aria-hidden="true"></i>
+                                    Piscina</span>
+                                <span class="amenity-tag"><i class="fas fa-spa" aria-hidden="true"></i> Spa</span>
+                                <span class="amenity-tag"><i class="fas fa-cocktail" aria-hidden="true"></i> Bar</span>
                             </div>
                             <div class="hotel-price">
                                 <span class="price-from">Desde</span>
                                 <span class="price-amount">$100</span>
-                                <span class="price-period">por noche</span>
+                                <span class="price-period">/ noche</span>
                             </div>
                             <a href="#" class="btn btn--secondary">Ver Detalles</a>
                         </div>
                     </article>
 
-                    <!-- Hotel Meilk -->
-                    <article class="hotel-card hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <article class="hotel-card hover-lift">
                         <div class="hotel-card__image">
-                            <img src="img/dormitorio4.jpg" alt="Hotel Meilk - Perú" loading="lazy" />
-                            <span class="hotel-card__badge">Premium</span>
+                            <img src="img/dormitorio4.jpg" alt="Hotel Meilk - Cusco, Perú" loading="lazy" />
+                            <span class="hotel-card__badge hotel-card__badge--premium">Premium</span>
                             <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div class="hotel-card__content">
                             <h3>Hotel Meilk</h3>
                             <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Cusco, Perú</span>
                             </div>
                             <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
+                                <div class="stars" aria-label="4 de 5 estrellas">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
                                 </div>
                                 <span>4.3/5 (89 reseñas)</span>
                             </div>
                             <div class="hotel-amenities">
-                                <span class="amenity-tag">
-                                    <i class="fas fa-mountain"></i> Vista
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="fas fa-concierge-bell"></i> Concierge
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="fas fa-dumbbell"></i> Gym
-                                </span>
+                                <span class="amenity-tag"><i class="fas fa-mountain" aria-hidden="true"></i>
+                                    Vista</span>
+                                <span class="amenity-tag"><i class="fas fa-concierge-bell" aria-hidden="true"></i>
+                                    Concierge</span>
+                                <span class="amenity-tag"><i class="fas fa-dumbbell" aria-hidden="true"></i> Gym</span>
                             </div>
                             <div class="hotel-price">
                                 <span class="price-from">Desde</span>
                                 <span class="price-amount">$150</span>
-                                <span class="price-period">por noche</span>
+                                <span class="price-period">/ noche</span>
                             </div>
                             <a href="#" class="btn btn--secondary">Ver Detalles</a>
                         </div>
                     </article>
 
-                    <!-- Hotel Drankl -->
-                    <article class="hotel-card hover-lift" data-aos="fade-up" data-aos-delay="400">
+                    <article class="hotel-card hover-lift">
                         <div class="hotel-card__image">
-                            <img src="img/dormitorio5.jpg" alt="Hotel Drankl - Venezuela" loading="lazy" />
-                            <span class="hotel-card__badge">Económico</span>
+                            <img src="img/dormitorio5.jpg" alt="Hotel Drankl - Caracas, Venezuela" loading="lazy" />
+                            <span class="hotel-card__badge hotel-card__badge--eco">Económico</span>
                             <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div class="hotel-card__content">
                             <h3>Hotel Drankl</h3>
                             <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Caracas, Venezuela</span>
                             </div>
                             <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
+                                <div class="stars" aria-label="3 de 5 estrellas">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
                                 </div>
                                 <span>3.8/5 (124 reseñas)</span>
                             </div>
                             <div class="hotel-amenities">
-                                <span class="amenity-tag">
-                                    <i class="fas fa-wifi"></i> Wi-Fi
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="fas fa-coffee"></i> Café
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="fas fa-car"></i> Transfer
-                                </span>
+                                <span class="amenity-tag"><i class="fas fa-wifi" aria-hidden="true"></i> Wi-Fi</span>
+                                <span class="amenity-tag"><i class="fas fa-coffee" aria-hidden="true"></i> Café</span>
+                                <span class="amenity-tag"><i class="fas fa-car" aria-hidden="true"></i> Transfer</span>
                             </div>
                             <div class="hotel-price">
                                 <span class="price-from">Desde</span>
                                 <span class="price-amount">$90</span>
-                                <span class="price-period">por noche</span>
+                                <span class="price-period">/ noche</span>
                             </div>
                             <a href="#" class="btn btn--secondary">Ver Detalles</a>
                         </div>
                     </article>
 
-                    <!-- Hotel Camilo -->
-                    <article class="hotel-card hover-lift" data-aos="fade-up" data-aos-delay="500">
+                    <article class="hotel-card hover-lift">
                         <div class="hotel-card__image">
-                            <img src="img/dormitorio6.jpg" alt="Hotel Camilo - Ecuador" loading="lazy" />
+                            <img src="img/dormitorio6.jpg" alt="Hotel Camilo - Quito, Ecuador" loading="lazy" />
                             <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div class="hotel-card__content">
                             <h3>Hotel Camilo</h3>
                             <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Quito, Ecuador</span>
                             </div>
                             <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
+                                <div class="stars" aria-label="4 de 5 estrellas">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
                                 </div>
                                 <span>4.1/5 (78 reseñas)</span>
                             </div>
                             <div class="hotel-amenities">
-                                <span class="amenity-tag">
-                                    <i class="fas fa-city"></i> Centro
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="fas fa-utensils"></i> Buffet
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="fas fa-wifi"></i> Wi-Fi
-                                </span>
+                                <span class="amenity-tag"><i class="fas fa-city" aria-hidden="true"></i> Centro</span>
+                                <span class="amenity-tag"><i class="fas fa-utensils" aria-hidden="true"></i>
+                                    Buffet</span>
+                                <span class="amenity-tag"><i class="fas fa-wifi" aria-hidden="true"></i> Wi-Fi</span>
                             </div>
                             <div class="hotel-price">
                                 <span class="price-from">Desde</span>
                                 <span class="price-amount">$120</span>
-                                <span class="price-period">por noche</span>
+                                <span class="price-period">/ noche</span>
                             </div>
                             <a href="#" class="btn btn--secondary">Ver Detalles</a>
                         </div>
                     </article>
 
-                    <!-- Hotel Greey -->
-                    <article class="hotel-card hover-lift" data-aos="fade-up" data-aos-delay="600">
+                    <article class="hotel-card hover-lift">
                         <div class="hotel-card__image">
-                            <img src="img/dormitorio7.jpg" alt="Hotel Greey - Estados Unidos" loading="lazy" />
-                            <span class="hotel-card__badge">Lujo</span>
+                            <img src="img/dormitorio7.jpg" alt="Hotel Greey - Miami, Estados Unidos" loading="lazy" />
+                            <span class="hotel-card__badge hotel-card__badge--lujo">Lujo</span>
                             <button class="hotel-card__favorite" aria-label="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div class="hotel-card__content">
                             <h3>Hotel Greey</h3>
                             <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Miami, Estados Unidos</span>
                             </div>
                             <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                <div class="stars" aria-label="5 de 5 estrellas">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
                                 </div>
                                 <span>4.7/5 (342 reseñas)</span>
                             </div>
                             <div class="hotel-amenities">
-                                <span class="amenity-tag">
-                                    <i class="fas fa-umbrella-beach"></i> Playa
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="fas fa-spa"></i> Spa
-                                </span>
-                                <span class="amenity-tag">
-                                    <i class="fas fa-glass-cheers"></i> Rooftop
-                                </span>
+                                <span class="amenity-tag"><i class="fas fa-umbrella-beach" aria-hidden="true"></i>
+                                    Playa</span>
+                                <span class="amenity-tag"><i class="fas fa-spa" aria-hidden="true"></i> Spa</span>
+                                <span class="amenity-tag"><i class="fas fa-glass-cheers" aria-hidden="true"></i>
+                                    Rooftop</span>
                             </div>
                             <div class="hotel-price">
                                 <span class="price-from">Desde</span>
                                 <span class="price-amount">$200</span>
-                                <span class="price-period">por noche</span>
+                                <span class="price-period">/ noche</span>
                             </div>
                             <a href="#" class="btn btn--secondary">Ver Detalles</a>
                         </div>
                     </article>
                 </div>
 
-                <!-- Load More Button -->
-                <div class="text-center load-more-container">
+                <div class="load-more-container">
                     <button class="btn btn--outline" id="loadMoreBtn">
-                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-plus" aria-hidden="true"></i>
                         Cargar Más Hoteles
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- Premium Hotels Section -->
-        <section class="premium-hotels">
+        <!-- Hoteles Premium -->
+        <section class="premium-hotels section-padded section-alt" aria-label="Hoteles Premium">
             <div class="container">
                 <h2 class="section-title">Hoteles Premium</h2>
-                <p class="section-subtitle">
-                    Descubre nuestros hoteles de lujo más exclusivos
-                </p>
+                <p class="section-subtitle">Descubre nuestros hoteles de lujo más exclusivos</p>
 
                 <div class="premium-grid">
                     <div class="premium-card hover-lift">
                         <div class="premium-card__image">
-                            <img src="img/puerto1.jpg" alt="Hotel Plata - República Dominicana" loading="lazy" />
+                            <img src="img/puerto1.jpg" alt="Hotel Plata - Puerto Plata, República Dominicana"
+                                loading="lazy" />
                         </div>
                         <div class="premium-card__content">
                             <h3>Hotel Plata</h3>
                             <p>Resort 4★ en Puerto Plata</p>
-                            <span class="premium-price">Desde $120/noche</span>
+                            <span class="premium-price">Desde $120 / noche</span>
                             <a href="#" class="btn btn--secondary">Explorar</a>
                         </div>
                     </div>
@@ -445,19 +411,19 @@
                         <div class="premium-card__content">
                             <h3>Hotel Malte</h3>
                             <p>Boutique 4★ en París</p>
-                            <span class="premium-price">Desde €180/noche</span>
+                            <span class="premium-price">Desde €180 / noche</span>
                             <a href="#" class="btn btn--secondary">Explorar</a>
                         </div>
                     </div>
 
                     <div class="premium-card hover-lift">
                         <div class="premium-card__image">
-                            <img src="img/banyan1.jpg" alt="Hotel Banyan Tree - Resort de Lujo" loading="lazy" />
+                            <img src="img/banyan1.jpg" alt="Hotel Banyan Tree - Resort de Ultra Lujo" loading="lazy" />
                         </div>
                         <div class="premium-card__content">
                             <h3>Hotel Banyan Tree</h3>
                             <p>Resort 5★ de Ultra Lujo</p>
-                            <span class="premium-price">Desde $450/noche</span>
+                            <span class="premium-price">Desde $450 / noche</span>
                             <a href="#" class="btn btn--secondary">Explorar</a>
                         </div>
                     </div>
@@ -465,54 +431,43 @@
             </div>
         </section>
 
-        <!-- Why Choose Us -->
-        <section class="why-choose-us">
+        <!-- Por qué elegirnos -->
+        <section class="why-choose-us section-padded" aria-label="Por qué elegirnos">
             <div class="container">
                 <h2 class="section-title">¿Por qué elegir Destinos Mundiales?</h2>
 
                 <div class="features-grid">
                     <div class="feature-item hover-lift">
                         <div class="feature-icon">
-                            <i class="fas fa-search"></i>
+                            <i class="fas fa-search" aria-hidden="true"></i>
                         </div>
                         <h3>Búsqueda Inteligente</h3>
-                        <p>
-                            Encuentra el hotel perfecto con nuestro avanzado sistema de
-                            búsqueda y filtros personalizados
+                        <p>Encuentra el hotel perfecto con nuestro avanzado sistema de búsqueda y filtros personalizados
                         </p>
                     </div>
 
                     <div class="feature-item hover-lift">
                         <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
                         </div>
                         <h3>Reservas Seguras</h3>
-                        <p>
-                            Transacciones protegidas con encriptación SSL y política de
-                            cancelación flexible
-                        </p>
+                        <p>Transacciones protegidas con encriptación SSL y política de cancelación flexible</p>
                     </div>
 
                     <div class="feature-item hover-lift">
                         <div class="feature-icon">
-                            <i class="fas fa-award"></i>
+                            <i class="fas fa-award" aria-hidden="true"></i>
                         </div>
                         <h3>Hoteles Verificados</h3>
-                        <p>
-                            Todos nuestros hoteles están verificados y cuentan con
-                            certificaciones de calidad
-                        </p>
+                        <p>Todos nuestros hoteles están verificados y cuentan con certificaciones de calidad</p>
                     </div>
 
                     <div class="feature-item hover-lift">
                         <div class="feature-icon">
-                            <i class="fas fa-headset"></i>
+                            <i class="fas fa-headset" aria-hidden="true"></i>
                         </div>
                         <h3>Soporte 24/7</h3>
-                        <p>
-                            Nuestro equipo de expertos está disponible las 24 horas para
-                            ayudarte en tu viaje
-                        </p>
+                        <p>Nuestro equipo de expertos está disponible las 24 horas para ayudarte en tu viaje</p>
                     </div>
                 </div>
             </div>
@@ -520,33 +475,26 @@
     </main>
 
     <!-- Footer -->
-    
-    <!-- Footer -->
-    </div>
-</main>
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
             </div>
-            <div class="footer-text">
-                <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
-                </p>
-            </div>
+            <p class="footer-text">
+                &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+            </p>
         </div>
     </footer>
 
-    <!-- JavaScript Modular -->
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/hospedaje.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="js/translator.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>
