@@ -1,1 +1,276 @@
-/* Estilos específicos para norte */
+.popular-cities {
+    margin-top: var(--spacing-lg);
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.popular-cities h4 {
+    color: var(--primary);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--gray-light);
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.city-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    background: var(--gray-light);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.city-item:hover {
+    background: rgba(33, 147, 176, 0.1);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.city-item:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.city-item i {
+    font-size: var(--font-size-xl);
+    color: var(--primary);
+}
+
+.city-item span:not(.city-price) {
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.city-price {
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+/* SECCIÓN "¿POR QUÉ ELEGIR...?" */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.info-card {
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border-top: 4px solid var(--primary);
+    transition: var(--transition);
+}
+
+.info-card>i {
+    font-size: var(--font-size-hero);
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    display: block;
+    transition: var(--transition);
+}
+
+.info-card:hover>i {
+    transform: scale(1.15);
+    color: var(--secondary);
+}
+
+.info-card h3 {
+    color: var(--primary);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-xs);
+}
+
+.info-card p {
+    color: var(--gray);
+    font-size: var(--font-size-small);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* DATOS CURIOSOS */
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.fact-card {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    text-align: center;
+    color: #ffffff;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.fact-number {
+    font-size: var(--font-size-hero);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: var(--spacing-xs);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.fact-text {
+    font-size: var(--font-size-small);
+    opacity: 0.92;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* CONSEJOS DE VIAJE */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.tip-card {
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.tip-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.tip-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    color: #ffffff;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.tip-card:hover .tip-icon {
+    transform: rotate(8deg) scale(1.08);
+}
+
+.tip-card h4 {
+    color: var(--primary);
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.tip-card p {
+    color: var(--gray);
+    font-size: var(--font-size-small);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* TEMA OSCURO */
+.dark-theme .popular-cities {
+    background: #2d2d2d;
+}
+
+.dark-theme .popular-cities h4 {
+    color: var(--secondary);
+    border-bottom-color: #444;
+}
+
+.dark-theme .city-item {
+    background: #3a3a3a;
+}
+
+.dark-theme .city-item:hover {
+    background: rgba(78, 205, 196, 0.12);
+    border-color: var(--secondary);
+}
+
+.dark-theme .city-item span:not(.city-price) {
+    color: #e0e0e0;
+}
+
+.dark-theme .info-card {
+    background: #2d2d2d;
+    border-top-color: var(--secondary);
+}
+
+.dark-theme .info-card h3 {
+    color: var(--secondary);
+}
+
+.dark-theme .info-card p {
+    color: #bbb;
+}
+
+.dark-theme .tip-card {
+    background: #2d2d2d;
+}
+
+.dark-theme .tip-card h4 {
+    color: var(--secondary);
+}
+
+.dark-theme .tip-card p {
+    color: #bbb;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .cities-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid,
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .cities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .facts-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .fact-number {
+        font-size: var(--font-size-xxl);
+    }
+}

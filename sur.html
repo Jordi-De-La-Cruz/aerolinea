@@ -1,31 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<title>América del Sur - Aerolínea High Flight</title>
 
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vuelos a América del Sur - Destinos Mundiales" />
+    <title>América del Sur - Destinos Mundiales</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg" />
-    
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
+
+    <!-- Preload crítico -->
+    <link rel="preload" href="img/mundo.png" as="image" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/america.css" />
     <link rel="stylesheet" href="css/sur.css" />
 
-    <!-- Icons -->
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -34,65 +34,71 @@
                 <span>Destinos<br />Mundiales</span>
             </a>
 
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegación principal">
+                <div id="google_translate_element"></div>
+
                 <a href="login.html" class="nav-btn">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     Iniciar Sesión
                 </a>
                 <a href="ayuda.html" class="nav-btn">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-<main class="main">
-    <div class="container">
-        <!-- Hero Section -->
-            <section class="hero-regional">
-                <h1>Descubre América del Sur</h1>
-                <p>Conectamos toda Sudamérica con los mejores precios</p>
-            </section>
+    <main>
+        <!-- Hero regional -->
+        <section class="page-hero" aria-label="América del Sur">
+            <div class="container">
+                <h1 class="page-title">Descubre América del Sur</h1>
+                <p class="page-subtitle">Conectamos toda Sudamérica con los mejores precios</p>
+            </div>
+        </section>
 
-            <!-- Slider de destinos -->
-            <section class="destinations-slider">
+        <!-- Slider de destinos -->
+        <section class="destinations-slider section-padded" aria-label="Nuestros destinos en América del Sur">
+            <div class="container">
                 <h2 class="section-title">Nuestros Destinos</h2>
-                <div class="slider-container">
-                    <div class="slider">
-                        <div class="slide active">
-                            <img src="img/sur1.jpg" alt="Machu Picchu, Perú" />
+
+                <div class="slider-wrapper" role="region" aria-label="Galería de destinos" aria-live="polite">
+                    <!-- Slides -->
+                    <div class="slides" id="slidesTrack">
+                        <div class="slide active" aria-hidden="false">
+                            <img src="img/sur1.jpg" alt="Machu Picchu, Perú" loading="eager" />
                             <div class="slide-info">
                                 <h3>Perú</h3>
                                 <p>Machu Picchu y maravillas ancestrales</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/sur2.jpg" alt="Cristo Redentor, Brasil" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/sur2.jpg" alt="Cristo Redentor, Brasil" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Brasil</h3>
                                 <p>Playas paradisíacas y cultura vibrante</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/sur3.jpg" alt="Buenos Aires, Argentina" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/sur3.jpg" alt="Buenos Aires, Argentina" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Argentina</h3>
                                 <p>Tango, vino y paisajes únicos</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/sur4.jpg" alt="Santiago, Chile" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/sur4.jpg" alt="Santiago de Chile" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Chile</h3>
                                 <p>De los Andes al Pacífico</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/sur5.jpg" alt="Cartagena, Colombia" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/sur5.jpg" alt="Ciudad amurallada de Cartagena, Colombia" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Colombia</h3>
                                 <p>Historia colonial y biodiversidad</p>
@@ -100,31 +106,35 @@
                         </div>
                     </div>
 
-                    <!-- Controles del slider -->
-                    <button class="slider-btn prev" onclick="changeSlide(-1)" title="Anterior">
-                        <i class="fas fa-chevron-left"></i>
+                    <!-- Controles -->
+                    <button class="slider-btn slider-btn--prev" id="slidePrev" aria-label="Destino anterior">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
                     </button>
-                    <button class="slider-btn next" onclick="changeSlide(1)" title="Siguiente">
-                        <i class="fas fa-chevron-right"></i>
+                    <button class="slider-btn slider-btn--next" id="slideNext" aria-label="Destino siguiente">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </button>
 
                     <!-- Indicadores -->
-                    <div class="slider-indicators">
-                        <span class="indicator active" onclick="currentSlide(1)"></span>
-                        <span class="indicator" onclick="currentSlide(2)"></span>
-                        <span class="indicator" onclick="currentSlide(3)"></span>
-                        <span class="indicator" onclick="currentSlide(4)"></span>
-                        <span class="indicator" onclick="currentSlide(5)"></span>
+                    <div class="slider-indicators" role="tablist" aria-label="Seleccionar destino">
+                        <button class="indicator active" role="tab" aria-selected="true" aria-label="Perú"></button>
+                        <button class="indicator" role="tab" aria-selected="false" aria-label="Brasil"></button>
+                        <button class="indicator" role="tab" aria-selected="false" aria-label="Argentina"></button>
+                        <button class="indicator" role="tab" aria-selected="false" aria-label="Chile"></button>
+                        <button class="indicator" role="tab" aria-selected="false" aria-label="Colombia"></button>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="booking-section">
+        <!-- Reservas y precios -->
+        <section class="booking-section section-padded section-alt" aria-label="Precios y reservas">
+            <div class="container">
                 <div class="booking-grid">
+
                     <!-- Tabla de precios -->
                     <div class="prices-section">
                         <h3 class="section-title">
-                            <i class="fas fa-tags"></i>
+                            <i class="fas fa-tags" aria-hidden="true"></i>
                             Precios desde Perú
                         </h3>
 
@@ -132,10 +142,10 @@
                             <table class="prices-table">
                                 <thead>
                                     <tr>
-                                        <th>País de Origen</th>
-                                        <th>Destino</th>
-                                        <th>Precio</th>
-                                        <th>Acción</th>
+                                        <th scope="col">Origen</th>
+                                        <th scope="col">Destino</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -143,49 +153,52 @@
                                         <td>Perú</td>
                                         <td>Brasil</td>
                                         <td class="price">$350</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="brasil">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Argentina</td>
                                         <td class="price">$380</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="argentina">Reservar</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Chile</td>
                                         <td class="price">$320</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="chile">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Colombia</td>
                                         <td class="price">$290</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="colombia">Reservar</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Ecuador</td>
                                         <td class="price">$250</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="ecuador">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Venezuela</td>
                                         <td class="price">$420</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="venezuela">Reservar</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Bolivia</td>
                                         <td class="price">$200</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="bolivia">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Uruguay</td>
                                         <td class="price">$450</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="uruguay">Reservar</button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -195,20 +208,21 @@
                     <!-- Formulario de reserva -->
                     <div class="booking-form-section">
                         <h3 class="section-title">
-                            <i class="fas fa-plane-departure"></i>
+                            <i class="fas fa-plane-departure" aria-hidden="true"></i>
                             Reservar tu pasaje
                         </h3>
 
-                        <form class="booking-form" id="bookingForm">
+                        <form class="booking-form" id="bookingForm" novalidate>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" id="nombre" name="nombre" class="form-input" required />
+                                    <input type="text" id="nombre" name="nombre" class="form-input"
+                                        autocomplete="given-name" required />
                                 </div>
-
                                 <div class="form-group">
                                     <label for="apellidos" class="form-label">Apellidos</label>
-                                    <input type="text" id="apellidos" name="apellidos" class="form-input" required />
+                                    <input type="text" id="apellidos" name="apellidos" class="form-input"
+                                        autocomplete="family-name" required />
                                 </div>
                             </div>
 
@@ -224,7 +238,6 @@
                                         <option value="5+">5 o más</option>
                                     </select>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="fecha" class="form-label">Fecha de viaje</label>
                                     <input type="date" id="fecha" name="fecha" class="form-input" required />
@@ -242,7 +255,6 @@
                                         <option value="trujillo">Trujillo, Perú</option>
                                     </select>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="destino" class="form-label">Destino</label>
                                     <select id="destino" name="destino" class="form-input" required>
@@ -260,46 +272,40 @@
                             </div>
 
                             <div class="form-actions">
-                                <button type="submit" class="btn btn--large btn--primary">
-                                    <i class="fas fa-credit-card"></i>
+                                <button type="submit" class="btn btn--large">
+                                    <i class="fas fa-credit-card" aria-hidden="true"></i>
                                     Continuar al pago
                                 </button>
                             </div>
                         </form>
                     </div>
-                </div>
-            </section>
-        </div>
-    </main>
 
-    <!-- Footer -->
-    
-    <!-- Footer -->
-    </div>
-</main>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
             </div>
-            <div class="footer-text">
-                <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
-                </p>
-            </div>
+            <p class="footer-text">
+                &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+            </p>
         </div>
     </footer>
 
-    <!-- JavaScript Modular -->
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/sur.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="js/translator.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>

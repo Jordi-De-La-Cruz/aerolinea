@@ -1,31 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<title>Aerolinea High Flight</title>
 
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vuelos al Caribe - Destinos Mundiales" />
+    <title>El Caribe - Destinos Mundiales</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg" />
-    
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
+
+    <!-- Preload crítico -->
+    <link rel="preload" href="img/mundo.png" as="image" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/america.css" />
+    <link rel="stylesheet" href="css/sur.css" />
     <link rel="stylesheet" href="css/caribe.css" />
 
-    <!-- Icons -->
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -34,174 +35,291 @@
                 <span>Destinos<br />Mundiales</span>
             </a>
 
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegación principal">
+                <div id="google_translate_element"></div>
+
                 <a href="login.html" class="nav-btn">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     Iniciar Sesión
                 </a>
                 <a href="ayuda.html" class="nav-btn">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-<main class="main">
-    <div class="container">
-        <section>
-    <div class="slider">
-      <ul>
-        <li><img src="img/centro1.jpg" alt="" /></li>
-        <li><img src="img/centro2.jpg" alt="" /></li>
-        <li><img src="img/centro3.jpg" alt="" /></li>
-        <li><img src="img/centro4.jpg" alt="" /></li>
-        <li><img src="img/centro5.jpg" alt="" /></li>
-        <li><img src="img/centro6.jpg" alt="" /></li>
-        <li><img src="img/centro7.jpg" alt="" /></li>
-        <li><img src="img/centro8.jpg" alt="" /></li>
-        <li><img src="img/centro9.jpg" alt="" /></li>
-        <li><img src="img/centro10.jpg" alt="" /></li>
-      </ul>
-    </div>
-  </section>
+    <main>
+        <!-- Hero regional -->
+        <section class="page-hero caribe-hero" aria-label="El Caribe">
+            <div class="container">
+                <h1 class="page-title">El Caribe</h1>
+                <p class="page-subtitle">Playas paradisíacas, aguas turquesas y cultura vibrante</p>
+            </div>
+        </section>
 
-  <section class="reserva">
-    <div class="reserva11">
-      <table>
-        <tr>
-          <th>PAIS DE ORIGEN</th>
-          <th>DESTINO</th>
-          <th>PRECIO</th>
-        </tr>
+        <!-- Galería de destinos -->
+        <section class="section-padded" aria-label="Galería de destinos caribeños">
+            <div class="container">
+                <h2 class="section-title">Destinos del Caribe</h2>
 
-        <tr>
-          <td>Perú</td>
-          <td>Cuba</td>
-          <td>$350</td>
-        </tr>
+                <div class="slider" role="img" aria-label="Imágenes de destinos del Caribe">
+                    <ul>
+                        <li><img src="img/centro1.jpg" alt="Playa del Caribe" /></li>
+                        <li><img src="img/centro2.jpg" alt="Cuba" /></li>
+                        <li><img src="img/centro3.jpg" alt="República Dominicana" /></li>
+                        <li><img src="img/centro4.jpg" alt="Jamaica" /></li>
+                        <li><img src="img/centro5.jpg" alt="Puerto Rico" /></li>
+                        <li><img src="img/centro6.jpg" alt="Bahamas" /></li>
+                        <li><img src="img/centro7.jpg" alt="Granada" /></li>
+                        <li><img src="img/centro8.jpg" alt="Honduras" /></li>
+                        <li><img src="img/centro9.jpg" alt="Nicaragua" /></li>
+                        <li><img src="img/centro10.jpg" alt="El Salvador" /></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <tr>
-          <td>Perú</td>
-          <td>Grenada</td>
-          <td>$350</td>
-        </tr>
+        <!-- Reservas y precios -->
+        <section class="booking-section section-padded section-alt" aria-label="Precios y reservas">
+            <div class="container">
+                <div class="booking-grid">
 
-        <tr>
-          <td>Perú</td>
-          <td>Dominicana</td>
-          <td>$350</td>
-        </tr>
+                    <!-- Tabla de precios -->
+                    <div class="prices-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-tags" aria-hidden="true"></i>
+                            Precios desde Perú
+                        </h3>
 
-        <tr>
-          <td>Perú</td>
-          <td>Nicaragua</td>
-          <td>$350</td>
-        </tr>
+                        <div class="prices-table-container">
+                            <table class="prices-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Origen</th>
+                                        <th scope="col">Destino</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Perú</td>
+                                        <td>Cuba</td>
+                                        <td class="price">$350</td>
+                                        <td><button class="btn btn--small" data-destino="cuba">Reservar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perú</td>
+                                        <td>Granada</td>
+                                        <td class="price">$380</td>
+                                        <td><button class="btn btn--small" data-destino="granada">Reservar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perú</td>
+                                        <td>Rep. Dominicana</td>
+                                        <td class="price">$340</td>
+                                        <td><button class="btn btn--small" data-destino="dominicana">Reservar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perú</td>
+                                        <td>Nicaragua</td>
+                                        <td class="price">$390</td>
+                                        <td><button class="btn btn--small" data-destino="nicaragua">Reservar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perú</td>
+                                        <td>Honduras</td>
+                                        <td class="price">$370</td>
+                                        <td><button class="btn btn--small" data-destino="honduras">Reservar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perú</td>
+                                        <td>Jamaica</td>
+                                        <td class="price">$360</td>
+                                        <td><button class="btn btn--small" data-destino="jamaica">Reservar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perú</td>
+                                        <td>Bahamas</td>
+                                        <td class="price">$420</td>
+                                        <td><button class="btn btn--small" data-destino="bahamas">Reservar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perú</td>
+                                        <td>El Salvador</td>
+                                        <td class="price">$310</td>
+                                        <td><button class="btn btn--small" data-destino="el-salvador">Reservar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perú</td>
+                                        <td>Guatemala</td>
+                                        <td class="price">$300</td>
+                                        <td><button class="btn btn--small" data-destino="guatemala">Reservar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perú</td>
+                                        <td>Puerto Rico</td>
+                                        <td class="price">$400</td>
+                                        <td><button class="btn btn--small" data-destino="puerto-rico">Reservar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
-        <tr>
-          <td>Perú</td>
-          <td>Honduras</td>
-          <td>$350</td>
-        </tr>
+                    <!-- Formulario de reserva -->
+                    <div class="booking-form-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-plane-departure" aria-hidden="true"></i>
+                            Reservar tu pasaje
+                        </h3>
 
-        <tr>
-          <td>Perú</td>
-          <td>Jamaica</td>
-          <td>$350</td>
-        </tr>
+                        <form class="booking-form" id="bookingForm" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" id="nombre" name="nombre" class="form-input"
+                                        autocomplete="given-name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellidos" class="form-label">Apellidos</label>
+                                    <input type="text" id="apellidos" name="apellidos" class="form-input"
+                                        autocomplete="family-name" required />
+                                </div>
+                            </div>
 
-        <tr>
-          <td>Perú</td>
-          <td>Bahamas</td>
-          <td>$350</td>
-        </tr>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pasajes" class="form-label">N° de pasajes</label>
+                                    <select id="pasajes" name="pasajes" class="form-input" required>
+                                        <option value="">Seleccionar</option>
+                                        <option value="1">1 pasaje</option>
+                                        <option value="2">2 pasajes</option>
+                                        <option value="3">3 pasajes</option>
+                                        <option value="4">4 pasajes</option>
+                                        <option value="5+">5 o más</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fecha" class="form-label">Fecha de viaje</label>
+                                    <input type="date" id="fecha" name="fecha" class="form-input" required />
+                                </div>
+                            </div>
 
-        <tr>
-          <td>Perú</td>
-          <td>El Salvador</td>
-          <td>$350</td>
-        </tr>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="origen" class="form-label">Origen</label>
+                                    <select id="origen" name="origen" class="form-input" required>
+                                        <option value="">Seleccionar ciudad</option>
+                                        <option value="lima">Lima, Perú</option>
+                                        <option value="arequipa">Arequipa, Perú</option>
+                                        <option value="cusco">Cusco, Perú</option>
+                                        <option value="trujillo">Trujillo, Perú</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="destino" class="form-label">Destino</label>
+                                    <select id="destino" name="destino" class="form-input" required>
+                                        <option value="">Seleccionar destino</option>
+                                        <option value="cuba">Cuba</option>
+                                        <option value="granada">Granada</option>
+                                        <option value="dominicana">Rep. Dominicana</option>
+                                        <option value="nicaragua">Nicaragua</option>
+                                        <option value="honduras">Honduras</option>
+                                        <option value="jamaica">Jamaica</option>
+                                        <option value="bahamas">Bahamas</option>
+                                        <option value="el-salvador">El Salvador</option>
+                                        <option value="guatemala">Guatemala</option>
+                                        <option value="puerto-rico">Puerto Rico</option>
+                                    </select>
+                                </div>
+                            </div>
 
-        <tr>
-          <td>Perú</td>
-          <td>Guatemala</td>
-          <td>$350</td>
-        </tr>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn--large">
+                                    <i class="fas fa-credit-card" aria-hidden="true"></i>
+                                    Continuar al pago
+                                </button>
+                            </div>
+                        </form>
+                    </div>
 
-        <tr>
-          <td>Perú</td>
-          <td>Puerto Rico</td>
-          <td>$350</td>
-        </tr>
-      </table>
-    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="reserva1">
-      <h2>RESERVAR TU PASAJE</h2>
+        <!-- Destacados del Caribe -->
+        <section class="caribe-highlights section-padded" aria-label="Por qué visitar el Caribe">
+            <div class="container">
+                <h2 class="section-title">¿Por qué visitar el Caribe?</h2>
 
-      <fieldset>
-        <input type="text" placeholder="Nombre " />
-      </fieldset>
-
-      <fieldset>
-        <input type="text" placeholder="Apellidos" />
-      </fieldset>
-
-      <fieldset>
-        <input type="text" placeholder="n° de pasajes" />
-      </fieldset>
-
-      <fieldset>
-        <input type="text" placeholder="Origen" />
-      </fieldset>
-
-      <fieldset>
-        <input type="text" placeholder="Destino" />
-      </fieldset>
-
-      <fieldset>
-        <label for="fecha"></label>
-        <input type="date" placeholder="Fecha" />
-      </fieldset>
-
-      <a class="bn" href="tarjeta.html">Enviar</a>
-    </div>
-  </section>
-
-  
-    <!-- Footer -->
-    
-    <!-- Footer -->
-    
-    </div>
-</main>
+                <div class="highlights-grid">
+                    <div class="highlight-card hover-lift">
+                        <div class="highlight-icon">
+                            <i class="fas fa-umbrella-beach" aria-hidden="true"></i>
+                        </div>
+                        <h3>Playas Paradisíacas</h3>
+                        <p>Arena blanca, aguas cristalinas y arrecifes de coral que te dejarán sin palabras.</p>
+                    </div>
+                    <div class="highlight-card hover-lift">
+                        <div class="highlight-icon">
+                            <i class="fas fa-music" aria-hidden="true"></i>
+                        </div>
+                        <h3>Cultura y Música</h3>
+                        <p>Salsa, reggae, merengue — cada isla tiene su propio ritmo y alma cultural única.</p>
+                    </div>
+                    <div class="highlight-card hover-lift">
+                        <div class="highlight-icon">
+                            <i class="fas fa-utensils" aria-hidden="true"></i>
+                        </div>
+                        <h3>Gastronomía Tropical</h3>
+                        <p>Sabores únicos con influencias africanas, europeas e indígenas en cada plato.</p>
+                    </div>
+                    <div class="highlight-card hover-lift">
+                        <div class="highlight-icon">
+                            <i class="fas fa-water" aria-hidden="true"></i>
+                        </div>
+                        <h3>Deportes Acuáticos</h3>
+                        <p>Buceo, snorkel, surf y vela en algunas de las aguas más cálidas del mundo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
             </div>
-            <div class="footer-text">
-                <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
-                </p>
-            </div>
+            <p class="footer-text">
+                &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+            </p>
         </div>
     </footer>
 
-    <!-- JavaScript Modular -->
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <script src="js/sur.js"></script>
     <script src="js/caribe.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="js/translator.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>
