@@ -1,31 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<title>Aerolinea High Flight</title>
 
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bebidas Premium a Bordo - Destinos Mundiales" />
+    <title>Bebidas Premium | Destinos Mundiales</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg" />
-    
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
+
+    <!-- Preload crítico -->
+    <link rel="preload" href="img/mundo.png" as="image" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/comidas.css" />
     <link rel="stylesheet" href="css/bebidas.css" />
 
-    <!-- Icons -->
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -34,290 +34,664 @@
                 <span>Destinos<br />Mundiales</span>
             </a>
 
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegación principal">
+                <div id="google_translate_element"></div>
+
                 <a href="login.html" class="nav-btn">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     Iniciar Sesión
                 </a>
                 <a href="ayuda.html" class="nav-btn">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-<main class="main">
-    <div class="container">
-        <section class="popular" id="popular">
-        <div class="heading">
-            <h3>CAFÉS</h3>
-        </div>
+    <main>
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+            <div class="container">
+                <ol class="breadcrumb-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="comidas.html">Menú Gourmet</a></li>
+                    <li aria-current="page">Bebidas Premium</li>
+                </ol>
+            </div>
+        </nav>
 
-        <div class="box-container">
-            <div class="box">
-                <a href="#" class="fas fa-heart" title="Add to favorites"></a>
+        <!-- Hero -->
+        <section class="menu-hero bebidas-hero" aria-label="Bebidas Premium a Bordo">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Bebidas Premium a Bordo</h1>
+                    <p>Selección exclusiva de cafés, licores y jugos naturales para acompañar tu vuelo</p>
 
-                <div class="image">
-                    <img src="img/img4.jpg" alt="" />
-                </div>
-
-                <div class="content">
-                    <h3>Café peruano</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+                    <div class="menu-stats">
+                        <div class="menu-stat">
+                            <i class="fas fa-coffee" aria-hidden="true"></i>
+                            <span class="stat-number" data-count="12">0</span>
+                            <span class="stat-label">Cafés de Especialidad</span>
+                        </div>
+                        <div class="menu-stat">
+                            <i class="fas fa-wine-glass" aria-hidden="true"></i>
+                            <span class="stat-number" data-count="18">0</span>
+                            <span class="stat-label">Licores Selectos</span>
+                        </div>
+                        <div class="menu-stat">
+                            <i class="fas fa-lemon" aria-hidden="true"></i>
+                            <span class="stat-number" data-count="8">0</span>
+                            <span class="stat-label">Jugos Naturales</span>
+                        </div>
                     </div>
-
-                    <div class="price">$40.00 <span>$50.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
                 </div>
             </div>
+        </section>
 
-            <div class="box">
-                <a href="#" class="fas fa-heart" title="Add to favorites"></a>
-
-                <div class="image">
-                    <img src="img/img13.jpg" alt="" />
+        <!-- Filtros -->
+        <section class="menu-filters" aria-label="Filtros de bebidas">
+            <div class="container">
+                <div class="filter-tabs" role="group" aria-label="Categoría de bebida">
+                    <button class="filter-tab active" data-category="all">
+                        <i class="fas fa-glass-water" aria-hidden="true"></i> Todas
+                    </button>
+                    <button class="filter-tab" data-category="cafes">
+                        <i class="fas fa-coffee" aria-hidden="true"></i> Cafés
+                    </button>
+                    <button class="filter-tab" data-category="licores">
+                        <i class="fas fa-wine-bottle" aria-hidden="true"></i> Licores
+                    </button>
+                    <button class="filter-tab" data-category="jugos">
+                        <i class="fas fa-lemon" aria-hidden="true"></i> Jugos y Cócteles
+                    </button>
                 </div>
 
-                <div class="content">
-                    <h3>capuchino</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+                <div class="menu-search">
+                    <label for="bebidasSearch" class="visually-hidden">Buscar bebidas</label>
+                    <div class="search-container">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input type="search" id="bebidasSearch" class="search-input" placeholder="Buscar bebidas…"
+                            autocomplete="off" />
+                        <button class="clear-search" id="clearSearch" aria-label="Limpiar búsqueda" hidden>
+                            <i class="fas fa-times" aria-hidden="true"></i>
+                        </button>
                     </div>
-
-                    <div class="price">$30.00 <span>$40.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
                 </div>
             </div>
+        </section>
 
-            <div class="box">
-                <a href="#" class="fas fa-heart" title="Add to favorites"></a>
-
-                <div class="image">
-                    <img src="img/img14.jpg" alt="" />
-                </div>
-
-                <div class="content">
-                    <h3>cheong cappuccino</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+        <!-- Carrito sticky -->
+        <div class="cart-summary" id="cartSummary" aria-live="polite" aria-label="Resumen del carrito">
+            <div class="container">
+                <div class="cart-content">
+                    <div class="cart-info">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        <span id="cartCount">0</span> bebidas seleccionadas
                     </div>
-
-                    <div class="price">$50.00 <span>$60.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="heading">
-            <h3>LICORES</h3>
-        </div>
-
-        <div class="box-container">
-            <div class="box">
-                <a href="#" class="fas fa-heart" title="Add to favorites"></a>
-
-                <div class="image">
-                    <img src="img/img5.jpg" alt="" />
-                </div>
-
-                <div class="content">
-                    <h3>delicious food</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-
-                    <div class="price">$20.00 <span>$40.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <a href="#" class="fas fa-heart" title="Add to favorites"></a>
-
-                <div class="image">
-                    <img src="img/img15.jpg" alt="" />
-                </div>
-
-                <div class="content">
-                    <h3>whisky in glaskaraffe</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-
-                    <div class="price">$60.00 <span>$80.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <a href="#" class="fas fa-heart" title="Add to favorites"></a>
-
-                <div class="image">
-                    <img src="img/img16.jpg" alt="" />
-                </div>
-
-                <div class="content">
-                    <h3>Rose Kennedy Cocktail</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-
-                    <div class="price">$80.00 <span>$90.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
+                    <div class="cart-total">Total: $<span id="cartTotal">0.00</span></div>
+                    <button class="btn" id="viewCartBtn">Ver Carrito</button>
                 </div>
             </div>
         </div>
 
-        <div class="heading">
-            <h3>JUGOS</h3>
+        <!-- CAFÉS -->
+        <section class="menu-section" data-category="cafes" aria-label="Cafés">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-coffee" aria-hidden="true"></i>
+                        Cafés de Especialidad
+                    </h2>
+                    <p class="section-subtitle">Origen único, tostado artesanal, sabor inigualable</p>
+                </div>
+
+                <div class="menu-grid">
+                    <article class="menu-item" data-price="40.00" data-id="cafe-peruano">
+                        <div class="menu-item-image">
+                            <img src="img/img4.jpg" alt="Café peruano de altura en taza" loading="lazy" />
+                            <div class="item-badges">
+                                <span class="badge badge--popular"><i class="fas fa-fire" aria-hidden="true"></i>
+                                    Popular</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" aria-pressed="false"
+                                data-id="cafe-peruano">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Café Peruano de Altura</h3>
+                            <p class="item-description">Grano arábica cultivado en los Andes a 1.800 m.s.n.m., con notas
+                                de chocolate, frutos rojos y caramelo.</p>
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item"><i class="fas fa-fire" aria-hidden="true"></i> 5
+                                        kcal</span>
+                                    <span class="nutrition-item"><i class="fas fa-clock" aria-hidden="true"></i> 5
+                                        min</span>
+                                </div>
+                                <div class="item-rating" aria-label="Valoración 4.5 de 5">
+                                    <div class="stars" aria-hidden="true">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.5 (218)</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$40.00</span>
+                                    <span class="price-original">$50.00</span>
+                                    <span class="discount-badge">−20%</span>
+                                </div>
+                                <button class="btn add-to-cart" data-id="cafe-peruano"
+                                    data-name="Café Peruano de Altura" data-price="40.00">
+                                    <i class="fas fa-plus" aria-hidden="true"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-price="30.00" data-id="capuccino">
+                        <div class="menu-item-image">
+                            <img src="img/img13.jpg" alt="Capuchino cremoso con arte latte" loading="lazy" />
+                            <div class="item-badges">
+                                <span class="badge badge--vegetarian"><i class="fas fa-leaf" aria-hidden="true"></i>
+                                    Vegetariano</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" aria-pressed="false"
+                                data-id="capuccino">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Capuchino Clásico</h3>
+                            <p class="item-description">Espresso doble con leche vaporizada al punto exacto y espuma
+                                densa, decorado con arte latte.</p>
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item"><i class="fas fa-fire" aria-hidden="true"></i> 80
+                                        kcal</span>
+                                    <span class="nutrition-item"><i class="fas fa-clock" aria-hidden="true"></i> 5
+                                        min</span>
+                                </div>
+                                <div class="item-rating" aria-label="Valoración 4.5 de 5">
+                                    <div class="stars" aria-hidden="true">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.5 (341)</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$30.00</span>
+                                    <span class="price-original">$40.00</span>
+                                    <span class="discount-badge">−25%</span>
+                                </div>
+                                <button class="btn add-to-cart" data-id="capuccino" data-name="Capuchino Clásico"
+                                    data-price="30.00">
+                                    <i class="fas fa-plus" aria-hidden="true"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-price="50.00" data-id="cheong-cappuccino">
+                        <div class="menu-item-image">
+                            <img src="img/img14.jpg" alt="Cheong cappuccino con sirope de flor de cerezo"
+                                loading="lazy" />
+                            <div class="item-badges">
+                                <span class="badge badge--signature"><i class="fas fa-pen-nib" aria-hidden="true"></i>
+                                    Signature</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" aria-pressed="false"
+                                data-id="cheong-cappuccino">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Cheong Cappuccino</h3>
+                            <p class="item-description">Capuchino coreano con sirope de flor de cerezo (cheong), leche
+                                de avena y espuma de vainilla.</p>
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item"><i class="fas fa-fire" aria-hidden="true"></i> 140
+                                        kcal</span>
+                                    <span class="nutrition-item"><i class="fas fa-clock" aria-hidden="true"></i> 8
+                                        min</span>
+                                </div>
+                                <div class="item-rating" aria-label="Valoración 4.5 de 5">
+                                    <div class="stars" aria-hidden="true">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.5 (97)</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$50.00</span>
+                                    <span class="price-original">$60.00</span>
+                                    <span class="discount-badge">−17%</span>
+                                </div>
+                                <button class="btn add-to-cart" data-id="cheong-cappuccino"
+                                    data-name="Cheong Cappuccino" data-price="50.00">
+                                    <i class="fas fa-plus" aria-hidden="true"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- LICORES -->
+        <section class="menu-section" data-category="licores" aria-label="Licores">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-wine-bottle" aria-hidden="true"></i>
+                        Licores Selectos
+                    </h2>
+                    <p class="section-subtitle">Destilados y vinos de las mejores bodegas del mundo</p>
+                </div>
+
+                <div class="menu-grid">
+                    <article class="menu-item" data-price="20.00" data-id="pisco-sour">
+                        <div class="menu-item-image">
+                            <img src="img/img5.jpg" alt="Pisco Sour peruano con espuma de clara" loading="lazy" />
+                            <div class="item-badges">
+                                <span class="badge badge--popular"><i class="fas fa-fire" aria-hidden="true"></i>
+                                    Popular</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" aria-pressed="false"
+                                data-id="pisco-sour">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Pisco Sour Peruano</h3>
+                            <p class="item-description">Pisco quebranta con zumo de lima, jarabe de goma, clara de huevo
+                                y amargo de angostura. Declarado patrimonio cultural.</p>
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item"><i class="fas fa-percent" aria-hidden="true"></i> 38%
+                                        Vol</span>
+                                    <span class="nutrition-item"><i class="fas fa-wine-glass" aria-hidden="true"></i>
+                                        120 ml</span>
+                                </div>
+                                <div class="item-rating" aria-label="Valoración 4.5 de 5">
+                                    <div class="stars" aria-hidden="true">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.5 (189)</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$20.00</span>
+                                    <span class="price-original">$40.00</span>
+                                    <span class="discount-badge">−50%</span>
+                                </div>
+                                <button class="btn add-to-cart" data-id="pisco-sour" data-name="Pisco Sour Peruano"
+                                    data-price="20.00">
+                                    <i class="fas fa-plus" aria-hidden="true"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-price="60.00" data-id="whisky-escoces">
+                        <div class="menu-item-image">
+                            <img src="img/img15.jpg" alt="Whisky escocés en jarra de cristal" loading="lazy" />
+                            <div class="item-badges">
+                                <span class="badge badge--premium"><i class="fas fa-crown" aria-hidden="true"></i>
+                                    Premium</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" aria-pressed="false"
+                                data-id="whisky-escoces">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Whisky Escocés Single Malt</h3>
+                            <p class="item-description">Scotch whisky de malta única, 12 años de crianza en barrica de
+                                roble, con notas de vainilla, avellana y ahumado suave.</p>
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item"><i class="fas fa-percent" aria-hidden="true"></i> 43%
+                                        Vol</span>
+                                    <span class="nutrition-item"><i class="fas fa-wine-glass" aria-hidden="true"></i> 50
+                                        ml</span>
+                                </div>
+                                <div class="item-rating" aria-label="Valoración 4.5 de 5">
+                                    <div class="stars" aria-hidden="true">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.5 (143)</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$60.00</span>
+                                    <span class="price-original">$80.00</span>
+                                    <span class="discount-badge">−25%</span>
+                                </div>
+                                <button class="btn add-to-cart" data-id="whisky-escoces"
+                                    data-name="Whisky Escocés Single Malt" data-price="60.00">
+                                    <i class="fas fa-plus" aria-hidden="true"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-price="80.00" data-id="cocktail-kennedy">
+                        <div class="menu-item-image">
+                            <img src="img/img16.jpg" alt="Cóctel Rose Kennedy con vodka y jugo de arándano"
+                                loading="lazy" />
+                            <div class="item-badges">
+                                <span class="badge badge--signature"><i class="fas fa-pen-nib" aria-hidden="true"></i>
+                                    Signature</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" aria-pressed="false"
+                                data-id="cocktail-kennedy">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Rose Kennedy Cocktail</h3>
+                            <p class="item-description">Vodka premium con jugo de arándano rojo, tónica y un toque de
+                                lima. Elegante y refrescante.</p>
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item"><i class="fas fa-percent" aria-hidden="true"></i> 12%
+                                        Vol</span>
+                                    <span class="nutrition-item"><i class="fas fa-wine-glass" aria-hidden="true"></i>
+                                        200 ml</span>
+                                </div>
+                                <div class="item-rating" aria-label="Valoración 4.5 de 5">
+                                    <div class="stars" aria-hidden="true">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.5 (76)</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$80.00</span>
+                                    <span class="price-original">$90.00</span>
+                                    <span class="discount-badge">−11%</span>
+                                </div>
+                                <button class="btn add-to-cart" data-id="cocktail-kennedy"
+                                    data-name="Rose Kennedy Cocktail" data-price="80.00">
+                                    <i class="fas fa-plus" aria-hidden="true"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- JUGOS Y CÓCTELES -->
+        <section class="menu-section" data-category="jugos" aria-label="Jugos y Cócteles">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-lemon" aria-hidden="true"></i>
+                        Jugos Naturales y Cócteles
+                    </h2>
+                    <p class="section-subtitle">Frescura natural y creatividad en cada vaso</p>
+                </div>
+
+                <div class="menu-grid">
+                    <article class="menu-item" data-price="30.00" data-id="limonada-suiza">
+                        <div class="menu-item-image">
+                            <img src="img/img6.jpg" alt="Limonada suiza con menta y hielo" loading="lazy" />
+                            <div class="item-badges">
+                                <span class="badge badge--healthy"><i class="fas fa-heart" aria-hidden="true"></i>
+                                    Saludable</span>
+                                <span class="badge badge--vegan"><i class="fas fa-seedling" aria-hidden="true"></i>
+                                    Vegano</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" aria-pressed="false"
+                                data-id="limonada-suiza">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Limonada Suiza</h3>
+                            <p class="item-description">Limón fresco exprimido con leche condensada, menta y hielo. La
+                                versión cremosa y refrescante de la limonada clásica.</p>
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item"><i class="fas fa-fire" aria-hidden="true"></i> 120
+                                        kcal</span>
+                                    <span class="nutrition-item"><i class="fas fa-clock" aria-hidden="true"></i> 5
+                                        min</span>
+                                </div>
+                                <div class="item-rating" aria-label="Valoración 4.5 de 5">
+                                    <div class="stars" aria-hidden="true">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.5 (302)</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$30.00</span>
+                                    <span class="price-original">$40.00</span>
+                                    <span class="discount-badge">−25%</span>
+                                </div>
+                                <button class="btn add-to-cart" data-id="limonada-suiza" data-name="Limonada Suiza"
+                                    data-price="30.00">
+                                    <i class="fas fa-plus" aria-hidden="true"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-price="60.00" data-id="soda-tropical">
+                        <div class="menu-item-image">
+                            <img src="img/img17.png" alt="Soda tropical de colores con frutas exóticas"
+                                loading="lazy" />
+                            <div class="item-badges">
+                                <span class="badge badge--popular"><i class="fas fa-fire" aria-hidden="true"></i>
+                                    Popular</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" aria-pressed="false"
+                                data-id="soda-tropical">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Soda Tropical de Colores</h3>
+                            <p class="item-description">Bebida sin alcohol con capas de soda natural, sirope de mango,
+                                maracuyá y frambuesa. Visualmente espectacular.</p>
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item"><i class="fas fa-fire" aria-hidden="true"></i> 95
+                                        kcal</span>
+                                    <span class="nutrition-item"><i class="fas fa-clock" aria-hidden="true"></i> 5
+                                        min</span>
+                                </div>
+                                <div class="item-rating" aria-label="Valoración 4.5 de 5">
+                                    <div class="stars" aria-hidden="true">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.5 (267)</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$60.00</span>
+                                    <span class="price-original">$70.00</span>
+                                    <span class="discount-badge">−14%</span>
+                                </div>
+                                <button class="btn add-to-cart" data-id="soda-tropical"
+                                    data-name="Soda Tropical de Colores" data-price="60.00">
+                                    <i class="fas fa-plus" aria-hidden="true"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-price="80.00" data-id="coctel-frutas">
+                        <div class="menu-item-image">
+                            <img src="img/img18.jpg" alt="Cóctel de frutas tropicales sin alcohol" loading="lazy" />
+                            <div class="item-badges">
+                                <span class="badge badge--healthy"><i class="fas fa-heart" aria-hidden="true"></i>
+                                    Saludable</span>
+                            </div>
+                            <button class="favorite-btn" aria-label="Agregar a favoritos" aria-pressed="false"
+                                data-id="coctel-frutas">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Cóctel de Frutas Tropicales</h3>
+                            <p class="item-description">Mezcla vibrante de piña, mango, guayaba y maracuyá con agua de
+                                coco y hierbabuena fresca. Sin alcohol.</p>
+                            <div class="item-details">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item"><i class="fas fa-fire" aria-hidden="true"></i> 110
+                                        kcal</span>
+                                    <span class="nutrition-item"><i class="fas fa-clock" aria-hidden="true"></i> 8
+                                        min</span>
+                                </div>
+                                <div class="item-rating" aria-label="Valoración 4.5 de 5">
+                                    <div class="stars" aria-hidden="true">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-text">4.5 (198)</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <div class="price-container">
+                                    <span class="price-current">$80.00</span>
+                                    <span class="price-original">$100.00</span>
+                                    <span class="discount-badge">−20%</span>
+                                </div>
+                                <button class="btn add-to-cart" data-id="coctel-frutas"
+                                    data-name="Cóctel de Frutas Tropicales" data-price="80.00">
+                                    <i class="fas fa-plus" aria-hidden="true"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volver -->
+        <div class="navigation-section">
+            <div class="container">
+                <a href="comidas.html" class="btn btn--outline-dark">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    Ver Menú Gourmet
+                </a>
+            </div>
         </div>
+    </main>
 
-        <div class="box-container">
-            <div class="box">
-                <a href="#" class="fas fa-heart" title="Add to favorites"></a>
-
-                <div class="image">
-                    <img src="img/img6.jpg" alt="" />
-                </div>
-
-                <div class="content">
-                    <h3>Limonada suiza</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-
-                    <div class="price">$30.00 <span>$40.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
+    <!-- Modal: Carrito -->
+    <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-label="Tu selección de bebidas" hidden>
+        <div class="modal-backdrop" id="cartBackdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-shopping-cart" aria-hidden="true"></i> Tu Selección de Bebidas</h2>
+                <button class="modal-close" id="closeCartModal" aria-label="Cerrar carrito">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <div class="empty-cart" id="emptyCart">
+                    <i class="fas fa-wine-glass" aria-hidden="true"></i>
+                    <p>Tu carrito está vacío</p>
+                    <small>Agrega algunas bebidas para continuar</small>
                 </div>
             </div>
-
-            <div class="box">
-                <a href="#" class="fas fa-heart" title="Add to favorites"></a>
-
-                <div class="image">
-                    <img src="img/img17.png" alt="" />
+            <div class="modal-footer">
+                <div class="total-breakdown">
+                    <div class="total-line"><span>Subtotal:</span> <span id="modalSubtotal">$0.00</span></div>
+                    <div class="total-line"><span>Servicio:</span> <span id="modalService">$5.00</span></div>
+                    <div class="total-line"><span>IVA (10%):</span> <span id="modalTax">$0.00</span></div>
+                    <div class="total-line total-line--grand"><strong>Total:</strong> <strong
+                            id="modalTotal">$5.00</strong></div>
                 </div>
-
-                <div class="content">
-                    <h3>colorful soda</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-
-                    <div class="price">$60.00 <span>$70.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <a href="#" class="fas fa-heart" title="Add to favorites"></a>
-
-                <div class="image">
-                    <img src="img/img18.jpg" alt="" />
-                </div>
-
-                <div class="content">
-                    <h3>cocteles</h3>
-
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-
-                    <div class="price">$80.00 <span>$100.00</span></div>
-
-                    <a href="#" class="btn">Agregar</a>
+                <div class="modal-actions">
+                    <button class="btn btn--outline-dark" id="clearCartBtn">
+                        <i class="fas fa-trash" aria-hidden="true"></i> Limpiar
+                    </button>
+                    <button class="btn" id="confirmOrderBtn">
+                        <i class="fas fa-check" aria-hidden="true"></i> Confirmar Pedido
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
-
-    
-    <!-- Footer -->
-    
-    <!-- Footer -->
-    
     </div>
-</main>
+
+    <!-- Modal: Pedido confirmado -->
+    <div class="success-modal" id="successModal" role="dialog" aria-modal="true" aria-label="Pedido confirmado" hidden>
+        <div class="modal-backdrop" id="successBackdrop"></div>
+        <div class="modal-content">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                </div>
+                <h2>¡Pedido Confirmado!</h2>
+                <p>Tus bebidas han sido registradas y te serán servidas durante el vuelo.</p>
+                <div class="order-details">
+                    <p><strong>Número de orden:</strong> <span id="orderNumber">#ORD-2024-001</span></p>
+                </div>
+                <button class="btn" id="closeSuccessModal">
+                    <i class="fas fa-plane" aria-hidden="true"></i>
+                    Continuar con mi Viaje
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
             </div>
-            <div class="footer-text">
-                <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
-                </p>
-            </div>
+            <p class="footer-text">
+                &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+            </p>
         </div>
     </footer>
 
-    <!-- JavaScript Modular -->
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
-    <script src="js/bebidas.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="js/comidas.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>

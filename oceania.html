@@ -1,31 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<title>Oceanía - High Flight</title>
 
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vuelos a Oceanía - Destinos Mundiales" />
+    <title>Oceanía - Destinos Mundiales</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg" />
-    
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
+
+    <!-- Preload crítico -->
+    <link rel="preload" href="img/mundo.png" as="image" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/america.css" />
+    <link rel="stylesheet" href="css/sur.css" />
+    <link rel="stylesheet" href="css/norte.css" />
     <link rel="stylesheet" href="css/oceania.css" />
 
-    <!-- Icons -->
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -34,100 +36,105 @@
                 <span>Destinos<br />Mundiales</span>
             </a>
 
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegación principal">
+                <div id="google_translate_element"></div>
+
                 <a href="login.html" class="nav-btn">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     Iniciar Sesión
                 </a>
                 <a href="ayuda.html" class="nav-btn">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-<main class="main">
-    <div class="container">
-        <!-- Hero Section -->
-            <section class="hero-regional">
-                <h1>Descubre Oceanía</h1>
-                <p>Paraísos naturales y aventuras únicas en el fin del mundo</p>
-            </section>
+    <main>
+        <!-- Hero regional -->
+        <section class="page-hero oceania-hero" aria-label="Oceanía">
+            <div class="container">
+                <h1 class="page-title">Oceanía</h1>
+                <p class="page-subtitle">Paraísos naturales y aventuras únicas en el fin del mundo</p>
+            </div>
+        </section>
 
-            <!-- Slider de destinos -->
-            <section class="destinations-slider">
+        <!-- Slider interactivo de destinos -->
+        <section class="destinations-slider section-padded" aria-label="Destinos de Oceanía">
+            <div class="container">
                 <h2 class="section-title">Destinos de Ensueño</h2>
-                <div class="slider-container">
-                    <div class="slider">
-                        <div class="slide active">
-                            <img src="img/oceania1.jpg" alt="Sídney, Australia" />
+
+                <div class="slider-wrapper" role="region" aria-label="Galería de destinos" aria-live="polite">
+                    <div class="slides" id="slidesTrack">
+                        <div class="slide active" aria-hidden="false">
+                            <img src="img/oceania1.jpg" alt="Ópera de Sídney, Australia" loading="eager" />
                             <div class="slide-info">
                                 <h3>Australia</h3>
                                 <p>Desde la Ópera de Sídney hasta el Outback</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/oceania2.jpg" alt="Nueva Zelanda" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/oceania2.jpg" alt="Fiordos de Nueva Zelanda" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Nueva Zelanda</h3>
                                 <p>Paisajes de película y aventuras extremas</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/oceania3.jpg" alt="Fiyi" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/oceania3.jpg" alt="Playa de Fiyi" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Fiyi</h3>
                                 <p>Aguas cristalinas y hospitalidad única</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/oceania4.jpg" alt="Samoa" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/oceania4.jpg" alt="Samoa" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Samoa</h3>
                                 <p>Cultura polinesia auténtica</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/oceania5.jpg" alt="Tahití" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/oceania5.jpg" alt="Tahití, Polinesia Francesa" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Tahití</h3>
                                 <p>El paraíso de la Polinesia Francesa</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/oceania6.jpg" alt="Vanuatu" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/oceania6.jpg" alt="Volcán de Vanuatu" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Vanuatu</h3>
                                 <p>Volcanes activos y culturas milenarias</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/oceania7.jpg" alt="Nueva Caledonia" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/oceania7.jpg" alt="Nueva Caledonia" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Nueva Caledonia</h3>
                                 <p>Elegancia francesa en el Pacífico</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/oceania8.jpg" alt="Islas Cook" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/oceania8.jpg" alt="Laguna de las Islas Cook" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Islas Cook</h3>
                                 <p>Lagunas turquesas y tranquilidad absoluta</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/oceania9.jpg" alt="Tonga" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/oceania9.jpg" alt="Tonga" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Tonga</h3>
                                 <p>Reino del Pacífico con tradiciones reales</p>
                             </div>
                         </div>
-                        <div class="slide">
-                            <img src="img/oceania10.jpg" alt="Palau" />
+                        <div class="slide" aria-hidden="true">
+                            <img src="img/oceania10.jpg" alt="Arrecife de coral en Palau" loading="lazy" />
                             <div class="slide-info">
                                 <h3>Palau</h3>
                                 <p>Santuario marino de biodiversidad única</p>
@@ -135,36 +142,40 @@
                         </div>
                     </div>
 
-                    <!-- Controles del slider -->
-                    <button class="slider-btn prev" onclick="changeSlide(-1)" title="Diapositiva anterior">
-                        <i class="fas fa-chevron-left"></i>
+                    <button class="slider-btn slider-btn--prev" id="slidePrev" aria-label="Destino anterior">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
                     </button>
-                    <button class="slider-btn next" onclick="changeSlide(1)" title="Siguiente diapositiva">
-                        <i class="fas fa-chevron-right"></i>
+                    <button class="slider-btn slider-btn--next" id="slideNext" aria-label="Destino siguiente">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </button>
 
-                    <!-- Indicadores -->
-                    <div class="slider-indicators">
-                        <span class="indicator active" onclick="currentSlide(1)"></span>
-                        <span class="indicator" onclick="currentSlide(2)"></span>
-                        <span class="indicator" onclick="currentSlide(3)"></span>
-                        <span class="indicator" onclick="currentSlide(4)"></span>
-                        <span class="indicator" onclick="currentSlide(5)"></span>
-                        <span class="indicator" onclick="currentSlide(6)"></span>
-                        <span class="indicator" onclick="currentSlide(7)"></span>
-                        <span class="indicator" onclick="currentSlide(8)"></span>
-                        <span class="indicator" onclick="currentSlide(9)"></span>
-                        <span class="indicator" onclick="currentSlide(10)"></span>
+                    <div class="slider-indicators" role="tablist" aria-label="Seleccionar destino">
+                        <button class="indicator active" role="tab" aria-selected="true"
+                            aria-label="Australia"></button>
+                        <button class="indicator" role="tab" aria-selected="false" aria-label="Nueva Zelanda"></button>
+                        <button class="indicator" role="tab" aria-selected="false" aria-label="Fiyi"></button>
+                        <button class="indicator" role="tab" aria-selected="false" aria-label="Samoa"></button>
+                        <button class="indicator" role="tab" aria-selected="false" aria-label="Tahití"></button>
+                        <button class="indicator" role="tab" aria-selected="false" aria-label="Vanuatu"></button>
+                        <button class="indicator" role="tab" aria-selected="false"
+                            aria-label="Nueva Caledonia"></button>
+                        <button class="indicator" role="tab" aria-selected="false" aria-label="Islas Cook"></button>
+                        <button class="indicator" role="tab" aria-selected="false" aria-label="Tonga"></button>
+                        <button class="indicator" role="tab" aria-selected="false" aria-label="Palau"></button>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="booking-section">
+        <!-- Reservas y precios -->
+        <section class="booking-section section-padded section-alt" aria-label="Precios y reservas">
+            <div class="container">
                 <div class="booking-grid">
+
                     <!-- Tabla de precios -->
                     <div class="prices-section">
                         <h3 class="section-title">
-                            <i class="fas fa-tags"></i>
+                            <i class="fas fa-tags" aria-hidden="true"></i>
                             Precios desde Perú
                         </h3>
 
@@ -172,10 +183,10 @@
                             <table class="prices-table">
                                 <thead>
                                     <tr>
-                                        <th>País de Origen</th>
-                                        <th>Destino</th>
-                                        <th>Precio</th>
-                                        <th>Acción</th>
+                                        <th scope="col">Origen</th>
+                                        <th scope="col">Destino</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -183,67 +194,74 @@
                                         <td>Perú</td>
                                         <td>Australia</td>
                                         <td class="price">$1,450</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="australia">Reservar</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Nueva Zelanda</td>
                                         <td class="price">$1,380</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small"
+                                                data-destino="nueva-zelanda">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Samoa</td>
                                         <td class="price">$890</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="samoa">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Palaos</td>
                                         <td class="price">$1,250</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="palaos">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Tuvalu</td>
                                         <td class="price">$1,150</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="tuvalu">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Nueva Caledonia</td>
                                         <td class="price">$1,320</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small"
+                                                data-destino="nueva-caledonia">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Samoa Americana</td>
                                         <td class="price">$950</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small"
+                                                data-destino="samoa-americana">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Islas Norfolk</td>
                                         <td class="price">$1,180</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small"
+                                                data-destino="islas-norfolk">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Nauru</td>
                                         <td class="price">$1,080</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small" data-destino="nauru">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Polinesia Francesa</td>
                                         <td class="price">$1,420</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small"
+                                                data-destino="polinesia-francesa">Reservar</button></td>
                                     </tr>
                                     <tr>
                                         <td>Perú</td>
                                         <td>Islas Marshall</td>
                                         <td class="price">$1,290</td>
-                                        <td><button class="btn btn--small">Reservar</button></td>
+                                        <td><button class="btn btn--small"
+                                                data-destino="islas-marshall">Reservar</button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -253,20 +271,21 @@
                     <!-- Formulario de reserva -->
                     <div class="booking-form-section">
                         <h3 class="section-title">
-                            <i class="fas fa-plane-departure"></i>
+                            <i class="fas fa-plane-departure" aria-hidden="true"></i>
                             Reservar tu pasaje
                         </h3>
 
-                        <form class="booking-form" id="bookingForm">
+                        <form class="booking-form" id="bookingForm" novalidate>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" id="nombre" name="nombre" class="form-input" required />
+                                    <input type="text" id="nombre" name="nombre" class="form-input"
+                                        autocomplete="given-name" required />
                                 </div>
-
                                 <div class="form-group">
                                     <label for="apellidos" class="form-label">Apellidos</label>
-                                    <input type="text" id="apellidos" name="apellidos" class="form-input" required />
+                                    <input type="text" id="apellidos" name="apellidos" class="form-input"
+                                        autocomplete="family-name" required />
                                 </div>
                             </div>
 
@@ -282,7 +301,6 @@
                                         <option value="5+">5 o más</option>
                                     </select>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="fecha" class="form-label">Fecha de viaje</label>
                                     <input type="date" id="fecha" name="fecha" class="form-input" required />
@@ -300,7 +318,6 @@
                                         <option value="trujillo">Trujillo, Perú</option>
                                     </select>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="destino" class="form-label">Destino</label>
                                     <select id="destino" name="destino" class="form-input" required>
@@ -314,182 +331,144 @@
                                         <option value="samoa-americana">Samoa Americana</option>
                                         <option value="islas-norfolk">Islas Norfolk</option>
                                         <option value="nauru">Nauru</option>
-                                        <option value="polinesia-francesa">
-                                            Polinesia Francesa
-                                        </option>
+                                        <option value="polinesia-francesa">Polinesia Francesa</option>
                                         <option value="islas-marshall">Islas Marshall</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-actions">
-                                <button type="submit" class="btn btn--large btn--primary">
-                                    <i class="fas fa-credit-card"></i>
+                                <button type="submit" class="btn btn--large">
+                                    <i class="fas fa-credit-card" aria-hidden="true"></i>
                                     Continuar al pago
                                 </button>
                             </div>
                         </form>
                     </div>
-                </div>
-            </section>
 
-            <section class="region-info">
-                <h2 class="section-title">
-                    <i class="fas fa-info-circle"></i>
-                    ¿Por qué elegir Oceanía?
-                </h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- ¿Por qué Oceanía? -->
+        <section class="region-info section-padded" aria-label="Por qué elegir Oceanía">
+            <div class="container">
+                <h2 class="section-title">¿Por qué elegir Oceanía?</h2>
 
                 <div class="info-grid">
-                    <div class="info-card">
-                        <i class="fas fa-water"></i>
+                    <div class="info-card hover-lift">
+                        <i class="fas fa-water" aria-hidden="true"></i>
                         <h3>Biodiversidad Marina</h3>
-                        <p>
-                            Los arrecifes de coral más espectaculares del mundo y vida
-                            marina única
-                        </p>
+                        <p>Los arrecifes de coral más espectaculares del mundo y vida marina única</p>
                     </div>
-
-                    <div class="info-card">
-                        <i class="fas fa-mountain"></i>
+                    <div class="info-card hover-lift">
+                        <i class="fas fa-mountain" aria-hidden="true"></i>
                         <h3>Paisajes Únicos</h3>
-                        <p>
-                            Desde desiertos rojos hasta fiordos glaciares y volcanes activos
-                        </p>
+                        <p>Desde desiertos rojos hasta fiordos glaciares y volcanes activos</p>
                     </div>
-
-                    <div class="info-card">
-                        <i class="fas fa-users"></i>
+                    <div class="info-card hover-lift">
+                        <i class="fas fa-users" aria-hidden="true"></i>
                         <h3>Culturas Ancestrales</h3>
-                        <p>
-                            Tradiciones aborígenes y polinesias que han perdurado miles de
-                            años
-                        </p>
+                        <p>Tradiciones aborígenes y polinesias que han perdurado miles de años</p>
                     </div>
-
-                    <div class="info-card">
-                        <i class="fas fa-hiking"></i>
+                    <div class="info-card hover-lift">
+                        <i class="fas fa-person-hiking" aria-hidden="true"></i>
                         <h3>Aventuras Extremas</h3>
-                        <p>
-                            Deportes acuáticos, escalada, senderismo y experiencias de
-                            adrenalina
-                        </p>
+                        <p>Deportes acuáticos, escalada, senderismo y experiencias de adrenalina</p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Datos curiosos -->
-            <section class="fun-facts">
-                <h3 class="section-title">
-                    <i class="fas fa-lightbulb"></i>
-                    Datos Curiosos de Oceanía
-                </h3>
+        <!-- Datos curiosos -->
+        <section class="fun-facts section-padded section-alt" aria-label="Datos curiosos de Oceanía">
+            <div class="container">
+                <h2 class="section-title">Datos Curiosos de Oceanía</h2>
 
                 <div class="facts-grid">
                     <div class="fact-card">
                         <div class="fact-number">14</div>
                         <div class="fact-text">países y territorios</div>
                     </div>
-
                     <div class="fact-card">
                         <div class="fact-number">45M</div>
                         <div class="fact-text">habitantes aproximadamente</div>
                     </div>
-
                     <div class="fact-card">
                         <div class="fact-number">10,000+</div>
                         <div class="fact-text">islas en total</div>
                     </div>
-
                     <div class="fact-card">
                         <div class="fact-number">3</div>
                         <div class="fact-text">zonas horarias diferentes</div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="travel-tips">
-                <h3 class="section-title">
-                    <i class="fas fa-compass"></i>
-                    Consejos para tu viaje a Oceanía
-                </h3>
+        <!-- Consejos de viaje -->
+        <section class="travel-tips section-padded" aria-label="Consejos para viajar a Oceanía">
+            <div class="container">
+                <h2 class="section-title">Consejos para tu Viaje a Oceanía</h2>
 
                 <div class="tips-grid">
-                    <div class="tip-card">
+                    <div class="tip-card hover-lift">
                         <div class="tip-icon">
-                            <i class="fas fa-calendar-alt"></i>
+                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                         </div>
-                        <h4>Mejor época para viajar</h4>
-                        <p>
-                            La temporada seca va de abril a octubre. Ideal para actividades
-                            al aire libre y buceo.
-                        </p>
+                        <h4>Mejor Época</h4>
+                        <p>La temporada seca va de abril a octubre. Ideal para actividades al aire libre y buceo.</p>
                     </div>
-
-                    <div class="tip-card">
+                    <div class="tip-card hover-lift">
                         <div class="tip-icon">
-                            <i class="fas fa-passport"></i>
+                            <i class="fas fa-passport" aria-hidden="true"></i>
                         </div>
                         <h4>Documentación</h4>
-                        <p>
-                            Pasaporte vigente y visa para algunos países. Consulta los
-                            requisitos específicos.
-                        </p>
+                        <p>Pasaporte vigente y visa para algunos países. Consulta los requisitos específicos de cada
+                            destino.</p>
                     </div>
-
-                    <div class="tip-card">
+                    <div class="tip-card hover-lift">
                         <div class="tip-icon">
-                            <i class="fas fa-suitcase"></i>
+                            <i class="fas fa-suitcase" aria-hidden="true"></i>
                         </div>
-                        <h4>Qué llevar</h4>
-                        <p>
-                            Ropa ligera, protector solar, equipo de snorkel y calzado cómodo
-                            para caminar.
-                        </p>
+                        <h4>Qué Llevar</h4>
+                        <p>Ropa ligera, protector solar, equipo de snorkel y calzado cómodo para caminar.</p>
                     </div>
-
-                    <div class="tip-card">
+                    <div class="tip-card hover-lift">
                         <div class="tip-icon">
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart" aria-hidden="true"></i>
                         </div>
-                        <h4>Cultura local</h4>
-                        <p>
-                            Respeta las tradiciones locales y participa en ceremonias
-                            culturales auténticas.
-                        </p>
+                        <h4>Cultura Local</h4>
+                        <p>Respeta las tradiciones locales y participa en ceremonias culturales auténticas.</p>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
-
-    <!-- Footer -->
-    
-    <!-- Footer -->
-    </div>
-</main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
             </div>
-            <div class="footer-text">
-                <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
-                </p>
-            </div>
+            <p class="footer-text">
+                &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+            </p>
         </div>
     </footer>
 
-    <!-- JavaScript Modular -->
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <script src="js/sur.js"></script>
+    <script src="js/norte.js"></script>
     <script src="js/oceania.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="js/translator.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>

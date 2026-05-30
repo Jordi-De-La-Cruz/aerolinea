@@ -1,867 +1,368 @@
-class EuropaPage {
-    constructor() {
-        this.destinations = [];
-        this.currentCurrency = "EUR";
-        this.exchangeRates = {
-            EUR: 1,
-            USD: 1.08,
-            GBP: 0.86,
-            JPY: 161.5,
-        };
+const DESTINATIONS = [
+    { id: "paris", name: "París, Francia", basePrice: 899, currency: "EUR", rating: 4.9, features: ["Monumentos", "Arte", "Gastronomía"], season: { high: [6, 7, 8], low: [1, 2, 11, 12] } },
+    { id: "roma", name: "Roma, Italia", basePrice: 749, currency: "EUR", rating: 4.8, features: ["Historia", "Arquitectura", "Comida"], season: { high: [5, 6, 7, 8, 9], low: [1, 2, 12] } },
+    { id: "barcelona", name: "Barcelona, España", basePrice: 599, currency: "EUR", rating: 4.7, features: ["Playas", "Gaudí", "Tapas"], season: { high: [6, 7, 8, 9], low: [1, 2, 3, 12] } },
+    { id: "londres", name: "Londres, Reino Unido", basePrice: 699, currency: "GBP", rating: 4.6, features: ["Realeza", "Teatro", "Museos"], season: { high: [6, 7, 8], low: [1, 2, 11, 12] } },
+    { id: "amsterdam", name: "Ámsterdam, Países Bajos", basePrice: 679, currency: "EUR", rating: 4.5, features: ["Canales", "Bicicletas", "Tulipanes"], season: { high: [4, 5, 6, 7, 8], low: [1, 2, 11, 12] } },
+    { id: "praga", name: "Praga, República Checa", basePrice: 529, currency: "EUR", rating: 4.4, features: ["Castillos", "Cerveza", "Puentes"], season: { high: [5, 6, 7, 8, 9], low: [1, 2, 3, 11, 12] } },
+];
 
-        this.init();
-    }
+const EXCHANGE_RATES = { EUR: 1, USD: 1.08, GBP: 0.86, JPY: 161.5 };
+const CURRENCY_SYMBOLS = { EUR: "€", USD: "$", GBP: "£", JPY: "¥" };
 
-    init() {
-        this.initDestinations();
-        this.initBookingForms();
-        this.initPriceCalculator();
-        this.initAnimations();
-        this.initInteractiveFeatures();
-        this.loadDestinationData();
-    }
+const CLASS_MULTIPLIERS = { economica: 1, premium: 1.4, business: 2, primera: 3.2 };
+const TAX_RATE = 0.12;
 
-    initDestinations() {
-        this.destinations = [
-            {
-                id: "paris",
-                name: "París, Francia",
-                country: "Francia",
-                basePrice: 899,
-                currency: "EUR",
-                rating: 4.9,
-                image: "img/paris.jpg",
-                features: ["Monumentos", "Arte", "Gastronomía"],
-                description:
-                    "La Ciudad de la Luz te espera con sus icónicos monumentos...",
-                season: {
-                    high: [6, 7, 8],
-                    low: [1, 2, 11, 12],
-                },
-            },
-            {
-                id: "roma",
-                name: "Roma, Italia",
-                country: "Italia",
-                basePrice: 749,
-                currency: "EUR",
-                rating: 4.8,
-                image: "img/roma.jpg",
-                features: ["Historia", "Arquitectura", "Comida"],
-                description:
-                    "La Ciudad Eterna donde cada piedra cuenta una historia...",
-                season: {
-                    high: [5, 6, 7, 8, 9],
-                    low: [1, 2, 12],
-                },
-            },
-            {
-                id: "barcelona",
-                name: "Barcelona, España",
-                country: "España",
-                basePrice: 599,
-                currency: "EUR",
-                rating: 4.7,
-                image: "img/barcelona.jpg",
-                features: ["Playas", "Gaudí", "Tapas"],
-                description: "Modernismo catalán, playas mediterráneas...",
-                season: {
-                    high: [6, 7, 8, 9],
-                    low: [1, 2, 3, 12],
-                },
-            },
-            {
-                id: "londres",
-                name: "Londres, Reino Unido",
-                country: "Reino Unido",
-                basePrice: 699,
-                currency: "GBP",
-                rating: 4.6,
-                image: "img/londres.jpg",
-                features: ["Realeza", "Teatro", "Museos"],
-                description: "Tradición y modernidad se fusionan...",
-                season: {
-                    high: [6, 7, 8],
-                    low: [1, 2, 11, 12],
-                },
-            },
-            {
-                id: "amsterdam",
-                name: "Ámsterdam, Países Bajos",
-                country: "Países Bajos",
-                basePrice: 679,
-                currency: "EUR",
-                rating: 4.5,
-                image: "img/amsterdam.jpg",
-                features: ["Canales", "Bicicletas", "Tulipanes"],
-                description: "Canales pintorescos, museos extraordinarios...",
-                season: {
-                    high: [4, 5, 6, 7, 8],
-                    low: [1, 2, 11, 12],
-                },
-            },
-            {
-                id: "praga",
-                name: "Praga, República Checa",
-                country: "República Checa",
-                basePrice: 529,
-                currency: "EUR",
-                rating: 4.4,
-                image: "img/praga.jpg",
-                features: ["Castillos", "Cerveza", "Puentes"],
-                description: 'La "Ciudad de las Cien Torres"...',
-                season: {
-                    high: [5, 6, 7, 8, 9],
-                    low: [1, 2, 3, 11, 12],
-                },
-            },
-        ];
-    }
+let currentCurrency = "EUR";
 
-    initBookingForms() {
-        const bookingButtons = document.querySelectorAll(".btn[data-destination]");
+/* PRECIO CON TEMPORADA */
+function seasonalPrice(dest, month) {
+    let m = 1;
+    if (dest.season.high.includes(month)) m = 1.3;
+    else if (dest.season.low.includes(month)) m = 0.8;
+    return Math.round(dest.basePrice * m);
+}
 
-        bookingButtons.forEach((button) => {
-            button.addEventListener("click", (e) => {
-                e.preventDefault();
-                const destinationId = button.dataset.destination;
-                this.openBookingModal(destinationId);
+function convertPrice(amount, fromCurrency, toCurrency) {
+    if (fromCurrency === toCurrency) return amount;
+    return Math.round((amount / EXCHANGE_RATES[fromCurrency]) * EXCHANGE_RATES[toCurrency]);
+}
+
+function formatPrice(amount, currency) {
+    return `${CURRENCY_SYMBOLS[currency] || "€"}${amount.toLocaleString()}`;
+}
+
+function updateCardPrices() {
+    const month = new Date().getMonth() + 1;
+
+    document.querySelectorAll(".price-amount[data-base]").forEach((el) => {
+        const base = parseInt(el.dataset.base, 10);
+        const origCur = el.dataset.currency || "EUR";
+
+        /* Precio base ajustado por temporada, en moneda original */
+        const destObj = DESTINATIONS.find((d) => el.closest("[data-dest]")?.dataset.dest === d.id);
+        const seasonal = destObj ? seasonalPrice(destObj, month) : base;
+
+        /* Convertir a moneda seleccionada */
+        const converted = convertPrice(seasonal, origCur, currentCurrency);
+        el.textContent = formatPrice(converted, currentCurrency);
+    });
+}
+
+/* SELECTOR DE MONEDA */
+function initCurrencySelector() {
+    const sel = document.getElementById("currencySelector");
+    if (!sel) return;
+
+    sel.addEventListener("change", () => {
+        currentCurrency = sel.value;
+        updateCardPrices();
+        updatePriceEstimate();
+    });
+}
+
+/* FILTROS DE DESTINOS */
+function initFilters() {
+    const buttons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".destination-card");
+
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            buttons.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const filter = btn.dataset.filter;
+
+            cards.forEach((card) => {
+                const categories = card.dataset.category || "";
+                const show = filter === "all" || categories.includes(filter);
+
+                card.style.display = show ? "" : "none";
+                card.style.animation = show ? "fadeIn 0.4s ease" : "";
             });
         });
+    });
+}
 
-        // Alternative: redirect to booking page
-        const reservarButtons = document.querySelectorAll(
-            ".card-footer .btn--primary",
-        );
-        reservarButtons.forEach((button, index) => {
-            button.addEventListener("click", (e) => {
-                e.preventDefault();
-                const destination = this.destinations[index];
-                if (destination) {
-                    this.handleBookingClick(destination);
-                }
-            });
-        });
-    }
+function initCardBooking() {
+    document.querySelectorAll(".destination-card .btn[data-dest]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const destId = btn.dataset.dest;
+            const dest = DESTINATIONS.find((d) => d.id === destId);
+            if (!dest) return;
 
-    handleBookingClick(destination) {
-        // Simulate booking process
-        this.showBookingAnimation();
-
-        // Save destination to localStorage for booking page
-        localStorage.setItem("selectedDestination", JSON.stringify(destination));
-
-        setTimeout(() => {
-            if (typeof showNotification === "function") {
-                showNotification(
-                    `Redirigiendo a reservas para ${destination.name}...`,
-                    "info",
-                );
+            const select = document.getElementById("destino");
+            if (select) {
+                select.value = destId;
+                select.style.boxShadow = "0 0 0 3px rgba(33, 147, 176, 0.4)";
+                setTimeout(() => { select.style.boxShadow = ""; }, 1200);
             }
 
-            setTimeout(() => {
-                window.location.href = `reservar.html?destino=${destination.id}`;
-            }, 1500);
-        }, 1000);
+            updatePriceEstimate();
+
+            document.getElementById("europaBookingForm")
+                ?.scrollIntoView({ behavior: "smooth", block: "center" });
+
+            window.showNotification(`Destino seleccionado: ${dest.name}`, "info");
+        });
+    });
+}
+
+function updatePriceEstimate() {
+    const destinoSel = document.getElementById("destino")?.value;
+    const claseSel = document.getElementById("clase")?.value || "economica";
+    const pasajeros = parseInt(document.getElementById("pasajeros")?.value || "1", 10);
+    const estimate = document.getElementById("priceEstimate");
+
+    if (!destinoSel || !estimate) {
+        estimate?.setAttribute("hidden", "");
+        return;
     }
 
-    showBookingAnimation() {
-        const button = event.target;
-        const originalText = button.innerHTML;
+    const dest = DESTINATIONS.find((d) => d.id === destinoSel);
+    if (!dest) return;
 
-        button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
-        button.disabled = true;
-        button.style.opacity = "0.7";
+    const month = new Date().getMonth() + 1;
+    const base = seasonalPrice(dest, month);
+    const converted = convertPrice(base, dest.currency, currentCurrency);
+    const classPrice = Math.round(converted * (CLASS_MULTIPLIERS[claseSel] || 1));
+    const total = classPrice * pasajeros;
+    const taxes = Math.round(total * TAX_RATE);
+    const grand = total + taxes;
 
-        setTimeout(() => {
-            button.innerHTML = originalText;
-            button.disabled = false;
-            button.style.opacity = "1";
-        }, 2000);
+    document.getElementById("basePrice").textContent = formatPrice(total, currentCurrency);
+    document.getElementById("taxes").textContent = formatPrice(taxes, currentCurrency);
+    document.getElementById("totalPrice").textContent = formatPrice(grand, currentCurrency);
+
+    estimate.removeAttribute("hidden");
+}
+
+function initPriceEstimate() {
+    ["destino", "clase", "pasajeros"].forEach((id) => {
+        document.getElementById(id)?.addEventListener("change", updatePriceEstimate);
+    });
+}
+
+/* FORMULARIO DE RESERVA */
+function initBookingForm() {
+    const form = document.getElementById("europaBookingForm");
+    const fechaIda = document.getElementById("fechaIda");
+    if (!form) return;
+
+    const todayStr = new Date().toISOString().split("T")[0];
+    if (fechaIda) {
+        fechaIda.min = todayStr;
+        fechaIda.value = todayStr;
+
+        fechaIda.addEventListener("change", () => {
+            const fv = document.getElementById("fechaVuelta");
+            if (!fv) return;
+            const next = new Date(fechaIda.value);
+            next.setDate(next.getDate() + 1);
+            fv.min = next.toISOString().split("T")[0];
+            if (fv.value && fv.value <= fechaIda.value) fv.value = fv.min;
+        });
     }
 
-    initPriceCalculator() {
-        this.updatePricesWithSeason();
-        this.initCurrencyConverter();
-    }
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-    updatePricesWithSeason() {
-        const currentMonth = new Date().getMonth() + 1;
-        const priceElements = document.querySelectorAll(".price-amount");
-
-        priceElements.forEach((element, index) => {
-            const destination = this.destinations[index];
-            if (destination) {
-                const adjustedPrice = this.calculateSeasonalPrice(
-                    destination,
-                    currentMonth,
-                );
-                element.textContent = this.formatPrice(
-                    adjustedPrice,
-                    destination.currency,
-                );
+        let valid = true;
+        form.querySelectorAll(".form-input[required]").forEach((input) => {
+            input.parentNode.querySelector(".error-message")?.remove();
+            input.classList.remove("error");
+            if (!input.value.trim()) {
+                input.classList.add("error");
+                const span = document.createElement("span");
+                span.className = "error-message";
+                span.textContent = "Este campo es obligatorio";
+                input.parentNode.appendChild(span);
+                valid = false;
             }
         });
-    }
 
-    calculateSeasonalPrice(destination, month) {
-        let multiplier = 1;
-
-        if (destination.season.high.includes(month)) {
-            multiplier = 1.3;
-        } else if (destination.season.low.includes(month)) {
-            multiplier = 0.8;
-        }
-
-        return Math.round(destination.basePrice * multiplier);
-    }
-
-    formatPrice(price, currency) {
-        const symbols = {
-            EUR: "€",
-            USD: "$",
-            GBP: "£",
-            JPY: "¥",
-        };
-
-        return `${symbols[currency] || "€"}${price.toLocaleString()}`;
-    }
-
-    initCurrencyConverter() {
-        this.createCurrencySelector();
-
-        const currencySelector = document.getElementById("currencySelector");
-        if (currencySelector) {
-            currencySelector.addEventListener("change", (e) => {
-                this.currentCurrency = e.target.value;
-                this.convertAllPrices();
-            });
-        }
-    }
-
-    createCurrencySelector() {
-        const heroContent = document.querySelector(".hero-content");
-        if (!heroContent || document.getElementById("currencySelector")) return;
-
-        const currencyDiv = document.createElement("div");
-        currencyDiv.className = "currency-selector";
-        currencyDiv.innerHTML = `
-            <div style="margin-top: 2rem; display: inline-flex; align-items: center; gap: 1rem; 
-                        background: rgba(255, 255, 255, 0.1); padding: 1rem 2rem; 
-                        border-radius: 2rem; backdrop-filter: blur(10px);">
-                <i class="fas fa-coins" style="color: var(--secondary);"></i>
-                <label for="currencySelector" style="color: white; font-weight: 600;">Moneda:</label>
-                <select id="currencySelector" style="background: rgba(255, 255, 255, 0.9); 
-                        border: none; padding: 0.5rem 1rem; border-radius: 0.5rem; 
-                        font-weight: 600; color: var(--primary);">
-                    <option value="EUR">EUR (€)</option>
-                    <option value="USD">USD ($)</option>
-                    <option value="GBP">GBP (£)</option>
-                    <option value="JPY">JPY (¥)</option>
-                </select>
-            </div>
-        `;
-
-        heroContent.appendChild(currencyDiv);
-    }
-
-    convertAllPrices() {
-        const priceElements = document.querySelectorAll(".price-amount");
-
-        priceElements.forEach((element, index) => {
-            const destination = this.destinations[index];
-            if (destination) {
-                const currentMonth = new Date().getMonth() + 1;
-                const basePrice = this.calculateSeasonalPrice(
-                    destination,
-                    currentMonth,
-                );
-                const convertedPrice = this.convertPrice(
-                    basePrice,
-                    destination.currency,
-                    this.currentCurrency,
-                );
-                element.textContent = this.formatPrice(
-                    convertedPrice,
-                    this.currentCurrency,
-                );
-            }
-        });
-    }
-
-    convertPrice(amount, fromCurrency, toCurrency) {
-        if (fromCurrency === toCurrency) return amount;
-
-        // Convert to EUR first, then to target currency
-        const inEUR = amount / this.exchangeRates[fromCurrency];
-        const converted = inEUR * this.exchangeRates[toCurrency];
-
-        return Math.round(converted);
-    }
-
-    initAnimations() {
-        this.initScrollAnimations();
-        this.initHoverAnimations();
-        this.initCounterAnimations();
-    }
-
-    initScrollAnimations() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -100px 0px",
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationDelay = `${Math.random() * 0.5}s`;
-                    entry.target.classList.add("fade-in");
-                }
-            });
-        }, observerOptions);
-
-        const animateElements = document.querySelectorAll(
-            ".destination-card, .tip-card",
-        );
-        animateElements.forEach((el) => observer.observe(el));
-    }
-
-    initHoverAnimations() {
-        const cards = document.querySelectorAll(".destination-card");
-
-        cards.forEach((card) => {
-            card.addEventListener("mouseenter", () => {
-                // Add subtle animation to feature tags
-                const tags = card.querySelectorAll(".feature-tag");
-                tags.forEach((tag, index) => {
-                    setTimeout(() => {
-                        tag.style.transform = "translateY(-2px) scale(1.05)";
-                    }, index * 100);
-                });
-            });
-
-            card.addEventListener("mouseleave", () => {
-                const tags = card.querySelectorAll(".feature-tag");
-                tags.forEach((tag) => {
-                    tag.style.transform = "translateY(0) scale(1)";
-                });
-            });
-        });
-    }
-
-    initCounterAnimations() {
-        const ratings = document.querySelectorAll(".card-rating span");
-
-        const animateRating = (element) => {
-            const finalValue = parseFloat(element.textContent);
-            let currentValue = 0;
-            const increment = finalValue / 50;
-
-            const timer = setInterval(() => {
-                currentValue += increment;
-                if (currentValue >= finalValue) {
-                    currentValue = finalValue;
-                    clearInterval(timer);
-                }
-                element.textContent = currentValue.toFixed(1);
-            }, 20);
-        };
-
-        const ratingObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    animateRating(entry.target);
-                    ratingObserver.unobserve(entry.target);
-                }
-            });
-        });
-
-        ratings.forEach((rating) => ratingObserver.observe(rating));
-    }
-
-    initInteractiveFeatures() {
-        this.initFeatureTagInteractions();
-        this.initPriceComparison();
-        this.initDestinationFilters();
-    }
-
-    initFeatureTagInteractions() {
-        const featureTags = document.querySelectorAll(".feature-tag");
-
-        featureTags.forEach((tag) => {
-            tag.addEventListener("click", () => {
-                const feature = tag.textContent.trim();
-                this.showFeatureInfo(feature);
-            });
-        });
-    }
-
-    showFeatureInfo(feature) {
-        const featureInfo = {
-            Monumentos:
-                "Descubre los monumentos más icónicos y su historia fascinante.",
-            Arte: "Explora museos y galerías de arte de renombre mundial.",
-            Gastronomía:
-                "Disfruta de la auténtica cocina local y restaurantes premiados.",
-            Historia: "Sumérgete en siglos de historia y cultura ancestral.",
-            Arquitectura:
-                "Admira estilos arquitectónicos únicos y construcciones legendarias.",
-            Playas: "Relájate en hermosas costas y playas mediterráneas.",
-            Realeza: "Conoce palacios, castillos y la rica tradición monárquica.",
-            Teatro: "Disfruta de espectáculos teatrales en venues históricos.",
-            Museos: "Visita colecciones artísticas y culturales excepcionales.",
-            Canales: "Navega por pintorescos canales y arquitectura acuática.",
-            Bicicletas: "Explora la ciudad de forma ecológica y divertida.",
-            Tulipanes: "Admira campos de flores y jardines espectaculares.",
-            Castillos: "Visita fortalezas medievales y palacios históricos.",
-            Cerveza: "Degusta cervezas artesanales y tradiciones cerveceras.",
-            Puentes: "Cruza puentes históricos con vistas panorámicas.",
-        };
-
-        if (typeof showNotification === "function") {
-            showNotification(
-                `${feature}: ${featureInfo[feature] || "Información no disponible"}`,
-                "info",
-            );
-        }
-    }
-
-    initPriceComparison() {
-        const compareButton = this.createCompareButton();
-        this.selectedDestinations = new Set();
-
-        const cards = document.querySelectorAll(".destination-card");
-        cards.forEach((card, index) => {
-            this.addCompareCheckbox(card, index);
-        });
-    }
-
-    createCompareButton() {
-        const heroContent = document.querySelector(".hero-content");
-        if (!heroContent) return;
-
-        const compareDiv = document.createElement("div");
-        compareDiv.className = "compare-section";
-        compareDiv.innerHTML = `
-            <button id="compareBtn" class="btn btn--outline" style="margin-top: 2rem; display: none;">
-                <i class="fas fa-balance-scale"></i>
-                Comparar Seleccionados (<span id="compareCount">0</span>)
-            </button>
-        `;
-
-        heroContent.appendChild(compareDiv);
-
-        const compareBtn = document.getElementById("compareBtn");
-        compareBtn.addEventListener("click", () => this.showComparison());
-
-        return compareBtn;
-    }
-
-    addCompareCheckbox(card, index) {
-        const checkbox = document.createElement("div");
-        checkbox.className = "compare-checkbox";
-        checkbox.innerHTML = `
-            <input type="checkbox" id="compare-${index}" class="compare-input">
-            <label for="compare-${index}" class="compare-label">
-                <i class="fas fa-plus"></i>
-                Comparar
-            </label>
-        `;
-
-        checkbox.style.cssText = `
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            z-index: 4;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 0.5rem;
-            padding: 0.5rem;
-            backdrop-filter: blur(10px);
-        `;
-
-        card.style.position = "relative";
-        card.appendChild(checkbox);
-
-        const input = checkbox.querySelector("input");
-        input.addEventListener("change", (e) => {
-            if (e.target.checked) {
-                this.selectedDestinations.add(index);
-            } else {
-                this.selectedDestinations.delete(index);
-            }
-            this.updateCompareButton();
-        });
-    }
-
-    updateCompareButton() {
-        const compareBtn = document.getElementById("compareBtn");
-        const compareCount = document.getElementById("compareCount");
-
-        if (!compareBtn || !compareCount) return;
-
-        const count = this.selectedDestinations.size;
-        compareCount.textContent = count;
-
-        if (count >= 2) {
-            compareBtn.style.display = "inline-flex";
-        } else {
-            compareBtn.style.display = "none";
-        }
-    }
-
-    showComparison() {
-        const selectedDestinations = Array.from(this.selectedDestinations).map(
-            (index) => this.destinations[index],
-        );
-
-        if (selectedDestinations.length < 2) {
-            if (typeof showNotification === "function") {
-                showNotification(
-                    "Selecciona al menos 2 destinos para comparar",
-                    "warning",
-                );
-            }
+        if (!valid) {
+            window.showNotification("Por favor completa todos los campos obligatorios", "warning");
             return;
         }
 
-        this.createComparisonModal(selectedDestinations);
-    }
-
-    createComparisonModal(destinations) {
-        const modal = document.createElement("div");
-        modal.className = "comparison-modal";
-        modal.innerHTML = `
-            <div class="modal-overlay">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2>Comparación de Destinos</h2>
-                        <button class="modal-close">&times;</button>
-                    </div>
-                    <div class="comparison-table">
-                        ${this.generateComparisonTable(destinations)}
-                    </div>
-                </div>
-            </div>
-        `;
-
-        modal.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        `;
-
-        document.body.appendChild(modal);
-
-        const closeButton = modal.querySelector(".modal-close");
-        const overlay = modal.querySelector(".modal-overlay");
-
-        closeButton.addEventListener("click", () => modal.remove());
-        overlay.addEventListener("click", (e) => {
-            if (e.target === overlay) modal.remove();
-        });
-    }
-
-    generateComparisonTable(destinations) {
-        const currentMonth = new Date().getMonth() + 1;
-
-        return `
-            <table style="width: 100%; border-collapse: collapse;">
-                <thead>
-                    <tr style="background: var(--primary); color: white;">
-                        <th style="padding: 1rem; text-align: left;">Aspecto</th>
-                        ${destinations.map((dest) => `<th style="padding: 1rem; text-align: center;">${dest.name}</th>`).join("")}
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: 1rem; font-weight: bold;">Precio</td>
-                        ${destinations
-                .map(
-                    (dest) => `
-                            <td style="padding: 1rem; text-align: center; color: var(--primary); font-weight: bold;">
-                                ${this.formatPrice(this.calculateSeasonalPrice(dest, currentMonth), dest.currency)}
-                            </td>
-                        `,
-                )
-                .join("")}
-                    </tr>
-                    <tr style="background: var(--gray-light);">
-                        <td style="padding: 1rem; font-weight: bold;">Rating</td>
-                        ${destinations
-                .map(
-                    (dest) => `
-                            <td style="padding: 1rem; text-align: center;">
-                                <span style="color: #ffd700;">★</span> ${dest.rating}
-                            </td>
-                        `,
-                )
-                .join("")}
-                    </tr>
-                    <tr>
-                        <td style="padding: 1rem; font-weight: bold;">Características</td>
-                        ${destinations
-                .map(
-                    (dest) => `
-                            <td style="padding: 1rem; text-align: center;">
-                                ${dest.features.map((f) => `<span style="display: inline-block; background: var(--secondary); color: white; padding: 0.2rem 0.5rem; margin: 0.1rem; border-radius: 1rem; font-size: 0.8rem;">${f}</span>`).join("")}
-                            </td>
-                        `,
-                )
-                .join("")}
-                    </tr>
-                </tbody>
-            </table>
-        `;
-    }
-
-    initDestinationFilters() {
-        this.createFilterControls();
-    }
-
-    createFilterControls() {
-        const destinationsSection = document.querySelector(".destinations-section");
-        if (!destinationsSection) return;
-
-        const filterDiv = document.createElement("div");
-        filterDiv.className = "filter-controls";
-        filterDiv.innerHTML = `
-            <div style="display: flex; justify-content: center; gap: 1rem; margin: 2rem 0; flex-wrap: wrap;">
-                <button class="filter-btn active" data-filter="all">
-                    <i class="fas fa-globe"></i> Todos
-                </button>
-                <button class="filter-btn" data-filter="budget">
-                    <i class="fas fa-coins"></i> Económicos
-                </button>
-                <button class="filter-btn" data-filter="luxury">
-                    <i class="fas fa-crown"></i> Premium
-                </button>
-                <button class="filter-btn" data-filter="cultural">
-                    <i class="fas fa-monument"></i> Culturales
-                </button>
-                <button class="filter-btn" data-filter="coastal">
-                    <i class="fas fa-umbrella-beach"></i> Costeros
-                </button>
-            </div>
-        `;
-
-        const sectionTitle = destinationsSection.querySelector(".section-title");
-        sectionTitle.after(filterDiv);
-
-        const filterButtons = filterDiv.querySelectorAll(".filter-btn");
-        filterButtons.forEach((btn) => {
-            btn.addEventListener("click", (e) => {
-                filterButtons.forEach((b) => b.classList.remove("active"));
-                btn.classList.add("active");
-                this.filterDestinations(btn.dataset.filter);
-            });
-        });
-
-        this.styleFilterButtons(filterButtons);
-    }
-
-    styleFilterButtons(buttons) {
-        buttons.forEach((btn) => {
-            btn.style.cssText = `
-                background: rgba(33, 147, 176, 0.1);
-                border: 2px solid var(--primary);
-                color: var(--primary);
-                padding: 0.8rem 1.5rem;
-                border-radius: 2rem;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                font-weight: 600;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-            `;
-
-            btn.addEventListener("mouseenter", () => {
-                if (!btn.classList.contains("active")) {
-                    btn.style.background = "var(--primary)";
-                    btn.style.color = "white";
-                    btn.style.transform = "translateY(-2px)";
-                }
-            });
-
-            btn.addEventListener("mouseleave", () => {
-                if (!btn.classList.contains("active")) {
-                    btn.style.background = "rgba(33, 147, 176, 0.1)";
-                    btn.style.color = "var(--primary)";
-                    btn.style.transform = "translateY(0)";
-                }
-            });
-        });
-
-        // Style active button
-        const activeBtn = document.querySelector(".filter-btn.active");
-        if (activeBtn) {
-            activeBtn.style.background = "var(--primary)";
-            activeBtn.style.color = "white";
+        const submitBtn = form.querySelector('[type="submit"]');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Buscando...';
         }
-    }
 
-    filterDestinations(filterType) {
-        const cards = document.querySelectorAll(".destination-card");
-
-        cards.forEach((card, index) => {
-            const destination = this.destinations[index];
-            let shouldShow = true;
-
-            switch (filterType) {
-                case "budget":
-                    shouldShow = destination.basePrice < 650;
-                    break;
-                case "luxury":
-                    shouldShow = destination.basePrice >= 750;
-                    break;
-                case "cultural":
-                    shouldShow = destination.features.some((f) =>
-                        [
-                            "Historia",
-                            "Arte",
-                            "Monumentos",
-                            "Arquitectura",
-                            "Museos",
-                        ].includes(f),
-                    );
-                    break;
-                case "coastal":
-                    shouldShow = destination.features.includes("Playas");
-                    break;
-                default:
-                    shouldShow = true;
+        try {
+            await new Promise((res) => setTimeout(res, 1400));
+            const destName = document.getElementById("destino")?.selectedOptions[0]?.text || "";
+            window.showNotification(`¡Vuelos encontrados para ${destName}!`, "success");
+        } catch {
+            window.showNotification("Error al buscar vuelos. Intenta nuevamente.", "error");
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-search" aria-hidden="true"></i> Buscar Vuelos';
             }
-
-            if (shouldShow) {
-                card.style.display = "flex";
-                card.style.animation = "fadeIn 0.5s ease";
-            } else {
-                card.style.display = "none";
-            }
-        });
-    }
-
-    loadDestinationData() {
-        this.showLoadingState();
-
-        setTimeout(() => {
-            this.updateWithRealTimeData();
-            this.hideLoadingState();
-        }, 1500);
-    }
-
-    showLoadingState() {
-        const priceElements = document.querySelectorAll(".price-amount");
-        priceElements.forEach((el) => {
-            el.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-        });
-    }
-
-    hideLoadingState() {
-        this.updatePricesWithSeason();
-    }
-
-    updateWithRealTimeData() {
-        const flightData = {
-            availability: Math.random() * 100,
-            demandMultiplier: 0.9 + Math.random() * 0.2,
-        };
-
-        this.destinations.forEach((dest) => {
-            dest.availability = flightData.availability;
-            dest.demandMultiplier = flightData.demandMultiplier;
-        });
-
-        this.showAvailabilityInfo();
-    }
-
-    showAvailabilityInfo() {
-        const cards = document.querySelectorAll(".destination-card");
-
-        cards.forEach((card, index) => {
-            const destination = this.destinations[index];
-            const availability = Math.round(destination.availability);
-
-            let statusClass = "high";
-            let statusText = "Alta disponibilidad";
-            let statusIcon = "fa-check-circle";
-
-            if (availability < 30) {
-                statusClass = "low";
-                statusText = "Pocas plazas";
-                statusIcon = "fa-exclamation-triangle";
-            } else if (availability < 60) {
-                statusClass = "medium";
-                statusText = "Disponibilidad media";
-                statusIcon = "fa-info-circle";
-            }
-
-            const statusBadge = document.createElement("div");
-            statusBadge.className = `availability-badge ${statusClass}`;
-            statusBadge.innerHTML = `
-                <i class="fas ${statusIcon}"></i>
-                <span>${statusText}</span>
-            `;
-
-            statusBadge.style.cssText = `
-                position: absolute;
-                bottom: 1rem;
-                left: 1rem;
-                background: rgba(255, 255, 255, 0.95);
-                padding: 0.5rem 1rem;
-                border-radius: 1rem;
-                font-size: 0.8rem;
-                font-weight: 600;
-                display: flex;
-                align-items: center;
-                gap: 0.3rem;
-                z-index: 3;
-                backdrop-filter: blur(10px);
-            `;
-
-            const colors = {
-                high: "#27ae60",
-                medium: "#f39c12",
-                low: "#e74c3c",
-            };
-
-            statusBadge.style.color = colors[statusClass];
-
-            card.querySelector(".card-image").appendChild(statusBadge);
-        });
-    }
-
-    destroy() {
-        // Limpiar event listeners
-        const buttons = document.querySelectorAll(
-            ".btn, .filter-btn, .compare-input",
-        );
-        buttons.forEach((btn) => {
-            btn.replaceWith(btn.cloneNode(true));
-        });
-
-        if (this.priceUpdateInterval) {
-            clearInterval(this.priceUpdateInterval);
         }
-    }
+    });
 }
 
-// Inicializar cuando el DOM esté listo
-document.addEventListener("DOMContentLoaded", () => {
-    window.europaPage = new EuropaPage();
-});
+/* COMPARADOR DE DESTINOS */
+let selectedForCompare = new Set();
 
-// Limpiar al salir de la página
-window.addEventListener("beforeunload", () => {
-    if (window.europaPage) {
-        window.europaPage.destroy();
+function initComparator() {
+    const cards = document.querySelectorAll(".destination-card");
+
+    cards.forEach((card) => {
+        const destId = card.dataset.dest;
+        if (!destId) return;
+
+        const btn = document.createElement("button");
+        btn.className = "compare-toggle-btn";
+        btn.dataset.dest = destId;
+        btn.innerHTML = '<i class="fas fa-plus" aria-hidden="true"></i> Comparar';
+        btn.setAttribute("aria-pressed", "false");
+
+        card.querySelector(".card-content")?.appendChild(btn);
+
+        btn.addEventListener("click", () => {
+            const isSelected = selectedForCompare.has(destId);
+            if (isSelected) {
+                selectedForCompare.delete(destId);
+                btn.classList.remove("selected");
+                btn.setAttribute("aria-pressed", "false");
+                btn.innerHTML = '<i class="fas fa-plus" aria-hidden="true"></i> Comparar';
+            } else {
+                if (selectedForCompare.size >= 3) {
+                    window.showNotification("Puedes comparar hasta 3 destinos a la vez", "warning");
+                    return;
+                }
+                selectedForCompare.add(destId);
+                btn.classList.add("selected");
+                btn.setAttribute("aria-pressed", "true");
+                btn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Seleccionado';
+            }
+            updateCompareBar();
+        });
+    });
+}
+
+function updateCompareBar() {
+    let bar = document.getElementById("compareBar");
+
+    if (selectedForCompare.size < 2) {
+        bar?.remove();
+        return;
     }
-});
 
-window.EuropaPage = EuropaPage;
+    if (!bar) {
+        bar = document.createElement("div");
+        bar.id = "compareBar";
+        bar.className = "compare-bar";
+        bar.innerHTML = `
+            <span id="compareBarText"></span>
+            <button class="btn btn--small" id="compareBarBtn">
+                <i class="fas fa-balance-scale" aria-hidden="true"></i>
+                Ver comparación
+            </button>
+        `;
+        document.body.appendChild(bar);
+        document.getElementById("compareBarBtn")?.addEventListener("click", showComparisonModal);
+    }
+
+    document.getElementById("compareBarText").textContent =
+        `${selectedForCompare.size} destinos seleccionados`;
+}
+
+function showComparisonModal() {
+    const dests = DESTINATIONS.filter((d) => selectedForCompare.has(d.id));
+    if (dests.length < 2) return;
+
+    const modal = document.createElement("div");
+    modal.className = "comparison-modal";
+
+    const month = new Date().getMonth() + 1;
+    const headers = dests.map((d) => `<th>${d.name}</th>`).join("");
+    const prices = dests.map((d) => {
+        const p = convertPrice(seasonalPrice(d, month), d.currency, currentCurrency);
+        return `<td><strong>${formatPrice(p, currentCurrency)}</strong></td>`;
+    }).join("");
+    const ratings = dests.map((d) => `<td>⭐ ${d.rating}</td>`).join("");
+    const features = dests.map((d) =>
+        `<td>${d.features.map((f) => `<span class="comparison-badge">${f}</span>`).join("")}</td>`
+    ).join("");
+
+    modal.innerHTML = `
+        <div class="comparison-modal__backdrop"></div>
+        <div class="comparison-modal__content" role="dialog" aria-modal="true" aria-label="Comparación de destinos">
+            <div class="comparison-modal__header">
+                <h2>Comparación de Destinos</h2>
+                <button class="comparison-modal__close" aria-label="Cerrar">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr><th>Aspecto</th>${headers}</tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Precio estimado</td>${prices}</tr>
+                        <tr><td>Valoración</td>${ratings}</tr>
+                        <tr><td>Destacados</td>${features}</tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+    modal.querySelector(".comparison-modal__close")?.focus();
+
+    const close = () => modal.remove();
+    modal.querySelector(".comparison-modal__close")?.addEventListener("click", close);
+    modal.querySelector(".comparison-modal__backdrop")?.addEventListener("click", close);
+    document.addEventListener("keydown", function onKey(e) {
+        if (e.key === "Escape") { close(); document.removeEventListener("keydown", onKey); }
+    });
+}
+
+/* ANIMACIONES DE ENTRADA */
+function initAnimations() {
+    if (!("IntersectionObserver" in window)) return;
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }, i * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    document.querySelectorAll(".destination-card, .tip-card").forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(20px)";
+        el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        observer.observe(el);
+    });
+}
+
+/* INICIALIZACIÓN */
+document.addEventListener("DOMContentLoaded", () => {
+    new Slider(".slider-wrapper");
+    updateCardPrices();
+    initCurrencySelector();
+    initFilters();
+    initCardBooking();
+    initPriceEstimate();
+    initBookingForm();
+    initComparator();
+    initAnimations();
+});

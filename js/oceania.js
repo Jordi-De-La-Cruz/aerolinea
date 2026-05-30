@@ -1,1 +1,9 @@
-// Lógica específica para oceania
+document.addEventListener("DOMContentLoaded", () => {
+    new Slider(".slider-wrapper");
+
+    initTableReserve();
+
+    initBookingForm();
+
+    initNorteAnimations();
+});

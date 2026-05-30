@@ -1,1 +1,21 @@
-/* Estilos específicos para oceania */
+.oceania-hero {
+    background:
+        linear-gradient(rgba(0, 80, 120, 0.6), rgba(0, 30, 60, 0.78)),
+        url("../img/oceania1.jpg") center / cover no-repeat;
+}
+
+/* TEMA OSCURO */
+.dark-theme .info-card,
+.dark-theme .tip-card {
+    background: #2d2d2d;
+}
+
+.dark-theme .info-card h3,
+.dark-theme .tip-card h4 {
+    color: var(--secondary);
+}
+
+.dark-theme .info-card p,
+.dark-theme .tip-card p {
+    color: #bbb;
+}

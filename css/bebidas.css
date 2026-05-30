@@ -1,1 +1,9 @@
-/* Estilos específicos para bebidas */
+.bebidas-hero {
+    background:
+        linear-gradient(135deg, rgba(44, 62, 80, 0.95), rgba(78, 205, 196, 0.85)),
+        url("../img/img16.jpg") center / cover no-repeat;
+}
+
+.dark-theme .menu-section:nth-child(even) {
+    background: #1e1e1e;
+}

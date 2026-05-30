@@ -1,207 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+
 <head>
-<title>Aerolinea High Flight</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vuelos a África - Destinos Mundiales" />
+  <title>África - Destinos Mundiales</title>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="img/inicial.jpg" />
-    
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/africa.css" />
+  <!-- Favicon -->
+  <link rel="icon" href="img/inicial.jpg" />
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Preload crítico -->
+  <link rel="preload" href="img/mundo.png" as="image" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/america.css" />
+  <link rel="stylesheet" href="css/sur.css" />
+  <link rel="stylesheet" href="css/africa.css" />
 
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
-
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="img/mundo.png" alt="Logo Destinos Mundiales" />
-                <span>Destinos<br />Mundiales</span>
-            </a>
-
-            <nav class="nav">
-                <a href="login.html" class="nav-btn">
-                    <i class="fas fa-user"></i>
-                    Iniciar Sesión
-                </a>
-                <a href="ayuda.html" class="nav-btn">
-                    <i class="fas fa-question-circle"></i>
-                    Ayuda
-                </a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </nav>
-        </div>
-    </header>
-
-<main class="main">
+  <!-- Header -->
+  <header class="header">
     <div class="container">
-        <section>
-    <div class="slider">
-      <ul>
-        <li><img src="img/africa1.jpg" alt="" /></li>
-        <li><img src="img/africa2.jpg" alt="" /></li>
-        <li><img src="img/africa3.jpg" alt="" /></li>
-        <li><img src="img/africa4.jpg" alt="" /></li>
-        <li><img src="img/africa5.jpg" alt="" /></li>
-        <li><img src="img/africa6.jpg" alt="" /></li>
-        <li><img src="img/africa7.jpg" alt="" /></li>
-        <li><img src="img/africa8.jpg" alt="" /></li>
-        <li><img src="img/africa9.jpg" alt="" /></li>
-        <li><img src="img/africa10.jpg" alt="" /></li>
-      </ul>
+      <a href="index.html" class="logo">
+        <img src="img/mundo.png" alt="Logo Destinos Mundiales" />
+        <span>Destinos<br />Mundiales</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <div id="google_translate_element"></div>
+
+        <a href="login.html" class="nav-btn">
+          <i class="fas fa-user" aria-hidden="true"></i>
+          Iniciar Sesión
+        </a>
+        <a href="ayuda.html" class="nav-btn">
+          <i class="fas fa-question-circle" aria-hidden="true"></i>
+          Ayuda
+        </a>
+        <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="reserva">
-    <div class="reserva11">
-      <table>
-        <tr>
-          <th>PAIS DE ORIGEN</th>
-          <th>DESTINO</th>
-          <th>PRECIO</th>
-        </tr>
+  <main>
+    <!-- Hero regional -->
+    <section class="page-hero africa-hero" aria-label="África">
+      <div class="container">
+        <h1 class="page-title">África</h1>
+        <p class="page-subtitle">Safaris épicos, culturas milenarias y paisajes que dejan sin aliento</p>
+      </div>
+    </section>
 
-        <tr>
-          <td>Perú</td>
-          <td>Nigeria</td>
-          <td>$350</td>
-        </tr>
+    <!-- Galería -->
+    <section class="section-padded" aria-label="Galería de destinos africanos">
+      <div class="container">
+        <h2 class="section-title">Destinos de África</h2>
 
-        <tr>
-          <td>Perú</td>
-          <td>Kenia</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Tanzania</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Sudan</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Senegal</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Malín</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Somalia</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Nigel</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Tambia</td>
-          <td>$350</td>
-        </tr>
-
-        <tr>
-          <td>Perú</td>
-          <td>Liberia</td>
-          <td>$350</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="reserva1">
-      <h2>RESERVAR TU PASAJE</h2>
-
-      <fieldset>
-        <input type="text" placeholder="Nombre " />
-      </fieldset>
-
-      <fieldset>
-        <input type="text" placeholder="Apellidos" />
-      </fieldset>
-
-      <fieldset>
-        <input type="text" placeholder="n° de pasajes" />
-      </fieldset>
-
-      <fieldset>
-        <input type="text" placeholder="Origen" />
-      </fieldset>
-
-      <fieldset>
-        <input type="text" placeholder="Destino" />
-      </fieldset>
-
-      <fieldset>
-        <label for="fecha"></label>
-        <input type="date" placeholder="Fecha" />
-      </fieldset>
-
-      <a class="bn" href="tarjeta.html">Enviar</a>
-    </div>
-  </section>
-
-  
-    <!-- Footer -->
-    
-    <!-- Footer -->
-    
-    </div>
-</main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
-            </div>
-            <div class="footer-text">
-                <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
-                </p>
-            </div>
+        <div class="slider africa-slider" role="img" aria-label="Imágenes de destinos africanos">
+          <ul>
+            <li><img src="img/africa1.jpg" alt="Nigeria" /></li>
+            <li><img src="img/africa2.jpg" alt="Kenia" /></li>
+            <li><img src="img/africa3.jpg" alt="Tanzania" /></li>
+            <li><img src="img/africa4.jpg" alt="Sudán" /></li>
+            <li><img src="img/africa5.jpg" alt="Senegal" /></li>
+            <li><img src="img/africa6.jpg" alt="Mali" /></li>
+            <li><img src="img/africa7.jpg" alt="Somalia" /></li>
+            <li><img src="img/africa8.jpg" alt="Níger" /></li>
+            <li><img src="img/africa9.jpg" alt="Zambia" /></li>
+            <li><img src="img/africa10.jpg" alt="Liberia" /></li>
+          </ul>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- JavaScript Modular -->
-    <script src="js/main.js"></script>
-    <script src="js/africa.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- Reservas y precios -->
+    <section class="booking-section section-padded section-alt" aria-label="Precios y reservas">
+      <div class="container">
+        <div class="booking-grid">
 
+          <!-- Tabla de precios -->
+          <div class="prices-section">
+            <h3 class="section-title">
+              <i class="fas fa-tags" aria-hidden="true"></i>
+              Precios desde Perú
+            </h3>
+
+            <div class="prices-table-container">
+              <table class="prices-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Origen</th>
+                    <th scope="col">Destino</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Perú</td>
+                    <td>Nigeria</td>
+                    <td class="price">$980</td>
+                    <td><button class="btn btn--small" data-destino="nigeria">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Perú</td>
+                    <td>Kenia</td>
+                    <td class="price">$1,050</td>
+                    <td><button class="btn btn--small" data-destino="kenia">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Perú</td>
+                    <td>Tanzania</td>
+                    <td class="price">$1,080</td>
+                    <td><button class="btn btn--small" data-destino="tanzania">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Perú</td>
+                    <td>Sudán</td>
+                    <td class="price">$1,100</td>
+                    <td><button class="btn btn--small" data-destino="sudan">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Perú</td>
+                    <td>Senegal</td>
+                    <td class="price">$950</td>
+                    <td><button class="btn btn--small" data-destino="senegal">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Perú</td>
+                    <td>Mali</td>
+                    <td class="price">$990</td>
+                    <td><button class="btn btn--small" data-destino="mali">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Perú</td>
+                    <td>Somalia</td>
+                    <td class="price">$1,120</td>
+                    <td><button class="btn btn--small" data-destino="somalia">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Perú</td>
+                    <td>Níger</td>
+                    <td class="price">$970</td>
+                    <td><button class="btn btn--small" data-destino="niger">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Perú</td>
+                    <td>Zambia</td>
+                    <td class="price">$1,060</td>
+                    <td><button class="btn btn--small" data-destino="zambia">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td>Perú</td>
+                    <td>Liberia</td>
+                    <td class="price">$940</td>
+                    <td><button class="btn btn--small" data-destino="liberia">Reservar</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Formulario de reserva -->
+          <div class="booking-form-section">
+            <h3 class="section-title">
+              <i class="fas fa-plane-departure" aria-hidden="true"></i>
+              Reservar tu pasaje
+            </h3>
+
+            <form class="booking-form" id="bookingForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" id="nombre" name="nombre" class="form-input" autocomplete="given-name" required />
+                </div>
+                <div class="form-group">
+                  <label for="apellidos" class="form-label">Apellidos</label>
+                  <input type="text" id="apellidos" name="apellidos" class="form-input" autocomplete="family-name"
+                    required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="pasajes" class="form-label">N° de pasajes</label>
+                  <select id="pasajes" name="pasajes" class="form-input" required>
+                    <option value="">Seleccionar</option>
+                    <option value="1">1 pasaje</option>
+                    <option value="2">2 pasajes</option>
+                    <option value="3">3 pasajes</option>
+                    <option value="4">4 pasajes</option>
+                    <option value="5+">5 o más</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="fecha" class="form-label">Fecha de viaje</label>
+                  <input type="date" id="fecha" name="fecha" class="form-input" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="origen" class="form-label">Origen</label>
+                  <select id="origen" name="origen" class="form-input" required>
+                    <option value="">Seleccionar ciudad</option>
+                    <option value="lima">Lima, Perú</option>
+                    <option value="arequipa">Arequipa, Perú</option>
+                    <option value="cusco">Cusco, Perú</option>
+                    <option value="trujillo">Trujillo, Perú</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="destino" class="form-label">Destino</label>
+                  <select id="destino" name="destino" class="form-input" required>
+                    <option value="">Seleccionar destino</option>
+                    <option value="nigeria">Nigeria</option>
+                    <option value="kenia">Kenia</option>
+                    <option value="tanzania">Tanzania</option>
+                    <option value="sudan">Sudán</option>
+                    <option value="senegal">Senegal</option>
+                    <option value="mali">Mali</option>
+                    <option value="somalia">Somalia</option>
+                    <option value="niger">Níger</option>
+                    <option value="zambia">Zambia</option>
+                    <option value="liberia">Liberia</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn--large">
+                  <i class="fas fa-credit-card" aria-hidden="true"></i>
+                  Continuar al pago
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Destacados de África -->
+    <section class="africa-highlights section-padded" aria-label="Por qué visitar África">
+      <div class="container">
+        <h2 class="section-title">¿Por qué visitar África?</h2>
+
+        <div class="highlights-grid">
+          <div class="highlight-card hover-lift">
+            <div class="highlight-icon">
+              <i class="fas fa-paw" aria-hidden="true"></i>
+            </div>
+            <h3>Safaris Épicos</h3>
+            <p>Observa los "Cinco Grandes" en su hábitat natural en los parques de Kenia y Tanzania.</p>
+          </div>
+          <div class="highlight-card hover-lift">
+            <div class="highlight-icon">
+              <i class="fas fa-monument" aria-hidden="true"></i>
+            </div>
+            <h3>Historia Milenaria</h3>
+            <p>Pirámides de Egipto, ruinas de Cartago y civilizaciones que dieron origen a la humanidad.</p>
+          </div>
+          <div class="highlight-card hover-lift">
+            <div class="highlight-icon">
+              <i class="fas fa-mountain" aria-hidden="true"></i>
+            </div>
+            <h3>Paisajes Únicos</h3>
+            <p>Del Sahara al Kilimanjaro, de las cataratas Victoria a las sabanas infinitas.</p>
+          </div>
+          <div class="highlight-card hover-lift">
+            <div class="highlight-icon">
+              <i class="fas fa-drum" aria-hidden="true"></i>
+            </div>
+            <h3>Cultura Vibrante</h3>
+            <p>Más de 3.000 etnias con tradiciones, música y gastronomía de una riqueza incomparable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
+      </div>
+      <p class="footer-text">
+        &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/sur.js"></script>
+  <script src="js/africa.js"></script>
+  <script src="js/translator.js"></script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>
