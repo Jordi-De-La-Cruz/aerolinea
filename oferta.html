@@ -1,31 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<title>Ofertas Especiales - High Flight</title>
 
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ofertas especiales en vuelos, hoteles y gastronomía - Destinos Mundiales" />
+    <title>Ofertas Especiales - Destinos Mundiales</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg" />
-    
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
+
+    <!-- Preload crítico -->
+    <link rel="preload" href="img/mundo.png" as="image" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/oferta.css" />
 
-    <!-- Icons -->
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -34,120 +33,108 @@
                 <span>Destinos<br />Mundiales</span>
             </a>
 
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegación principal">
+                <div id="google_translate_element"></div>
+
                 <a href="login.html" class="nav-btn">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     Iniciar Sesión
                 </a>
                 <a href="ayuda.html" class="nav-btn">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-<main class="main">
-    <div class="container">
-        <!-- Hero de ofertas -->
-            <section class="offers-hero">
+    <main>
+        <!-- Hero -->
+        <section class="offers-hero" aria-label="Ofertas Especiales">
+            <div class="container">
                 <div class="hero-content">
-                    <h1>Vuelos Internacionales</h1>
-                    <p>Viaje seguro en nuestra aerolínea</p>
+                    <h1>Paquetes y Promociones</h1>
+                    <p>Las mejores ofertas en vuelos, hoteles y gastronomía para tu próximo viaje</p>
                     <div class="hero-features">
-                        <span class="feature">
-                            <i class="fas fa-plane"></i>
+                        <span class="hero-feature">
+                            <i class="fas fa-plane" aria-hidden="true"></i>
                             Vuelos directos
                         </span>
-                        <span class="feature">
-                            <i class="fas fa-shield-alt"></i>
+                        <span class="hero-feature">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
                             Viaje seguro
                         </span>
-                        <span class="feature">
-                            <i class="fas fa-tags"></i>
-                            Mejores ofertas
+                        <span class="hero-feature">
+                            <i class="fas fa-tags" aria-hidden="true"></i>
+                            Mejores precios
                         </span>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Título de paquetes -->
-            <section class="packages-title">
-                <h2>Paquetes y Promociones</h2>
-            </section>
-
-            <!-- Ofertas de hoy -->
-            <section class="offers-section">
+        <!-- Ofertas de Hoy -->
+        <section class="offers-section section-padded" aria-label="Ofertas de hoy">
+            <div class="container">
                 <h2 class="section-title">
-                    <i class="fas fa-fire"></i>
+                    <i class="fas fa-fire" aria-hidden="true"></i>
                     Ofertas de Hoy
                 </h2>
 
                 <div class="offers-grid">
-                    <!-- Comida Kawaii -->
-                    <article class="offer-card">
+                    <article class="offer-card hover-lift" data-id="comida-kawaii">
                         <div class="offer-image">
-                            <img src="img/comida2.jpg" alt="Comida Kawaii" />
-                            <div class="discount-badge">-8%</div>
+                            <img src="img/comida2.jpg" alt="Experiencia gastronómica kawaii japonesa" loading="lazy" />
+                            <span class="discount-badge">−8%</span>
                         </div>
-
                         <div class="offer-actions">
-                            <button class="action-btn favorite" onclick="toggleFavorite(this)"
-                                title="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                            <button class="action-btn action-btn--fav" aria-label="Agregar a favoritos" aria-pressed="false" data-id="comida-kawaii">
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
-                            <a href="Kawaii.html" class="action-btn view" title="Ver detalles">
-                                <i class="fas fa-eye"></i>
+                            <a href="Kawaii.html" class="action-btn action-btn--view" aria-label="Ver detalles de Comida Kawaii">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
                             </a>
                         </div>
-
                         <div class="offer-content">
                             <h3>Comida Kawaii</h3>
-                            <div class="offer-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                            <div class="offer-rating" aria-label="Valoración 4 de 5">
+                                <div class="stars" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
                                 <span class="rating-value">4.0</span>
                             </div>
-                            <p>
-                                Experiencia gastronómica única con platillos de diseño japonés
-                            </p>
+                            <p>Experiencia gastronómica única con platillos de diseño japonés</p>
                         </div>
                     </article>
 
-                    <!-- Hotel Plata -->
-                    <article class="offer-card">
+                    <article class="offer-card hover-lift" data-id="hotel-plata">
                         <div class="offer-image">
-                            <img src="img/hotel.jpg" alt="Hotel Plata República Dominicana" />
-                            <div class="discount-badge">-5%</div>
+                            <img src="img/hotel.jpg" alt="Hotel Plata en República Dominicana" loading="lazy" />
+                            <span class="discount-badge">−5%</span>
                         </div>
-
                         <div class="offer-actions">
-                            <button class="action-btn favorite" onclick="toggleFavorite(this)"
-                                title="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                            <button class="action-btn action-btn--fav" aria-label="Agregar a favoritos" aria-pressed="false" data-id="hotel-plata">
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
-                            <a href="Hotelplata.html" class="action-btn view" title="Ver detalles">
-                                <i class="fas fa-eye"></i>
+                            <a href="Hotelplata.html" class="action-btn action-btn--view" aria-label="Ver detalles de Hotel Plata">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
                             </a>
                         </div>
-
                         <div class="offer-content">
                             <h3>Hotel Plata</h3>
-                            <p class="location">República Dominicana</p>
-                            <div class="offer-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                            <p class="offer-location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                República Dominicana
+                            </p>
+                            <div class="offer-rating" aria-label="Valoración 4 de 5">
+                                <div class="stars" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
                                 <span class="rating-value">4.0</span>
@@ -156,35 +143,28 @@
                         </div>
                     </article>
 
-                    <!-- Viaje a Singapur -->
-                    <article class="offer-card featured">
+                    <article class="offer-card offer-card--featured hover-lift" data-id="singapur">
                         <div class="featured-badge">
-                            <i class="fas fa-crown"></i>
-                            Destacado
+                            <i class="fas fa-crown" aria-hidden="true"></i> Destacado
                         </div>
                         <div class="offer-image">
-                            <img src="img/vuelo.jpg" alt="Viaje a Singapur" />
-                            <div class="discount-badge">-10%</div>
+                            <img src="img/vuelo.jpg" alt="Paquete de viaje a Singapur" loading="lazy" />
+                            <span class="discount-badge">−10%</span>
                         </div>
-
                         <div class="offer-actions">
-                            <button class="action-btn favorite" onclick="toggleFavorite(this)"
-                                title="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                            <button class="action-btn action-btn--fav" aria-label="Agregar a favoritos" aria-pressed="false" data-id="singapur">
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
-                            <a href="#" class="action-btn view" title="Ver detalles">
-                                <i class="fas fa-eye"></i>
+                            <a href="asia.html" class="action-btn action-btn--view" aria-label="Ver detalles de Viaje a Singapur">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
                             </a>
                         </div>
-
                         <div class="offer-content">
                             <h3>Viaje a Singapur</h3>
-                            <div class="offer-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                            <div class="offer-rating" aria-label="Valoración 4 de 5">
+                                <div class="stars" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
                                 <span class="rating-value">4.0</span>
@@ -193,75 +173,68 @@
                         </div>
                     </article>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Ofertas navideñas -->
-            <section class="offers-section">
+        <!-- Ofertas Navideñas -->
+        <section class="offers-section section-padded section-alt" aria-label="Ofertas navideñas">
+            <div class="container">
                 <h2 class="section-title">
-                    <i class="fas fa-gift"></i>
+                    <i class="fas fa-gift" aria-hidden="true"></i>
                     Ofertas Navideñas
                 </h2>
 
                 <div class="offers-grid">
-                    <!-- Comida Navideña -->
-                    <article class="offer-card">
+                    <article class="offer-card hover-lift" data-id="comida-navidad">
                         <div class="offer-image">
-                            <img src="img/com_navidad.jpg" alt="Comida Navideña" />
-                            <div class="discount-badge">-9%</div>
+                            <img src="img/com_navidad.jpg" alt="Menú navideño especial a bordo" loading="lazy" />
+                            <span class="discount-badge">−9%</span>
                         </div>
-
                         <div class="offer-actions">
-                            <button class="action-btn favorite" onclick="toggleFavorite(this)"
-                                title="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                            <button class="action-btn action-btn--fav" aria-label="Agregar a favoritos" aria-pressed="false" data-id="comida-navidad">
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
-                            <a href="nav.html" class="action-btn view" title="Ver detalles">
-                                <i class="fas fa-eye"></i>
+                            <a href="comidas.html" class="action-btn action-btn--view" aria-label="Ver detalles de Comida Navideña">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
                             </a>
                         </div>
-
                         <div class="offer-content">
                             <h3>Comida Navideña</h3>
-                            <div class="offer-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                            <div class="offer-rating" aria-label="Valoración 4 de 5">
+                                <div class="stars" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
                                 <span class="rating-value">4.0</span>
                             </div>
-                            <p>Menú especial de temporada con los sabores tradicionales</p>
+                            <p>Menú especial de temporada con los sabores tradicionales de la Navidad</p>
                         </div>
                     </article>
 
-                    <!-- Hotel Malte -->
-                    <article class="offer-card">
+                    <article class="offer-card hover-lift" data-id="hotel-malte">
                         <div class="offer-image">
-                            <img src="img/hos_navidad.jpg" alt="Hotel Malte Francia" />
-                            <div class="discount-badge">-5%</div>
+                            <img src="img/hos_navidad.jpg" alt="Hotel Malte en Francia" loading="lazy" />
+                            <span class="discount-badge">−5%</span>
                         </div>
-
                         <div class="offer-actions">
-                            <button class="action-btn favorite" onclick="toggleFavorite(this)"
-                                title="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                            <button class="action-btn action-btn--fav" aria-label="Agregar a favoritos" aria-pressed="false" data-id="hotel-malte">
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
-                            <a href="hotelMate.html" class="action-btn view" title="Ver detalles">
-                                <i class="fas fa-eye"></i>
+                            <a href="hospedaje.html" class="action-btn action-btn--view" aria-label="Ver detalles de Hotel Malte">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
                             </a>
                         </div>
-
                         <div class="offer-content">
                             <h3>Hotel Malte</h3>
-                            <p class="location">Francia</p>
-                            <div class="offer-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                            <p class="offer-location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                Francia
+                            </p>
+                            <div class="offer-rating" aria-label="Valoración 4 de 5">
+                                <div class="stars" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
                                 <span class="rating-value">4.0</span>
@@ -270,188 +243,165 @@
                         </div>
                     </article>
 
-                    <article class="offer-card">
+                    <article class="offer-card hover-lift" data-id="emiratos">
                         <div class="offer-image">
-                            <img src="img/vuelo_navidad.jpg" alt="Viaje a Emiratos Árabes Unidos" />
-                            <div class="discount-badge">-10%</div>
+                            <img src="img/vuelo_navidad.jpg" alt="Viaje a Emiratos Árabes Unidos" loading="lazy" />
+                            <span class="discount-badge">−10%</span>
                         </div>
-
                         <div class="offer-actions">
-                            <button class="action-btn favorite" onclick="toggleFavorite(this)"
-                                title="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                            <button class="action-btn action-btn--fav" aria-label="Agregar a favoritos" aria-pressed="false" data-id="emiratos">
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
-                            <a href="Emiratos.html" class="action-btn view" title="Ver detalles">
-                                <i class="fas fa-eye"></i>
+                            <a href="asia.html" class="action-btn action-btn--view" aria-label="Ver detalles de Viaje a Emiratos">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
                             </a>
                         </div>
-
                         <div class="offer-content">
-                            <h3>Viaje a Emiratos Árabes Unidos</h3>
-                            <div class="offer-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                            <h3>Viaje a Emiratos Árabes</h3>
+                            <div class="offer-rating" aria-label="Valoración 4 de 5">
+                                <div class="stars" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
                                 <span class="rating-value">4.0</span>
                             </div>
-                            <p>Lujo y modernidad en el desierto dorado</p>
+                            <p>Lujo y modernidad en el desierto dorado de Dubái</p>
                         </div>
                     </article>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Ofertas año nuevo -->
-            <section class="offers-section">
+        <!-- Ofertas Año Nuevo -->
+        <section class="offers-section section-padded" aria-label="Ofertas de año nuevo">
+            <div class="container">
                 <h2 class="section-title">
-                    <i class="fas fa-calendar-alt"></i>
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                     Ofertas Año Nuevo
                 </h2>
 
                 <div class="offers-grid">
-                    <!-- Pizzas -->
-                    <article class="offer-card">
+                    <article class="offer-card hover-lift" data-id="pizzas-gourmet">
                         <div class="offer-image">
-                            <img src="img/oferta4.jpg" alt="Pizzas gourmet" />
-                            <div class="discount-badge">-10%</div>
+                            <img src="img/oferta4.jpg" alt="Pizzas gourmet italianas a bordo" loading="lazy" />
+                            <span class="discount-badge">−10%</span>
                         </div>
-
                         <div class="offer-actions">
-                            <button class="action-btn favorite" onclick="toggleFavorite(this)"
-                                title="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                            <button class="action-btn action-btn--fav" aria-label="Agregar a favoritos" aria-pressed="false" data-id="pizzas-gourmet">
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
-                            <a href="piz.html" class="action-btn view" title="Ver detalles">
-                                <i class="fas fa-eye"></i>
+                            <a href="comidas.html" class="action-btn action-btn--view" aria-label="Ver detalles de Pizzas Gourmet">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
                             </a>
                         </div>
-
                         <div class="offer-content">
                             <h3>Pizzas Gourmet</h3>
-                            <div class="offer-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                            <div class="offer-rating" aria-label="Valoración 4 de 5">
+                                <div class="stars" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
                                 <span class="rating-value">4.0</span>
                             </div>
-                            <p>Auténticas recetas italianas con ingredientes premium</p>
+                            <p>Auténticas recetas italianas con ingredientes de primera calidad</p>
                         </div>
                     </article>
 
-                    <!-- Hotel Banyan Tree -->
-                    <article class="offer-card">
+                    <article class="offer-card hover-lift" data-id="hotel-banyan">
                         <div class="offer-image">
-                            <img src="img/oferta5.jpg" alt="Hotel Banyan Tree Macau" />
-                            <div class="discount-badge">-5%</div>
+                            <img src="img/oferta5.jpg" alt="Hotel Banyan Tree Macau" loading="lazy" />
+                            <span class="discount-badge">−5%</span>
                         </div>
-
                         <div class="offer-actions">
-                            <button class="action-btn favorite" onclick="toggleFavorite(this)"
-                                title="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                            <button class="action-btn action-btn--fav" aria-label="Agregar a favoritos" aria-pressed="false" data-id="hotel-banyan">
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
-                            <a href="HotelBanyan.html" class="action-btn view" title="Ver detalles">
-                                <i class="fas fa-eye"></i>
+                            <a href="hospedaje.html" class="action-btn action-btn--view" aria-label="Ver detalles de Hotel Banyan Tree">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
                             </a>
                         </div>
-
                         <div class="offer-content">
                             <h3>Hotel Banyan Tree Macau</h3>
-                            <p class="location">Japón</p>
-                            <div class="offer-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                            <p class="offer-location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                Asia
+                            </p>
+                            <div class="offer-rating" aria-label="Valoración 4 de 5">
+                                <div class="stars" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
                                 <span class="rating-value">4.0</span>
                             </div>
-                            <p>Lujo asiático con vistas espectaculares</p>
+                            <p>Lujo asiático con vistas espectaculares sobre el mar</p>
                         </div>
                     </article>
 
-                    <!-- Viaje a Francia -->
-                    <article class="offer-card">
+                    <article class="offer-card hover-lift" data-id="viaje-francia">
                         <div class="offer-image">
-                            <img src="img/oferta7.jpg" alt="Viaje a Francia" />
-                            <div class="discount-badge">-10%</div>
+                            <img src="img/oferta7.jpg" alt="Viaje a Francia en Año Nuevo" loading="lazy" />
+                            <span class="discount-badge">−10%</span>
                         </div>
-
                         <div class="offer-actions">
-                            <button class="action-btn favorite" onclick="toggleFavorite(this)"
-                                title="Agregar a favoritos">
-                                <i class="far fa-heart"></i>
+                            <button class="action-btn action-btn--fav" aria-label="Agregar a favoritos" aria-pressed="false" data-id="viaje-francia">
+                                <i class="far fa-heart" aria-hidden="true"></i>
                             </button>
-                            <a href="viajefran.html" class="action-btn view" title="Ver detalles">
-                                <i class="fas fa-eye"></i>
+                            <a href="europa.html" class="action-btn action-btn--view" aria-label="Ver detalles de Viaje a Francia">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
                             </a>
                         </div>
-
                         <div class="offer-content">
                             <h3>Viaje a Francia</h3>
-                            <div class="offer-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                            <div class="offer-rating" aria-label="Valoración 4 de 5">
+                                <div class="stars" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
                                 <span class="rating-value">4.0</span>
                             </div>
-                            <p>Romance, arte y gastronomía en la Ciudad Luz</p>
+                            <p>Romance, arte y gastronomía en la Ciudad de la Luz</p>
                         </div>
                     </article>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Navegación -->
-            <section class="navigation-section">
-                <a href="index.html" class="back-to-home">
-                    <i class="fas fa-arrow-left"></i>
-                    Volver al inicio
+        <!-- Volver -->
+        <div class="navigation-section section-alt">
+            <div class="container">
+                <a href="index.html" class="btn btn--outline-offers">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    Volver al Inicio
                 </a>
-            </section>
+            </div>
         </div>
     </main>
-
-    <!-- Footer -->
-    
-    <!-- Footer -->
-    </div>
-</main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
             </div>
-            <div class="footer-text">
-                <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
-                </p>
-            </div>
+            <p class="footer-text">
+                &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+            </p>
         </div>
     </footer>
 
-    <!-- JavaScript Modular -->
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/oferta.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="js/translator.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>

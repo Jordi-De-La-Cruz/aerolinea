@@ -1,1 +1,311 @@
-/* Estilos específicos para oferta */
+/* ============================================================
+   OFERTA.CSS — Estilos de la página de ofertas especiales
+   ============================================================ */
+
+/* ============================================================
+   UTILIDADES (reutilizadas de america.css si está cargado,
+   pero oferta no depende de él — se definen aquí también)
+   ============================================================ */
+.section-padded   { padding: var(--spacing-xl) 0; }
+.section-alt      { background: var(--gray-light); }
+
+.dark-theme .section-alt { background: #1e1e1e; }
+
+/* ============================================================
+   HERO DE OFERTAS
+   ============================================================ */
+.offers-hero {
+    background:
+        linear-gradient(135deg, rgba(12, 73, 89, 0.88), rgba(33, 147, 176, 0.82)),
+        url("../img/fondo.jpg") center / cover no-repeat;
+    color: #ffffff;
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.offers-hero .hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.offers-hero h1 {
+    font-size: var(--font-size-hero);
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: var(--spacing-sm);
+}
+
+.offers-hero p {
+    font-size: var(--font-size-large);
+    opacity: 0.92;
+    margin-bottom: var(--spacing-lg);
+    color: #ffffff;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.hero-feature {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 2rem;
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: #ffffff;
+    backdrop-filter: blur(6px);
+}
+
+/* ============================================================
+   SECCIONES DE OFERTAS
+   ============================================================ */
+.offers-section .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ============================================================
+   GRID DE TARJETAS
+   ============================================================ */
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* ============================================================
+   TARJETA DE OFERTA
+   ============================================================ */
+.offer-card {
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Variante destacada */
+.offer-card--featured {
+    border: 2px solid var(--secondary);
+}
+
+.featured-badge {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    z-index: 3;
+}
+
+/* Imagen */
+.offer-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.offer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.offer-card:hover .offer-image img {
+    transform: scale(1.08);
+}
+
+/* Badge de descuento */
+.discount-badge {
+    position: absolute;
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background: var(--danger);
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    z-index: 2;
+}
+
+/* Botones de acción (favorito + ver) */
+.offer-actions {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    z-index: 3;
+}
+
+.action-btn {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.92);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    color: var(--gray);
+    transition: var(--transition);
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+}
+
+.action-btn--fav:hover,
+.action-btn--fav[aria-pressed="true"] {
+    background: var(--danger);
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.action-btn--view:hover {
+    background: var(--primary);
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Contenido */
+.offer-content {
+    padding: var(--spacing-md);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.offer-content h3 {
+    color: var(--primary);
+    font-size: var(--font-size-large);
+    margin-bottom: 0;
+}
+
+.offer-location {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--gray);
+    font-size: var(--font-size-small);
+    margin-bottom: 0;
+}
+
+.offer-location i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.offer-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.offer-rating .stars {
+    color: #f1c40f;
+    font-size: var(--font-size-small);
+    display: flex;
+    gap: 2px;
+}
+
+.rating-value {
+    color: var(--gray);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+}
+
+.offer-content > p:last-child {
+    color: var(--gray);
+    font-size: var(--font-size-small);
+    line-height: 1.7;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+/* ============================================================
+   NAVEGACIÓN DE VUELTA
+   ============================================================ */
+.navigation-section {
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.btn--outline-offers {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn--outline-offers:hover {
+    background: var(--primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   TEMA OSCURO
+   ============================================================ */
+.dark-theme .offer-card       { background: #2d2d2d; border-color: #444; }
+.dark-theme .offer-card--featured { border-color: var(--secondary); }
+.dark-theme .offer-content h3 { color: var(--secondary); }
+.dark-theme .offer-content > p:last-child { color: #bbb; }
+.dark-theme .action-btn       { background: rgba(60, 60, 60, 0.92); color: #ccc; }
+.dark-theme .offers-hero      { background-color: var(--primary-dark); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .offers-hero h1   { font-size: var(--font-size-xxl); }
+    .offers-hero p    { font-size: var(--font-size-base); }
+    .hero-features    { gap: var(--spacing-sm); }
+    .offers-grid      { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .offers-hero { padding: var(--spacing-lg) 0; }
+    .offer-image { height: 180px; }
+}
