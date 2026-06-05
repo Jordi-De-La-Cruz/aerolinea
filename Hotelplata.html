@@ -1,31 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<title>Destinos Mundiales</title>
 
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Hotel Plata - Resort 4 estrellas en Puerto Plata, República Dominicana - Destinos Mundiales" />
+    <title>Hotel Plata - Puerto Plata | Destinos Mundiales</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="img/inicial.jpg" />
-    
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
+
+    <!-- Preload crítico -->
+    <link rel="preload" href="img/mundo.png" as="image" />
+    <link rel="preload" href="img/puerto1.jpg" as="image" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/hospedaje-page.css" />
     <link rel="stylesheet" href="css/Hotelplata.css" />
 
-    <!-- Icons -->
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -34,80 +36,70 @@
                 <span>Destinos<br />Mundiales</span>
             </a>
 
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegación principal">
+                <div id="google_translate_element"></div>
+
                 <a href="login.html" class="nav-btn">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     Iniciar Sesión
                 </a>
                 <a href="ayuda.html" class="nav-btn">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-<main class="main">
-    <div class="container">
-        <!-- Hotel Gallery -->
-        <section class="hotel-gallery">
+    <main>
+        <!-- Galería de fotos -->
+        <section class="hotel-gallery" aria-label="Galería del hotel">
             <div class="container">
                 <div class="gallery-grid">
                     <div class="gallery-main">
-                        <img src="img/puerto1.jpg" alt="Hotel Plata - Vista principal del resort" />
+                        <img src="img/puerto1.jpg" alt="Hotel Plata - Vista principal del resort frente al mar" />
                     </div>
                     <div class="gallery-thumbnails">
                         <img src="img/puerto2.jpg" alt="Hotel Plata - Área de piscina" loading="lazy" />
                         <img src="img/puerto3.jpg" alt="Hotel Plata - Habitaciones de lujo" loading="lazy" />
-                        <div class="gallery-more">
+                        <button class="gallery-more" id="galleryMoreBtn" aria-label="Ver 15 fotos más">
+                            <i class="fas fa-images" aria-hidden="true"></i>
                             <span>+15 fotos más</span>
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Hotel Header -->
-        <section class="hotel-header">
+        <!-- Cabecera del hotel -->
+        <section class="hotel-header" aria-label="Información del hotel">
             <div class="container">
                 <div class="hotel-title-section">
                     <div class="hotel-info">
                         <h1>Hotel Plata</h1>
-                        <div class="hotel-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                        <div class="hotel-rating" aria-label="Valoración 4.2 de 5">
+                            <div class="stars" aria-hidden="true">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <span class="rating-text">4.2/5 (324 reseñas)</span>
+                            <span class="rating-text">4.2 / 5 (324 reseñas)</span>
                         </div>
                         <div class="hotel-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Puerto Plata, República Dominicana · A 4.38 km del
-                                centro</span>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <span>Puerto Plata, República Dominicana &middot; A 4.38 km del centro</span>
                         </div>
                         <div class="hotel-highlights">
-                            <span class="highlight-badge">
-                                <i class="fas fa-wifi"></i>
-                                Wi-Fi Gratis
-                            </span>
-                            <span class="highlight-badge">
-                                <i class="fas fa-swimming-pool"></i>
-                                Piscina
-                            </span>
-                            <span class="highlight-badge">
-                                <i class="fas fa-parking"></i>
-                                Parking Gratis
-                            </span>
-                            <span class="highlight-badge">
-                                <i class="fas fa-spa"></i>
-                                Spa
-                            </span>
+                            <span class="highlight-badge"><i class="fas fa-wifi" aria-hidden="true"></i> Wi-Fi
+                                Gratis</span>
+                            <span class="highlight-badge"><i class="fas fa-swimming-pool" aria-hidden="true"></i>
+                                Piscina</span>
+                            <span class="highlight-badge"><i class="fas fa-parking" aria-hidden="true"></i> Parking
+                                Gratis</span>
+                            <span class="highlight-badge"><i class="fas fa-spa" aria-hidden="true"></i> Spa</span>
                         </div>
                     </div>
 
@@ -117,13 +109,16 @@
                             <span class="price-amount">$120</span>
                             <span class="price-period">por noche</span>
                         </div>
-                        <p class="price-note">*Impuestos y tasas incluidos</p>
+                        <p class="price-note">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                            Impuestos y tasas incluidos
+                        </p>
                         <a href="#booking" class="btn btn--large">
-                            <i class="fas fa-calendar-check"></i>
+                            <i class="fas fa-calendar-check" aria-hidden="true"></i>
                             Reservar Ahora
                         </a>
-                        <button class="btn btn--outline" data-tooltip="Guardar en lista de favoritos">
-                            <i class="fas fa-heart"></i>
+                        <button class="btn btn--outline" id="favBtn" aria-pressed="false">
+                            <i class="far fa-heart" aria-hidden="true"></i>
                             Agregar a Favoritos
                         </button>
                     </div>
@@ -131,260 +126,230 @@
             </div>
         </section>
 
-        <!-- Special Features -->
-        <section class="special-features">
+        <!-- Por qué elegirlo -->
+        <section class="special-features section-padded section-alt" aria-label="Por qué elegir Hotel Plata">
             <div class="container">
                 <h2 class="section-title">¿Por qué elegir Hotel Plata?</h2>
                 <div class="features-grid">
                     <div class="feature-card hover-lift">
                         <div class="feature-icon">
-                            <i class="fas fa-umbrella-beach"></i>
+                            <i class="fas fa-umbrella-beach" aria-hidden="true"></i>
                         </div>
                         <h3>Acceso Directo a Playa</h3>
-                        <p>
-                            Disfruta de la hermosa Playa Tortugas con acceso privado desde
-                            el hotel
-                        </p>
+                        <p>Disfruta de la hermosa Playa Tortugas con acceso privado desde el hotel</p>
                     </div>
                     <div class="feature-card hover-lift">
                         <div class="feature-icon">
-                            <i class="fas fa-utensils"></i>
+                            <i class="fas fa-utensils" aria-hidden="true"></i>
                         </div>
                         <h3>Todo Incluido</h3>
                         <p>Comidas buffet, cenas gourmet y bebidas premium sin límite</p>
                     </div>
                     <div class="feature-card hover-lift">
                         <div class="feature-icon">
-                            <i class="fas fa-dumbbell"></i>
+                            <i class="fas fa-dumbbell" aria-hidden="true"></i>
                         </div>
                         <h3>Instalaciones Completas</h3>
                         <p>Gimnasio, spa, piscinas y actividades para toda la familia</p>
                     </div>
                     <div class="feature-card hover-lift">
                         <div class="feature-icon">
-                            <i class="fas fa-concierge-bell"></i>
+                            <i class="fas fa-concierge-bell" aria-hidden="true"></i>
                         </div>
                         <h3>Servicio Premium</h3>
-                        <p>
-                            Personal multilingüe y atención 24/7 para una estancia perfecta
-                        </p>
+                        <p>Personal multilingüe y atención 24/7 para una estancia perfecta</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Hotel Details -->
-        <section class="hotel-details" id="details">
+        <!-- Amenities + Mapa -->
+        <section class="hotel-details section-padded" id="details" aria-label="Detalles del hotel">
             <div class="container">
                 <div class="details-grid">
                     <!-- Amenities -->
                     <div class="amenities-section">
                         <h2>El alojamiento ofrece</h2>
                         <div class="amenities-grid">
-                            <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-snowflake"></i>
+                            <div class="amenity-item">
+                                <i class="fas fa-snowflake" aria-hidden="true"></i>
                                 <span>Aire acondicionado en zonas comunes</span>
                             </div>
-                            <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-wifi"></i>
+                            <div class="amenity-item">
+                                <i class="fas fa-wifi" aria-hidden="true"></i>
                                 <span>Wi-Fi gratis en zonas comunes</span>
                             </div>
-                            <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-swimming-pool"></i>
-                                <span>Piscina</span>
+                            <div class="amenity-item">
+                                <i class="fas fa-swimming-pool" aria-hidden="true"></i>
+                                <span>Piscina exterior</span>
                             </div>
-                            <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-parking"></i>
-                                <span>Estacionamiento gratis</span>
+                            <div class="amenity-item">
+                                <i class="fas fa-parking" aria-hidden="true"></i>
+                                <span>Estacionamiento gratuito</span>
                             </div>
-                            <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-dumbbell"></i>
-                                <span>Gimnasio</span>
+                            <div class="amenity-item">
+                                <i class="fas fa-dumbbell" aria-hidden="true"></i>
+                                <span>Gimnasio equipado</span>
                             </div>
-                            <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-spa"></i>
+                            <div class="amenity-item">
+                                <i class="fas fa-spa" aria-hidden="true"></i>
                                 <span>Servicio de spa</span>
                             </div>
-                            <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-cocktail"></i>
+                            <div class="amenity-item">
+                                <i class="fas fa-cocktail" aria-hidden="true"></i>
                                 <span>Bar en la piscina</span>
                             </div>
-                            <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-baby"></i>
+                            <div class="amenity-item">
+                                <i class="fas fa-baby" aria-hidden="true"></i>
                                 <span>Club para niños</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Location and Map -->
+                    <!-- Mapa y atracciones -->
                     <div class="location-section">
                         <h2>Explora los alrededores</h2>
                         <div class="map-container">
                             <iframe class="hotel-map"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.0595820910926!2d-79.03799639778634!3d-8.095406754396853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3ddee38a5a23%3A0x69cbed0ac8430345!2sAv.%20Nicol%C3%A1s%20de%20Pi%C3%A9rola%2C%20Trujillo%2013011!5e0!3m2!1ses!2spe!4v1637026840121!5m2!1ses!2spe"
                                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer"
-                                title="Ubicación Hotel Plata">
+                                title="Ubicación Hotel Plata en Puerto Plata">
                             </iframe>
                         </div>
 
                         <div class="nearby-attractions">
                             <h3>Atracciones Cercanas</h3>
-                            <div class="attraction-list">
-                                <div class="attraction-item">
-                                    <i class="fas fa-umbrella-beach"></i>
+                            <ul class="attraction-list">
+                                <li class="attraction-item">
+                                    <i class="fas fa-umbrella-beach" aria-hidden="true"></i>
                                     <div class="attraction-info">
                                         <span class="attraction-name">Playa Tortugas</span>
-                                        <span class="attraction-distance">200m</span>
+                                        <span class="attraction-distance">200 m</span>
                                     </div>
-                                </div>
-                                <div class="attraction-item">
-                                    <i class="fas fa-fish"></i>
+                                </li>
+                                <li class="attraction-item">
+                                    <i class="fas fa-fish" aria-hidden="true"></i>
                                     <div class="attraction-info">
                                         <span class="attraction-name">Acuario Interactivo de Puerto Plata</span>
                                         <span class="attraction-distance">9.5 km</span>
                                     </div>
-                                </div>
-                                <div class="attraction-item">
-                                    <i class="fas fa-tree"></i>
+                                </li>
+                                <li class="attraction-item">
+                                    <i class="fas fa-tree" aria-hidden="true"></i>
                                     <div class="attraction-info">
                                         <span class="attraction-name">Parque de las Palapas</span>
                                         <span class="attraction-distance">5.2 km</span>
                                     </div>
-                                </div>
-                                <div class="attraction-item">
-                                    <i class="fas fa-ship"></i>
+                                </li>
+                                <li class="attraction-item">
+                                    <i class="fas fa-ship" aria-hidden="true"></i>
                                     <div class="attraction-info">
                                         <span class="attraction-name">Puerto de Ultramar</span>
                                         <span class="attraction-distance">3 km</span>
                                     </div>
-                                </div>
-                                <div class="attraction-item">
-                                    <i class="fas fa-plane"></i>
+                                </li>
+                                <li class="attraction-item">
+                                    <i class="fas fa-plane" aria-hidden="true"></i>
                                     <div class="attraction-info">
                                         <span class="attraction-name">Aeropuerto Internacional</span>
                                         <span class="attraction-distance">22 km</span>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Hotel Description -->
-        <section class="hotel-description">
+        <!-- Descripción + reseñas -->
+        <section class="hotel-description section-padded section-alt" aria-label="Descripción y reseñas">
             <div class="container">
                 <div class="description-content">
                     <h2>Conoce un poco más</h2>
 
                     <div class="description-text">
-                        <p>
-                            El Hotel Plata está situado en Playa Tortugas, a 6.5 km del
-                            Parque Urbano Kabah, a 15 km de Playa Delfines y a 22 km del
-                            Aeropuerto Internacional de República Dominicana. Ofrece
-                            asistencia turística y piscina al aire libre en un entorno
-                            paradisíaco.
-                        </p>
-                        <p>
-                            El hotel cuenta con el restaurante El Faisán, que sirve desayuno
-                            tipo buffet incluido en la tarifa, así como almuerzo y cena bajo
-                            el régimen todo incluido. Los bares Piña Colada y Faisán brindan
-                            cócteles y bebidas selectas para completar tu experiencia.
-                        </p>
+                        <p>El Hotel Plata está situado en Playa Tortugas, a 6.5 km del Parque Urbano Kabah, a 15 km de
+                            Playa Delfines y a 22 km del Aeropuerto Internacional. Ofrece asistencia turística y piscina
+                            al aire libre en un entorno paradisíaco.</p>
+                        <p>El hotel cuenta con el restaurante El Faisán, que sirve desayuno tipo buffet incluido en la
+                            tarifa, así como almuerzo y cena bajo el régimen todo incluido. Los bares Piña Colada y
+                            Faisán brindan cócteles y bebidas selectas.</p>
                     </div>
 
                     <div class="info-sections">
                         <div class="info-section">
-                            <h3><i class="fas fa-info-circle"></i> Necesitas saber</h3>
+                            <h3><i class="fas fa-info-circle" aria-hidden="true"></i> Necesitas saber</h3>
                             <ul>
-                                <li>
-                                    Algunos huéspedes consideran que la señal Wi-Fi dentro del
-                                    hotel podría ser mejor
-                                </li>
-                                <li>Check-in: 15:00 hrs | Check-out: 12:00 hrs</li>
+                                <li>Check-in: 15:00 h &nbsp;|&nbsp; Check-out: 12:00 h</li>
                                 <li>Se admiten mascotas bajo consulta previa</li>
                                 <li>Servicio de habitaciones disponible 24/7</li>
+                                <li>La señal Wi-Fi en algunas habitaciones puede ser limitada</li>
                             </ul>
                         </div>
-
                         <div class="info-section">
-                            <h3><i class="fas fa-compass"></i> Brújula</h3>
+                            <h3><i class="fas fa-compass" aria-hidden="true"></i> Distancias clave</h3>
                             <ul>
-                                <li>A 3 km del Puerto de Ultramar</li>
-                                <li>El Hotel se ubica a 9.5 km del Acuario Interactivo</li>
-                                <li>A 22 km de Isla Mujeres</li>
-                                <li>Centro de Puerto Plata a 4.38 km</li>
+                                <li>Centro de Puerto Plata: 4.38 km</li>
+                                <li>Puerto de Ultramar: 3 km</li>
+                                <li>Acuario Interactivo: 9.5 km</li>
+                                <li>Isla Mujeres: 22 km</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Reviews Section -->
+                    <!-- Reseñas -->
                     <div class="reviews-section">
                         <h3>Lo que dicen nuestros huéspedes</h3>
                         <div class="reviews-grid">
                             <div class="review-card">
-                                <div class="review-rating">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                                <div class="review-rating" aria-label="5 de 5 estrellas">
+                                    <div class="stars" aria-hidden="true">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                     </div>
                                     <span>5.0</span>
                                 </div>
-                                <p>
-                                    "Excelente ubicación frente a la playa. El personal es muy
-                                    amable y las instalaciones están impecables. El buffet es
-                                    variado y delicioso."
-                                </p>
+                                <blockquote>"Excelente ubicación frente a la playa. El personal es muy amable y las
+                                    instalaciones están impecables. El buffet es variado y delicioso."</blockquote>
                                 <div class="review-author">
                                     <strong>María González</strong>
-                                    <span>Marzo 2024</span>
+                                    <time datetime="2024-03">Marzo 2024</time>
                                 </div>
                             </div>
 
                             <div class="review-card">
-                                <div class="review-rating">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                                <div class="review-rating" aria-label="4 de 5 estrellas">
+                                    <div class="stars" aria-hidden="true">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                         <i class="far fa-star"></i>
                                     </div>
                                     <span>4.0</span>
                                 </div>
-                                <p>
-                                    "Muy buena experiencia en general. Las habitaciones son
-                                    cómodas y el spa es relajante. Solo mejoraría la velocidad
-                                    del Wi-Fi."
-                                </p>
+                                <blockquote>"Muy buena experiencia en general. Las habitaciones son cómodas y el spa es
+                                    relajante. Solo mejoraría la velocidad del Wi-Fi."</blockquote>
                                 <div class="review-author">
                                     <strong>Carlos Mendoza</strong>
-                                    <span>Febrero 2024</span>
+                                    <time datetime="2024-02">Febrero 2024</time>
                                 </div>
                             </div>
 
                             <div class="review-card">
-                                <div class="review-rating">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                                <div class="review-rating" aria-label="5 de 5 estrellas">
+                                    <div class="stars" aria-hidden="true">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                     </div>
                                     <span>5.0</span>
                                 </div>
-                                <p>
-                                    "Perfecto para familias. Los niños se divirtieron mucho en
-                                    la piscina y el club infantil. Volveremos sin duda."
-                                </p>
+                                <blockquote>"Perfecto para familias. Los niños se divirtieron mucho en la piscina y el
+                                    club infantil. Volveremos sin duda."</blockquote>
                                 <div class="review-author">
                                     <strong>Ana Rodríguez</strong>
-                                    <span>Enero 2024</span>
+                                    <time datetime="2024-01">Enero 2024</time>
                                 </div>
                             </div>
                         </div>
@@ -393,12 +358,12 @@
             </div>
         </section>
 
-        <!-- Booking Section -->
-        <section class="booking-section" id="booking">
+        <!-- Formulario de reserva -->
+        <section class="booking-section section-padded" id="booking" aria-label="Reservar estancia">
             <div class="container">
                 <div class="booking-card">
                     <h2>Reserva tu estancia</h2>
-                    <form class="booking-form" id="bookingForm">
+                    <form class="booking-form" id="bookingForm" novalidate>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="checkin" class="form-label">Fecha de llegada</label>
@@ -418,7 +383,7 @@
                                     <option value="2" selected>2 Huéspedes</option>
                                     <option value="3">3 Huéspedes</option>
                                     <option value="4">4 Huéspedes</option>
-                                    <option value="5">5+ Huéspedes</option>
+                                    <option value="5+">5+ Huéspedes</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -432,173 +397,153 @@
                             </div>
                         </div>
 
-                        <div class="price-summary">
-                            <div class="price-breakdown">
-                                <div class="price-line">
-                                    <span>Selecciona fechas para ver precios</span>
-                                    <span>--</span>
-                                </div>
-                            </div>
+                        <!-- Resumen de precio -->
+                        <div class="price-summary" id="priceSummary" hidden>
+                            <div class="price-breakdown" id="priceBreakdown"></div>
+                        </div>
+
+                        <div id="datePrompt" class="date-prompt">
+                            <i class="fas fa-calendar" aria-hidden="true"></i>
+                            Selecciona fechas para ver el precio estimado
                         </div>
 
                         <button type="submit" class="btn btn--large">
-                            <i class="fas fa-calendar-check"></i>
+                            <i class="fas fa-calendar-check" aria-hidden="true"></i>
                             Confirmar Reserva
                         </button>
 
                         <p class="booking-note">
-                            <i class="fas fa-shield-alt"></i>
-                            Reserva segura · Cancelación gratuita hasta 24h antes
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            Reserva segura &middot; Cancelación gratuita hasta 24 h antes
                         </p>
                     </form>
                 </div>
             </div>
         </section>
 
-        <!-- Similar Hotels -->
-        <section class="similar-hotels">
+        <!-- Hoteles similares -->
+        <section class="similar-hotels section-padded section-alt" aria-label="Hoteles similares">
             <div class="container">
-                <h2 class="section-title">
-                    Hoteles similares en República Dominicana
-                </h2>
+                <h2 class="section-title">Hoteles similares en República Dominicana</h2>
                 <div class="hotels-grid">
                     <div class="hotel-card hover-lift">
                         <div class="hotel-card__image">
-                            <img src="img/hotel-similar-1.jpg" alt="Resort Caribe" onerror="
-                    this.src =
-                      'https://via.placeholder.com/300x200/2193b0/ffffff?text=Resort+Caribe'
-                  " />
+                            <img src="img/hotel-similar-1.jpg" alt="Resort Caribe en Punta Cana" loading="lazy"
+                                onerror="this.src='https://placehold.co/300x200/2193b0/ffffff?text=Resort+Caribe'" />
                             <span class="hotel-card__badge">Oferta</span>
                         </div>
                         <div class="hotel-card__content">
                             <h3>Resort Caribe</h3>
-                            <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                            <div class="hotel-rating" aria-label="4.8 de 5">
+                                <div class="stars" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <span class="rating-text">4.8/5</span>
+                                <span class="rating-text">4.8 / 5</span>
                             </div>
                             <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Punta Cana</span>
                             </div>
                             <div class="hotel-price">
                                 <span class="price-from">Desde</span>
                                 <span class="price-amount">$180</span>
-                                <span class="price-period">/noche</span>
+                                <span class="price-period">/ noche</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="hotel-card hover-lift">
                         <div class="hotel-card__image">
-                            <img src="img/hotel-similar-2.jpg" alt="Hotel Bahía" onerror="
-                    this.src =
-                      'https://via.placeholder.com/300x200/4ecdc4/ffffff?text=Hotel+Bahía'
-                  " />
+                            <img src="img/hotel-similar-2.jpg" alt="Hotel Bahía en Santo Domingo" loading="lazy"
+                                onerror="this.src='https://placehold.co/300x200/4ecdc4/ffffff?text=Hotel+Bahía'" />
                         </div>
                         <div class="hotel-card__content">
                             <h3>Hotel Bahía</h3>
-                            <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                            <div class="hotel-rating" aria-label="4.2 de 5">
+                                <div class="stars" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
-                                <span class="rating-text">4.2/5</span>
+                                <span class="rating-text">4.2 / 5</span>
                             </div>
                             <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Santo Domingo</span>
                             </div>
                             <div class="hotel-price">
                                 <span class="price-from">Desde</span>
                                 <span class="price-amount">$95</span>
-                                <span class="price-period">/noche</span>
+                                <span class="price-period">/ noche</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="hotel-card hover-lift">
                         <div class="hotel-card__image">
-                            <img src="img/hotel-similar-3.jpg" alt="Villa Paraíso" onerror="
-                    this.src =
-                      'https://via.placeholder.com/300x200/ff6b9d/ffffff?text=Villa+Paraíso'
-                  " />
+                            <img src="img/hotel-similar-3.jpg" alt="Villa Paraíso en Samaná" loading="lazy"
+                                onerror="this.src='https://placehold.co/300x200/ff6b9d/ffffff?text=Villa+Paraíso'" />
                             <span class="hotel-card__badge">Nuevo</span>
                         </div>
                         <div class="hotel-card__content">
                             <h3>Villa Paraíso</h3>
-                            <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                            <div class="hotel-rating" aria-label="4.9 de 5">
+                                <div class="stars" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <span class="rating-text">4.9/5</span>
+                                <span class="rating-text">4.9 / 5</span>
                             </div>
                             <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Samaná</span>
                             </div>
                             <div class="hotel-price">
                                 <span class="price-from">Desde</span>
                                 <span class="price-amount">$220</span>
-                                <span class="price-period">/noche</span>
+                                <span class="price-period">/ noche</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- Page Navigation -->
-    <nav class="page-navigation">
-        <div class="container">
-            <a href="#" class="back-btn">
-                <i class="fas fa-arrow-left"></i>
-                Volver a Ofertas
-            </a>
+        <!-- Volver -->
+        <div class="navigation-section">
+            <div class="container">
+                <a href="oferta.html" class="btn btn--outline-offers">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    Volver a Ofertas
+                </a>
+            </div>
         </div>
-    </nav>
-
-    <!-- Footer -->
-    
-    <!-- Footer -->
-    </div>
-</main>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
             </div>
-            <div class="footer-text">
-                <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
-                </p>
-            </div>
+            <p class="footer-text">
+                &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+            </p>
         </div>
     </footer>
 
-    <!-- JavaScript Modular -->
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/Hotelplata.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="js/translator.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>
