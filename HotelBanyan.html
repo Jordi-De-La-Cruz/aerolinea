@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<title>Destinos Mundiales</title>
 
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Banyan Tree | Destinos Mundiales</title>
     <link rel="icon" href="img/inicial.jpg" />
-    
+
     <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
@@ -18,13 +17,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet" />
 </head>
-<body>
 
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
+<body>
 
     <!-- Header -->
     <header class="header">
@@ -35,23 +32,24 @@
             </a>
 
             <nav class="nav">
+                <div id="google_translate_element"></div>
                 <a href="login.html" class="nav-btn">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     Iniciar Sesión
                 </a>
                 <a href="ayuda.html" class="nav-btn">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-<main class="main">
-    <div class="container">
+    <main class="main">
+
         <!-- Hotel Gallery -->
         <section class="hotel-gallery">
             <div class="container">
@@ -77,39 +75,38 @@
                     <div class="hotel-info">
                         <h1>Hotel Banyan Tree</h1>
                         <div class="hotel-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                            <div class="stars" aria-label="5 estrellas">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
                             </div>
                             <span class="rating-text">4.8/5 (891 reseñas)</span>
                         </div>
                         <div class="hotel-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Paraíso Tropical, Asia · Resort exclusivo en laguna
-                                privada</span>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <span>Paraíso Tropical, Asia · Resort exclusivo en laguna privada</span>
                         </div>
                         <div class="hotel-highlights">
                             <span class="highlight-badge">
-                                <i class="fas fa-award"></i>
+                                <i class="fas fa-award" aria-hidden="true"></i>
                                 Spa Galardonado
                             </span>
                             <span class="highlight-badge">
-                                <i class="fas fa-home"></i>
+                                <i class="fas fa-home" aria-hidden="true"></i>
                                 Villas Privadas
                             </span>
                             <span class="highlight-badge">
-                                <i class="fas fa-leaf"></i>
+                                <i class="fas fa-leaf" aria-hidden="true"></i>
                                 Eco-Luxury
                             </span>
                             <span class="highlight-badge">
-                                <i class="fas fa-water"></i>
+                                <i class="fas fa-water" aria-hidden="true"></i>
                                 Laguna Privada
                             </span>
                             <span class="highlight-badge">
-                                <i class="fas fa-crown"></i>
+                                <i class="fas fa-crown" aria-hidden="true"></i>
                                 All-Inclusive Premium
                             </span>
                         </div>
@@ -123,11 +120,11 @@
                         </div>
                         <p class="price-note">*Villa pool suite, todo incluido premium</p>
                         <a href="#booking" class="btn btn--large">
-                            <i class="fas fa-calendar-check"></i>
+                            <i class="fas fa-calendar-check" aria-hidden="true"></i>
                             Reservar Villa
                         </a>
-                        <button class="btn btn--outline" data-tooltip="Añadir a mi lista de sueños">
-                            <i class="fas fa-heart"></i>
+                        <button class="btn btn--outline" id="wishlistBtn" aria-label="Añadir a mi lista de deseos">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
                             Lista de Deseos
                         </button>
                     </div>
@@ -142,43 +139,31 @@
                 <div class="features-grid">
                     <div class="feature-card hover-lift">
                         <div class="feature-icon">
-                            <i class="fas fa-spa"></i>
+                            <i class="fas fa-spa" aria-hidden="true"></i>
                         </div>
                         <h3>Banyan Tree Spa</h3>
-                        <p>
-                            Spa galardonado con tratamientos ancestrales asiáticos y
-                            terapeutas certificados
-                        </p>
+                        <p>Spa galardonado con tratamientos ancestrales asiáticos y terapeutas certificados</p>
                     </div>
                     <div class="feature-card hover-lift">
                         <div class="feature-icon">
-                            <i class="fas fa-swimming-pool"></i>
+                            <i class="fas fa-swimming-pool" aria-hidden="true"></i>
                         </div>
                         <h3>Villas con Piscina Privada</h3>
-                        <p>
-                            Cada villa cuenta con piscina infinity privada y mayordomo
-                            personal
-                        </p>
+                        <p>Cada villa cuenta con piscina infinity privada y mayordomo personal</p>
                     </div>
                     <div class="feature-card hover-lift">
                         <div class="feature-icon">
-                            <i class="fas fa-utensils"></i>
+                            <i class="fas fa-utensils" aria-hidden="true"></i>
                         </div>
                         <h3>Gastronomía de Autor</h3>
-                        <p>
-                            5 restaurantes únicos con cocina fusión asiática y chefs
-                            internacionales
-                        </p>
+                        <p>5 restaurantes únicos con cocina fusión asiática y chefs internacionales</p>
                     </div>
                     <div class="feature-card hover-lift">
                         <div class="feature-icon">
-                            <i class="fas fa-seedling"></i>
+                            <i class="fas fa-seedling" aria-hidden="true"></i>
                         </div>
                         <h3>Compromiso Ecológico</h3>
-                        <p>
-                            Resort carbono neutral con programas de conservación marina y
-                            terrestre
-                        </p>
+                        <p>Resort carbono neutral con programas de conservación marina y terrestre</p>
                     </div>
                 </div>
             </div>
@@ -188,56 +173,57 @@
         <section class="hotel-details" id="details">
             <div class="container">
                 <div class="details-grid">
+
                     <!-- Amenities -->
                     <div class="amenities-section">
                         <h2>El resort de lujo ofrece</h2>
                         <div class="amenities-grid">
                             <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-snowflake"></i>
+                                <i class="fas fa-snowflake" aria-hidden="true"></i>
                                 <span>Clima controlado en todas las villas</span>
                             </div>
                             <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-wifi" aria-hidden="true"></i>
                                 <span>Wi-Fi de alta velocidad ilimitado</span>
                             </div>
                             <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-swimming-pool"></i>
+                                <i class="fas fa-swimming-pool" aria-hidden="true"></i>
                                 <span>Piscinas privadas en cada villa</span>
                             </div>
                             <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-car-side"></i>
+                                <i class="fas fa-car-side" aria-hidden="true"></i>
                                 <span>Transfer privado en carrito de golf</span>
                             </div>
                             <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-dumbbell"></i>
+                                <i class="fas fa-dumbbell" aria-hidden="true"></i>
                                 <span>Gimnasio panorámico 24/7</span>
                             </div>
                             <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-spa"></i>
+                                <i class="fas fa-spa" aria-hidden="true"></i>
                                 <span>Banyan Tree Spa award-winning</span>
                             </div>
                             <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-cocktail"></i>
+                                <i class="fas fa-cocktail" aria-hidden="true"></i>
                                 <span>5 restaurantes y 3 bares exclusivos</span>
                             </div>
                             <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-user-tie"></i>
+                                <i class="fas fa-user-tie" aria-hidden="true"></i>
                                 <span>Mayordomo personal 24h</span>
                             </div>
                             <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-ship"></i>
+                                <i class="fas fa-ship" aria-hidden="true"></i>
                                 <span>Centro de deportes acuáticos</span>
                             </div>
                             <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-baby"></i>
+                                <i class="fas fa-baby" aria-hidden="true"></i>
                                 <span>Kids Club con actividades educativas</span>
                             </div>
                             <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-helicopter"></i>
+                                <i class="fas fa-helicopter" aria-hidden="true"></i>
                                 <span>Helipad para llegadas VIP</span>
                             </div>
                             <div class="amenity-item animate-on-scroll">
-                                <i class="fas fa-leaf"></i>
+                                <i class="fas fa-leaf" aria-hidden="true"></i>
                                 <span>Jardín de especias orgánico</span>
                             </div>
                         </div>
@@ -257,42 +243,42 @@
                             <h3>Experiencias Exclusivas Cercanas</h3>
                             <div class="attraction-list">
                                 <div class="attraction-item">
-                                    <i class="fas fa-water"></i>
+                                    <i class="fas fa-water" aria-hidden="true"></i>
                                     <div class="attraction-info">
                                         <span class="attraction-name">Laguna Cristalina Privada</span>
                                         <span class="attraction-distance">0 m - Acceso directo</span>
                                     </div>
                                 </div>
                                 <div class="attraction-item">
-                                    <i class="fas fa-fish"></i>
+                                    <i class="fas fa-fish" aria-hidden="true"></i>
                                     <div class="attraction-info">
                                         <span class="attraction-name">Arrecife de Coral Protegido</span>
                                         <span class="attraction-distance">300 m - Snorkel</span>
                                     </div>
                                 </div>
                                 <div class="attraction-item">
-                                    <i class="fas fa-tree"></i>
+                                    <i class="fas fa-tree" aria-hidden="true"></i>
                                     <div class="attraction-info">
                                         <span class="attraction-name">Reserva Natural Banyan</span>
                                         <span class="attraction-distance">500 m - Senderos</span>
                                     </div>
                                 </div>
                                 <div class="attraction-item">
-                                    <i class="fas fa-mountain"></i>
+                                    <i class="fas fa-mountain" aria-hidden="true"></i>
                                     <div class="attraction-info">
                                         <span class="attraction-name">Mirador Panorámico Sunset</span>
                                         <span class="attraction-distance">1.2 km - Trekking</span>
                                     </div>
                                 </div>
                                 <div class="attraction-item">
-                                    <i class="fas fa-campground"></i>
+                                    <i class="fas fa-campground" aria-hidden="true"></i>
                                     <div class="attraction-info">
                                         <span class="attraction-name">Villa Cultural Local</span>
                                         <span class="attraction-distance">2.5 km - Tour cultural</span>
                                     </div>
                                 </div>
                                 <div class="attraction-item">
-                                    <i class="fas fa-plane"></i>
+                                    <i class="fas fa-plane" aria-hidden="true"></i>
                                     <div class="attraction-info">
                                         <span class="attraction-name">Aeropuerto Internacional</span>
                                         <span class="attraction-distance">25 km - Transfer VIP</span>
@@ -301,6 +287,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -313,26 +300,24 @@
 
                     <div class="description-text">
                         <p>
-                            El Hotel Banyan Tree es un santuario de lujo ubicado en una
-                            laguna tropical privada, rodeado de exuberante vegetación y
-                            aguas cristalinas. Este resort exclusivo ofrece una experiencia
-                            única donde el lujo asiático se fusiona con la sostenibilidad
-                            ambiental, creando un refugio perfecto para el alma y los
+                            El Hotel Banyan Tree es un santuario de lujo ubicado en una laguna tropical
+                            privada, rodeado de exuberante vegetación y aguas cristalinas. Este resort
+                            exclusivo ofrece una experiencia única donde el lujo asiático se fusiona con
+                            la sostenibilidad ambiental, creando un refugio perfecto para el alma y los
                             sentidos.
                         </p>
                         <p>
-                            Cada villa es una obra maestra arquitectónica con piscina
-                            infinity privada, terraza con vista panorámica y acceso directo
-                            a la laguna. El galardonado Banyan Tree Spa ofrece tratamientos
-                            ancestrales con ingredientes naturales locales, mientras que
-                            nuestros cinco restaurantes presentan lo mejor de la gastronomía
-                            asiática contemporánea.
+                            Cada villa es una obra maestra arquitectónica con piscina infinity privada,
+                            terraza con vista panorámica y acceso directo a la laguna. El galardonado
+                            Banyan Tree Spa ofrece tratamientos ancestrales con ingredientes naturales
+                            locales, mientras que nuestros cinco restaurantes presentan lo mejor de la
+                            gastronomía asiática contemporánea.
                         </p>
                     </div>
 
                     <div class="info-sections">
                         <div class="info-section">
-                            <h3><i class="fas fa-info-circle"></i> Experiencia Premium</h3>
+                            <h3><i class="fas fa-info-circle" aria-hidden="true"></i> Experiencia Premium</h3>
                             <ul>
                                 <li>Mayordomo personal asignado a cada villa</li>
                                 <li>Check-in privado en tu villa a cualquier hora</li>
@@ -344,40 +329,36 @@
                         </div>
 
                         <div class="info-section">
-                            <h3><i class="fas fa-compass"></i> Guía del Paraíso</h3>
+                            <h3><i class="fas fa-compass" aria-hidden="true"></i> Guía del Paraíso</h3>
                             <ul>
                                 <li>Acceso directo a playa virgen de arena blanca</li>
                                 <li>Jardín botánico con 200+ especies tropicales</li>
                                 <li>Centro de conservación marina in-situ</li>
                                 <li>Observatorio astronómico en la terraza principal</li>
                                 <li>Granja orgánica que abastece los restaurantes</li>
-                                <li>
-                                    Biblioteca con más de 1000 libros en múltiples idiomas
-                                </li>
+                                <li>Biblioteca con más de 1000 libros en múltiples idiomas</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Reviews Section -->
+                    <!-- Reviews -->
                     <div class="reviews-section">
                         <h3>Testimonios de huéspedes VIP</h3>
                         <div class="reviews-grid">
                             <div class="review-card">
                                 <div class="review-rating">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                                    <div class="stars" aria-label="5 estrellas">
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
                                     </div>
                                     <span>5.0</span>
                                 </div>
-                                <p>
-                                    "Una experiencia que trasciende el lujo. La villa con
-                                    piscina privada, el servicio impecable y los tratamientos de
-                                    spa fueron simplemente perfectos. Volveremos sin duda."
-                                </p>
+                                <p>"Una experiencia que trasciende el lujo. La villa con piscina privada,
+                                    el servicio impecable y los tratamientos de spa fueron simplemente perfectos.
+                                    Volveremos sin duda."</p>
                                 <div class="review-author">
                                     <strong>Isabella Chen</strong>
                                     <span>Mayo 2024 - Villa Presidencial</span>
@@ -386,42 +367,37 @@
 
                             <div class="review-card">
                                 <div class="review-rating">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                                    <div class="stars" aria-label="5 estrellas">
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
                                     </div>
                                     <span>5.0</span>
                                 </div>
-                                <p>
-                                    "El paraíso existe y se llama Banyan Tree. Cada detalle está
-                                    cuidado al máximo. La gastronomía, el spa y las actividades
-                                    culturales superaron todas nuestras expectativas."
-                                </p>
+                                <p>"El paraíso existe y se llama Banyan Tree. Cada detalle está cuidado al
+                                    máximo. La gastronomía, el spa y las actividades culturales superaron todas
+                                    nuestras expectativas."</p>
                                 <div class="review-author">
-                                    <strong>David & Sarah Johnson</strong>
+                                    <strong>David &amp; Sarah Johnson</strong>
                                     <span>Abril 2024 - Luna de miel</span>
                                 </div>
                             </div>
 
                             <div class="review-card">
                                 <div class="review-rating">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                                    <div class="stars" aria-label="5 estrellas">
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
                                     </div>
                                     <span>5.0</span>
                                 </div>
-                                <p>
-                                    "Un resort que redefine el lujo sostenible. La conexión con
-                                    la naturaleza es increíble y el compromiso ecológico es
-                                    admirable. Una joya escondida."
-                                </p>
+                                <p>"Un resort que redefine el lujo sostenible. La conexión con la naturaleza
+                                    es increíble y el compromiso ecológico es admirable. Una joya escondida."</p>
                                 <div class="review-author">
                                     <strong>Dr. Michael Thompson</strong>
                                     <span>Marzo 2024 - Retiro ejecutivo</span>
@@ -438,15 +414,17 @@
             <div class="container">
                 <div class="booking-card">
                     <h2>Reserva tu villa de ensueño</h2>
-                    <form class="booking-form" id="bookingForm">
+                    <form class="booking-form" id="bookingForm" novalidate>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="checkin" class="form-label">Fecha de llegada</label>
-                                <input type="date" id="checkin" name="checkin" class="form-input" required />
+                                <input type="date" id="checkin" name="checkin" class="form-input" required
+                                    autocomplete="off" />
                             </div>
                             <div class="form-group">
                                 <label for="checkout" class="form-label">Fecha de salida</label>
-                                <input type="date" id="checkout" name="checkout" class="form-input" required />
+                                <input type="date" id="checkout" name="checkout" class="form-input" required
+                                    autocomplete="off" />
                             </div>
                         </div>
 
@@ -462,17 +440,17 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="rooms" class="form-label">Tipo de Villa</label>
-                                <select id="rooms" name="rooms" class="form-input">
-                                    <option value="1" selected>Villa Laguna (1 bedroom)</option>
-                                    <option value="2">Villa Panorámica (2 bedrooms)</option>
-                                    <option value="3">Villa Presidencial (3 bedrooms)</option>
-                                    <option value="4">Villa Real (4+ bedrooms)</option>
+                                <label for="villaType" class="form-label">Tipo de Villa</label>
+                                <select id="villaType" name="villaType" class="form-input">
+                                    <option value="laguna" selected>Villa Laguna (1 bedroom)</option>
+                                    <option value="panoramica">Villa Panorámica (2 bedrooms)</option>
+                                    <option value="presidencial">Villa Presidencial (3 bedrooms)</option>
+                                    <option value="real">Villa Real (4+ bedrooms)</option>
                                 </select>
                             </div>
                         </div>
 
-                        <div class="price-summary">
+                        <div class="price-summary" id="priceSummary">
                             <div class="price-breakdown">
                                 <div class="price-line">
                                     <span>Selecciona fechas para cotización VIP</span>
@@ -482,14 +460,13 @@
                         </div>
 
                         <button type="submit" class="btn btn--large">
-                            <i class="fas fa-crown"></i>
+                            <i class="fas fa-crown" aria-hidden="true"></i>
                             Reservar Villa de Lujo
                         </button>
 
                         <p class="booking-note">
-                            <i class="fas fa-shield-alt"></i>
-                            Reserva VIP segura · Modificaciones gratuitas · Transfer
-                            incluido
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            Reserva VIP segura · Modificaciones gratuitas · Transfer incluido
                         </p>
                     </form>
                 </div>
@@ -503,26 +480,25 @@
                 <div class="hotels-grid">
                     <div class="hotel-card hover-lift">
                         <div class="hotel-card__image">
-                            <img src="img/resort-luxury-1.jpg" alt="Four Seasons Resort" onerror="
-                    this.src =
-                      'https://via.placeholder.com/300x200/2193b0/ffffff?text=Four+Seasons+Resort'
-                  " />
+                            <img src="img/resort-luxury-1.jpg" alt="Four Seasons Resort"
+                                onerror="this.src='https://via.placeholder.com/300x200/2193b0/ffffff?text=Four+Seasons+Resort'"
+                                loading="lazy" />
                             <span class="hotel-card__badge">5★ Lujo</span>
                         </div>
                         <div class="hotel-card__content">
                             <h3>Four Seasons Resort</h3>
                             <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                <div class="stars" aria-label="5 estrellas">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
                                 </div>
                                 <span class="rating-text">4.9/5</span>
                             </div>
                             <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Maldivas</span>
                             </div>
                             <div class="hotel-price">
@@ -535,25 +511,24 @@
 
                     <div class="hotel-card hover-lift">
                         <div class="hotel-card__image">
-                            <img src="img/resort-luxury-2.jpg" alt="Aman Resort" onerror="
-                    this.src =
-                      'https://via.placeholder.com/300x200/4ecdc4/ffffff?text=Aman+Resort'
-                  " />
+                            <img src="img/resort-luxury-2.jpg" alt="Aman Resort"
+                                onerror="this.src='https://via.placeholder.com/300x200/4ecdc4/ffffff?text=Aman+Resort'"
+                                loading="lazy" />
                         </div>
                         <div class="hotel-card__content">
                             <h3>Aman Resort</h3>
                             <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                <div class="stars" aria-label="5 estrellas">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
                                 </div>
                                 <span class="rating-text">4.7/5</span>
                             </div>
                             <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Bali, Indonesia</span>
                             </div>
                             <div class="hotel-price">
@@ -566,26 +541,25 @@
 
                     <div class="hotel-card hover-lift">
                         <div class="hotel-card__image">
-                            <img src="img/resort-luxury-3.jpg" alt="One&Only Resort" onerror="
-                    this.src =
-                      'https://via.placeholder.com/300x200/ff6b9d/ffffff?text=One%26Only+Resort'
-                  " />
+                            <img src="img/resort-luxury-3.jpg" alt="One&amp;Only Resort"
+                                onerror="this.src='https://via.placeholder.com/300x200/ff6b9d/ffffff?text=One%26Only+Resort'"
+                                loading="lazy" />
                             <span class="hotel-card__badge">Exclusivo</span>
                         </div>
                         <div class="hotel-card__content">
-                            <h3>One&Only Resort</h3>
+                            <h3>One&amp;Only Resort</h3>
                             <div class="hotel-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                <div class="stars" aria-label="5 estrellas">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
                                 </div>
                                 <span class="rating-text">4.8/5</span>
                             </div>
                             <div class="hotel-location">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span>Seychelles</span>
                             </div>
                             <div class="hotel-price">
@@ -598,46 +572,39 @@
                 </div>
             </div>
         </section>
+
+        <!-- Page Navigation -->
+        <nav class="page-navigation" aria-label="Navegación de página">
+            <div class="container">
+                <a href="hospedaje.html" class="back-btn">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    Volver a Ofertas Premium
+                </a>
+            </div>
+        </nav>
+
     </main>
-
-    <!-- Page Navigation -->
-    <nav class="page-navigation">
-        <div class="container">
-            <a href="#" class="back-btn">
-                <i class="fas fa-arrow-left"></i>
-                Volver a Ofertas Premium
-            </a>
-        </div>
-    </nav>
-
-    <!-- Footer -->
-    
-    <!-- Footer -->
-    </div>
-</main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
             </div>
-            <div class="footer-text">
-                <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
-                </p>
-            </div>
+            <p class="footer-text">
+                &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+            </p>
         </div>
     </footer>
 
     <!-- JavaScript Modular -->
     <script src="js/main.js"></script>
     <script src="js/HotelBanyan.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>

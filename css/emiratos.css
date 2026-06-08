@@ -1,8 +1,3 @@
-/* ===================================
-   EMIRATOS/SINGAPUR PAGE STYLES
-   =================================== */
-
-/* Hero Gallery Section */
 .destination-hero {
     padding: var(--spacing-xl) 0;
     background: linear-gradient(135deg, var(--light), var(--gray-light));
@@ -30,10 +25,7 @@
 
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), transparent);
     display: flex;
     align-items: flex-start;
@@ -83,7 +75,6 @@
     transform: scale(1.05);
 }
 
-/* Destination Info */
 .destination-info {
     padding: var(--spacing-lg) 0;
     border-bottom: 1px solid var(--gray-light);
@@ -161,12 +152,17 @@
     margin-bottom: var(--spacing-xl);
 }
 
-.section-header .section-title {
+.section-header .section-title,
+.section-title {
     color: var(--primary);
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-header .section-title {
+    justify-content: center;
 }
 
 .package-grid {
@@ -316,7 +312,6 @@
     margin-bottom: 0;
 }
 
-/* Price Summary */
 .price-summary {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: var(--light);
@@ -343,6 +338,7 @@
     margin-top: var(--spacing-sm);
     padding-top: var(--spacing-md);
     font-size: var(--font-size-large);
+    font-weight: 700;
 }
 
 .booking-actions {
@@ -351,7 +347,6 @@
     justify-content: center;
 }
 
-/* Not Included Section */
 .not-included-section {
     padding: var(--spacing-xl) 0;
     background: var(--gray-light);
@@ -450,6 +445,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.activity-card:hover .activity-image img {
+    transform: scale(1.05);
 }
 
 .activity-price {
@@ -523,6 +523,7 @@
     height: 50px;
     border-radius: 50%;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .reviewer-avatar img {
@@ -551,13 +552,91 @@
     font-style: italic;
 }
 
-/* Dark Theme Adjustments */
+/* CTA Section */
+.cta-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+.cta-content {
+    text-align: center;
+    color: var(--light);
+}
+
+.cta-content h2 {
+    font-size: var(--font-size-xxl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.cta-content p {
+    font-size: var(--font-size-large);
+    opacity: 0.9;
+    margin-bottom: var(--spacing-lg);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.breadcrumb {
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.breadcrumb-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+.breadcrumb-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--gray);
+    font-size: var(--font-size-small);
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+    content: "/";
+    color: var(--gray);
+}
+
+.breadcrumb-list a {
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.breadcrumb-list a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Dark Theme */
+.dark-theme .destination-hero {
+    background: linear-gradient(135deg, var(--light), var(--gray-light));
+}
+
+.dark-theme .destination-info {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .package-section,
+.dark-theme .activities-section {
+    background: var(--light);
+}
+
 .dark-theme .package-card,
 .dark-theme .exclusion-card,
 .dark-theme .activity-card,
 .dark-theme .review-card {
     background: var(--gray-light);
-    border: 1px solid #444;
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .dark-theme .flight-details,
@@ -565,7 +644,15 @@
     background: var(--dark);
 }
 
-/* Responsive Design */
+.dark-theme .exclusion-price {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .breadcrumb {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .hero-gallery {
         grid-template-columns: 1fr;
@@ -619,6 +706,11 @@
 
     .reviews-grid {
         grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 }
 

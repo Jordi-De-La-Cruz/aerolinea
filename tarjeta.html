@@ -1,135 +1,187 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
 	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Aerolinea High Flight</title>
+	<title>Pago con Tarjeta | Destinos Mundiales</title>
 	<link rel="icon" href="img/inicial.jpg" />
-	
-	<link rel="stylesheet" href="css/estilos.css" />
 
-    <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/tarjeta.css" />
+	<!-- CSS Modular -->
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="css/components.css" />
+	<link rel="stylesheet" href="css/tarjeta.css" />
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+	<!-- Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+		rel="stylesheet" />
 </head>
 
 <body>
-	<div class="contenedor">
-		<!-- Tarjeta -->
-		<section class="tarjeta" id="tarjeta">
-			<div class="delantera">
-				<div class="logo-marca" id="logo-marca">
-					<img src="img/visa.png" alt="" />
-				</div>
-				<img src="img/chip-tarjeta.png" class="chip" alt="" />
-				<div class="datos">
-					<div class="grupo" id="numero">
-						<p class="label">Número Tarjeta</p>
-						<p class="numero">#### #### #### ####</p>
-					</div>
-					<div class="flexbox">
-						<div class="grupo" id="nombre">
-							<p class="label">Nombre Tarjeta</p>
-							<p class="nombre">HIGH FLIGHT</p>
+
+	<!-- Header -->
+	<header class="header">
+		<div class="container">
+			<a href="index.html" class="logo">
+				<img src="img/mundo.png" alt="Logo Destinos Mundiales" />
+				<span>Destinos<br />Mundiales</span>
+			</a>
+
+			<nav class="nav">
+				<div id="google_translate_element"></div>
+				<a href="login.html" class="nav-btn">
+					<i class="fas fa-user" aria-hidden="true"></i>
+					Iniciar Sesión
+				</a>
+				<a href="ayuda.html" class="nav-btn">
+					<i class="fas fa-question-circle" aria-hidden="true"></i>
+					Ayuda
+				</a>
+				<button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+					<i class="fas fa-moon" aria-hidden="true"></i>
+				</button>
+			</nav>
+		</div>
+	</header>
+
+	<main class="main">
+		<section class="payment-section">
+			<div class="container">
+
+				<div class="payment-wrapper">
+
+					<!-- Tarjeta animada -->
+					<div class="card-scene" id="tarjeta" role="img" aria-label="Vista previa de tu tarjeta">
+						<div class="delantera">
+							<div class="logo-marca" id="logo-marca">
+								<img src="img/visa.png" alt="Visa" />
+							</div>
+							<img src="img/chip-tarjeta.png" class="chip" alt="" aria-hidden="true" />
+							<div class="datos">
+								<div class="grupo" id="numero">
+									<p class="label">Número Tarjeta</p>
+									<p class="numero">#### #### #### ####</p>
+								</div>
+								<div class="flexbox">
+									<div class="grupo" id="nombre">
+										<p class="label">Nombre Tarjeta</p>
+										<p class="nombre">HIGH FLIGHT</p>
+									</div>
+									<div class="grupo" id="expiracion">
+										<p class="label">Expiración</p>
+										<p class="expiracion">
+											<span class="mes">MM</span> / <span class="year">AA</span>
+										</p>
+									</div>
+								</div>
+							</div>
 						</div>
 
-						<div class="grupo" id="expiracion">
-							<p class="label">Expiracion</p>
-							<p class="expiracion">
-								<span class="mes">MM</span> / <span class="year">AA</span>
+						<div class="trasera">
+							<div class="barra-magnetica" aria-hidden="true"></div>
+							<div class="datos">
+								<div class="grupo" id="firma">
+									<p class="label">Firma</p>
+									<div class="firma">
+										<p></p>
+									</div>
+								</div>
+								<div class="grupo" id="ccv">
+									<p class="label">CCV</p>
+									<p class="ccv"></p>
+								</div>
+							</div>
+							<p class="leyenda">
+								USO SUJETO AL CONTRATO SUSCRITO POR EL TITULAR DE LA CUENTA
+								CORRESPONDIENTE A ESTA TARJETA.
 							</p>
+							<p class="link-banco">www.Mibanco.com</p>
 						</div>
 					</div>
-				</div>
-			</div>
 
-			<div class="trasera">
-				<div class="barra-magnetica"></div>
-				<div class="datos">
-					<div class="grupo" id="firma">
-						<p class="label">Firma</p>
-						<div class="firma">
-							<p></p>
+					<!-- Botón abrir formulario -->
+					<div class="contenedor-btn">
+						<button class="btn-abrir-formulario" id="btn-abrir-formulario" aria-expanded="false"
+							aria-controls="formulario-tarjeta" title="Abrir formulario de tarjeta">
+							<i class="fas fa-plus" aria-hidden="true"></i>
+						</button>
+					</div>
+
+					<!-- Formulario -->
+					<form id="formulario-tarjeta" class="formulario-tarjeta" novalidate aria-label="Datos de tarjeta">
+						<div class="grupo">
+							<label for="inputNumero">Número de Tarjeta</label>
+							<input type="text" id="inputNumero" name="numero" maxlength="19" autocomplete="cc-number"
+								placeholder="#### #### #### ####" inputmode="numeric" />
 						</div>
-					</div>
-					<div class="grupo" id="ccv">
-						<p class="label">CCV</p>
-						<p class="ccv"></p>
-					</div>
+
+						<div class="grupo">
+							<label for="inputNombre">Nombre en la Tarjeta</label>
+							<input type="text" id="inputNombre" name="nombre" maxlength="26" autocomplete="cc-name"
+								placeholder="Como aparece en la tarjeta" />
+						</div>
+
+						<div class="flexbox">
+							<div class="grupo expira">
+								<label>Expiración</label>
+								<div class="flexbox">
+									<div class="grupo-select">
+										<select id="selectMes" name="mes" aria-label="Mes de expiración">
+											<option disabled selected>Mes</option>
+										</select>
+										<i class="fas fa-angle-down" aria-hidden="true"></i>
+									</div>
+									<div class="grupo-select">
+										<select id="selectYear" name="year" aria-label="Año de expiración">
+											<option disabled selected>Año</option>
+										</select>
+										<i class="fas fa-angle-down" aria-hidden="true"></i>
+									</div>
+								</div>
+							</div>
+
+							<div class="grupo ccv">
+								<label for="inputCCV">CCV</label>
+								<input type="text" id="inputCCV" name="ccv" maxlength="3" autocomplete="cc-csc"
+									placeholder="···" inputmode="numeric" />
+							</div>
+						</div>
+
+						<button type="submit" class="btn btn--large" id="btnGuardar">
+							<i class="fas fa-lock" aria-hidden="true"></i>
+							Guardar y Pagar
+						</button>
+					</form>
+
 				</div>
-				<p class="leyenda">
-					USO SUJETO AL CONTRATO SUSCRITO POR EL TITULAR DE LA CUENTA
-					CORRESPONDIENTE A ESTA TARJETA .
-				</p>
-				<a href="#" class="link-banco">www.Mibanco.com</a>
 			</div>
 		</section>
+	</main>
 
-		<div class="contenedor-btn">
-			<button class="btn-abrir-formulario" id="btn-abrir-formulario" title="Abrir formulario de tarjeta">
-				<i class="fas fa-plus"></i>
-			</button>
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="social-links">
+				<a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+				<a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+				<a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+				<a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+				<a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
+			</div>
+			<p class="footer-text">
+				&copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+			</p>
 		</div>
+	</footer>
 
-		<!-- Formulario -->
-		<form action="" id="formulario-tarjeta" class="formulario-tarjeta">
-			<div class="grupo">
-				<label for="inputNumero">Número Tarjeta</label>
-				<input type="text" id="inputNumero" maxlength="19" autocomplete="off" />
-			</div>
-			<div class="grupo">
-				<label for="inputNombre">Nombre</label>
-				<input type="text" id="inputNombre" maxlength="19" autocomplete="off" />
-			</div>
-			<div class="flexbox">
-				<div class="grupo expira">
-					<label for="selectMes">Expiracion</label>
-					<div class="flexbox">
-						<div class="grupo-select">
-							<select name="mes" id="selectMes">
-								<option disabled selected>Mes</option>
-							</select>
-							<i class="fas fa-angle-down"></i>
-						</div>
-						<div class="grupo-select">
-							<select name="year" id="selectYear" title="Seleccionar año de expiración">
-								<option disabled selected>Año</option>
-							</select>
-							<i class="fas fa-angle-down"></i>
-						</div>
-					</div>
-				</div>
-
-				<div class="grupo ccv">
-					<label for="inputCCV">CCV</label>
-					<input type="text" id="inputCCV" maxlength="3" />
-				</div>
-			</div>
-			<a href="index.html" class="btn-enviar">Guardar</a>
-		</form>
-	</div>
-
-	
-	
-
-    <!-- JavaScript Modular -->
-    <script src="js/main.js"></script>
-    <script src="js/tarjeta.js"></script>
-
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+	<!-- JavaScript Modular -->
+	<script src="js/main.js"></script>
+	<script src="js/tarjeta.js"></script>
+	<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

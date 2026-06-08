@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<title>Comida Navideña - High Flight</title>
 
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comida Navideña - High Flight | Destinos Mundiales</title>
     <link rel="icon" href="img/inicial.jpg" />
-    
+
     <!-- CSS Modular -->
-    <link rel="stylesheet" href="css/legacy.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
@@ -18,13 +17,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet" />
 </head>
-<body>
 
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
+<body>
 
     <!-- Header -->
     <header class="header">
@@ -35,68 +32,73 @@
             </a>
 
             <nav class="nav">
+                <div id="google_translate_element"></div>
                 <a href="login.html" class="nav-btn">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     Iniciar Sesión
                 </a>
                 <a href="ayuda.html" class="nav-btn">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
                     Ayuda
                 </a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-<main class="main">
-    <div class="container">
+    <main class="main">
+
         <!-- Hero navideño -->
-            <section class="christmas-hero">
+        <section class="christmas-hero">
+            <div class="container">
                 <div class="hero-content">
-                    <div class="christmas-decoration">
+                    <div class="christmas-decoration" aria-hidden="true">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-snowflake"></i>
                         <i class="fas fa-gift"></i>
                     </div>
                     <h1>
-                        <i class="fas fa-candy-cane"></i>
+                        <i class="fas fa-candy-cane" aria-hidden="true"></i>
                         Menú Navideño Especial
                     </h1>
                     <p>Celebra las fiestas con sabores tradicionales a gran altura</p>
                     <div class="hero-badges">
                         <span class="badge">
-                            <i class="fas fa-holly-berry"></i>
+                            <i class="fas fa-holly-berry" aria-hidden="true"></i>
                             Edición limitada
                         </span>
                         <span class="badge">
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart" aria-hidden="true"></i>
                             Recetas familiares
                         </span>
                         <span class="badge">
-                            <i class="fas fa-sparkles"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
                             Temporada especial
                         </span>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Menú navideño -->
-            <section class="christmas-menu">
+        <!-- Menú navideño -->
+        <section class="christmas-menu">
+            <div class="container">
                 <h2 class="section-title">
-                    <i class="fas fa-utensils"></i>
+                    <i class="fas fa-utensils" aria-hidden="true"></i>
                     Nuestras Especialidades Navideñas
                 </h2>
 
                 <div class="menu-grid">
+
                     <!-- Pasta Fría Navideña -->
                     <article class="christmas-item">
                         <div class="item-image">
                             <img src="img/nav1.jpg" alt="Pasta Fría Navideña" loading="lazy" />
                             <div class="christmas-overlay">
                                 <div class="seasonal-badge">
-                                    <i class="fas fa-snowflake"></i>
+                                    <i class="fas fa-snowflake" aria-hidden="true"></i>
                                     Temporada
                                 </div>
                             </div>
@@ -109,49 +111,43 @@
                             </div>
 
                             <div class="item-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
+                                <div class="stars" aria-label="4.8 de 5 estrellas">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star-half-alt" aria-hidden="true"></i>
                                 </div>
                                 <span class="rating-text">(4.8) · 87 reseñas</span>
                             </div>
 
                             <p class="item-description">
-                                Ensalada de pasta con vegetales frescos de temporada, jamón
-                                especiado, queso manchego, aceitunas mediterráneas y nuestra
-                                vinagreta navideña con hierbas aromáticas. Una deliciosa
-                                fusión de sabores tradicionales perfecta para acompañar tus
-                                celebraciones.
+                                Ensalada de pasta con vegetales frescos de temporada, jamón especiado,
+                                queso manchego, aceitunas mediterráneas y nuestra vinagreta navideña
+                                con hierbas aromáticas. Una deliciosa fusión de sabores tradicionales
+                                perfecta para acompañar tus celebraciones.
                             </p>
 
                             <div class="item-tags">
                                 <span class="tag tag--christmas">
-                                    <i class="fas fa-tree"></i>
+                                    <i class="fas fa-tree" aria-hidden="true"></i>
                                     Navideño
                                 </span>
                                 <span class="tag tag--fresh">
-                                    <i class="fas fa-leaf"></i>
+                                    <i class="fas fa-leaf" aria-hidden="true"></i>
                                     Fresco
                                 </span>
                             </div>
 
                             <div class="item-actions">
-                                <button class="btn btn--outline btn--small" onclick="toggleFavorite(this)">
-                                    <i class="far fa-heart"></i>
+                                <button class="btn btn--outline btn--small js-favorite" aria-pressed="false"
+                                    aria-label="Guardar en favoritos">
+                                    <i class="far fa-heart" aria-hidden="true"></i>
                                     Favorito
                                 </button>
-                                <button class="btn btn--primary" onclick="
-                      addToCart(
-                        'pasta-navidena',
-                        24.99,
-                        'Pasta Fría Navideña',
-                        'img/nav1.jpg',
-                      )
-                    ">
-                                    <i class="fas fa-cart-plus"></i>
+                                <button class="btn btn--small js-add-cart" data-id="pasta-navidena" data-price="24.99"
+                                    data-name="Pasta Fría Navideña" data-img="img/nav1.jpg">
+                                    <i class="fas fa-cart-plus" aria-hidden="true"></i>
                                     Agregar al carrito
                                 </button>
                             </div>
@@ -161,7 +157,7 @@
                     <!-- Sandwichón Navideño -->
                     <article class="christmas-item featured">
                         <div class="featured-badge">
-                            <i class="fas fa-crown"></i>
+                            <i class="fas fa-crown" aria-hidden="true"></i>
                             Especialidad
                         </div>
 
@@ -169,7 +165,7 @@
                             <img src="img/nav2.jpg" alt="Sandwichón Navideño" loading="lazy" />
                             <div class="christmas-overlay">
                                 <div class="seasonal-badge">
-                                    <i class="fas fa-gift"></i>
+                                    <i class="fas fa-gift" aria-hidden="true"></i>
                                     Exclusivo
                                 </div>
                             </div>
@@ -182,49 +178,43 @@
                             </div>
 
                             <div class="item-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                <div class="stars" aria-label="5 de 5 estrellas">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
                                 </div>
                                 <span class="rating-text">(4.9) · 156 reseñas</span>
                             </div>
 
                             <p class="item-description">
-                                Nuestro icónico sandwichón multicapa con pan brioche
-                                artesanal, pavo rostizado con especias navideñas, jamón
-                                ahumado, queso cremoso, vegetales crujientes y nuestra salsa
-                                especial de arándanos. Una experiencia gastronómica que evoca
-                                la calidez del hogar en cada bocado.
+                                Nuestro icónico sandwichón multicapa con pan brioche artesanal, pavo
+                                rostizado con especias navideñas, jamón ahumado, queso cremoso,
+                                vegetales crujientes y nuestra salsa especial de arándanos. Una
+                                experiencia gastronómica que evoca la calidez del hogar en cada bocado.
                             </p>
 
                             <div class="item-tags">
                                 <span class="tag tag--signature">
-                                    <i class="fas fa-signature"></i>
+                                    <i class="fas fa-award" aria-hidden="true"></i>
                                     Signature
                                 </span>
                                 <span class="tag tag--premium">
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
                                     Premium
                                 </span>
                             </div>
 
                             <div class="item-actions">
-                                <button class="btn btn--outline btn--small" onclick="toggleFavorite(this)">
-                                    <i class="far fa-heart"></i>
+                                <button class="btn btn--outline btn--small js-favorite" aria-pressed="false"
+                                    aria-label="Guardar en favoritos">
+                                    <i class="far fa-heart" aria-hidden="true"></i>
                                     Favorito
                                 </button>
-                                <button class="btn btn--primary" onclick="
-                      addToCart(
-                        'sandwichon-navideno',
-                        32.99,
-                        'Sandwichón Navideño',
-                        'img/nav2.jpg',
-                      )
-                    ">
-                                    <i class="fas fa-cart-plus"></i>
+                                <button class="btn btn--small js-add-cart" data-id="sandwichon-navideno"
+                                    data-price="32.99" data-name="Sandwichón Navideño" data-img="img/nav2.jpg">
+                                    <i class="fas fa-cart-plus" aria-hidden="true"></i>
                                     Agregar al carrito
                                 </button>
                             </div>
@@ -237,7 +227,7 @@
                             <img src="img/nav3.png" alt="Taquitos Dorados" loading="lazy" />
                             <div class="christmas-overlay">
                                 <div class="seasonal-badge">
-                                    <i class="fas fa-pepper-hot"></i>
+                                    <i class="fas fa-pepper-hot" aria-hidden="true"></i>
                                     Picante
                                 </div>
                             </div>
@@ -250,213 +240,181 @@
                             </div>
 
                             <div class="item-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
+                                <div class="stars" aria-label="4.2 de 5 estrellas">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="far fa-star" aria-hidden="true"></i>
                                 </div>
                                 <span class="rating-text">(4.2) · 94 reseñas</span>
                             </div>
 
                             <p class="item-description">
-                                Crujientes taquitos rellenos de pollo deshebrado sazonado con
-                                especias mexicanas tradicionales, servidos con guacamole
-                                fresco, crema agria, salsa verde artesanal y una mezcla de
-                                quesos. Una explosión de sabores auténticos que transportan a
-                                las tradiciones culinarias mexicanas.
+                                Crujientes taquitos rellenos de pollo deshebrado sazonado con especias
+                                mexicanas tradicionales, servidos con guacamole fresco, crema agria,
+                                salsa verde artesanal y una mezcla de quesos. Una explosión de sabores
+                                auténticos que transportan a las tradiciones culinarias mexicanas.
                             </p>
 
                             <div class="item-tags">
                                 <span class="tag tag--spicy">
-                                    <i class="fas fa-fire"></i>
+                                    <i class="fas fa-fire" aria-hidden="true"></i>
                                     Picante
                                 </span>
                                 <span class="tag tag--traditional">
-                                    <i class="fas fa-pepper-hot"></i>
+                                    <i class="fas fa-pepper-hot" aria-hidden="true"></i>
                                     Tradicional
                                 </span>
                             </div>
 
                             <div class="item-actions">
-                                <button class="btn btn--outline btn--small" onclick="toggleFavorite(this)">
-                                    <i class="far fa-heart"></i>
+                                <button class="btn btn--outline btn--small js-favorite" aria-pressed="false"
+                                    aria-label="Guardar en favoritos">
+                                    <i class="far fa-heart" aria-hidden="true"></i>
                                     Favorito
                                 </button>
-                                <button class="btn btn--primary" onclick="
-                      addToCart(
-                        'taquitos-dorados',
-                        19.99,
-                        'Taquitos Dorados',
-                        'img/nav3.png',
-                      )
-                    ">
-                                    <i class="fas fa-cart-plus"></i>
+                                <button class="btn btn--small js-add-cart" data-id="taquitos-dorados" data-price="19.99"
+                                    data-name="Taquitos Dorados" data-img="img/nav3.png">
+                                    <i class="fas fa-cart-plus" aria-hidden="true"></i>
                                     Agregar al carrito
                                 </button>
                             </div>
                         </div>
                     </article>
-                </div>
-            </section>
 
-            <!-- Información navideña -->
-            <section class="christmas-info">
+                </div>
+            </div>
+        </section>
+
+        <!-- Información navideña -->
+        <section class="christmas-info">
+            <div class="container">
                 <h2 class="section-title">
-                    <i class="fas fa-info-circle"></i>
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
                     Celebra la Navidad en las Alturas
                 </h2>
 
                 <div class="info-grid">
                     <div class="info-card">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-clock" aria-hidden="true"></i>
                         <h3>Disponibilidad Limitada</h3>
-                        <p>
-                            Menú especial disponible solo durante la temporada navideña
-                            (Diciembre - Enero)
-                        </p>
+                        <p>Menú especial disponible solo durante la temporada navideña (Diciembre - Enero)</p>
                     </div>
-
                     <div class="info-card">
-                        <i class="fas fa-award"></i>
+                        <i class="fas fa-award" aria-hidden="true"></i>
                         <h3>Recetas Tradicionales</h3>
-                        <p>
-                            Platos preparados con recetas familiares transmitidas por
-                            generaciones
-                        </p>
+                        <p>Platos preparados con recetas familiares transmitidas por generaciones</p>
                     </div>
-
                     <div class="info-card">
-                        <i class="fas fa-leaf"></i>
+                        <i class="fas fa-leaf" aria-hidden="true"></i>
                         <h3>Ingredientes Frescos</h3>
-                        <p>
-                            Solo utilizamos ingredientes de temporada y de la más alta
-                            calidad
-                        </p>
+                        <p>Solo utilizamos ingredientes de temporada y de la más alta calidad</p>
                     </div>
-
                     <div class="info-card">
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart" aria-hidden="true"></i>
                         <h3>Preparado con Amor</h3>
-                        <p>
-                            Cada platillo es preparado con el cariño y calidez de las
-                            fiestas navideñas
-                        </p>
+                        <p>Cada platillo es preparado con el cariño y calidez de las fiestas navideñas</p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Promociones navideñas -->
-            <section class="christmas-promotions">
-                <h3 class="section-title">
-                    <i class="fas fa-gift"></i>
+        <!-- Promociones navideñas -->
+        <section class="christmas-promotions">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-gift" aria-hidden="true"></i>
                     Promociones Especiales de Temporada
-                </h3>
+                </h2>
 
                 <div class="promotions-grid">
                     <div class="promo-card">
                         <div class="promo-icon">
-                            <i class="fas fa-percentage"></i>
+                            <i class="fas fa-percentage" aria-hidden="true"></i>
                         </div>
                         <h4>Combo Familiar</h4>
-                        <p>
-                            Ordena 3 platillos navideños y obtén
-                            <strong>15% de descuento</strong>
-                        </p>
+                        <p>Ordena 3 platillos navideños y obtén <strong>15% de descuento</strong></p>
                         <span class="promo-code">Código: FAMILIA15</span>
                     </div>
 
                     <div class="promo-card">
                         <div class="promo-icon">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-users" aria-hidden="true"></i>
                         </div>
                         <h4>Mesa Compartida</h4>
-                        <p>
-                            Para grupos de <strong>4 personas o más</strong>, bebida
-                            navideña gratis
-                        </p>
+                        <p>Para grupos de <strong>4 personas o más</strong>, bebida navideña gratis</p>
                         <span class="promo-code">Válido hasta enero</span>
                     </div>
 
                     <div class="promo-card">
                         <div class="promo-icon">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
                         </div>
                         <h4>Reserva Anticipada</h4>
-                        <p>
-                            Reserva con <strong>48 horas de anticipación</strong> y obtén
-                            postre gratis
-                        </p>
+                        <p>Reserva con <strong>48 horas de anticipación</strong> y obtén postre gratis</p>
                         <span class="promo-code">Solo vuelos internacionales</span>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Carrito flotante -->
-            <div class="cart-floating" id="cartFloating">
-                <button class="cart-toggle" onclick="toggleCart()">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
+        <!-- Carrito flotante -->
+        <div class="cart-floating" id="cartFloating" aria-live="polite">
+            <button class="cart-toggle" id="cartToggleBtn" aria-label="Abrir carrito">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
 
-                <div class="cart-dropdown" id="cartDropdown">
-                    <div class="cart-header">
-                        <h3>Tu pedido navideño</h3>
-                        <button class="cart-close" onclick="toggleCart()" title="Cerrar carrito">
-                            <i class="fas fa-times"></i>
-                        </button>
+            <div class="cart-dropdown" id="cartDropdown" hidden>
+                <div class="cart-header">
+                    <h3>Tu pedido navideño</h3>
+                    <button class="cart-close" id="cartCloseBtn" aria-label="Cerrar carrito">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <div class="cart-items" id="cartItems">
+                    <div class="cart-empty" id="cartEmpty">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        <p>Tu carrito está vacío</p>
                     </div>
+                </div>
 
-                    <div class="cart-items" id="cartItems">
-                        <div class="cart-empty">
-                            <i class="fas fa-shopping-cart"></i>
-                            <p>Tu carrito está vacío</p>
-                        </div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <span>Total: $<span id="cartTotal">0.00</span></span>
                     </div>
-
-                    <div class="cart-footer">
-                        <div class="cart-total">
-                            <span>Total: $<span id="cartTotal">0.00</span></span>
-                        </div>
-                        <button class="btn btn--primary btn--large" onclick="proceedToCheckout()">
-                            <i class="fas fa-credit-card"></i>
-                            Proceder al pago
-                        </button>
-                    </div>
+                    <button class="btn btn--large" id="checkoutBtn">
+                        <i class="fas fa-credit-card" aria-hidden="true"></i>
+                        Proceder al pago
+                    </button>
                 </div>
             </div>
         </div>
-    </main>
 
-    <!-- Footer -->
-    
-    <!-- Footer -->
-    </div>
-</main>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
             </div>
-            <div class="footer-text">
-                <p>
-                    &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
-                </p>
-            </div>
+            <p class="footer-text">
+                &copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.
+            </p>
         </div>
     </footer>
 
     <!-- JavaScript Modular -->
     <script src="js/main.js"></script>
     <script src="js/navidad.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>
