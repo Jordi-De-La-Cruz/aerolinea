@@ -1,0 +1,792 @@
+:root {
+    --newyear-red: #b71c1c;
+    --newyear-gold: #ffd700;
+    --newyear-blue: #1565c0;
+    --newyear-white: #f8f9fa;
+}
+
+/* Hero */
+.newyear-hero {
+    background: linear-gradient(135deg, var(--newyear-red), var(--newyear-gold));
+    color: white;
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.newyear-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20">🎆</text></svg>') repeat;
+    opacity: 0.1;
+    animation: fireworks 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fireworks {
+    from {
+        transform: translateY(-100px);
+    }
+
+    to {
+        transform: translateY(100px);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 var(--spacing-md);
+}
+
+.newyear-decoration {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    font-size: 2rem;
+}
+
+.newyear-decoration i {
+    color: var(--newyear-gold);
+    animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+.newyear-decoration i:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.newyear-decoration i:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.newyear-hero h1 {
+    font-size: var(--font-size-hero);
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.newyear-hero h1 i {
+    color: var(--newyear-gold);
+}
+
+.newyear-hero p {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+}
+
+.hero-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 20px;
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+/* Section title */
+.section-title {
+    color: var(--primary);
+    font-size: var(--font-size-xxl);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* Menú grid */
+.newyear-menu {
+    padding: var(--spacing-xl) 0;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* Item cards */
+.newyear-item {
+    background: var(--newyear-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+}
+
+.newyear-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--newyear-red);
+}
+
+.newyear-item.featured {
+    border-color: var(--newyear-gold);
+}
+
+.featured-badge {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    z-index: 2;
+    background: var(--newyear-gold);
+    color: var(--newyear-red);
+    padding: 4px 12px;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    box-shadow: var(--shadow-sm);
+}
+
+.item-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.newyear-item:hover .item-image img {
+    animation: spark 0.5s ease-in-out;
+    transform: scale(1.05);
+}
+
+@keyframes spark {
+
+    0%,
+    100% {
+        transform: rotate(0deg) scale(1.05);
+    }
+
+    25% {
+        transform: rotate(-5deg) scale(1.05);
+    }
+
+    75% {
+        transform: rotate(5deg) scale(1.05);
+    }
+}
+
+.newyear-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    opacity: 0;
+    transition: var(--transition);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-md);
+}
+
+.newyear-item:hover .newyear-overlay {
+    opacity: 1;
+}
+
+.seasonal-badge {
+    background: var(--newyear-red);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+/* Item content */
+.item-content {
+    padding: var(--spacing-md);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.item-header h3 {
+    color: var(--primary);
+    font-size: var(--font-size-large);
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+.price {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--newyear-red);
+    white-space: nowrap;
+}
+
+.item-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.item-rating .stars {
+    display: flex;
+    gap: 2px;
+    color: var(--newyear-gold);
+    font-size: var(--font-size-small);
+}
+
+.rating-text {
+    color: var(--gray);
+    font-size: var(--font-size-small);
+}
+
+.item-description {
+    color: var(--gray);
+    font-size: var(--font-size-small);
+    line-height: 1.7;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+/* Tags */
+.item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: var(--font-size-small);
+    font-weight: 600;
+}
+
+.tag--new {
+    background: var(--newyear-gold);
+    color: var(--newyear-red);
+}
+
+.tag--premium {
+    background: var(--primary);
+    color: white;
+}
+
+/* Item actions */
+.item-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: auto;
+}
+
+.item-actions .btn {
+    flex: 1;
+    justify-content: center;
+}
+
+/* Info section */
+.newyear-info {
+    padding: var(--spacing-xl) 0;
+    background: var(--gray-light);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.info-card {
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    border-left: 4px solid var(--newyear-red);
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    border-left-color: var(--newyear-gold);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.info-card>i {
+    font-size: var(--font-size-xxl);
+    color: var(--newyear-red);
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.info-card h3 {
+    color: var(--primary);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-xs);
+}
+
+.info-card p {
+    color: var(--gray);
+    font-size: var(--font-size-small);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Promotions */
+.newyear-promotions {
+    padding: var(--spacing-xl) 0;
+    margin-bottom: var(--spacing-xl);
+}
+
+.newyear-promotions>.container {
+    background: linear-gradient(135deg, var(--newyear-blue), var(--newyear-red));
+    color: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+}
+
+.newyear-promotions .section-title {
+    color: var(--newyear-gold);
+    margin-bottom: var(--spacing-lg);
+}
+
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.promo-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.promo-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--newyear-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-md);
+    color: var(--newyear-red);
+    font-size: var(--font-size-xl);
+}
+
+.promo-card h4 {
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-large);
+    color: var(--newyear-gold);
+}
+
+.promo-card p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+    font-size: var(--font-size-small);
+}
+
+.promo-code {
+    display: inline-block;
+    background: var(--newyear-red);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.cart-floating {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: 500;
+}
+
+.cart-toggle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--newyear-red);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-large);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    position: relative;
+}
+
+.cart-toggle:hover {
+    background: #8b0000;
+    transform: scale(1.1);
+}
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: var(--newyear-gold);
+    color: var(--dark);
+    font-size: 1.1rem;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.cart-floating.has-items .cart-toggle {
+    animation: cartBounce 0.4s ease;
+}
+
+@keyframes cartBounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.cart-dropdown {
+    position: absolute;
+    bottom: calc(100% + var(--spacing-sm));
+    right: 0;
+    width: 340px;
+    background: var(--light);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-light);
+    overflow: hidden;
+}
+
+.cart-dropdown[hidden] {
+    display: none;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    background: var(--newyear-red);
+    color: white;
+}
+
+.cart-header h3 {
+    font-size: var(--font-size-large);
+    margin: 0;
+    color: white;
+}
+
+.cart-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: var(--font-size-large);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    border-radius: 50%;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.cart-items {
+    max-height: 280px;
+    overflow-y: auto;
+    padding: var(--spacing-sm);
+}
+
+.cart-empty {
+    text-align: center;
+    padding: var(--spacing-lg);
+    color: var(--gray);
+}
+
+.cart-empty i {
+    font-size: var(--font-size-xxl);
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.4;
+}
+
+.cart-line {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.cart-line:last-child {
+    border-bottom: none;
+}
+
+.cart-line__img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    flex-shrink: 0;
+}
+
+.cart-line__info {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.cart-line__name {
+    display: block;
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--dark);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cart-line__price {
+    display: block;
+    font-size: var(--font-size-small);
+    color: var(--newyear-red);
+    font-weight: 700;
+}
+
+.cart-line__controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.qty-btn {
+    width: 26px;
+    height: 26px;
+    border: 1px solid var(--gray-light);
+    background: var(--light);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-small);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    color: var(--dark);
+}
+
+.qty-btn:hover {
+    background: var(--newyear-red);
+    color: white;
+    border-color: var(--newyear-red);
+}
+
+.cart-footer {
+    padding: var(--spacing-md);
+    border-top: 2px solid var(--gray-light);
+    background: var(--gray-light);
+}
+
+.cart-total {
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.cart-footer .btn {
+    width: 100%;
+    justify-content: center;
+    background: var(--newyear-red);
+}
+
+.cart-footer .btn:hover {
+    background: #8b0000;
+}
+
+/* Tema oscuro */
+.dark-theme .newyear-item {
+    background: #2a2a2a;
+    border-color: var(--newyear-red);
+}
+
+.dark-theme .newyear-item.featured {
+    border-color: var(--newyear-gold);
+}
+
+.dark-theme .item-header h3 {
+    color: var(--secondary);
+}
+
+.dark-theme .newyear-info {
+    background: var(--gray-light);
+}
+
+.dark-theme .info-card {
+    background: #2d2d2d;
+    border-left-color: var(--newyear-gold);
+}
+
+.dark-theme .info-card h3 {
+    color: var(--secondary);
+}
+
+.dark-theme .cart-dropdown {
+    background: #2d2d2d;
+    border-color: #444;
+}
+
+.dark-theme .cart-footer {
+    background: #3a3a3a;
+    border-top-color: #444;
+}
+
+.dark-theme .cart-line {
+    border-bottom-color: #444;
+}
+
+.dark-theme .cart-line__name {
+    color: #e0e0e0;
+}
+
+.dark-theme .qty-btn {
+    background: #3a3a3a;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .newyear-hero h1 {
+        font-size: var(--font-size-xxl);
+        flex-direction: column;
+    }
+
+    .newyear-decoration {
+        gap: var(--spacing-md);
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .promotions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cart-dropdown {
+        width: 300px;
+        right: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .newyear-hero {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .newyear-decoration {
+        font-size: 1.5rem;
+    }
+
+    .promo-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-dropdown {
+        width: calc(100vw - var(--spacing-lg) * 2);
+        right: 0;
+    }
+
+    .item-actions {
+        flex-direction: column;
+    }
+}

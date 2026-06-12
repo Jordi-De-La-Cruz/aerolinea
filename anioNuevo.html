@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ofertas de Año Nuevo - Destinos Mundiales</title>
+    <link rel="icon" href="img/inicial.jpg" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/anioNuevo.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/mundo.png" alt="Logo Destinos Mundiales" />
+                <span>Destinos<br />Mundiales</span>
+            </a>
+            <nav class="nav">
+                <div id="google_translate_element"></div>
+                <a href="login.html" class="nav-btn">
+                    <i class="fas fa-user" aria-hidden="true"></i> Iniciar Sesión
+                </a>
+                <a href="ayuda.html" class="nav-btn">
+                    <i class="fas fa-question-circle" aria-hidden="true"></i> Ayuda
+                </a>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Hero Año Nuevo -->
+        <section class="newyear-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="newyear-decoration" aria-hidden="true">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-calendar-alt"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h1>
+                        <i class="fas fa-glass-cheers" aria-hidden="true"></i>
+                        Ofertas de Año Nuevo
+                    </h1>
+                    <p>Comienza el año con experiencias exclusivas y descuentos irresistibles.</p>
+                    <div class="hero-badges">
+                        <span class="badge"><i class="fas fa-gift" aria-hidden="true"></i> Edición Limitada</span>
+                        <span class="badge"><i class="fas fa-star" aria-hidden="true"></i> 10% Extra</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menú de Año Nuevo -->
+        <section class="newyear-menu">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-utensils" aria-hidden="true"></i> Sabores del Nuevo Año
+                </h2>
+                <div class="menu-grid">
+
+                    <!-- Cóctel Brindis -->
+                    <article class="newyear-item">
+                        <div class="item-image">
+                            <img src="img/img6.jpg" alt="Cóctel Brindis" loading="lazy" />
+                            <div class="newyear-overlay">
+                                <div class="seasonal-badge">
+                                    <i class="fas fa-glass-cheers" aria-hidden="true"></i> Brindis
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Cóctel Brindis</h3>
+                                <span class="price">$19.99</span>
+                            </div>
+                            <div class="item-rating">
+                                <div class="stars" aria-label="5 de 5 estrellas">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-text">(5.0) · 120 reseñas</span>
+                            </div>
+                            <p class="item-description">Una mezcla burbujeante de champán, frutas rojas y toques de
+                                menta para celebrar el primer día.</p>
+                            <div class="item-tags">
+                                <span class="tag tag--new">
+                                    <i class="fas fa-sparkles" aria-hidden="true"></i> Nuevo
+                                </span>
+                            </div>
+                            <div class="item-actions">
+                                <button class="btn btn--outline btn--small js-favorite" aria-pressed="false"
+                                    aria-label="Guardar en favoritos">
+                                    <i class="far fa-heart" aria-hidden="true"></i> Favorito
+                                </button>
+                                <button class="btn btn--small js-add-cart" data-id="cocktail-brindis" data-price="19.99"
+                                    data-name="Cóctel Brindis" data-img="img/img6.jpg">
+                                    <i class="fas fa-cart-plus" aria-hidden="true"></i> Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Sopa de Estrellas -->
+                    <article class="newyear-item featured">
+                        <div class="featured-badge">
+                            <i class="fas fa-crown" aria-hidden="true"></i> Especialidad
+                        </div>
+                        <div class="item-image">
+                            <img src="img/comida2.jpg" alt="Sopa de Estrellas" loading="lazy" />
+                            <div class="newyear-overlay">
+                                <div class="seasonal-badge">
+                                    <i class="fas fa-star" aria-hidden="true"></i> Premium
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Sopa de Estrellas</h3>
+                                <span class="price">$27.99</span>
+                            </div>
+                            <div class="item-rating">
+                                <div class="stars" aria-label="4.9 de 5 estrellas">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-text">(4.9) · 85 reseñas</span>
+                            </div>
+                            <p class="item-description">Crema delicada con trozos de oro comestible, verduras de
+                                temporada y un toque de jengibre.</p>
+                            <div class="item-tags">
+                                <span class="tag tag--premium">
+                                    <i class="fas fa-star" aria-hidden="true"></i> Premium
+                                </span>
+                            </div>
+                            <div class="item-actions">
+                                <button class="btn btn--outline btn--small js-favorite" aria-pressed="false"
+                                    aria-label="Guardar en favoritos">
+                                    <i class="far fa-heart" aria-hidden="true"></i> Favorito
+                                </button>
+                                <button class="btn btn--small js-add-cart" data-id="sopa-estrellas" data-price="27.99"
+                                    data-name="Sopa de Estrellas" data-img="img/comida2.jpg">
+                                    <i class="fas fa-cart-plus" aria-hidden="true"></i> Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Información de Año Nuevo -->
+        <section class="newyear-info">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i> Detalles de la Oferta
+                </h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <h3>Duración Limitada</h3>
+                        <p>Disponible solo del 1 al 10 de Enero.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-gift" aria-hidden="true"></i>
+                        <h3>Regalo Sorpresa</h3>
+                        <p>Cada compra incluye un paquete de regalo exclusivo.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-leaf" aria-hidden="true"></i>
+                        <h3>Ingredientes Frescos</h3>
+                        <p>Seleccionamos los mejores productos locales para cada platillo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promociones de Año Nuevo -->
+        <section class="newyear-promotions">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-gift" aria-hidden="true"></i> Promociones Especiales
+                </h2>
+                <div class="promotions-grid">
+                    <div class="promo-card">
+                        <div class="promo-icon"><i class="fas fa-percentage" aria-hidden="true"></i></div>
+                        <h4>Combo Fiesta</h4>
+                        <p>Ordena 2 platillos y obtén <strong>20% de descuento</strong></p>
+                        <span class="promo-code">Código: FIESTA20</span>
+                    </div>
+                    <div class="promo-card">
+                        <div class="promo-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+                        <h4>Grupo Grande</h4>
+                        <p>Grupos de 5 o más personas reciben una bebida de cortesía.</p>
+                        <span class="promo-code">Válido hasta 15/01</span>
+                    </div>
+                    <div class="promo-card">
+                        <div class="promo-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+                        <h4>Reserva Anticipada</h4>
+                        <p>Reserva con <strong>48h de antelación</strong> y obtén postre gratuito.</p>
+                        <span class="promo-code">Solo vuelos internacionales</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrito flotante -->
+        <div class="cart-floating" id="cartFloating" aria-live="polite">
+            <button class="cart-toggle" id="cartToggleBtn" aria-label="Abrir carrito" aria-expanded="false">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <div class="cart-dropdown" id="cartDropdown" hidden>
+                <div class="cart-header">
+                    <h3>Tu pedido de Año Nuevo</h3>
+                    <button class="cart-close" id="cartCloseBtn" aria-label="Cerrar carrito">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="cart-items" id="cartItems">
+                    <div class="cart-empty" id="cartEmpty">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        <p>Tu carrito está vacío</p>
+                    </div>
+                </div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        Total: $<span id="cartTotal">0.00</span>
+                    </div>
+                    <button class="btn btn--large" id="checkoutBtn">
+                        <i class="fas fa-credit-card" aria-hidden="true"></i> Proceder al pago
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
+            </div>
+            <p class="footer-text">&copy; 2024 <span>Destinos Mundiales</span> | Creado por Aerolínea H.F.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/anioNuevo.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

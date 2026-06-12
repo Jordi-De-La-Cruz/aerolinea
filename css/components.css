@@ -319,3 +319,90 @@
         font-size: var(--font-size-base);
     }
 }
+
+#google_translate_element {
+    display: inline-flex;
+    align-items: center;
+}
+
+.goog-te-gadget {
+    margin: 0 !important;
+    font-size: 0 !important;
+    font-family: var(--font-primary) !important;
+}
+
+.goog-te-gadget-simple {
+    background: #0F6E56 !important;
+    border: none !important;
+    padding: 6px 14px !important;
+    border-radius: var(--border-radius) !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    transition: background var(--transition), transform var(--transition) !important;
+    text-decoration: none !important;
+    height: auto !important;
+}
+
+.goog-te-gadget-simple:hover {
+    background: #085041 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.goog-te-gadget-simple:active {
+    transform: translateY(0) !important;
+}
+
+/* Ícono de globo */
+.goog-te-gadget-simple::before {
+    content: "\f0ac" !important;
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    margin-right: 7px !important;
+    color: #9FE1CB !important;
+    font-size: var(--font-size-base) !important;
+    display: inline-block !important;
+}
+
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+/* Texto del botón */
+.goog-te-gadget-simple span,
+.goog-te-gadget-simple a,
+.goog-te-gadget-simple a:link,
+.goog-te-gadget-simple a:visited,
+.goog-te-gadget-simple a:hover,
+.goog-te-gadget-simple a:active {
+    color: #E1F5EE !important;
+    font-size: var(--font-size-base) !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    border: none !important;
+    background: none !important;
+    vertical-align: middle !important;
+}
+
+/* Sin separadores internos */
+.goog-te-gadget-simple span {
+    border-left: none !important;
+}
+
+/* Flecha del dropdown */
+.goog-te-menu-value span:nth-child(3) {
+    color: #5DCAA5 !important;
+    font-size: 10px !important;
+    margin-left: 6px !important;
+}
+
+/* Ocultar banner de Google */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}

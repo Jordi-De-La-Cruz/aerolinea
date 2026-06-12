@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Regístrate en Destinos Mundiales" />
+    <title>Registrarse - Destinos Mundiales</title>
+    <link rel="icon" href="img/inicial.jpg" />
+    <link rel="preload" href="img/mundo.png" as="image" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="register-page">
+
+        <button class="back-btn" id="backBtn" aria-label="Volver a inicio de sesión">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        </button>
+
+        <div class="register-container">
+            <div class="register-header">
+                <div class="register-logo">
+                    <img src="img/mundo.png" alt="Logo Destinos Mundiales" />
+                    <h1>Destinos<br />Mundiales</h1>
+                </div>
+                <p class="register-subtitle">¡Crea tu cuenta y comienza la aventura!</p>
+            </div>
+
+            <form class="register-form" id="registerForm" novalidate>
+
+                <div class="form-group">
+                    <label for="name" class="visually-hidden">Nombre completo</label>
+                    <input type="text" id="name" class="form-input" placeholder="Nombre completo" required
+                        autocomplete="name" aria-describedby="name-error" />
+                    <i class="fas fa-user input-icon" aria-hidden="true"></i>
+                    <span id="name-error" class="error-message" role="alert" hidden></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="visually-hidden">Correo electrónico</label>
+                    <input type="email" id="email" class="form-input" placeholder="Correo electrónico" required
+                        autocomplete="email" aria-describedby="email-error" />
+                    <i class="fas fa-envelope input-icon" aria-hidden="true"></i>
+                    <span id="email-error" class="error-message" role="alert" hidden></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="visually-hidden">Contraseña</label>
+                    <input type="password" id="password" class="form-input" placeholder="Contraseña (mín. 8 caracteres)"
+                        required autocomplete="new-password" aria-describedby="password-error" />
+                    <i class="fas fa-lock input-icon" aria-hidden="true"></i>
+                    <span id="password-error" class="error-message" role="alert" hidden></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword" class="visually-hidden">Confirmar contraseña</label>
+                    <input type="password" id="confirmPassword" class="form-input" placeholder="Confirmar contraseña"
+                        required autocomplete="new-password" aria-describedby="confirm-error" />
+                    <i class="fas fa-lock input-icon" aria-hidden="true"></i>
+                    <span id="confirm-error" class="error-message" role="alert" hidden></span>
+                </div>
+
+                <div class="terms">
+                    <input type="checkbox" id="terms" required />
+                    <label for="terms">
+                        Acepto los <a href="#" class="terms-link">términos y condiciones</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-register">
+                    <i class="fas fa-user-plus" aria-hidden="true"></i> Registrarse
+                </button>
+
+            </form>
+
+            <div class="register-login-link">
+                <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/register.js"></script>
+</body>
+
+</html>
